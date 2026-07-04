@@ -288,6 +288,27 @@ mark.hl{background:none;color:inherit;font-weight:600}
   h1{font-size:26px}
 }
 
+/* ---------- journey page ---------- */
+.journeymap{margin:0}
+.journeymap svg{
+  width:100%;height:auto;display:block;
+  border:1px solid var(--line);border-radius:6px;background:#F4F7FB;
+}
+.journeymap figcaption{margin-top:12px;font-size:14px;color:var(--muted);max-width:44em}
+.zh{font-family:'Source Serif 4','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif}
+
+.lifebar{display:flex;height:26px;border-radius:5px;overflow:hidden;margin-top:2px;border:1px solid var(--line)}
+.lifebar span{display:block;min-width:22px}
+.yearaxis{
+  display:flex;justify-content:space-between;margin-top:8px;
+  font:400 10px/1 var(--mono);letter-spacing:.1em;color:var(--muted);
+}
+.phases{list-style:none;margin-top:22px;max-width:50em}
+.phase{display:flex;align-items:baseline;gap:11px;padding:8px 0;font-size:15.5px;line-height:1.5}
+.phase + .phase{border-top:1px solid var(--line)}
+.phase .sw{flex:0 0 auto;width:12px;height:12px;border-radius:3px;position:relative;top:2px}
+.phase b{font-weight:600;white-space:nowrap}
+
 /* ---------- footer (shared) ---------- */
 footer{
   border-top:1px solid var(--line);
