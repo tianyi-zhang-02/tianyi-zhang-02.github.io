@@ -25,6 +25,8 @@
     </div>
   </nav>
 
+  <aside id="toc" class="toc" aria-label="On this page"></aside>
+
   <header class="pagehead">
     <h1>Projects</h1>
     <p class="lede">Open-source and research tooling for evaluating and securing AI systems.</p>
@@ -32,7 +34,7 @@
 
   <main class="pagebody">
 
-    <article>
+    <article id="monitorstress" data-toc="monitorstress">
       <h3><a href="https://github.com/tianyi-zhang-02/monitorstress">monitorstress</a></h3>
       <p class="pubmeta">
         <span class="chip">In progress</span>
@@ -47,7 +49,7 @@
       collapses a Claude-Sonnet-based monitor from <strong>AUROC 0.683 to chance</strong>.</p>
     </article>
 
-    <article>
+    <article id="llm-serving" data-toc="LLM serving security">
       <h3>Confidentiality in shared LLM serving infrastructure</h3>
       <p class="pubmeta">
         <span class="chip">In progress</span>
@@ -71,5 +73,6 @@
 </div>
 
 <script src="script.js"></script>
+<script src="toc.js"></script>
 </body>
 </html>

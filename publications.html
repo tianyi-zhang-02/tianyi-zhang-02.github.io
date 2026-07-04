@@ -25,51 +25,88 @@
     </div>
   </nav>
 
+  <aside id="toc" class="toc" aria-label="On this page"></aside>
+
   <header class="pagehead">
     <h1>Publications</h1>
     <p class="lede">Peer-reviewed work spanning LLM-agent evaluation and machine learning for
     neuroimaging. <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&user=46rbYk0AAAAJ">Google Scholar →</a></p>
   </header>
 
-  <main class="pagebody">
+  <main>
 
-    <article>
-      <h3><a href="https://openreview.net/pdf?id=2Exmr1eIKZ">AgentSuite: Toward More Reliable Agent Evaluation with a Component-Based Benchmark Auditing Pipeline</a></h3>
-      <p class="authors">H. Suh*, S. Lee*, B. Ji*, R. Khare, B. Khan, H. Kim, <strong>Tianyi Zhang</strong>, et al. <span style="white-space:nowrap">(* equal contribution)</span></p>
-      <p class="pubmeta">
-        <span class="chip acc">ICML 2026</span>
-        <a href="https://openreview.net/pdf?id=2Exmr1eIKZ">Paper</a>
-      </p>
-      <p class="desc">A <strong>component-based pipeline</strong> that audits validity flaws in
-      LLM-agent benchmarks — decomposing tasks into user, environment, ground-truth, and
-      evaluation components. It matches expert judgments at <strong>0.79–0.87 F1</strong> across
-      <strong>6 benchmarks</strong>, finds flaws affecting <strong>~23% of tasks</strong>, and
-      reshuffles <strong>63% of model rankings</strong> on a 30-LLM leaderboard.</p>
-    </article>
+    <section id="highlighted">
+      <h2>Highlighted</h2>
+      <div class="content">
+        <article>
+          <h3><a href="https://openreview.net/pdf?id=2Exmr1eIKZ">AgentSuite: Toward More Reliable Agent Evaluation with a Component-Based Benchmark Auditing Pipeline</a></h3>
+          <p class="authors">H. Suh*, S. Lee*, B. Ji*, R. Khare, B. Khan, H. Kim, <strong>Tianyi Zhang</strong>, et al. <span style="white-space:nowrap">(* equal contribution)</span></p>
+          <p class="pubmeta">
+            <span class="chip acc">ICML 2026</span>
+            <a href="https://openreview.net/pdf?id=2Exmr1eIKZ">Paper</a>
+          </p>
+          <p class="desc">A <strong>component-based pipeline</strong> that audits validity flaws in
+          LLM-agent benchmarks — decomposing tasks into user, environment, ground-truth, and
+          evaluation components. It matches expert judgments at <strong>0.79–0.87 F1</strong> across
+          <strong>6 benchmarks</strong>, finds flaws affecting <strong>~23% of tasks</strong>, and
+          reshuffles <strong>63% of model rankings</strong> on a 30-LLM leaderboard.</p>
+        </article>
+      </div>
+    </section>
 
-    <article>
-      <h3><a href="https://link.springer.com/chapter/10.1007/978-3-031-95841-0_81">Causal Brain Connectivity: Integrating Granger Directed Graphs in fMRI Analysis</a></h3>
-      <p class="authors"><strong>Tianyi Zhang</strong>, K. Han, J. Nie, et al.</p>
-      <p class="pubmeta">
-        <span class="chip acc">AIME 2025</span>
-        <a href="https://link.springer.com/chapter/10.1007/978-3-031-95841-0_81">Paper</a>
-      </p>
-      <p class="desc">A causal method that recovers <strong>directional</strong> brain-connectivity
-      dependencies invisible to correlation-based graphs, improving downstream diagnostic
-      prediction across <strong>~8K patients</strong> via Granger-directed graphs.</p>
-    </article>
+    <section id="preprints">
+      <h2>Preprints</h2>
+      <div class="content">
+        <p style="color:var(--muted);max-width:42em;margin-bottom:6px">Work in progress / under review — statuses and links to update as they land.</p>
+        <article>
+          <h3><a href="https://github.com/tianyi-zhang-02/monitorstress">Stress-Testing LLM-Based Safety Monitors under Semantics-Preserving Transcript Transforms</a></h3>
+          <p class="authors"><strong>Tianyi Zhang</strong></p>
+          <p class="pubmeta">
+            <span class="chip">In preparation</span>
+            <a href="https://github.com/tianyi-zhang-02/monitorstress">Code</a>
+          </p>
+          <p class="desc">Adversarial stress-testing of LLM-based safety monitors — removing reasoning
+          traces collapses a Claude-Sonnet monitor from <strong>AUROC 0.683 to chance</strong> on METR
+          MALT trajectories.</p>
+        </article>
+        <article>
+          <h3>Confidentiality in Shared LLM Serving Infrastructure</h3>
+          <p class="authors"><strong>Tianyi Zhang</strong></p>
+          <p class="pubmeta">
+            <span class="chip">In preparation</span>
+          </p>
+          <p class="desc">Isolation properties of multi-tenant LLM inference systems. Write-up in
+          progress; details on request.</p>
+        </article>
+      </div>
+    </section>
 
-    <article>
-      <h3><a href="https://www.cs.emory.edu/~jyang71/files/bnst.pdf">Brain Network State Transformer: Leveraging State Functional Connectivity</a></h3>
-      <p class="authors">J. Nie, K. Han, <strong>Tianyi Zhang</strong>, et al.</p>
-      <p class="pubmeta">
-        <span class="chip acc">IEEE EMBC 2025 · Oral</span>
-        <a href="https://www.cs.emory.edu/~jyang71/files/bnst.pdf">Paper</a>
-      </p>
-      <p class="desc">A <strong>state-based Transformer</strong> that models temporal transitions
-      across latent functional-connectivity states, outperforming static-connectivity baselines
-      on clinical prediction.</p>
-    </article>
+    <section id="all-pubs">
+      <h2>All Publications</h2>
+      <div class="content">
+        <article>
+          <h3><a href="https://openreview.net/pdf?id=2Exmr1eIKZ">AgentSuite: Toward More Reliable Agent Evaluation with a Component-Based Benchmark Auditing Pipeline</a></h3>
+          <p class="authors">H. Suh*, S. Lee*, B. Ji*, R. Khare, B. Khan, H. Kim, <strong>Tianyi Zhang</strong>, et al.</p>
+          <p class="pubmeta"><span class="chip acc">ICML 2026</span><a href="https://openreview.net/pdf?id=2Exmr1eIKZ">Paper</a></p>
+        </article>
+        <article>
+          <h3><a href="https://link.springer.com/chapter/10.1007/978-3-031-95841-0_81">Causal Brain Connectivity: Integrating Granger Directed Graphs in fMRI Analysis</a></h3>
+          <p class="authors"><strong>Tianyi Zhang</strong>, K. Han, J. Nie, et al.</p>
+          <p class="pubmeta"><span class="chip acc">AIME 2025</span><a href="https://link.springer.com/chapter/10.1007/978-3-031-95841-0_81">Paper</a></p>
+          <p class="desc">A causal method that recovers <strong>directional</strong> brain-connectivity
+          dependencies invisible to correlation-based graphs, improving downstream diagnostic
+          prediction across <strong>~8K patients</strong> via Granger-directed graphs.</p>
+        </article>
+        <article>
+          <h3><a href="https://www.cs.emory.edu/~jyang71/files/bnst.pdf">Brain Network State Transformer: Leveraging State Functional Connectivity</a></h3>
+          <p class="authors">J. Nie, K. Han, <strong>Tianyi Zhang</strong>, et al.</p>
+          <p class="pubmeta"><span class="chip acc">IEEE EMBC 2025 · Oral</span><a href="https://www.cs.emory.edu/~jyang71/files/bnst.pdf">Paper</a></p>
+          <p class="desc">A <strong>state-based Transformer</strong> that models temporal transitions
+          across latent functional-connectivity states, outperforming static-connectivity baselines
+          on clinical prediction.</p>
+        </article>
+      </div>
+    </section>
 
   </main>
 
@@ -86,5 +123,6 @@
 </div>
 
 <script src="script.js"></script>
+<script src="toc.js"></script>
 </body>
 </html>
