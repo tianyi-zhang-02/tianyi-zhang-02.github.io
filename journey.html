@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 
@@ -67,7 +67,7 @@
     <section id="places">
       <h2>Places</h2>
       <div class="content">
-        <p style="color:var(--muted);max-width:42em">The big picture, region by region.</p>
+        <p style="color:var(--muted);max-width:42em">The big picture — click a place to unfold its finer footprint.</p>
         <div class="lifebar" aria-hidden="true">
           <span style="flex:19;background:#B0764B"></span>
           <span style="flex:5;background:#17418A"></span>
@@ -75,32 +75,31 @@
         </div>
         <div class="yearaxis"><span>2002</span><span>2021</span><span>2026</span></div>
 
-        <ol class="phases">
-          <li class="phase"><span class="sw" style="background:#B0764B"></span>
-            <b>2002 – 2021</b> · Shanghai — born &amp; grew up</li>
-          <li class="phase"><span class="sw" style="background:#17418A"></span>
-            <b>2021 – 2026</b> · Atlanta, GA — Emory &amp; Georgia Tech</li>
-          <li class="phase"><span class="sw" style="background:#0A66C2"></span>
-            <b>2026</b> · Bay Area, CA — LinkedIn</li>
-          <li class="phase" style="color:var(--muted)"><span class="sw" style="background:transparent;border:1px dashed var(--muted)"></span>
-            <b>→</b> the journey continues</li>
-        </ol>
-      </div>
-    </section>
-
-    <section id="detail">
-      <h2>In Detail</h2>
-      <div class="content">
-        <p style="color:var(--muted);max-width:42em">The finer grain — district by district, campus by campus.</p>
-        <ol class="phases">
-          <li class="phase"><b>Shanghai · Minhang</b> — kindergarten</li>
-          <li class="phase"><b>Shanghai · Xuhui</b> — primary school</li>
-          <li class="phase"><b>Shanghai · Minhang</b> — middle &amp; high school (SUIS Wanyuan)</li>
-          <li class="phase"><b>2021 – 2023 · Oxford, GA</b> — Emory, first two years (Oxford College)</li>
-          <li class="phase"><b>2023 – 2025 · Decatur, GA</b> — Emory main campus, B.S.</li>
-          <li class="phase"><b>2025 – 2026 · Atlanta, GA</b> — Georgia Tech, M.S. CS (in progress)</li>
-          <li class="phase"><b>2026 · Mountain View, CA</b> — LinkedIn</li>
-        </ol>
+        <div class="footprints">
+          <details class="fp" open>
+            <summary><span class="chev"></span><span class="sw" style="background:#B0764B"></span> <b>2002 – 2021</b> · Shanghai — born &amp; grew up</summary>
+            <ul>
+              <li>Minhang — kindergarten <span class="zh">（绿世界实验幼儿园）</span></li>
+              <li>Xuhui — primary school <span class="zh">（逸夫小学）</span></li>
+              <li>Minhang — middle &amp; high school (SUIS Wanyuan)</li>
+            </ul>
+          </details>
+          <details class="fp">
+            <summary><span class="chev"></span><span class="sw" style="background:#17418A"></span> <b>2021 – 2026</b> · Atlanta, GA — Emory &amp; Georgia Tech</summary>
+            <ul>
+              <li>2021 – 2023 · Oxford, GA — Emory, first two years (Oxford College)</li>
+              <li>2023 – 2025 · Decatur, GA — Emory main campus, B.S.</li>
+              <li>2025 – 2026 · Atlanta, GA — Georgia Tech, M.S. CS (in progress)</li>
+            </ul>
+          </details>
+          <details class="fp">
+            <summary><span class="chev"></span><span class="sw" style="background:#0A66C2"></span> <b>2026</b> · Bay Area, CA — LinkedIn</summary>
+            <ul>
+              <li>2026 · Mountain View, CA — LinkedIn, ML Engineer Intern</li>
+            </ul>
+          </details>
+          <p class="fp-cont"><b>→</b> the journey continues</p>
+        </div>
       </div>
     </section>
 

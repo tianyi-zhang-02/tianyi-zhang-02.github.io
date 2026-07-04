@@ -314,6 +314,30 @@ mark.hl{background:none;color:inherit;font-weight:600}
 .phase .sw{flex:0 0 auto;width:12px;height:12px;border-radius:3px;position:relative;top:2px}
 .phase b{font-weight:600;white-space:nowrap}
 
+/* expandable coarse -> fine footprints */
+.footprints{margin-top:22px;max-width:52em}
+.fp{border-top:1px solid var(--line)}
+.footprints .fp:last-of-type{border-bottom:1px solid var(--line)}
+.fp summary{
+  cursor:pointer;list-style:none;
+  display:flex;align-items:baseline;gap:10px;
+  padding:12px 0;font-size:15.5px;
+}
+.fp summary::-webkit-details-marker{display:none}
+.fp summary:hover{color:var(--accent)}
+.fp .chev{
+  flex:0 0 auto;width:8px;height:8px;
+  border-right:1.5px solid var(--accent);border-bottom:1.5px solid var(--accent);
+  transform:rotate(-45deg);transition:transform .15s;
+}
+.fp[open] .chev{transform:rotate(45deg)}
+.fp .sw{flex:0 0 auto;width:12px;height:12px;border-radius:3px;position:relative;top:2px}
+.fp summary b{font-weight:600;white-space:nowrap}
+.fp ul{list-style:none;margin:0 0 14px 30px;max-width:44em}
+.fp li{padding:6px 0;font-size:14.5px;line-height:1.5;color:var(--muted);border-top:1px dashed var(--line)}
+.fp li:first-child{border-top:0}
+.fp-cont{margin-top:16px;color:var(--muted);font-size:15px}
+
 /* ---------- footer (shared) ---------- */
 footer{
   border-top:1px solid var(--line);
