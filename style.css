@@ -120,6 +120,9 @@ section h2{
 .content > * + *{margin-top:16px}
 .content p{max-width:42em}
 
+/* focus-area tags */
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:4px}
+
 /* full-width list body for single-topic pages */
 .pagebody{padding:30px 0 8px}
 .pagebody > article:first-child{margin-top:0}
