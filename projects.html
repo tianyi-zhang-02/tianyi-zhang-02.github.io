@@ -40,18 +40,17 @@
       <div class="content">
         <p style="color:var(--muted);max-width:42em">Research and open-source projects I lead.</p>
         <article>
-          <h3><a href="https://github.com/tianyi-zhang-02/monitorstress">monitorstress</a></h3>
+          <h3><a href="https://github.com/tianyi-zhang-02/monitorstress">loopcanary</a></h3>
           <p class="pubmeta">
             <span class="chip">Research · In progress</span>
             <a href="https://github.com/tianyi-zhang-02/monitorstress">Code</a>
           </p>
-          <p class="desc">An <strong>adversarial stress-test suite</strong> for LLM-based safety
-          monitors — the class of system labs like METR and UK AISI use to detect agent reward
-          hacking and sandbagging. Built on a typed Python/Pydantic-v2 stack, it applies
-          semantics-preserving transformations (chain-of-thought stripping, observation
-          truncation, action-padding noise) to agent transcripts from METR's MALT split and
-          measures how monitor discrimination degrades — removing a model's reasoning traces
-          collapses a Claude-Sonnet-based monitor from <strong>AUROC 0.683 to chance</strong>.</p>
+          <p class="desc">An open-source Python library for <strong>agent-loop observability</strong> —
+          it watches an agent's execution and diagnoses when the loop goes off-rails: the same tool
+          call firing over and over, silent context compression, memory writes that never get recalled,
+          cost run-away, or a safety monitor raising an alarm. Emits a <strong>per-run timeline</strong>
+          you can inspect after the fact or stream live. (Grew out of a batch stress-test tool for AI
+          safety monitors.)</p>
         </article>
         <article>
           <h3>Confidentiality in shared LLM serving infrastructure</h3>
@@ -80,8 +79,8 @@
         <article>
           <h3><a href="https://github.com/tianyi-zhang-02/tracker">Wealth Projection Simulator</a></h3>
           <p class="pubmeta">
-            <span class="chip">Eng</span>
-            <a href="https://tracker-gamma-eight-14.vercel.app">Live demo</a>
+            <span class="chip">Eng · Shipped</span>
+            <a href="https://tracker-gamma-eight-14.vercel.app">Live</a>
             <a href="https://github.com/tianyi-zhang-02/tracker">Code</a>
           </p>
           <p class="desc">A client-side <strong>net-worth projection simulator</strong> — model household
