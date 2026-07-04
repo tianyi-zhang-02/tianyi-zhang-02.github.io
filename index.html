@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
 
@@ -76,9 +76,17 @@
     </div>
   </header>
 
-  <figure class="hero-photo">
-    <img src="images/namcha-barwa.jpg" alt="Namcha Barwa panorama, Tibet — photo by Tianyi Zhang" loading="lazy">
-    <figcaption>Namcha Barwa 南迦巴瓦峰 — one of mine. <a href="images/namcha-barwa-full.jpg" download>Download full-res ↓</a></figcaption>
+  <figure class="hero-reveal">
+    <div class="reveal">
+      <video class="rv-media rv-video" preload="none" muted loop playsinline poster="images/namcha-barwa-poster.jpg">
+        <source src="videos/namcha-barwa.mp4" type="video/mp4">
+      </video>
+      <img class="rv-media rv-photo" src="images/namcha-barwa.jpg" alt="Namcha Barwa panorama, Tibet — photo by Tianyi Zhang">
+      <div class="rv-handle" aria-hidden="true"><span class="rv-grip">↔</span></div>
+      <input class="rv-range" type="range" min="0" max="100" value="0" step="0.5" aria-label="Slide to reveal the time-lapse">
+      <div class="rv-hint">slide to reveal the time-lapse ▸</div>
+    </div>
+    <figcaption>Namcha Barwa 南迦巴瓦峰 <a href="images/namcha-barwa-full.jpg" download>Download full-res ↓</a></figcaption>
   </figure>
 
   <main>
@@ -141,5 +149,24 @@
 
 <script src="script.js"></script>
 <script src="toc.js"></script>
+<script>
+(function () {
+  var box = document.querySelector('.reveal');
+  if (!box) return;
+  var range = box.querySelector('.rv-range');
+  var vid = box.querySelector('video');
+  function update() {
+    box.style.setProperty('--pos', range.value + '%');
+    if (parseFloat(range.value) >= 96) {
+      box.classList.add('unlocked');
+      if (vid.paused) { vid.play().catch(function () {}); }
+    } else {
+      box.classList.remove('unlocked');
+    }
+  }
+  range.addEventListener('input', update);
+  update();
+})();
+</script>
 </body>
 </html>

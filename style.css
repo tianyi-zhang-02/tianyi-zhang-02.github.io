@@ -298,6 +298,33 @@ figure.video{margin:0}
 figure.video video{width:100%;height:auto;display:block;border-radius:6px;border:1px solid var(--line);background:#000}
 figure.video figcaption{margin-top:10px;font:italic 400 14px/1.5 var(--serif);color:var(--muted)}
 
+/* slide-to-reveal: still photo -> time-lapse */
+.hero-reveal{margin:10px 0 4px}
+.hero-reveal figcaption{margin-top:10px;font:italic 400 14px/1.5 var(--serif);color:var(--muted)}
+.reveal{
+  position:relative;aspect-ratio:16 / 9;overflow:hidden;
+  border-radius:6px;border:1px solid var(--line);background:#000;
+  --pos:0%;touch-action:pan-y;
+}
+.rv-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.rv-photo{clip-path:inset(0 0 0 var(--pos))}
+.rv-handle{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;background:#fff;transform:translateX(-1px);pointer-events:none}
+.rv-grip{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:36px;height:36px;border-radius:50%;background:#fff;
+  box-shadow:0 1px 8px rgba(0,0,0,.35);
+  display:flex;align-items:center;justify-content:center;
+  font:700 15px var(--mono);color:var(--accent);
+}
+.rv-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize}
+.rv-hint{
+  position:absolute;left:12px;bottom:12px;
+  font:400 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;
+  color:#fff;background:rgba(23,25,30,.55);padding:7px 11px;border-radius:20px;
+  pointer-events:none;transition:opacity .3s;
+}
+.reveal.unlocked .rv-hint{opacity:0}
+
 /* ---------- journey page ---------- */
 .journeymap{margin:0}
 .journeymap svg{
