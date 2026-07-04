@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#E9EBEC"/>
+  <circle cx="470" cy="112" r="46" fill="#5E646D" opacity="0.20"/>
+  <path d="M0 400 L150 258 L268 330 L392 214 L520 300 L600 262 L600 400 Z" fill="#CDD0D2"/>
+  <path d="M0 400 L210 300 L340 356 L470 276 L600 330 L600 400 Z" fill="#5E646D" opacity="0.28"/>
+  <text x="300" y="205" text-anchor="middle" font-family="ui-monospace, monospace" font-size="20" fill="#5E646D" letter-spacing="6" opacity="0.85">PHOTO 05</text>
+</svg>
