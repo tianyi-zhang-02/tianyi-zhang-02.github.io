@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Resume — Tianyi Zhang</title>
-<meta name="description" content="Tianyi Zhang — résumé and CV. ML engineering at LinkedIn Feed AI; LLM evaluation research at Georgia Tech; graph learning at Emory.">
+<title>CV — Tianyi Zhang</title>
+<meta name="description" content="Tianyi Zhang — full CV. ML engineering at LinkedIn Feed AI; LLM evaluation research at Georgia Tech; graph learning at Emory.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FCFCFA'/%3E%3Cpath d='M5 27 L27 5' stroke='%23BDBFB8' stroke-dasharray='2 3' fill='none'/%3E%3Cpath d='M5 27 C 11 12 17 7 27 5' stroke='%231E3EC8' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,212 +21,137 @@
       <a href="index.html">About</a>
       <a href="publications.html">Publications</a>
       <a href="projects.html">Projects</a>
-      <a href="resume.html" aria-current="page">Resume</a>
+      <a href="resume.html" aria-current="page">CV</a>
     </div>
   </nav>
 
   <header class="pagehead">
-    <h1>Resume</h1>
-    <p class="lede">Pick a format — a one-page résumé, or a fuller CV.</p>
+    <h1>CV</h1>
+    <p class="lede">The full version. Prefer the short one? Grab the 1-page résumé.</p>
     <div class="cv-toggle">
-      <div class="seg" role="tablist" aria-label="Résumé format">
-        <button type="button" data-view="onepager" class="active" role="tab">One-pager</button>
-        <button type="button" data-view="cv" role="tab">Full CV</button>
-      </div>
-      <a id="dl" class="dl-btn" href="resume.pdf" download>Download PDF ↓</a>
+      <a class="dl-btn" href="resume.pdf" download>Résumé — 1-page PDF ↓</a>
     </div>
   </header>
 
   <main>
 
-    <!-- ============================= ONE-PAGER ============================= -->
-    <div id="view-onepager">
+    <section id="cv-experience">
+      <h2>Experience</h2>
+      <div class="content">
 
-      <section id="op-experience">
-        <h2>Experience</h2>
-        <div class="content">
-          <div class="xp">
-            <p class="org"><span>LinkedIn · Mountain View</span><span class="when">May 2026 — Present</span></p>
-            <p class="role"><strong>ML Engineer Intern, Feed AI.</strong> LLM-based generative retrieval
-            (<mark class="hl">Apollo out-of-network</mark>) and adaptive, compressed member representation
-            for homepage-feed candidate generation.</p>
-          </div>
-          <div class="xp">
-            <p class="org"><span>Georgia Tech · Efficient &amp; Intelligent Computing Lab (NVIDIA)</span><span class="when">Jul — Dec 2025</span></p>
-            <p class="role"><strong>Student Researcher, LLM Evaluation &amp; Agentic AI.</strong> Co-authored
-            <mark class="hl">AgentSuite (ICML 2026)</mark>; built the taxonomy-guided LLM-judge and rule-based
-            structural detectors for benchmark auditing.</p>
-          </div>
-          <div class="xp">
-            <p class="org"><span>Emory · Graph Mining Lab</span><span class="when">Dec 2023 — May 2025</span></p>
-            <p class="role"><strong>Machine Learning Researcher.</strong> Graph neural networks and
-            time-series models for biomedical and neuroimaging data; first-authored AIME 2025,
-            co-authored EMBC 2025 (oral).</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="op-selected">
-        <h2>Selected Publications</h2>
-        <div class="content">
-          <ul class="linklist">
-            <li><a href="https://openreview.net/pdf?id=2Exmr1eIKZ">AgentSuite: Component-Based Benchmark Auditing for Agents</a> <em>ICML 2026</em></li>
-            <li><a href="https://link.springer.com/chapter/10.1007/978-3-031-95841-0_81">Causal Brain Connectivity: Granger Directed Graphs in fMRI</a> <em>AIME 2025</em></li>
-            <li><a href="https://www.cs.emory.edu/~jyang71/files/bnst.pdf">Brain Network State Transformer</a> <em>IEEE EMBC 2025 · Oral</em></li>
+        <div class="xp job">
+          <p class="org"><span>LinkedIn Corporation · Mountain View, CA</span><span class="when">May 2026 — Present</span></p>
+          <p class="role"><strong>AI/ML Engineer Intern</strong> — Feed AI · LLM for RecSys, LLM Post-Training</p>
+          <ul>
+            <li>Contributing to LinkedIn's <strong>Apollo out-of-network retrieval</strong> for homepage-feed
+            candidate generation, applying <strong>LLM-based generative retrieval</strong> to surface relevant
+            content beyond a member's immediate network.</li>
+            <li>Led a research direction on <strong>adaptive, compressed member representation</strong> — modeling
+            profile signals, temporal engagement history, long-history compression, and member-regime
+            differences in retrieval.</li>
+            <li>Built a <strong>multi-axis retrieval experimentation framework</strong> studying tradeoffs among
+            <mark class="hl">Recall@K</mark>, diversity, efficiency, and evaluation fidelity across cold-start,
+            sparse-, stale-, and active-user scenarios.</li>
+            <li>Developed a reusable <strong>Apollo experimentation pipeline</strong> (training, retrieval eval,
+            config reuse, execution tracking) improving team velocity and reproducibility.</li>
           </ul>
-          <p class="role"><a href="publications.html">All publications →</a></p>
         </div>
-      </section>
 
-      <section id="op-education">
-        <h2>Education</h2>
-        <div class="content">
-          <div class="xp">
-            <p class="org"><span>Georgia Institute of Technology <span class="pride gt">🐝 Go Jackets</span></span><span class="when">Aug 2025 — Dec 2026</span></p>
-            <p class="role">M.S. Computer Science.</p>
-          </div>
-          <div class="xp">
-            <p class="org"><span>Emory University <span class="pride emory">🦅 Go Eagles</span></span><span class="when">Aug 2021 — May 2025</span></p>
-            <p class="role">B.S. Quantitative Sciences.</p>
-          </div>
+        <div class="xp job">
+          <p class="org"><span>Georgia Tech Efficient &amp; Intelligent Computing Lab · NVIDIA</span><span class="when">Jul — Dec 2025</span></p>
+          <p class="role"><strong>Student Researcher</strong> — LLM Evaluation, Agentic AI</p>
+          <ul>
+            <li>Co-authored <strong>AgentSuite</strong> (<mark class="hl">ICML 2026</mark>), an automated pipeline
+            auditing validity flaws in LLM-agent benchmarks; matched expert judgments at
+            <mark class="hl">0.79–0.87 F1</mark> across <mark class="hl">6 benchmarks</mark> and showed flaws affect
+            <mark class="hl">~23% of tasks</mark>, reshuffling <mark class="hl">63% of model rankings</mark> on a
+            30-LLM leaderboard.</li>
+            <li>Built the <strong>taxonomy-guided LLM-judge</strong> stage and <strong>rule-based structural
+            detectors</strong>, decomposing agent tasks into user / environment / ground-truth / evaluation
+            components; generalized to unseen benchmarks with no retuning and surfaced
+            <mark class="hl">100+</mark> undocumented issues.</li>
+          </ul>
         </div>
-      </section>
 
-      <section id="op-skills">
-        <h2>Skills</h2>
-        <div class="content">
-          <div class="xp">
-            <p class="role"><strong>Programming</strong> — Python, SQL, Java, R, C/C++ &nbsp;·&nbsp;
-            <strong>ML/AI</strong> — PyTorch, CUDA, Hugging Face, vLLM, SGLang, LangChain, MLflow &nbsp;·&nbsp;
-            <strong>Infra &amp; Data</strong> — Docker, AWS, GitHub Actions, FastAPI, Linux, PostgreSQL, Spark</p>
-          </div>
+        <div class="xp job">
+          <p class="org"><span>Emory Graph Mining Lab · Atlanta, GA</span><span class="when">Dec 2023 — May 2025</span></p>
+          <p class="role"><strong>Machine Learning Researcher</strong> — AI for Science, Graph Representation Learning</p>
+          <ul>
+            <li>First-authored a <strong>causal brain-connectivity</strong> method (<mark class="hl">AIME 2025</mark>)
+            recovering <strong>directional</strong> dependencies invisible to correlation graphs, improving
+            diagnostic prediction across <mark class="hl">~8K patients</mark> via Granger-directed graphs.</li>
+            <li>Co-authored a <strong>state-based Transformer</strong> (<mark class="hl">IEEE EMBC 2025</mark>, oral)
+            modeling temporal transitions across latent functional-connectivity states, outperforming
+            static-connectivity baselines on clinical prediction.</li>
+          </ul>
         </div>
-      </section>
 
-    </div>
+      </div>
+    </section>
 
-    <!-- ============================= FULL CV ============================= -->
-    <div id="view-cv" hidden>
+    <section id="cv-pubs">
+      <h2>Publications</h2>
+      <div class="content">
+        <article>
+          <h3><a href="https://openreview.net/pdf?id=2Exmr1eIKZ">AgentSuite: Toward More Reliable Agent Evaluation with a Component-Based Benchmark Auditing Pipeline</a></h3>
+          <p class="authors">H. Suh*, S. Lee*, B. Ji*, R. Khare, B. Khan, H. Kim, <strong>Tianyi Zhang</strong>, et al. <span style="white-space:nowrap">(* equal contribution)</span></p>
+          <p class="pubmeta"><span class="chip acc">ICML 2026</span><a href="https://openreview.net/pdf?id=2Exmr1eIKZ">Paper</a></p>
+        </article>
+        <article>
+          <h3><a href="https://link.springer.com/chapter/10.1007/978-3-031-95841-0_81">Causal Brain Connectivity: Integrating Granger Directed Graphs in fMRI Analysis</a></h3>
+          <p class="authors"><strong>Tianyi Zhang</strong>, K. Han, J. Nie, et al.</p>
+          <p class="pubmeta"><span class="chip acc">AIME 2025</span><a href="https://link.springer.com/chapter/10.1007/978-3-031-95841-0_81">Paper</a></p>
+        </article>
+        <article>
+          <h3><a href="https://www.cs.emory.edu/~jyang71/files/bnst.pdf">Brain Network State Transformer: Leveraging State Functional Connectivity</a></h3>
+          <p class="authors">J. Nie, K. Han, <strong>Tianyi Zhang</strong>, et al.</p>
+          <p class="pubmeta"><span class="chip acc">IEEE EMBC 2025 · Oral</span><a href="https://www.cs.emory.edu/~jyang71/files/bnst.pdf">Paper</a></p>
+        </article>
+      </div>
+    </section>
 
-      <section id="cv-experience">
-        <h2>Experience</h2>
-        <div class="content">
+    <section id="cv-projects">
+      <h2>Projects</h2>
+      <div class="content">
+        <article>
+          <h3><a href="https://github.com/tianyi-zhang-02/monitorstress">monitorstress</a></h3>
+          <p class="pubmeta"><span class="chip">In progress</span><a href="https://github.com/tianyi-zhang-02/monitorstress">Code</a></p>
+          <p class="desc">Adversarial stress-test suite for LLM-based safety monitors. Applies
+          semantics-preserving transformations to METR MALT transcripts and measures how monitor
+          discrimination degrades — removing reasoning traces collapses a Claude-Sonnet monitor from
+          <mark class="hl">AUROC 0.683 to chance</mark>.</p>
+        </article>
+        <article>
+          <h3>Confidentiality in shared LLM serving infrastructure</h3>
+          <p class="pubmeta"><span class="chip">In progress</span></p>
+          <p class="desc">Security work on <strong>isolation properties of multi-tenant LLM inference</strong>
+          systems. Write-up in progress; details on request.</p>
+        </article>
+      </div>
+    </section>
 
-          <div class="xp job">
-            <p class="org"><span>LinkedIn Corporation · Mountain View, CA</span><span class="when">May 2026 — Present</span></p>
-            <p class="role"><strong>AI/ML Engineer Intern</strong> — Feed AI · LLM for RecSys, LLM Post-Training</p>
-            <ul>
-              <li>Contributing to LinkedIn's <strong>Apollo out-of-network retrieval</strong> for homepage-feed
-              candidate generation, applying <strong>LLM-based generative retrieval</strong> to surface relevant
-              content beyond a member's immediate network.</li>
-              <li>Led a research direction on <strong>adaptive, compressed member representation</strong> — modeling
-              profile signals, temporal engagement history, long-history compression, and member-regime
-              differences in retrieval.</li>
-              <li>Built a <strong>multi-axis retrieval experimentation framework</strong> studying tradeoffs among
-              <mark class="hl">Recall@K</mark>, diversity, efficiency, and evaluation fidelity across cold-start,
-              sparse-, stale-, and active-user scenarios.</li>
-              <li>Developed a reusable <strong>Apollo experimentation pipeline</strong> (training, retrieval eval,
-              config reuse, execution tracking) improving team velocity and reproducibility.</li>
-            </ul>
-          </div>
-
-          <div class="xp job">
-            <p class="org"><span>Georgia Tech Efficient &amp; Intelligent Computing Lab · NVIDIA</span><span class="when">Jul — Dec 2025</span></p>
-            <p class="role"><strong>Student Researcher</strong> — LLM Evaluation, Agentic AI</p>
-            <ul>
-              <li>Co-authored <strong>AgentSuite</strong> (<mark class="hl">ICML 2026</mark>), an automated pipeline
-              auditing validity flaws in LLM-agent benchmarks; matched expert judgments at
-              <mark class="hl">0.79–0.87 F1</mark> across <mark class="hl">6 benchmarks</mark> and showed flaws affect
-              <mark class="hl">~23% of tasks</mark>, reshuffling <mark class="hl">63% of model rankings</mark> on a
-              30-LLM leaderboard.</li>
-              <li>Built the <strong>taxonomy-guided LLM-judge</strong> stage and <strong>rule-based structural
-              detectors</strong>, decomposing agent tasks into user / environment / ground-truth / evaluation
-              components; generalized to unseen benchmarks with no retuning and surfaced
-              <mark class="hl">100+</mark> undocumented issues.</li>
-            </ul>
-          </div>
-
-          <div class="xp job">
-            <p class="org"><span>Emory Graph Mining Lab · Atlanta, GA</span><span class="when">Dec 2023 — May 2025</span></p>
-            <p class="role"><strong>Machine Learning Researcher</strong> — AI for Science, Graph Representation Learning</p>
-            <ul>
-              <li>First-authored a <strong>causal brain-connectivity</strong> method (<mark class="hl">AIME 2025</mark>)
-              recovering <strong>directional</strong> dependencies invisible to correlation graphs, improving
-              diagnostic prediction across <mark class="hl">~8K patients</mark> via Granger-directed graphs.</li>
-              <li>Co-authored a <strong>state-based Transformer</strong> (<mark class="hl">IEEE EMBC 2025</mark>, oral)
-              modeling temporal transitions across latent functional-connectivity states, outperforming
-              static-connectivity baselines on clinical prediction.</li>
-            </ul>
-          </div>
-
+    <section id="cv-education">
+      <h2>Education</h2>
+      <div class="content">
+        <div class="xp">
+          <p class="org"><span>Georgia Institute of Technology <span class="pride gt">🐝 Go Jackets</span></span><span class="when">Aug 2025 — Dec 2026</span></p>
+          <p class="role">M.S. Computer Science.</p>
         </div>
-      </section>
-
-      <section id="cv-pubs">
-        <h2>Publications</h2>
-        <div class="content">
-          <article>
-            <h3><a href="https://openreview.net/pdf?id=2Exmr1eIKZ">AgentSuite: Toward More Reliable Agent Evaluation with a Component-Based Benchmark Auditing Pipeline</a></h3>
-            <p class="authors">H. Suh*, S. Lee*, B. Ji*, R. Khare, B. Khan, H. Kim, <strong>Tianyi Zhang</strong>, et al. <span style="white-space:nowrap">(* equal contribution)</span></p>
-            <p class="pubmeta"><span class="chip acc">ICML 2026</span><a href="https://openreview.net/pdf?id=2Exmr1eIKZ">Paper</a></p>
-          </article>
-          <article>
-            <h3><a href="https://link.springer.com/chapter/10.1007/978-3-031-95841-0_81">Causal Brain Connectivity: Integrating Granger Directed Graphs in fMRI Analysis</a></h3>
-            <p class="authors"><strong>Tianyi Zhang</strong>, K. Han, J. Nie, et al.</p>
-            <p class="pubmeta"><span class="chip acc">AIME 2025</span><a href="https://link.springer.com/chapter/10.1007/978-3-031-95841-0_81">Paper</a></p>
-          </article>
-          <article>
-            <h3><a href="https://www.cs.emory.edu/~jyang71/files/bnst.pdf">Brain Network State Transformer: Leveraging State Functional Connectivity</a></h3>
-            <p class="authors">J. Nie, K. Han, <strong>Tianyi Zhang</strong>, et al.</p>
-            <p class="pubmeta"><span class="chip acc">IEEE EMBC 2025 · Oral</span><a href="https://www.cs.emory.edu/~jyang71/files/bnst.pdf">Paper</a></p>
-          </article>
+        <div class="xp">
+          <p class="org"><span>Emory University <span class="pride emory">🦅 Go Eagles</span></span><span class="when">Aug 2021 — May 2025</span></p>
+          <p class="role">B.S. Quantitative Sciences.</p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="cv-projects">
-        <h2>Projects</h2>
-        <div class="content">
-          <article>
-            <h3><a href="https://github.com/tianyi-zhang-02/monitorstress">monitorstress</a></h3>
-            <p class="pubmeta"><span class="chip">In progress</span><a href="https://github.com/tianyi-zhang-02/monitorstress">Code</a></p>
-            <p class="desc">Adversarial stress-test suite for LLM-based safety monitors. Applies
-            semantics-preserving transformations to METR MALT transcripts and measures how monitor
-            discrimination degrades — removing reasoning traces collapses a Claude-Sonnet monitor from
-            <mark class="hl">AUROC 0.683 to chance</mark>.</p>
-          </article>
-          <article>
-            <h3>Confidentiality in shared LLM serving infrastructure</h3>
-            <p class="pubmeta"><span class="chip">In progress</span></p>
-            <p class="desc">Security work on isolation properties of multi-tenant LLM inference systems.
-            Write-up in progress; details on request.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="cv-education">
-        <h2>Education</h2>
-        <div class="content">
-          <div class="xp">
-            <p class="org"><span>Georgia Institute of Technology <span class="pride gt">🐝 Go Jackets</span></span><span class="when">Aug 2025 — Dec 2026</span></p>
-            <p class="role">M.S. Computer Science.</p>
-          </div>
-          <div class="xp">
-            <p class="org"><span>Emory University <span class="pride emory">🦅 Go Eagles</span></span><span class="when">Aug 2021 — May 2025</span></p>
-            <p class="role">B.S. Quantitative Sciences.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="cv-skills">
-        <h2>Skills</h2>
-        <div class="content">
-          <div class="xp"><p class="org"><span>Programming</span></p><p class="role">Python, SQL, Java, R, C/C++.</p></div>
-          <div class="xp"><p class="org"><span>ML / AI</span></p><p class="role">PyTorch, CUDA, Hugging Face, vLLM, SGLang, LangChain, MLflow.</p></div>
-          <div class="xp"><p class="org"><span>Infra &amp; Data</span></p><p class="role">Docker, AWS, GitHub Actions, FastAPI, Linux · PostgreSQL, MongoDB, Redis, Apache Spark.</p></div>
-        </div>
-      </section>
-
-    </div>
+    <section id="cv-skills">
+      <h2>Skills</h2>
+      <div class="content">
+        <div class="xp"><p class="org"><span>Programming</span></p><p class="role">Python, SQL, Java, R, C/C++.</p></div>
+        <div class="xp"><p class="org"><span>ML / AI</span></p><p class="role">PyTorch, CUDA, Hugging Face, vLLM, SGLang, LangChain, MLflow.</p></div>
+        <div class="xp"><p class="org"><span>Infra &amp; Data</span></p><p class="role">Docker, AWS, GitHub Actions, FastAPI, Linux · PostgreSQL, MongoDB, Redis, Apache Spark.</p></div>
+      </div>
+    </section>
 
   </main>
 
@@ -243,38 +168,5 @@
 </div>
 
 <script src="script.js"></script>
-<script>
-(function () {
-  var seg = document.querySelectorAll('.seg button');
-  var onepager = document.getElementById('view-onepager');
-  var cv = document.getElementById('view-cv');
-  var dl = document.getElementById('dl');
-
-  function show(v) {
-    seg.forEach(function (b) { b.classList.toggle('active', b.dataset.view === v); });
-    onepager.hidden = v !== 'onepager';
-    cv.hidden = v !== 'cv';
-    if (v === 'cv') {
-      dl.textContent = 'Save as PDF ↓';
-      dl.dataset.mode = 'print';
-      dl.removeAttribute('href');
-      dl.removeAttribute('download');
-    } else {
-      dl.textContent = 'Download PDF ↓';
-      dl.dataset.mode = 'file';
-      dl.href = 'resume.pdf';
-      dl.setAttribute('download', '');
-    }
-    history.replaceState(null, '', v === 'cv' ? '#cv' : '#');
-  }
-
-  seg.forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.view); }); });
-  dl.addEventListener('click', function (e) {
-    if (dl.dataset.mode === 'print') { e.preventDefault(); window.print(); }
-  });
-
-  show(location.hash === '#cv' ? 'cv' : 'onepager');
-})();
-</script>
 </body>
 </html>
