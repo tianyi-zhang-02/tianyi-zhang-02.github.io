@@ -288,6 +288,11 @@ mark.hl{background:none;color:inherit;font-weight:600}
   h1{font-size:26px}
 }
 
+/* ---------- front-page hero photo ---------- */
+.hero-photo{margin:10px 0 4px}
+.hero-photo img{width:100%;height:auto;display:block;border-radius:6px;border:1px solid var(--line)}
+.hero-photo figcaption{margin-top:10px;font:italic 400 14px/1.5 var(--serif);color:var(--muted)}
+
 /* ---------- journey page ---------- */
 .journeymap{margin:0}
 .journeymap svg{
