@@ -123,7 +123,7 @@ section h2{
 /* focus-area tags */
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:4px}
 
-/* ---------- sticky top bar: page nav + section bar ---------- */
+/* ---------- sticky top nav ---------- */
 .topbar{
   position:sticky;top:0;z-index:30;
   background:var(--paper);
@@ -132,26 +132,35 @@ section h2{
 .topbar .sitenav{border-bottom:0;padding:20px 0 16px}
 @media (max-width:720px){ .topbar{position:static} }
 
-/* section bar ("on this page") — horizontal, all screen sizes */
-.secbar{
-  display:flex;gap:22px;align-items:center;
-  padding:0 0 11px;
-  overflow-x:auto;
-  scrollbar-width:none;
+/* ---------- "on this page" sidebar (left rail) ---------- */
+.toc{display:none}
+@media (min-width:1280px){
+  .toc{
+    display:block;
+    position:fixed;
+    top:132px;
+    left:calc(50% - 634px);
+    width:140px;
+    max-height:70vh;
+    overflow:auto;
+  }
 }
-.secbar::-webkit-scrollbar{display:none}
-.secbar:empty{display:none}
-.secbar a{
-  flex:0 0 auto;
-  font:400 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;
-  color:var(--muted);text-decoration:none;white-space:nowrap;
-  padding-bottom:3px;border-bottom:1.5px solid transparent;
+.toc .toc-h{
+  font:400 9px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px;
 }
-.secbar a:hover{color:var(--ink)}
-.secbar a.active{color:var(--accent);border-bottom-color:var(--accent)}
+.toc ol{list-style:none}
+.toc a{
+  display:block;
+  font:400 10.5px/1.35 var(--mono);letter-spacing:.04em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;
+  padding:6px 0 6px 12px;border-left:2px solid var(--line);
+}
+.toc a:hover{color:var(--ink);border-left-color:var(--muted)}
+.toc a.active{color:var(--accent);border-left-color:var(--accent)}
 
-/* anchored sections clear the sticky bar */
-main section[id], main article[id]{scroll-margin-top:118px}
+/* anchored sections clear the sticky nav */
+main section[id], main article[id]{scroll-margin-top:88px}
 
 /* accent-bulleted list (about "current threads") */
 .threads{list-style:none;max-width:44em;margin-top:2px}
