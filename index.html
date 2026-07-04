@@ -1,16 +1,7 @@
 <!doctype html>
 <!--
-  tianyi-zhang-02.github.io — single-file personal site (no build step, no dependencies)
-
-  DEPLOY
-    1. Public repo named exactly: tianyi-zhang-02.github.io
-    2. This file at the repo root as index.html, pushed to main.
-    3. Live at https://tianyi-zhang-02.github.io within ~1 minute.
-       (If not: Settings → Pages → deploy from main / root.)
-
-  STILL TODO (optional)
-    - Add cv.pdf to the repo root so the "CV" link resolves (or delete that link).
-    - Verify graduation date (May 2027) and all author lists / paper links.
+  tianyi-zhang-02.github.io — home. Multi-page site, no build step.
+  Shared: style.css, script.js. Pages: index / publications / projects / cv.
 -->
 <html lang="en">
 <head>
@@ -22,173 +13,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --paper:#FCFCFA;
-    --ink:#17191E;
-    --muted:#5E646D;
-    --line:#E5E6E2;
-    --accent:#1E3EC8;
-    --fill:#FFF3C4;
-    --mono:'Martian Mono', ui-monospace, 'SF Mono', Menlo, monospace;
-    --serif:'Source Serif 4', Georgia, 'Times New Roman', serif;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--paper);
-    color:var(--ink);
-    font:400 17px/1.65 var(--serif);
-    -webkit-font-smoothing:antialiased;
-  }
-  ::selection{background:var(--accent);color:#fff}
-  a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
-  a:hover{text-decoration-thickness:2px}
-  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
-  mark.fill{background:var(--fill);padding:0 3px;border-radius:2px}
-
-  .wrap{max-width:940px;margin:0 auto;padding:0 24px}
-
-  /* ---------- masthead ---------- */
-  header{padding:72px 0 56px}
-  .mast{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
-  h1{
-    font:700 clamp(34px, 5.6vw, 54px)/0.98 var(--mono);
-    letter-spacing:-0.03em;
-    text-transform:uppercase;
-  }
-  .tagline{margin:22px 0 18px;max-width:34em;font-size:18px}
-  .idline{
-    font:400 10.5px/1.9 var(--mono);
-    letter-spacing:.14em;
-    color:var(--muted);
-    text-transform:uppercase;
-  }
-  nav.links{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
-  nav.links a{
-    font:400 10.5px/1 var(--mono);
-    letter-spacing:.1em;
-    color:var(--ink);
-    text-decoration:none;
-    border:1px solid var(--line);
-    border-radius:3px;
-    padding:7px 11px;
-    transition:border-color .15s, color .15s;
-  }
-  nav.links a:hover{border-color:var(--accent);color:var(--accent)}
-
-  figure.sig{padding-top:6px}
-  figure.sig svg{width:100%;height:auto;display:block}
-  figure.sig figcaption{
-    margin-top:10px;
-    font:400 9.5px/1.6 var(--mono);
-    letter-spacing:.08em;
-    color:var(--muted);
-    text-transform:uppercase;
-    max-width:36em;
-  }
-
-  /* ---------- section rows ---------- */
-  section{
-    display:grid;
-    grid-template-columns:168px 1fr;
-    gap:40px;
-    padding:44px 0;
-    border-top:1px solid var(--line);
-  }
-  section h2{
-    font:400 11px/1 var(--mono);
-    letter-spacing:.22em;
-    color:var(--muted);
-    text-transform:uppercase;
-    padding-top:7px;
-  }
-  .content > * + *{margin-top:16px}
-  .content p{max-width:42em}
-
-  /* news */
-  .news{list-style:none}
-  .news li{
-    display:grid;
-    grid-template-columns:64px 1fr;
-    gap:20px;
-    padding:7px 0;
-    max-width:46em;
-  }
-  .news .yr{font:400 11px/2.1 var(--mono);color:var(--muted);letter-spacing:.06em}
-
-  /* publications & projects */
-  article + article{margin-top:34px}
-  article h3{font:600 19px/1.35 var(--serif);max-width:36em}
-  article h3 a{color:inherit;text-decoration:none}
-  article h3 a:hover{color:var(--accent)}
-  .authors{margin-top:5px;color:var(--muted);font-size:15.5px;max-width:40em}
-  .authors strong{color:var(--ink);font-weight:600}
-  .pubmeta{margin-top:9px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-  .chip{
-    font:400 9.5px/1 var(--mono);
-    letter-spacing:.1em;
-    text-transform:uppercase;
-    border:1px solid var(--line);
-    border-radius:3px;
-    padding:5px 8px;
-    color:var(--ink);
-  }
-  .chip.acc{border-color:var(--accent);color:var(--accent)}
-  .pubmeta a{
-    font:400 9.5px/1 var(--mono);
-    letter-spacing:.1em;
-    text-transform:uppercase;
-    text-decoration:none;
-    padding:5px 2px;
-  }
-  .pubmeta a:hover{text-decoration:underline;text-underline-offset:4px}
-  article .desc{margin-top:10px;font-size:16px;max-width:42em}
-
-  /* experience / education */
-  .xp + .xp{margin-top:26px}
-  .xp .org{
-    font:400 11px/1.6 var(--mono);
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    display:flex;
-    justify-content:space-between;
-    gap:16px;
-    flex-wrap:wrap;
-    max-width:44em;
-  }
-  .xp .org .when{color:var(--muted);letter-spacing:.08em}
-  .xp p.role{margin-top:6px;max-width:42em;font-size:16px}
-
-  /* ---------- footer ---------- */
-  footer{
-    border-top:1px solid var(--line);
-    padding:34px 0 64px;
-    display:flex;
-    justify-content:space-between;
-    gap:16px;
-    flex-wrap:wrap;
-    font:400 10px/1.8 var(--mono);
-    letter-spacing:.12em;
-    color:var(--muted);
-    text-transform:uppercase;
-  }
-  footer a{color:var(--muted)}
-
-  /* ---------- responsive ---------- */
-  @media (max-width:820px){
-    header{padding:52px 0 40px}
-    .mast{grid-template-columns:1fr;gap:40px}
-    section{grid-template-columns:1fr;gap:14px;padding:36px 0}
-    section h2{padding-top:0}
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="wrap">
 
-  <header>
+  <nav class="sitenav" aria-label="Primary">
+    <a class="brand" href="index.html">Tianyi Zhang</a>
+    <div class="pages">
+      <a href="index.html" aria-current="page">About</a>
+      <a href="publications.html">Publications</a>
+      <a href="projects.html">Projects</a>
+      <a href="cv.html">CV</a>
+    </div>
+  </nav>
+
+  <header class="mastwrap">
     <div class="mast">
       <div>
         <h1>Tianyi<br>Zhang</h1>
@@ -200,33 +41,28 @@
         </p>
         <nav class="links" aria-label="Contact links">
           <a href="mailto:tzhang708@gatech.edu">Email</a>
-          <a href="cv.pdf">CV</a>
+          <a href="cv.pdf">CV (PDF)</a>
           <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&user=46rbYk0AAAAJ">Google Scholar</a>
           <a href="https://github.com/tianyi-zhang-02">GitHub</a>
-          <a href="https://www.linkedin.com/in/tianyi-zhang-gt-emory-cs/">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/tianyi-zhang2002/">LinkedIn</a>
         </nav>
       </div>
 
       <figure class="sig">
         <svg viewBox="0 0 340 260" role="img" aria-labelledby="figtitle">
           <title id="figtitle">ROC curves: a safety monitor's discrimination on clean transcripts (AUROC 0.683) collapses to chance (0.500) when reasoning traces are removed.</title>
-          <!-- axes -->
           <path d="M48 18 V218 H316" fill="none" stroke="#D6D8D2" stroke-width="1"/>
-          <!-- ticks -->
           <text x="40" y="231" text-anchor="end" font-family="Martian Mono, monospace" font-size="9" fill="#8A8F97">0</text>
           <text x="316" y="233" text-anchor="middle" font-family="Martian Mono, monospace" font-size="9" fill="#8A8F97">1.0</text>
           <text x="40" y="24" text-anchor="end" font-family="Martian Mono, monospace" font-size="9" fill="#8A8F97">1.0</text>
           <text x="182" y="250" text-anchor="middle" font-family="Martian Mono, monospace" font-size="9" letter-spacing="2" fill="#8A8F97">FPR</text>
           <text transform="rotate(-90 22 122)" x="22" y="122" text-anchor="middle" font-family="Martian Mono, monospace" font-size="9" letter-spacing="2" fill="#8A8F97">TPR</text>
-          <!-- chance diagonal -->
           <path d="M48 218 L316 18" fill="none" stroke="#BDBFB8" stroke-width="1.25" stroke-dasharray="4 5"/>
           <text x="100" y="200" font-family="Martian Mono, monospace" font-size="8.5" letter-spacing="1" fill="#8A8F97">CHANCE</text>
-          <!-- degraded monitor: hugs the diagonal -->
           <path class="draw" d="M48 218 C 100 175, 122 170, 168 128 S 252 58, 316 18" fill="none" stroke="#1E3EC8" stroke-width="2" stroke-linecap="round"/>
           <text x="208" y="146" font-family="Martian Mono, monospace" font-size="9" letter-spacing="1" fill="#1E3EC8">DROP_REASONING
             <tspan x="208" dy="13">AUROC 0.500</tspan>
           </text>
-          <!-- clean monitor -->
           <path class="draw" d="M48 218 C 112 148, 168 82, 316 18" fill="none" stroke="#17191E" stroke-width="2" stroke-linecap="round"/>
           <text x="126" y="58" font-family="Martian Mono, monospace" font-size="9" letter-spacing="1" fill="#17191E">CLEAN
             <tspan x="126" dy="13">AUROC 0.683</tspan>
@@ -243,9 +79,6 @@
     <section id="about">
       <h2>About</h2>
       <div class="content">
-        <!-- Optional headshot: uncomment and add photo.jpg to the repo root.
-        <img src="photo.jpg" alt="Tianyi Zhang" width="132" style="border-radius:4px;float:right;margin:0 0 12px 20px">
-        -->
         <p>I build measurement infrastructure for AI systems and study where it breaks.
         Current threads: stress-testing LLM-based safety monitors under distribution shift,
         auditing the benchmarks used to certify model behavior, and the retrieval and
@@ -263,159 +96,28 @@
       <h2>News</h2>
       <div class="content">
         <ul class="news">
-          <li><span class="yr">2026</span><span><em>AgentSuite</em>, a component-based benchmark-auditing pipeline for LLM agents, accepted at ICML 2026.</span></li>
           <li><span class="yr">2026</span><span>Joined LinkedIn's feed recommendation team (Feed AI) for the summer as an ML engineer intern.</span></li>
+          <li><span class="yr">2026</span><span><em>AgentSuite</em>, a component-based benchmark-auditing pipeline for LLM agents, accepted at ICML 2026.</span></li>
           <li><span class="yr">2025</span><span>Oral presentation at IEEE EMBC 2025 — a state-based Transformer for fMRI.</span></li>
           <li><span class="yr">2025</span><span>First-authored paper on causal brain-connectivity analysis published at AIME 2025.</span></li>
         </ul>
       </div>
     </section>
 
-    <section id="publications">
-      <h2>Publications</h2>
-      <div class="content">
-
-        <article>
-          <h3><a href="https://openreview.net/pdf?id=2Exmr1eIKZ">AgentSuite: Toward More Reliable Agent Evaluation with a Component-Based Benchmark Auditing Pipeline</a></h3>
-          <p class="authors">H. Suh*, S. Lee*, B. Ji*, R. Khare, B. Khan, H. Kim, <strong>Tianyi Zhang</strong>, et al. <span style="white-space:nowrap">(* equal contribution)</span></p>
-          <p class="pubmeta">
-            <span class="chip acc">ICML 2026</span>
-            <a href="https://openreview.net/pdf?id=2Exmr1eIKZ">Paper</a>
-          </p>
-          <p class="desc">A component-based pipeline that audits validity flaws in LLM-agent
-          benchmarks — decomposing tasks into user, environment, ground-truth, and evaluation
-          components. It matches expert judgments at 0.79–0.87 F1 across 6 benchmarks, finds
-          flaws affecting ~23% of tasks, and reshuffles 63% of model rankings on a 30-LLM
-          leaderboard.</p>
-        </article>
-
-        <article>
-          <h3><a href="https://link.springer.com/chapter/10.1007/978-3-031-95841-0_81">Causal Brain Connectivity: Integrating Granger Directed Graphs in fMRI Analysis</a></h3>
-          <p class="authors"><strong>Tianyi Zhang</strong>, K. Han, J. Nie, et al.</p>
-          <p class="pubmeta">
-            <span class="chip acc">AIME 2025</span>
-            <a href="https://link.springer.com/chapter/10.1007/978-3-031-95841-0_81">Paper</a>
-          </p>
-          <p class="desc">A causal method that recovers directional brain-connectivity
-          dependencies invisible to correlation-based graphs, improving downstream diagnostic
-          prediction across ~8K patients via Granger-directed graphs.</p>
-        </article>
-
-        <article>
-          <h3><a href="https://www.cs.emory.edu/~jyang71/files/bnst.pdf">Brain Network State Transformer: Leveraging State Functional Connectivity</a></h3>
-          <p class="authors">J. Nie, K. Han, <strong>Tianyi Zhang</strong>, et al.</p>
-          <p class="pubmeta">
-            <span class="chip acc">IEEE EMBC 2025 · Oral</span>
-            <a href="https://www.cs.emory.edu/~jyang71/files/bnst.pdf">Paper</a>
-          </p>
-          <p class="desc">A state-based Transformer that models temporal transitions across
-          latent functional-connectivity states, outperforming static-connectivity baselines
-          on clinical prediction.</p>
-        </article>
-
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="content">
-
-        <article>
-          <h3><a href="https://github.com/tianyi-zhang-02/monitorstress">monitorstress</a></h3>
-          <p class="pubmeta">
-            <span class="chip">In progress</span>
-            <a href="https://github.com/tianyi-zhang-02/monitorstress">Code</a>
-          </p>
-          <p class="desc">An adversarial stress-test suite for LLM-based safety monitors — the
-          class of system labs like METR and UK AISI use to detect agent reward hacking and
-          sandbagging. Built on a typed Python/Pydantic-v2 stack, it applies
-          semantics-preserving transformations (chain-of-thought stripping, observation
-          truncation, action-padding noise) to agent transcripts from METR's MALT split and
-          measures how monitor discrimination degrades — removing a model's reasoning traces
-          collapses a Claude-Sonnet-based monitor from AUROC 0.683 to chance.</p>
-        </article>
-
-        <article>
-          <h3>Confidentiality in shared LLM serving infrastructure</h3>
-          <p class="pubmeta">
-            <span class="chip">In progress</span>
-          </p>
-          <p class="desc">Early-stage security work on isolation properties of multi-tenant
-          LLM inference systems. Write-up in progress; details on request.</p>
-        </article>
-
-      </div>
-    </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="content">
-
-        <div class="xp">
-          <p class="org"><span>LinkedIn · Mountain View</span><span class="when">May 2026 — Present</span></p>
-          <p class="role">ML Engineer Intern, Feed AI. LLM-based generative retrieval (Apollo
-          out-of-network) and adaptive, compressed member representation for homepage-feed
-          candidate generation.</p>
-        </div>
-
-        <div class="xp">
-          <p class="org"><span>Georgia Tech · Efficient &amp; Intelligent Computing Lab (NVIDIA collaboration)</span><span class="when">Jul — Dec 2025</span></p>
-          <p class="role">Student researcher, LLM evaluation &amp; agentic AI. Co-authored
-          AgentSuite (ICML 2026); built the taxonomy-guided LLM-judge and rule-based
-          structural detectors powering the benchmark-auditing pipeline.</p>
-        </div>
-
-        <div class="xp">
-          <p class="org"><span>Emory · Graph Mining Lab</span><span class="when">Dec 2023 — May 2025</span></p>
-          <p class="role">Machine learning researcher. Graph neural networks and time-series
-          models for biomedical and neuroimaging data (AI for science).</p>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="education">
-      <h2>Education</h2>
-      <div class="content">
-
-        <div class="xp">
-          <p class="org"><span>Georgia Institute of Technology</span><span class="when">Aug 2025 — May 2027</span></p>
-          <p class="role">M.S. Computer Science.</p>
-        </div>
-
-        <div class="xp">
-          <p class="org"><span>Emory University</span><span class="when">Aug 2021 — May 2025</span></p>
-          <p class="role">B.S. Quantitative Sciences.</p>
-        </div>
-
-      </div>
-    </section>
-
   </main>
 
   <footer>
-    <span>© <span id="yr">2026</span> Tianyi Zhang</span>
-    <span>Plain HTML, no build step · <a href="https://github.com/tianyi-zhang-02/tianyi-zhang-02.github.io">Source</a></span>
-    <span>Last updated Jul 2026</span>
+    <span>© <span id="yr">2026</span> Tianyi Zhang · Plain HTML</span>
+    <nav class="footlinks" aria-label="Contact">
+      <a href="mailto:tzhang708@gatech.edu">Email</a>
+      <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&user=46rbYk0AAAAJ">Scholar</a>
+      <a href="https://github.com/tianyi-zhang-02">GitHub</a>
+      <a href="https://www.linkedin.com/in/tianyi-zhang2002/">LinkedIn</a>
+    </nav>
   </footer>
 
 </div>
 
-<script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
-
-  // Draw-on animation for the Fig. 1 curves; skipped for reduced-motion users.
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.draw').forEach(function (p, i) {
-      var L = p.getTotalLength();
-      p.style.strokeDasharray = L;
-      p.style.strokeDashoffset = L;
-      p.getBoundingClientRect(); // force layout
-      p.style.transition = 'stroke-dashoffset 1.1s ' + (0.25 + i * 0.35) + 's cubic-bezier(.4,0,.2,1)';
-      p.style.strokeDashoffset = '0';
-    });
-  }
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>

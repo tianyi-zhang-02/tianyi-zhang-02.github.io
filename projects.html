@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Tianyi Zhang</title>
+<meta name="description" content="Projects by Tianyi Zhang — monitorstress (adversarial stress-testing for LLM safety monitors) and confidentiality in shared LLM serving infrastructure.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FCFCFA'/%3E%3Cpath d='M5 27 L27 5' stroke='%23BDBFB8' stroke-dasharray='2 3' fill='none'/%3E%3Cpath d='M5 27 C 11 12 17 7 27 5' stroke='%231E3EC8' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <nav class="sitenav" aria-label="Primary">
+    <a class="brand" href="index.html">Tianyi Zhang</a>
+    <div class="pages">
+      <a href="index.html">About</a>
+      <a href="publications.html">Publications</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="cv.html">CV</a>
+    </div>
+  </nav>
+
+  <header class="pagehead">
+    <h1>Projects</h1>
+    <p class="lede">Open-source and research tooling for evaluating and securing AI systems.</p>
+  </header>
+
+  <main class="pagebody">
+
+    <article>
+      <h3><a href="https://github.com/tianyi-zhang-02/monitorstress">monitorstress</a></h3>
+      <p class="pubmeta">
+        <span class="chip">In progress</span>
+        <a href="https://github.com/tianyi-zhang-02/monitorstress">Code</a>
+      </p>
+      <p class="desc">An adversarial stress-test suite for LLM-based safety monitors — the
+      class of system labs like METR and UK AISI use to detect agent reward hacking and
+      sandbagging. Built on a typed Python/Pydantic-v2 stack, it applies
+      semantics-preserving transformations (chain-of-thought stripping, observation
+      truncation, action-padding noise) to agent transcripts from METR's MALT split and
+      measures how monitor discrimination degrades — removing a model's reasoning traces
+      collapses a Claude-Sonnet-based monitor from AUROC 0.683 to chance.</p>
+    </article>
+
+    <article>
+      <h3>Confidentiality in shared LLM serving infrastructure</h3>
+      <p class="pubmeta">
+        <span class="chip">In progress</span>
+      </p>
+      <p class="desc">Early-stage security work on isolation properties of multi-tenant
+      LLM inference systems. Write-up in progress; details on request.</p>
+    </article>
+
+  </main>
+
+  <footer>
+    <span>© <span id="yr">2026</span> Tianyi Zhang · Plain HTML</span>
+    <nav class="footlinks" aria-label="Contact">
+      <a href="mailto:tzhang708@gatech.edu">Email</a>
+      <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&user=46rbYk0AAAAJ">Scholar</a>
+      <a href="https://github.com/tianyi-zhang-02">GitHub</a>
+      <a href="https://www.linkedin.com/in/tianyi-zhang2002/">LinkedIn</a>
+    </nav>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
