@@ -123,26 +123,23 @@ section h2{
 /* focus-area tags */
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:4px}
 
-/* ---------- sticky top nav ---------- */
+/* ---------- top nav (not sticky) ---------- */
 .topbar{
-  position:sticky;top:0;z-index:30;
   background:var(--paper);
   border-bottom:1px solid var(--line);
 }
-.topbar .sitenav{border-bottom:0;padding:20px 0 16px}
-@media (max-width:720px){ .topbar{position:static} }
+.topbar .sitenav{border-bottom:0}
 
-/* ---------- "on this page" sidebar (left rail) ---------- */
+/* ---------- "on this page" sidebar (left rail, scrolls with the page) ---------- */
+main{position:relative}
 .toc{display:none}
 @media (min-width:1280px){
   .toc{
     display:block;
-    position:fixed;
-    top:132px;
-    left:calc(50% - 634px);
-    width:140px;
-    max-height:70vh;
-    overflow:auto;
+    position:absolute;
+    top:2px;
+    left:-170px;
+    width:150px;
   }
 }
 .toc .toc-h{
@@ -159,8 +156,8 @@ section h2{
 .toc a:hover{color:var(--ink);border-left-color:var(--muted)}
 .toc a.active{color:var(--accent);border-left-color:var(--accent)}
 
-/* anchored sections clear the sticky nav */
-main section[id], main article[id]{scroll-margin-top:88px}
+/* small offset for anchored-section jumps */
+main section[id], main article[id]{scroll-margin-top:16px}
 
 /* accent-bulleted list (about "current threads") */
 .threads{list-style:none;max-width:44em;margin-top:2px}
