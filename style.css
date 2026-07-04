@@ -123,6 +123,20 @@ section h2{
 /* focus-area tags */
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:4px}
 
+/* accent-bulleted list (about "current threads") */
+.threads{list-style:none;max-width:44em;margin-top:2px}
+.threads li{position:relative;padding-left:20px;font-size:16.5px;line-height:1.5;margin-top:9px}
+.threads li::before{content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;background:var(--accent);border-radius:50%}
+
+/* compact link list (résumé selected publications) */
+.linklist{list-style:none;max-width:47em}
+.linklist li{padding:8px 0;font-size:15.5px;line-height:1.5}
+.linklist li + li{border-top:1px solid var(--line)}
+.linklist em{
+  font:400 9.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);font-style:normal;margin-left:8px;white-space:nowrap;
+}
+
 /* full-width list body for single-topic pages */
 .pagebody{padding:30px 0 8px}
 .pagebody > article:first-child{margin-top:0}
@@ -198,8 +212,8 @@ article .desc{margin-top:10px;font-size:16px;max-width:42em}
 }
 .dl-btn:hover{background:var(--accent);color:#fff}
 
-/* highlight for scannable metrics */
-mark.hl{background:#E9EDFB;color:var(--ink);padding:0 3px;border-radius:2px}
+/* scannable metrics — plain bold, no highlight */
+mark.hl{background:none;color:inherit;font-weight:600}
 
 /* school-pride chips */
 .pride{
