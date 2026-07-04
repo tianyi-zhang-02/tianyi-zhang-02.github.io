@@ -293,6 +293,11 @@ mark.hl{background:none;color:inherit;font-weight:600}
 .hero-photo img{width:100%;height:auto;display:block;border-radius:6px;border:1px solid var(--line)}
 .hero-photo figcaption{margin-top:10px;font:italic 400 14px/1.5 var(--serif);color:var(--muted)}
 
+/* time-lapse video */
+figure.video{margin:0}
+figure.video video{width:100%;height:auto;display:block;border-radius:6px;border:1px solid var(--line);background:#000}
+figure.video figcaption{margin-top:10px;font:italic 400 14px/1.5 var(--serif);color:var(--muted)}
+
 /* ---------- journey page ---------- */
 .journeymap{margin:0}
 .journeymap svg{
