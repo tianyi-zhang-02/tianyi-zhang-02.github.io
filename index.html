@@ -39,8 +39,8 @@
     <div class="mast">
       <div>
         <h1>Tianyi<br>Zhang</h1>
-        <p class="tagline">I work on <b>solving real-world AI system problems</b> — across
-        product, engineering, and open-ended research.</p>
+        <p class="tagline">I work on <b>trustworthy AI, end to end</b> — tracking where data, models,
+        and metrics drift from the truth they stand for, and how those gaps compound.</p>
         <p class="idline">
           Emory ’25 &nbsp;|&nbsp; Georgia Tech ’26<br>
           ML Engineer Intern · LinkedIn Feed AI
@@ -102,22 +102,22 @@
           <span class="chip">AI safety</span>
           <span class="chip">Evaluation &amp; robustness</span>
         </div>
-        <p>My main focus is <strong>solving real-world AI system problems</strong> — I move across
-        <strong>product</strong>, <strong>engineering</strong>, and <strong>open-ended research</strong>
-        depending on what a problem needs. One part of that is <strong>trustworthy AI</strong>:
-        whether evaluations measure what they claim, and whether safeguards survive contact with
-        adversaries. Current threads:</p>
+        <p>My through-line is <strong>proxy fidelity across the ML pipeline</strong>. Training data is a
+        proxy for the real distribution; a model's learned objective is a proxy for what you actually
+        wanted; an evaluation metric is a proxy for whether it's genuinely good and safe. The same gap
+        shows up at all three — and it <em>compounds</em>: a proxy-corrupted dataset can train a
+        proxy-gaming model that a proxy-blind eval scores as clean. I study those failures at the
+        interfaces, across the whole chain, not inside any single stage. Where the gap shows up:</p>
         <ul class="threads">
-          <li><strong>Safety monitors</strong> — stress-testing LLM-based monitors under distribution shift.</li>
-          <li><strong>Benchmark integrity</strong> — auditing the benchmarks used to certify model behavior.</li>
-          <li><strong>LLM serving</strong> — isolation properties of multi-tenant inference.</li>
-          <li><strong>Recommender systems</strong> — retrieval &amp; representation behind large-scale feeds.</li>
+          <li><strong>Data</strong> — is a benchmark a faithful proxy for real task quality? <span style="color:var(--muted)">(AgentSuite, ICML 2026)</span></li>
+          <li><strong>Model</strong> — did it learn the objective we meant, or one it can game? <span style="color:var(--muted)">(retrieval &amp; recommender systems)</span></li>
+          <li><strong>Eval</strong> — does a metric or safety monitor actually track quality and safety? <span style="color:var(--muted)">(monitorstress / loopcanary)</span></li>
         </ul>
         <p>I'm finishing an <strong>MS in Computer Science at Georgia Tech</strong> (Dec 2026),
         affiliated with the <strong>NVIDIA/GT Efficient &amp; Intelligent Computing Lab</strong>, and
         spending the summer as an <strong>ML engineer intern at LinkedIn</strong> (Feed AI). Before
-        that: graph learning and causal analysis for biomedical data at <strong>Emory</strong>. The
-        through-line is <strong>evaluation</strong> — whether the numbers we report mean what we claim
+        that: graph learning and causal analysis for biomedical data at <strong>Emory</strong>. Across
+        all of it, the same question keeps recurring — whether the numbers we report mean what we claim
         they mean.</p>
       </div>
     </section>
