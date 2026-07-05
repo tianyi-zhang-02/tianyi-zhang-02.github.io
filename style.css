@@ -272,6 +272,7 @@ mark.hl{background:none;color:inherit;font-weight:600}
 .job ul{margin:12px 0 0;padding-left:18px;max-width:46em}
 .job li{font-size:15.5px;line-height:1.55;margin-top:6px}
 .job li::marker{color:var(--accent)}
+.job .sum{margin-top:9px;font-size:15px;line-height:1.55;max-width:45em}
 /* stack the date under the title on small screens */
 @media (max-width:600px){
   .job-head{grid-template-columns:1fr}
