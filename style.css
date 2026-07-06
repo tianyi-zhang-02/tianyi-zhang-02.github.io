@@ -207,6 +207,7 @@ article h3 a:hover{color:var(--accent)}
 }
 .chip.acc{border-color:var(--accent);color:var(--accent)}
 .chip.star{color:#8f7526;border-color:#E4D9B8;background:#FBF8EF}
+.orglogo{width:18px;height:18px;object-fit:contain;border-radius:3px;vertical-align:-4px;margin-right:7px}
 .pubmeta a{
   font:400 9.5px/1 var(--mono);
   letter-spacing:.1em;
