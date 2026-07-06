@@ -208,6 +208,17 @@ article h3 a:hover{color:var(--accent)}
 .chip.acc{border-color:var(--accent);color:var(--accent)}
 .chip.star{color:#8f7526;border-color:#E4D9B8;background:#FBF8EF}
 .orglogo{width:18px;height:18px;object-fit:contain;border-radius:3px;vertical-align:-4px;margin-right:7px}
+
+/* project card: tags row / links row (github icon + star + live) / short + long desc */
+.ptags{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
+.plinks{display:flex;align-items:center;gap:16px;margin-top:10px}
+.plinks .ghicon{color:var(--ink);display:inline-flex}
+.plinks .ghicon:hover{color:var(--accent)}
+.plinks .ghicon svg{width:18px;height:18px;display:block}
+.plinks .starnum{font:400 11px/1 var(--mono);letter-spacing:.05em;color:#8f7526}
+.plinks .livelink{font:400 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.plinks .livelink:hover{color:var(--accent)}
+.pshort{margin-top:13px;font:600 16.5px/1.45 var(--serif);color:var(--ink);max-width:42em}
 .pubmeta a{
   font:400 9.5px/1 var(--mono);
   letter-spacing:.1em;
