@@ -56,6 +56,18 @@
           you can inspect after the fact or stream live. (Grew out of a batch stress-test tool for AI
           safety monitors.)</p>
         </article>
+        <article>
+          <h3>Where does an agent's capability come from?</h3>
+          <p class="pubmeta">
+            <span class="chip">Research · In progress</span>
+          </p>
+          <p class="desc">Current research on <strong>attributing LLM-agent capability</strong> — is a gain
+          supplied by the model's <strong>weights</strong>, the runtime <strong>context</strong>, or the
+          surrounding <strong>harness</strong> (planners, verifiers, retry logic)? The key test is
+          <strong>cross-harness transfer</strong>: does a post-training gain survive when the model runs
+          under a different harness? It's the proxy-fidelity question one level up — whether a reported
+          "agent score" measures the model or the scaffolding around it.</p>
+        </article>
       </div>
     </section>
 
