@@ -207,6 +207,7 @@ article h3 a:hover{color:var(--accent)}
 }
 .chip.acc{border-color:var(--accent);color:var(--accent)}
 .chip.star{color:#8f7526;border-color:#E4D9B8;background:#FBF8EF}
+.chip.status{color:var(--accent);border-color:var(--accent);background:rgba(30,62,200,.06)}
 .orglogo{width:18px;height:18px;object-fit:contain;border-radius:3px;vertical-align:-4px;margin-right:7px}
 
 /* project card: tags row / links row (github icon + star + live) / short + long desc */
