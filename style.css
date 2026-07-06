@@ -206,6 +206,7 @@ article h3 a:hover{color:var(--accent)}
   color:var(--ink);
 }
 .chip.acc{border-color:var(--accent);color:var(--accent)}
+.chip.star{color:#8f7526;border-color:#E4D9B8;background:#FBF8EF}
 .pubmeta a{
   font:400 9.5px/1 var(--mono);
   letter-spacing:.1em;
