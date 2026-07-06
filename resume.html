@@ -67,7 +67,7 @@
             <h3 class="job-title">Student Researcher</h3>
             <span class="job-when">Jul — Dec 2025</span>
           </div>
-          <p class="job-org"><img class="orglogo" src="https://www.google.com/s2/favicons?domain=gatech.edu&sz=64" alt="" onerror="this.remove()">Georgia Tech · Efficient &amp; Intelligent Computing Lab (NVIDIA)</p>
+          <p class="job-org"><img class="orglogo" src="https://www.google.com/s2/favicons?domain=gatech.edu&sz=64" alt="" onerror="this.remove()"><img class="orglogo" src="https://www.google.com/s2/favicons?domain=nvidia.com&sz=64" alt="" onerror="this.remove()">Georgia Tech · Efficient &amp; Intelligent Computing Lab (NVIDIA)</p>
           <p class="sum">Co-authored <strong>AgentSuite</strong> (ICML 2026); built the taxonomy-guided LLM-judge and structural detectors for benchmark auditing.</p>
           <div class="tags" style="margin-top:11px">
             <span class="chip">Agent evaluation</span>
@@ -118,18 +118,36 @@
       <h2>Projects</h2>
       <div class="content">
         <article>
-          <h3><a href="https://github.com/tianyi-zhang-02/monitorstress">monitorstress</a></h3>
-          <p class="pubmeta"><span class="chip">In progress</span><a href="https://github.com/tianyi-zhang-02/monitorstress">Code</a></p>
-          <p class="desc">Adversarial stress-test suite for LLM-based safety monitors. Applies
-          semantics-preserving transformations to METR MALT transcripts and measures how monitor
-          discrimination degrades — removing reasoning traces collapses a Claude-Sonnet monitor from
-          <mark class="hl">AUROC 0.683 to chance</mark>.</p>
+          <h3><a href="https://github.com/tianyi-zhang-02/monitorstress">loopcanary</a></h3>
+          <p class="pubmeta"><span class="chip">Research · In progress</span><span class="chip star" data-stars="tianyi-zhang-02/monitorstress">★</span><a href="https://github.com/tianyi-zhang-02/monitorstress">Code</a></p>
+          <p class="desc">Open-source Python library for <strong>agent-loop observability</strong> — diagnoses when
+          an agent's loop goes off-rails (repeated tool calls, silent context compression, cost run-away, a
+          safety monitor firing) and emits a per-run timeline you can inspect or stream live.</p>
         </article>
         <article>
-          <h3>Confidentiality in shared LLM serving infrastructure</h3>
-          <p class="pubmeta"><span class="chip">In progress</span></p>
-          <p class="desc">Security work on <strong>isolation properties of multi-tenant LLM inference</strong>
-          systems. Write-up in progress; details on request.</p>
+          <h3><a href="https://github.com/tianyi-zhang-02/coact">coact</a></h3>
+          <p class="pubmeta"><span class="chip">Eng · In progress</span><span class="chip star" data-stars="tianyi-zhang-02/coact">★</span><a href="https://github.com/tianyi-zhang-02/coact">Code</a></p>
+          <p class="desc">A <strong>governance substrate for two coding agents in one repo</strong> — lets Claude
+          Code and Codex work in the same project safely via filesystem coordination (capability policies,
+          locks, a task board, worktree isolation, an append-only journal). Single dependency-free Go binary.</p>
+        </article>
+        <article>
+          <h3><a href="https://github.com/tianyi-zhang-02/tracker">Wealth Projection Simulator</a></h3>
+          <p class="pubmeta"><span class="chip">Eng · Shipped</span><span class="chip star" data-stars="tianyi-zhang-02/tracker">★</span><a href="https://tracker-gamma-eight-14.vercel.app">Live</a><a href="https://github.com/tianyi-zhang-02/tracker">Code</a></p>
+          <p class="desc">A client-side <strong>net-worth projection simulator</strong> — models household net worth
+          from your own assumptions and goal-seeks "$X by age Y." Runs entirely in the browser; no backend.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="cv-oss">
+      <h2>Open Source</h2>
+      <div class="content">
+        <article>
+          <h3><img class="orglogo" src="https://www.google.com/s2/favicons?domain=nvidia.com&sz=64" alt="" onerror="this.remove()"><a href="https://github.com/NVIDIA-NeMo/RL">NVIDIA NeMo RL</a></h3>
+          <p class="pubmeta"><span class="chip">Contributor</span><span class="chip star" data-stars="NVIDIA-NeMo/RL">★</span><a href="https://github.com/NVIDIA-NeMo/RL">Code</a></p>
+          <p class="desc">Contributor to NVIDIA's <strong>NeMo RL</strong> — a scalable library for reinforcement
+          learning and post-training of large language models.</p>
         </article>
       </div>
     </section>
@@ -179,5 +197,6 @@
 
 <script src="script.js"></script>
 <script src="toc.js"></script>
+<script src="stars.js"></script>
 </body>
 </html>
