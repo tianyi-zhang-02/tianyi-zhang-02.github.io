@@ -57,19 +57,21 @@
     <div class="row"><span class="title">LinkedIn</span><span class="where">Mountain View, CA</span></div>
     <div class="sub"><span>AI/ML Engineer Intern | Feed AI, LLM Retrieval</span><span>May 2026 - Present</span></div>
     <ul>
-      <li>Built and production-scale validated a backward-compatible <strong>PySpark retrieval scorecard</strong>
-      over <strong>2.7B member-candidate pairs</strong>, extending Recall with NDCG, intra-list diversity,
-      catalog/topic exposure, lifecycle segmentation, eligibility diagnostics, and efficiency metrics.</li>
-      <li>Designed a five-seed matched lifecycle analysis controlling a <strong>30x population imbalance</strong>;
-      Semi-cold members achieved <strong>+25.1% Recall@10 and +26.8% NDCG@10</strong> but
-      <strong>21.6% lower ILD</strong> than matched Active members. Prompt analysis identified median histories of
-      31 versus 135 activities as a representation confounder.</li>
-      <li>Developed profile/history multi-tower <strong>Qwen3 semantic retrieval</strong> with mean, concat,
-      scalar/vector-gated, and adapter fusion; implemented an opt-in train-inference reconstruction path and
-      corrected a normalization-order mismatch that could silently change the fused direction.</li>
-      <li>Standardized distributed ML experimentation through layered configuration, dry-run safety,
-      reproducible manifests, execution tracking, validation, and searchable experiment catalogs while
-      preserving legacy workflow compatibility.</li>
+      <li>Expanded retrieval evaluation beyond Recall by building and production-scale validating a
+      backward-compatible <strong>PySpark scorecard</strong> over <strong>2.7B member-candidate pairs</strong>;
+      combined ranking quality, diversity, exposure, lifecycle, eligibility, and efficiency signals to support
+      more reliable, member-value-aware model selection.</li>
+      <li>Established a five-seed matched lifecycle evaluation controlling a <strong>30x population imbalance</strong>;
+      exposed <strong>+25.1% Recall@10 and +26.8% NDCG@10</strong> but <strong>21.6% lower ILD</strong> for
+      Semi-cold versus matched Active members. Prompt analysis identified median histories of 31 versus 135
+      activities as a representation confounder.</li>
+      <li>Built a profile/history multi-tower <strong>routing framework for Qwen3 semantic retrieval</strong> that
+      learns member-specific mixtures of profile and behavioral intent through mean, concat, scalar/vector-gated,
+      and adapter routing; added complementarity analysis and corrected a normalization-order mismatch in
+      train-inference reconstruction.</li>
+      <li>Improved distributed training and model-serving reliability through layered configuration, dry-run
+      validation, reproducible manifests, execution tracking, searchable run catalogs, train/serve parity checks,
+      and serving observability while preserving legacy workflow compatibility.</li>
     </ul>
   </div>
   <div class="entry">

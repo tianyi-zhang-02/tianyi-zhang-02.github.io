@@ -48,25 +48,28 @@
           <p class="job-org">Mountain View, CA · Feed AI — LLM for RecSys &amp; post-training</p>
           <div class="tags" style="margin-top:12px">
             <span class="chip">Semantic retrieval</span>
-            <span class="chip">Recommender systems</span>
+            <span class="chip">Multi-intent routing</span>
             <span class="chip">Lifecycle evaluation</span>
             <span class="chip">ML systems</span>
           </div>
           <ul>
-            <li>Built and production-scale validated a backward-compatible <strong>PySpark retrieval
-            scorecard</strong> over <mark class="hl">2.7B member–candidate pairs</mark>, extending Recall with
-            NDCG, intra-list diversity, catalog/topic exposure, lifecycle segmentation, eligibility diagnostics,
-            and efficiency metrics.</li>
-            <li>Designed a five-seed matched lifecycle analysis controlling a <mark class="hl">30× cohort-size
-            imbalance</mark>; found Semi-cold members achieved <mark class="hl">+25.1% Recall@10</mark> and
+            <li>Expanded retrieval evaluation beyond Recall by building and production-scale validating a
+            backward-compatible <strong>PySpark scorecard</strong> over
+            <mark class="hl">2.7B member–candidate pairs</mark>; combined ranking quality, diversity, exposure,
+            lifecycle, eligibility, and efficiency signals to make model selection more reliable and
+            member-value aware.</li>
+            <li>Established a five-seed matched lifecycle evaluation that corrected a
+            <mark class="hl">30× cohort-size imbalance</mark> and exposed a hidden relevance–breadth tradeoff:
+            Semi-cold members achieved <mark class="hl">+25.1% Recall@10</mark> and
             <mark class="hl">+26.8% NDCG@10</mark> but <mark class="hl">21.6% lower ILD</mark> than matched
-            Active members, motivating lifecycle-aware representation.</li>
-            <li>Developed profile/history multi-tower <strong>Qwen3 semantic retrieval</strong> and an opt-in
-            train–inference reconstruction path for mean, concat, gated, and adapter fusion; identified and
-            corrected a normalization-order mismatch and added candidate-complementarity analysis.</li>
-            <li>Standardized distributed ML experimentation through layered configuration, dry-run validation,
-            reproducible manifests, execution tracking, and searchable experiment catalogs while preserving
-            legacy workflow compatibility.</li>
+            Active members, motivating regime-specific evaluation and representation.</li>
+            <li>Built a profile/history multi-tower <strong>routing framework for Qwen3 semantic retrieval</strong>
+            that learns member-specific mixtures of profile and behavioral intent through mean, concat,
+            scalar/vector-gated, and adapter routing; added candidate-complementarity analysis and corrected a
+            normalization-order mismatch in train–inference reconstruction.</li>
+            <li>Improved distributed training and model-serving reliability with layered configuration, dry-run
+            validation, reproducible manifests, execution tracking, searchable run catalogs, train/serve parity
+            checks, and serving observability while preserving legacy workflow compatibility.</li>
           </ul>
         </div>
       </div>

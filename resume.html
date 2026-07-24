@@ -57,19 +57,21 @@
           <p class="sum">LLM-based semantic retrieval, lifecycle-aware evaluation, and profile/history member representation for homepage-feed candidate generation.</p>
           <div class="tags" style="margin-top:11px">
             <span class="chip">Semantic retrieval</span>
-            <span class="chip">Recommender systems</span>
+            <span class="chip">Multi-intent routing</span>
             <span class="chip">Lifecycle evaluation</span>
             <span class="chip">PySpark</span>
           </div>
           <ul>
-            <li>Built and production-scale validated a backward-compatible retrieval scorecard over
-            <strong>2.7B member–candidate pairs</strong>, adding ranking, diversity, exposure, lifecycle,
-            eligibility, and efficiency diagnostics.</li>
-            <li>Used five-seed matched cohorts to uncover a lifecycle-specific relevance–breadth tradeoff:
+            <li>Expanded retrieval evaluation beyond Recall with a production-scale scorecard over
+            <strong>2.7B member–candidate pairs</strong>, enabling model selection across ranking quality,
+            diversity, exposure, lifecycle, eligibility, and efficiency.</li>
+            <li>Built five-seed matched lifecycle evaluation that exposed a relevance–breadth tradeoff:
             Semi-cold members had <strong>+25.1% Recall@10</strong> but <strong>21.6% lower ILD</strong> than
             matched Active members.</li>
-            <li>Developed profile/history multi-tower Qwen3 retrieval, train–inference fusion reconstruction,
-            and reproducible distributed experiment infrastructure.</li>
+            <li>Built a profile/history multi-tower routing framework for Qwen3 semantic retrieval that learns
+            member-specific mixtures of profile and behavioral intent.</li>
+            <li>Improved distributed training and serving reliability through reproducible execution,
+            train/serve parity checks, and model-serving observability.</li>
           </ul>
         </div>
 
