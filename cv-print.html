@@ -59,8 +59,9 @@
     <ul>
       <li>Built a backend-agnostic <strong>Adaptive User Representation Layer</strong> that decouples user
       understanding from candidate generation. Its compact user-state contract captures short- and long-term
-      intents, lifecycle, confidence/freshness, and evidence provenance as shared conditioning for ANN, GR, SID,
-      or larger retrieval models; implemented the first producer with profile/history multi-tower Qwen3 encoding, allowing
+      intents, lifecycle, confidence/freshness, and evidence provenance as shared conditioning for embedding
+      retrieval and generative recommendation; implemented the first producer with profile/history multi-tower
+      Qwen3 encoding, allowing
       retrieval backends and model capacity to evolve without rebuilding the user-understanding layer.</li>
       <li>Built and production-scale validated a backward-compatible <strong>PySpark retrieval scorecard over
       2.7B member-candidate pairs</strong>, then used matched lifecycle evaluation to correct a
