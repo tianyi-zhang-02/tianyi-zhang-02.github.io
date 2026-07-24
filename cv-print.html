@@ -57,18 +57,16 @@
     <div class="row"><span class="title">LinkedIn</span><span class="where">Mountain View, CA</span></div>
     <div class="sub"><span>AI/ML Engineer Intern | Feed AI, LLM Retrieval</span><span>May 2026 - Present</span></div>
     <ul>
-      <li>Expanded retrieval evaluation beyond Recall by building and production-scale validating a
-      backward-compatible <strong>PySpark scorecard</strong> over <strong>2.7B member-candidate pairs</strong>;
-      combined ranking quality, diversity, exposure, lifecycle, eligibility, and efficiency signals to support
-      more reliable, member-value-aware model selection.</li>
-      <li>Established a matched lifecycle evaluation controlling a <strong>30x population imbalance</strong>;
-      exposed <strong>+25.1% Recall@10 and +26.8% NDCG@10</strong> but <strong>21.6% lower ILD</strong> for
-      Semi-cold versus matched Active members. Prompt analysis identified median histories of 31 versus 135
-      activities as a representation confounder.</li>
       <li>Built a backend-agnostic <strong>Adaptive User Representation Layer</strong> that decouples user
       understanding from candidate generation. Its compact user-state contract captures short- and long-term
-      intents, lifecycle, confidence/freshness, and evidence provenance for ANN, GR, SID, or larger-model
-      consumers; implemented the first producer with profile/history multi-tower Qwen3 encoding.</li>
+      intents, lifecycle, confidence/freshness, and evidence provenance as shared conditioning for ANN, GR, SID,
+      or larger retrieval models; implemented the first producer with profile/history multi-tower Qwen3 encoding, allowing
+      retrieval backends and model capacity to evolve without rebuilding the user-understanding layer.</li>
+      <li>Built and production-scale validated a backward-compatible <strong>PySpark retrieval scorecard over
+      2.7B member-candidate pairs</strong>, then used matched lifecycle evaluation to correct a
+      <strong>30x population imbalance</strong>; exposed <strong>+25.1% Recall@10 and +26.8% NDCG@10</strong>
+      but <strong>21.6% lower ILD</strong> for Semi-cold versus matched Active members, informing model selection
+      and lifecycle strategy that balance relevance with feed breadth.</li>
       <li>Improved distributed training and model-serving reliability through layered configuration, dry-run
       validation, reproducible manifests, execution tracking, searchable run catalogs, train/serve parity checks,
       and serving observability while preserving legacy workflow compatibility; defined one-axis-at-a-time

@@ -62,15 +62,13 @@
             <span class="chip">PySpark</span>
           </div>
           <ul>
-            <li>Expanded retrieval evaluation beyond Recall with a production-scale scorecard over
-            <strong>2.7B member–candidate pairs</strong>, enabling model selection across ranking quality,
-            diversity, exposure, lifecycle, eligibility, and efficiency.</li>
-            <li>Built a matched lifecycle evaluation that exposed a relevance–breadth tradeoff:
-            Semi-cold members had <strong>+25.1% Recall@10</strong> but <strong>21.6% lower ILD</strong> than
-            matched Active members.</li>
             <li>Built a backend-agnostic <strong>Adaptive User Representation Layer</strong> that emits compact
-            short-/long-term intents, lifecycle state, confidence, and evidence provenance for ANN, GR, SID, or
-            larger-model consumers.</li>
+            short-/long-term intents, lifecycle state, confidence, and evidence provenance as shared conditioning
+            for ANN, GR, SID, or larger retrieval models.</li>
+            <li>Built a production-scale scorecard over <strong>2.7B member–candidate pairs</strong> and matched
+            lifecycle evaluation; uncovered <strong>+25.1% Recall@10</strong> but
+            <strong>21.6% lower ILD</strong> for Semi-cold versus Active members, informing model selection and
+            lifecycle strategy that balance relevance with feed breadth.</li>
             <li>Improved distributed training and serving reliability through reproducible execution,
             train/serve parity checks, model-serving observability, and one-axis-at-a-time validation across
             representation, model capacity, retrieval backend, and lifecycle policy.</li>
