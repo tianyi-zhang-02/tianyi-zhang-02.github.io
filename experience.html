@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Experience — Tianyi Zhang</title>
-<meta name="description" content="Tianyi Zhang's industry work experience — semantic retrieval, lifecycle-aware evaluation, member representation, and ML experimentation at LinkedIn Feed AI.">
+<meta name="description" content="Tianyi Zhang's industry work experience — adaptive user representation, semantic retrieval, lifecycle-aware evaluation, and ML systems at LinkedIn Feed AI.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FCFCFA'/%3E%3Cpath d='M5 27 L27 5' stroke='%23BDBFB8' stroke-dasharray='2 3' fill='none'/%3E%3Cpath d='M5 27 C 11 12 17 7 27 5' stroke='%231E3EC8' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +48,7 @@
           <p class="job-org">Mountain View, CA · Feed AI — LLM for RecSys &amp; post-training</p>
           <div class="tags" style="margin-top:12px">
             <span class="chip">Semantic retrieval</span>
-            <span class="chip">Multi-intent routing</span>
+            <span class="chip">Adaptive representation</span>
             <span class="chip">Lifecycle evaluation</span>
             <span class="chip">ML systems</span>
           </div>
@@ -63,13 +63,15 @@
             Semi-cold members achieved <mark class="hl">+25.1% Recall@10</mark> and
             <mark class="hl">+26.8% NDCG@10</mark> but <mark class="hl">21.6% lower ILD</mark> than matched
             Active members, motivating regime-specific evaluation and representation.</li>
-            <li>Built a profile/history multi-tower <strong>routing framework for Qwen3 semantic retrieval</strong>
-            that learns member-specific mixtures of profile and behavioral intent through mean, concat,
-            scalar/vector-gated, and adapter routing; added candidate-complementarity analysis and corrected a
-            normalization-order mismatch in train–inference reconstruction.</li>
+            <li>Built a backend-agnostic <strong>Adaptive User Representation Layer</strong> that decouples user
+            understanding from candidate generation. Its compact user-state contract captures short- and long-term
+            intents, lifecycle, confidence/freshness, and evidence provenance for ANN, GR, SID, or larger-model
+            consumers; implemented the first producer with profile/history multi-tower Qwen3 encoding.</li>
             <li>Improved distributed training and model-serving reliability with layered configuration, dry-run
             validation, reproducible manifests, execution tracking, searchable run catalogs, train/serve parity
-            checks, and serving observability while preserving legacy workflow compatibility.</li>
+            checks, and serving observability while preserving legacy workflow compatibility; defined a staged
+            validation matrix that isolates representation, model capacity, retrieval backend, and lifecycle
+            policy so improvements remain attributable.</li>
           </ul>
         </div>
       </div>
