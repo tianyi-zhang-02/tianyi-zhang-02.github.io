@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tianyi Zhang - Curriculum Vitae</title>
+<style>
+  @page { size: Letter; margin: 0.42in 0.48in; }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: #111; font: 10.25pt/1.24 Georgia, "Times New Roman", serif; }
+  a { color: inherit; text-decoration: none; }
+  h1 { margin: 0; text-align: center; font-size: 27pt; line-height: 1; }
+  .contact { margin: 4px 0 14px; text-align: center; font-size: 9.5pt; }
+  h2 { margin: 12px 0 7px; padding-bottom: 2px; border-bottom: 0.8px solid #111;
+       font-size: 13pt; font-weight: 400; letter-spacing: .04em; text-transform: uppercase; }
+  p { margin: 0 0 6px; }
+  .entry { margin: 0 0 8px; }
+  .row { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+  .title { font-weight: 700; font-size: 11.2pt; }
+  .where { white-space: nowrap; }
+  .sub { display: flex; justify-content: space-between; gap: 16px; font-style: italic; }
+  ul { margin: 3px 0 0 19px; padding: 0; }
+  li { margin: 2px 0; padding-left: 1px; }
+  .page-break { break-before: page; page-break-before: always; }
+  .pub { margin: 0 0 8px; }
+  .project { margin: 0 0 11px; }
+  .skills div { margin: 2px 0; }
+</style>
+</head>
+<body>
+  <h1>Tianyi Zhang</h1>
+  <div class="contact">
+    404-422-2842 &nbsp;|&nbsp;
+    <a href="mailto:tzhang708@gatech.edu">tzhang708@gatech.edu</a> &nbsp;|&nbsp;
+    <a href="https://www.linkedin.com/in/tianyi-zhang2002/">LinkedIn</a> &nbsp;|&nbsp;
+    <a href="https://github.com/tianyi-zhang-02">GitHub</a> &nbsp;|&nbsp;
+    <a href="https://scholar.google.com/citations?user=46rbYk0AAAAJ">Google Scholar</a>
+  </div>
+
+  <h2>Research Interests</h2>
+  <p><strong>Trustworthy AI systems, end to end.</strong> I study proxy fidelity across the ML pipeline:
+  whether training data reflects the real distribution, learned objectives capture intended behavior, and
+  evaluation metrics track genuine quality and safety. My work spans data and benchmark integrity,
+  representation learning, retrieval evaluation, reward/specification gaming, and monitor robustness.</p>
+
+  <h2>Education</h2>
+  <div class="entry">
+    <div class="row"><span class="title">Georgia Institute of Technology</span><span class="where">Atlanta, GA</span></div>
+    <div class="sub"><span>Master of Science in Computer Science</span><span>Aug 2025 - Dec 2026</span></div>
+  </div>
+  <div class="entry">
+    <div class="row"><span class="title">Emory University</span><span class="where">Atlanta, GA</span></div>
+    <div class="sub"><span>Bachelor of Science in Quantitative Science (Honors)</span><span>Aug 2021 - May 2025</span></div>
+  </div>
+
+  <h2>Professional Experience</h2>
+  <div class="entry">
+    <div class="row"><span class="title">LinkedIn</span><span class="where">Mountain View, CA</span></div>
+    <div class="sub"><span>AI/ML Engineer Intern | Feed AI, LLM Retrieval</span><span>May 2026 - Present</span></div>
+    <ul>
+      <li>Built and production-scale validated a backward-compatible <strong>PySpark retrieval scorecard</strong>
+      over <strong>2.7B member-candidate pairs</strong>, extending Recall with NDCG, intra-list diversity,
+      catalog/topic exposure, lifecycle segmentation, eligibility diagnostics, and efficiency metrics.</li>
+      <li>Designed a five-seed matched lifecycle analysis controlling a <strong>30x population imbalance</strong>;
+      Semi-cold members achieved <strong>+25.1% Recall@10 and +26.8% NDCG@10</strong> but
+      <strong>21.6% lower ILD</strong> than matched Active members. Prompt analysis identified median histories of
+      31 versus 135 activities as a representation confounder.</li>
+      <li>Developed profile/history multi-tower <strong>Qwen3 semantic retrieval</strong> with mean, concat,
+      scalar/vector-gated, and adapter fusion; implemented an opt-in train-inference reconstruction path and
+      corrected a normalization-order mismatch that could silently change the fused direction.</li>
+      <li>Standardized distributed ML experimentation through layered configuration, dry-run safety,
+      reproducible manifests, execution tracking, validation, and searchable experiment catalogs while
+      preserving legacy workflow compatibility.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row"><span class="title">NVIDIA - Georgia Tech Efficient &amp; Intelligent Computing Lab</span><span class="where">Atlanta, GA</span></div>
+    <div class="sub"><span>Student Researcher | LLM Evaluation, Agentic AI</span><span>Jul 2025 - Dec 2025</span></div>
+    <ul>
+      <li>Co-authored <strong>AgentSuite (ICML 2026)</strong>, a component-based pipeline for auditing LLM-agent
+      benchmarks; surfaced flaws affecting ~23% of tasks across 6 benchmarks and shifting ~63% of model rankings.</li>
+      <li>Built taxonomy-guided LLM-judge and structural-detector stages, matching expert labels at
+      <strong>0.79-0.87 F1</strong> and surfacing 100+ undocumented issues.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row"><span class="title">Emory Graph Mining Lab</span><span class="where">Atlanta, GA</span></div>
+    <div class="sub"><span>Undergraduate Researcher | Graph Learning, AI for Science</span><span>Dec 2023 - May 2025</span></div>
+    <ul>
+      <li>Built a graph-neural-network pipeline over ~8K patients and first-authored a Granger-directed
+      brain-connectivity method at <strong>AIME 2025</strong>.</li>
+      <li>Engineered a Transformer-based clinical time-series pipeline modeling transitions across latent
+      functional-connectivity states; oral presentation at <strong>IEEE EMBC 2025</strong>.</li>
+    </ul>
+  </div>
+
+  <div class="page-break"></div>
+  <h2>Publications</h2>
+  <div class="pub">H. Suh*, S. Lee*, B. Ji*, R. Khare, B. Khan, H. Kim, <strong>T. Zhang</strong>, et al.
+  "AgentSuite: Toward More Reliable Agent Evaluation with a Component-Based Benchmark Auditing Pipeline."
+  <em>International Conference on Machine Learning (ICML)</em> 2026.</div>
+  <div class="pub"><strong>T. Zhang</strong>, K. Han, J. Nie, C. You, S. van Rooij, J. Stevens, B. Dunlop,
+  C. Gillespie, C. Yang. "Causal Brain Connectivity: Integrating Granger Directed Graphs in fMRI Analysis."
+  <em>International Conference on Artificial Intelligence in Medicine (AIME)</em> 2025. (First Author)</div>
+  <div class="pub">J. Nie, K. Han, <strong>T. Zhang</strong>, C. You, S. van Rooij, J. Stevens, B. Dunlop,
+  C. Gillespie, C. Yang. "Brain Network State Transformer: Leveraging State Functional Connectivity."
+  <em>IEEE Engineering in Medicine and Biology Society (EMBC)</em> 2025. (Oral)</div>
+
+  <h2>Selected Projects</h2>
+  <div class="project"><span class="title">CoAct: Governance Substrate for Multi-Agent Coding</span>
+    <ul>
+      <li>Building a dependency-free Go governance substrate that lets coding agents work safely in one repository
+      through capability policies, advisory locks, worktree isolation, merge gates, a shared task board, and an
+      append-only journal for replayable oversight.</li>
+    </ul>
+  </div>
+  <div class="project"><span class="title">Agent-Loop Observability</span>
+    <ul>
+      <li>Developing observability tools for diagnosing repeated tool calls, context loss, unrecalled memory writes,
+      cost runaway, and safety-monitor failures in long-running LLM-agent trajectories.</li>
+    </ul>
+  </div>
+
+  <h2>Open Source</h2>
+  <p><strong>NVIDIA NeMo RL</strong> - Contributor to NVIDIA's scalable reinforcement-learning and LLM
+  post-training library, including checkpointing and response-dataset improvements.</p>
+
+  <h2>Technical Skills</h2>
+  <div class="skills">
+    <div><strong>Programming:</strong> Python, Go, SQL, Java, R, C/C++</div>
+    <div><strong>ML/AI:</strong> PyTorch, PyTorch Lightning, CUDA, Hugging Face Transformers, vLLM, SGLang, MLflow</div>
+    <div><strong>Data/Systems:</strong> Spark/PySpark, FSDP, Docker, AWS, GitHub Actions, Linux, PostgreSQL, MongoDB, Redis</div>
+  </div>
+</body>
+</html>

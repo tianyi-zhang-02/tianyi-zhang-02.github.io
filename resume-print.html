@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tianyi Zhang - Resume</title>
+<style>
+  @page { size: Letter; margin: 0.38in 0.44in; }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: #111; font: 10pt/1.18 Georgia, "Times New Roman", serif; }
+  a { color: inherit; text-decoration: none; }
+  h1 { margin: 0; text-align: center; font-size: 28pt; line-height: 1; font-weight: 700; }
+  .contact { margin: 5px 0 10px; text-align: center; font-size: 9pt; }
+  h2 { margin: 8px 0 4px; padding-bottom: 1px; border-bottom: 0.75px solid #111;
+       font-size: 12pt; font-weight: 400; letter-spacing: .04em; text-transform: uppercase; }
+  .entry { margin: 0 0 6px; }
+  .row { display: flex; justify-content: space-between; gap: 14px; align-items: baseline; }
+  .title { font-weight: 700; font-size: 10.7pt; }
+  .where { white-space: nowrap; }
+  .sub { display: flex; justify-content: space-between; gap: 14px; font-style: italic; }
+  ul { margin: 2px 0 0 18px; padding: 0; }
+  li { margin: 2px 0; padding-left: 1px; }
+  .pub { margin: 2.5px 0; }
+  .project { margin: 3.5px 0; }
+  .skills { margin-top: 2px; }
+  .tight { letter-spacing: -.01em; }
+</style>
+</head>
+<body>
+  <h1>Tianyi Zhang</h1>
+  <div class="contact">
+    404-422-2842 &nbsp;|&nbsp;
+    <a href="mailto:tzhang708@gatech.edu">tzhang708@gatech.edu</a> &nbsp;|&nbsp;
+    <a href="https://www.linkedin.com/in/tianyi-zhang2002/">LinkedIn</a> &nbsp;|&nbsp;
+    <a href="https://github.com/tianyi-zhang-02">GitHub</a> &nbsp;|&nbsp;
+    <a href="https://scholar.google.com/citations?user=46rbYk0AAAAJ">Google Scholar</a> &nbsp;|&nbsp;
+    <a href="https://tianyi-zhang-02.github.io">tianyi-zhang-02.github.io</a>
+  </div>
+
+  <h2>Education</h2>
+  <div class="entry">
+    <div class="row"><span class="title">Georgia Institute of Technology</span><span class="where">Atlanta, GA</span></div>
+    <div class="sub"><span>Master of Science in Computer Science</span><span>Aug 2025 - May 2027</span></div>
+  </div>
+  <div class="entry">
+    <div class="row"><span class="title">Emory University</span><span class="where">Atlanta, GA</span></div>
+    <div class="sub"><span>Bachelor of Science in Quantitative Sciences</span><span>Aug 2021 - May 2025</span></div>
+  </div>
+
+  <h2>Professional Experience</h2>
+  <div class="entry">
+    <div class="row"><span class="title">LinkedIn Corporation</span><span class="where">Mountain View, CA</span></div>
+    <div class="sub"><span>AI/ML Engineer Intern | Feed AI, LLM Retrieval</span><span>May 2026 - Present</span></div>
+    <ul>
+      <li>Built and production-scale validated a backward-compatible <strong>PySpark retrieval scorecard</strong> over
+      <strong>2.7B member-candidate pairs</strong>, adding NDCG, intra-list diversity, catalog/topic exposure,
+      lifecycle slices, eligibility diagnostics, and efficiency metrics.</li>
+      <li>Designed a five-seed matched lifecycle analysis controlling a <strong>30x cohort imbalance</strong>;
+      Semi-cold members achieved <strong>+25.1% Recall@10 / +26.8% NDCG@10</strong> but
+      <strong>21.6% lower ILD</strong> than matched Active members.</li>
+      <li>Developed profile/history multi-tower <strong>Qwen3 semantic retrieval</strong> with mean, concat, gated,
+      and adapter fusion; identified and corrected a normalization-order mismatch in train-inference reconstruction.</li>
+      <li>Standardized distributed experimentation through layered configuration, dry-run validation, reproducible
+      manifests, execution tracking, and searchable run catalogs while preserving legacy workflow compatibility.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row"><span class="title">Georgia Tech Efficient &amp; Intelligent Computing Lab - NVIDIA Collaboration</span><span class="where">Atlanta, GA</span></div>
+    <div class="sub"><span>Student Researcher | LLM Evaluation, Agentic AI</span><span>Jul 2025 - Dec 2025</span></div>
+    <ul>
+      <li>Co-authored <strong>AgentSuite (ICML 2026)</strong>, auditing validity flaws in LLM-agent benchmarks;
+      matched expert judgments at <strong>0.79-0.87 F1</strong> across 6 benchmarks and showed flaws affect
+      <strong>~23% of tasks</strong>, reshuffling <strong>63% of model rankings</strong>.</li>
+      <li>Built taxonomy-guided LLM-judge and rule-based structural detectors; generalized to unseen benchmarks
+      without retuning and surfaced <strong>100+</strong> undocumented issues.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row"><span class="title">Emory Graph Mining Lab</span><span class="where">Atlanta, GA</span></div>
+    <div class="sub"><span>Machine Learning Researcher | Graph Learning, AI for Science</span><span>Dec 2023 - May 2025</span></div>
+    <ul>
+      <li>First-authored a causal brain-connectivity method (<strong>AIME 2025</strong>) using Granger-directed
+      graphs to improve clinical prediction across <strong>~8K patients</strong>.</li>
+      <li>Co-authored a state-based Transformer (<strong>IEEE EMBC 2025, oral</strong>) modeling temporal
+      transitions across latent functional-connectivity states.</li>
+    </ul>
+  </div>
+
+  <h2>Publications</h2>
+  <div class="pub">H. Suh*, S. Lee*, B. Ji*, et al., including <strong>T. Zhang</strong>. "AgentSuite: Toward More Reliable Agent Evaluation with a Component-Based Benchmark Auditing Pipeline." <em>ICML</em> 2026.</div>
+  <div class="pub"><strong>T. Zhang</strong>, K. Han, J. Nie, et al. "Causal Brain Connectivity: Integrating Granger Directed Graphs in fMRI Analysis." <em>AIME</em> 2025.</div>
+  <div class="pub">J. Nie, K. Han, <strong>T. Zhang</strong>, et al. "Brain Network State Transformer." <em>IEEE EMBC</em> 2025. (Oral)</div>
+
+  <h2>Projects &amp; Open Source</h2>
+  <div class="project"><strong>CoAct: Governance Substrate for Multi-Agent Coding</strong> - Dependency-free Go
+  binary for capability policies, locks, worktree isolation, merge gates, and append-only audit journals.</div>
+  <div class="project"><strong>NVIDIA NeMo RL: Open-Source Contributor</strong> - Contributions to a scalable
+  reinforcement-learning and LLM post-training library.</div>
+
+  <h2>Technical Skills</h2>
+  <div class="skills"><strong>Programming:</strong> Python, Go, SQL, Java, R, C/C++ &nbsp;
+  <strong>ML/AI:</strong> PyTorch, CUDA, Hugging Face, vLLM, SGLang, MLflow &nbsp;
+  <strong>Infra/Data:</strong> Spark/PySpark, Docker, AWS, GitHub Actions, Linux, PostgreSQL, MongoDB, Redis</div>
+</body>
+</html>
