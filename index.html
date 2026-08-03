@@ -1,163 +1,323 @@
 <!doctype html>
-<!--
-  tianyi-zhang-02.github.io — home. Multi-page site, no build step.
-  Shared: style.css, script.js. Pages: index / publications / projects / cv.
--->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tianyi Zhang</title>
+<title>Tianyi Zhang — Research &amp; Engineering</title>
 <meta name="description" content="Tianyi Zhang — AI researcher and engineer working on trustworthy AI across algorithms, systems, and evaluation.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FCFCFA'/%3E%3Cpath d='M5 27 L27 5' stroke='%23BDBFB8' stroke-dasharray='2 3' fill='none'/%3E%3Cpath d='M5 27 C 11 12 17 7 27 5' stroke='%231E3EC8' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=17">
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=19">
 </head>
-<body>
+<body class="one-page">
 
-<div class="wrap">
-
-  <div class="topbar">
-  <nav class="sitenav" aria-label="Primary">
-    <a class="brand" href="index.html">Tianyi Zhang</a>
-    <div class="pages">
-      <a href="index.html" aria-current="page">About</a>
-      <a href="experience.html">Experience</a>
-      <a href="publications.html">Publications</a>
-      <a href="projects.html">Projects &amp; OSS</a>
-      <a href="resume.html">CV</a>
-      <a href="journey.html">Journey</a>
-      <a href="hobbies.html">Hobbies</a>
-    </div>
-  </nav>
-
-  </div>
-
-  <header class="mastwrap">
-    <div class="mast">
+<div class="site-shell">
+  <aside class="site-sidebar" aria-label="Site navigation">
+    <div class="sidebar-head">
       <div>
+        <a class="side-brand" href="#top">Tianyi Zhang</a>
+        <p class="side-role">AI Researcher &amp; Engineer</p>
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="side-nav">Menu</button>
+    </div>
+
+    <nav id="side-nav" class="side-nav">
+      <div class="side-group is-open" data-nav-section="about">
+        <a class="side-main" href="#about">About</a>
+        <div class="side-sub">
+          <a href="#approach">Approach</a>
+          <a href="#now">Now</a>
+        </div>
+      </div>
+      <div class="side-group" data-nav-section="experience">
+        <a class="side-main" href="#experience">Experience</a>
+        <div class="side-sub">
+          <a href="#linkedin">LinkedIn</a>
+          <a href="#gatech">Georgia Tech</a>
+          <a href="#emory">Emory</a>
+        </div>
+      </div>
+      <div class="side-group" data-nav-section="research">
+        <a class="side-main" href="#research">Research</a>
+        <div class="side-sub">
+          <a href="#agentsuite">AgentSuite</a>
+          <a href="#causal-brain">Causal connectivity</a>
+          <a href="#bnst">State Transformer</a>
+        </div>
+      </div>
+      <div class="side-group" data-nav-section="projects">
+        <a class="side-main" href="#projects">Projects &amp; OSS</a>
+        <div class="side-sub">
+          <a href="#nemo-rl">NeMo RL</a>
+          <a href="#coact">coact</a>
+          <a href="#accretia">Wealth projector</a>
+        </div>
+      </div>
+      <div class="side-group" data-nav-section="journey">
+        <a class="side-main" href="#journey">Journey</a>
+        <div class="side-sub">
+          <a href="#shanghai">Shanghai</a>
+          <a href="#atlanta">Atlanta</a>
+          <a href="#bay-area">Bay Area</a>
+        </div>
+      </div>
+      <div class="side-group" data-nav-section="personal">
+        <a class="side-main" href="#personal">Personal</a>
+        <div class="side-sub">
+          <a href="#hobbies">Hobbies</a>
+          <a href="#music">Music</a>
+        </div>
+      </div>
+      <div class="side-group" data-nav-section="resume">
+        <a class="side-main" href="#resume">CV</a>
+        <div class="side-sub">
+          <a href="#education">Education</a>
+          <a href="#downloads">Downloads</a>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="side-contact" aria-label="Contact links">
+      <a href="mailto:zhangtianyi975@gmail.com">Email</a>
+      <a href="https://scholar.google.com/citations?hl=en&amp;view_op=list_works&amp;user=46rbYk0AAAAJ">Scholar</a>
+      <a href="https://github.com/tianyi-zhang-02">GitHub</a>
+      <a href="https://www.linkedin.com/in/tianyi-zhang2002/">LinkedIn</a>
+    </nav>
+  </aside>
+
+  <div class="one-page-content">
+    <header id="top" class="onepage-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Research × Engineering</p>
         <h1>Tianyi<br>Zhang</h1>
-        <p class="tagline">I work on <b>trustworthy AI, end to end</b> — tracking where data, models,
-        and metrics drift from the truth they stand for, and how those gaps compound.</p>
-        <p class="idline">
-          AI Researcher &amp; Engineer<br>
-          Emory ’25 &nbsp;|&nbsp; Georgia Tech ’26
-        </p>
-        <nav class="links" aria-label="Contact links">
+        <p class="tagline">I work on <strong>trustworthy AI, end to end</strong> — tracking where data,
+        models, and metrics drift from the truth they stand for, and how those gaps compound.</p>
+        <p class="idline">AI Researcher &amp; Engineer<br>Emory ’25 &nbsp;|&nbsp; Georgia Tech ’26</p>
+        <nav class="links" aria-label="Primary links">
           <a href="mailto:zhangtianyi975@gmail.com">Email</a>
-          <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&user=46rbYk0AAAAJ">Google Scholar</a>
+          <a href="https://scholar.google.com/citations?hl=en&amp;view_op=list_works&amp;user=46rbYk0AAAAJ">Google Scholar</a>
           <a href="https://github.com/tianyi-zhang-02">GitHub</a>
           <a href="https://www.linkedin.com/in/tianyi-zhang2002/">LinkedIn</a>
         </nav>
       </div>
-
       <figure class="sig">
         <svg viewBox="0 0 340 260" role="img" aria-labelledby="figtitle">
-          <title id="figtitle">An abstract node graph: connected points with two highlighted nodes, evoking structure, connection, and inspection.</title>
-          <!-- edges, revealed as a single stroke -->
+          <title id="figtitle">An abstract graph connecting algorithms, systems, and evidence.</title>
           <path class="draw" d="M52 198 L116 150 M116 150 L86 78 M116 150 L172 104 M116 150 L150 212 M172 104 L282 84 M172 104 L244 158 M244 158 L300 196 M244 158 L282 84 M150 212 L244 158" fill="none" stroke="#AEB2AC" stroke-width="1.4" stroke-linecap="round"/>
-          <!-- rings on the highlighted nodes -->
           <circle cx="172" cy="104" r="11" fill="none" stroke="#1E3EC8" stroke-width="1" opacity="0.45"/>
           <circle cx="282" cy="84" r="11" fill="none" stroke="#1E3EC8" stroke-width="1" opacity="0.45"/>
-          <!-- nodes -->
-          <circle cx="52" cy="198" r="3.4" fill="#17191E" stroke="#FCFCFA" stroke-width="1.5"/>
-          <circle cx="116" cy="150" r="3.4" fill="#17191E" stroke="#FCFCFA" stroke-width="1.5"/>
-          <circle cx="86" cy="78" r="3.4" fill="#17191E" stroke="#FCFCFA" stroke-width="1.5"/>
-          <circle cx="150" cy="212" r="3.4" fill="#17191E" stroke="#FCFCFA" stroke-width="1.5"/>
-          <circle cx="244" cy="158" r="3.4" fill="#17191E" stroke="#FCFCFA" stroke-width="1.5"/>
-          <circle cx="300" cy="196" r="3.4" fill="#17191E" stroke="#FCFCFA" stroke-width="1.5"/>
-          <!-- highlighted nodes -->
+          <g fill="#17191E" stroke="#FCFCFA" stroke-width="1.5">
+            <circle cx="52" cy="198" r="3.4"/><circle cx="116" cy="150" r="3.4"/>
+            <circle cx="86" cy="78" r="3.4"/><circle cx="150" cy="212" r="3.4"/>
+            <circle cx="244" cy="158" r="3.4"/><circle cx="300" cy="196" r="3.4"/>
+          </g>
           <circle cx="172" cy="104" r="4.8" fill="#1E3EC8" stroke="#FCFCFA" stroke-width="1.5"/>
           <circle cx="282" cy="84" r="4.8" fill="#1E3EC8" stroke="#FCFCFA" stroke-width="1.5"/>
         </svg>
-        <figcaption>Research · Engineering · Evidence</figcaption>
+        <figcaption>Algorithms · Systems · Evidence</figcaption>
       </figure>
-    </div>
-  </header>
+    </header>
 
-  <figure class="hero-reveal">
-    <div class="reveal">
-      <video class="rv-media rv-video" preload="none" muted loop playsinline poster="images/namcha-barwa-poster.jpg">
-        <source src="videos/namcha-barwa.mp4" type="video/mp4">
-      </video>
-      <img class="rv-media rv-photo" src="images/namcha-barwa.jpg" alt="Namcha Barwa panorama, Tibet — photo by Tianyi Zhang">
-      <div class="rv-handle" aria-hidden="true"><span class="rv-grip">↔</span></div>
-      <input class="rv-range" type="range" min="0" max="100" value="0" step="0.5" aria-label="Slide to reveal the time-lapse">
-      <div class="rv-hint">slide to reveal the time-lapse ▸</div>
-    </div>
-    <figcaption>Namcha Barwa 南迦巴瓦峰</figcaption>
-  </figure>
-
-  <main>
-    <aside id="toc" class="toc" aria-label="On this page"></aside>
-
-    <section id="about">
-      <h2>About</h2>
-      <div class="content">
-        <p>I'm a <strong>researcher and engineer</strong> who works from real workloads and constraints:
-        identify the failure, formalize the problem, build the system, design the experiment, and test
-        whether the solution is actually supported by evidence. I care about the full chain — from data
-        and algorithms to runtimes, infrastructure, evaluation, and the final goal.</p>
-        <ul class="threads">
-          <li><strong>Research</strong> — find questions worth solving, form falsifiable hypotheses, and design controlled experiments.</li>
-          <li><strong>Algorithms</strong> — develop representations, objectives, and methods that fit the real problem.</li>
-          <li><strong>Systems</strong> — turn ideas into reliable implementations, tests, and measurable end-to-end behavior.</li>
-          <li><strong>Context</strong> — connect local behavior back to the workload, constraints, tradeoffs, and end result.</li>
-        </ul>
-        <p>I'm finishing an <strong>MS in Computer Science at Georgia Tech</strong> (Dec 2026). My interests include
-        trustworthy ML, representation and recommendation algorithms, reliable training and inference systems,
-        agent evaluation, and research that connects formal claims to reproducible evidence.</p>
+    <figure class="hero-reveal">
+      <div class="reveal">
+        <video class="rv-media rv-video" preload="none" muted loop playsinline poster="videos/namcha-barwa-poster.jpg">
+          <source src="videos/namcha-barwa.mp4" type="video/mp4">
+        </video>
+        <img class="rv-media rv-photo" src="images/namcha-barwa.jpg" alt="Namcha Barwa panorama, Tibet — photo by Tianyi Zhang">
+        <div class="rv-handle" aria-hidden="true"><span class="rv-grip">↔</span></div>
+        <input class="rv-range" type="range" min="0" max="100" value="0" step="0.5" aria-label="Slide to reveal the time-lapse">
+        <div class="rv-hint">slide to reveal the time-lapse ▸</div>
       </div>
-    </section>
+      <figcaption>Namcha Barwa 南迦巴瓦峰</figcaption>
+    </figure>
 
-    <section id="news">
-      <h2>News</h2>
-      <div class="content">
-        <ul class="news">
-          <li><span class="yr">2026</span><span><img class="orglogo" src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=64" alt="" onerror="this.remove()">Joined LinkedIn's feed recommendation team (Feed AI) for the summer as an ML engineer intern.</span></li>
-          <li><span class="yr">2026</span><span>🎉 <em>AgentSuite</em>, a component-based benchmark-auditing pipeline for LLM agents, accepted at ICML 2026.</span></li>
-          <li><span class="yr">2025</span><span>🎉 Oral presentation at IEEE EMBC 2025 — a state-based Transformer for fMRI.</span></li>
-          <li><span class="yr">2025</span><span>🎉 First-authored paper on causal brain-connectivity analysis published at AIME 2025.</span></li>
-        </ul>
-      </div>
-    </section>
+    <main>
+      <section id="about" class="onepage-section" data-section="about">
+        <div class="section-kicker">01 / About</div>
+        <div class="section-body">
+          <h2>End-to-end thinking, grounded in evidence.</h2>
+          <div id="approach" class="subsection">
+            <p class="section-lede">I work from real workloads and constraints: identify the failure,
+            formalize the problem, build the system, design the experiment, and test whether the solution is
+            actually supported by evidence.</p>
+            <div class="focus-grid">
+              <article><span>01</span><h3>Research</h3><p>Falsifiable questions, clear baselines, controlled experiments.</p></article>
+              <article><span>02</span><h3>Algorithms</h3><p>Representations, objectives, and methods that fit the real problem.</p></article>
+              <article><span>03</span><h3>Systems</h3><p>Reliable implementations, tests, observability, and measured behavior.</p></article>
+              <article><span>04</span><h3>Context</h3><p>Workloads, constraints, tradeoffs, and responsibility for the outcome.</p></article>
+            </div>
+          </div>
+          <div id="now" class="subsection now-block">
+            <h3>Now</h3>
+            <p>Finishing an <strong>M.S. in Computer Science at Georgia Tech</strong> (Dec 2026). Current interests:
+            trustworthy ML, representation and recommendation algorithms, reliable training and inference systems,
+            agent evaluation, and research that connects formal claims to reproducible evidence.</p>
+            <ul class="news compact-news">
+              <li><span class="yr">2026</span><span><em>AgentSuite</em> accepted at ICML 2026.</span></li>
+              <li><span class="yr">2025</span><span>IEEE EMBC oral and AIME publication on neuroimaging.</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-  </main>
+      <section id="experience" class="onepage-section" data-section="experience">
+        <div class="section-kicker">02 / Experience</div>
+        <div class="section-body">
+          <h2>Industry and research labs.</h2>
+          <article id="linkedin" class="timeline-card subsection">
+            <div class="timeline-meta"><span>LinkedIn · Feed AI</span><time>May 2026 — Present</time></div>
+            <h3>AI/ML Engineer Intern</h3>
+            <div class="tags"><span class="chip">Semantic retrieval</span><span class="chip">Adaptive representation</span><span class="chip">ML systems</span></div>
+            <p>Built adaptive user representations and retrieval evaluation for feed recommendation, spanning
+            embedding and generative retrieval. Developed production-scale ML tooling for lifecycle-aware evaluation
+            and reliable training and serving workflows.</p>
+          </article>
+          <article id="gatech" class="timeline-card subsection">
+            <div class="timeline-meta"><span>Georgia Tech · NVIDIA AI Research collaboration</span><time>Jul — Dec 2025</time></div>
+            <h3>Student Researcher</h3>
+            <div class="tags"><span class="chip">Agent evaluation</span><span class="chip">Benchmark auditing</span><span class="chip">LLM-as-judge</span></div>
+            <p>Co-authored <strong>AgentSuite</strong> (ICML 2026), an automated pipeline for auditing LLM-agent
+            benchmarks. Built its taxonomy-guided LLM-as-judge and structural detectors, surfacing 100+ undocumented issues.</p>
+          </article>
+          <article id="emory" class="timeline-card subsection">
+            <div class="timeline-meta"><span>Emory · Graph Mining Lab</span><time>Dec 2023 — May 2025</time></div>
+            <h3>Machine Learning Researcher</h3>
+            <div class="tags"><span class="chip">Graph learning</span><span class="chip">Causal inference</span><span class="chip">Neuroimaging</span></div>
+            <p>Developed graph learning methods for neuroimaging, including causal brain-connectivity analysis and a
+            state-based Transformer. The work led to publications at AIME 2025 and IEEE EMBC 2025 (oral).</p>
+          </article>
+        </div>
+      </section>
 
-  <footer>
-    <span>© <span id="yr">2026</span> Tianyi Zhang · Plain HTML</span>
-    <nav class="footlinks" aria-label="Contact">
-      <a href="mailto:zhangtianyi975@gmail.com">Email</a>
-      <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&user=46rbYk0AAAAJ">Scholar</a>
-      <a href="https://github.com/tianyi-zhang-02">GitHub</a>
-      <a href="https://www.linkedin.com/in/tianyi-zhang2002/">LinkedIn</a>
-    </nav>
-  </footer>
+      <section id="research" class="onepage-section" data-section="research">
+        <div class="section-kicker">03 / Research</div>
+        <div class="section-body">
+          <h2>Selected publications.</h2>
+          <article id="agentsuite" class="publication-card subsection">
+            <p class="card-index">ICML 2026</p>
+            <h3><a href="https://openreview.net/pdf?id=2Exmr1eIKZ">AgentSuite: Toward More Reliable Agent Evaluation with a Component-Based Benchmark Auditing Pipeline</a></h3>
+            <p class="authors">H. Suh*, S. Lee*, B. Ji*, R. Khare, B. Khan, H. Kim, <strong>Tianyi Zhang</strong>, et al.</p>
+            <p>A component-based pipeline that audits validity flaws in LLM-agent benchmarks, matches expert
+            judgments across six benchmarks, and materially changes model rankings.</p>
+          </article>
+          <article id="causal-brain" class="publication-card subsection">
+            <p class="card-index">AIME 2025 · First author</p>
+            <h3><a href="https://link.springer.com/chapter/10.1007/978-3-031-95841-0_81">Causal Brain Connectivity: Integrating Granger Directed Graphs in fMRI Analysis</a></h3>
+            <p class="authors"><strong>Tianyi Zhang</strong>, K. Han, J. Nie, et al.</p>
+            <p>Recovers directional brain-connectivity dependencies invisible to correlation graphs and improves
+            diagnostic prediction across roughly 8,000 patients.</p>
+          </article>
+          <article id="bnst" class="publication-card subsection">
+            <p class="card-index">IEEE EMBC 2025 · Oral</p>
+            <h3><a href="https://www.cs.emory.edu/~jyang71/files/bnst.pdf">Brain Network State Transformer: Leveraging State Functional Connectivity</a></h3>
+            <p class="authors">J. Nie, K. Han, <strong>Tianyi Zhang</strong>, et al.</p>
+            <p>Models temporal transitions across latent functional-connectivity states and outperforms
+            static-connectivity baselines on clinical prediction.</p>
+          </article>
+          <p class="section-link"><a href="https://scholar.google.com/citations?hl=en&amp;view_op=list_works&amp;user=46rbYk0AAAAJ">All publications on Google Scholar →</a></p>
+        </div>
+      </section>
 
+      <section id="projects" class="onepage-section" data-section="projects">
+        <div class="section-kicker">04 / Projects &amp; OSS</div>
+        <div class="section-body">
+          <h2>Things I contribute to and build.</h2>
+          <article id="nemo-rl" class="project-card subsection">
+            <div class="project-head"><p class="card-index">Open source contribution</p><span class="starnum" data-stars="NVIDIA-NeMo/RL">★</span></div>
+            <h3><a href="https://github.com/NVIDIA-NeMo/RL">NVIDIA NeMo RL</a></h3>
+            <div class="tags"><span class="chip">LLM post-training</span><span class="chip">Reliability</span><span class="chip">Contributor</span></div>
+            <p>Merged upstream improvements across checkpointing, response-dataset integration, configuration
+            validation, and regression coverage.</p>
+            <p class="section-link"><a href="https://github.com/NVIDIA-NeMo/RL/commits/main/?author=tianyi-zhang-02">View merged commits →</a></p>
+          </article>
+          <article id="coact" class="project-card subsection">
+            <div class="project-head"><p class="card-index">Project · Medium priority</p><span class="starnum" data-stars="tianyi-zhang-02/coact">★</span></div>
+            <h3><a href="https://github.com/tianyi-zhang-02/coact">coact</a></h3>
+            <div class="tags"><span class="chip">Agent orchestration</span><span class="chip">Go</span><span class="chip">Governance</span></div>
+            <p>A governance substrate that lets Claude Code and Codex work safely in the same repository through
+            capability policies, locks, worktree isolation, shared task state, and an append-only journal.</p>
+          </article>
+          <article id="accretia" class="project-card subsection">
+            <div class="project-head"><p class="card-index">Project · Medium priority</p><span class="starnum" data-stars="tianyi-zhang-02/accretia">★</span></div>
+            <h3><a href="https://github.com/tianyi-zhang-02/accretia">Wealth Projection Simulator</a></h3>
+            <div class="tags"><span class="chip">Personal finance</span><span class="chip">Bilingual</span><span class="chip">Client-side</span></div>
+            <p>A privacy-first wealth projector with equity compensation, housing scenarios, Monte Carlo analysis,
+            stress tests, FIRE planning, and goal-seek — entirely in the browser.</p>
+            <p class="section-link"><a href="https://tracker-gamma-eight-14.vercel.app">Open live app →</a></p>
+          </article>
+        </div>
+      </section>
+
+      <section id="journey" class="onepage-section" data-section="journey">
+        <div class="section-kicker">05 / Journey</div>
+        <div class="section-body">
+          <h2>Shanghai → Atlanta → Bay Area.</h2>
+          <div class="journey-line" aria-hidden="true"><span></span><span></span><span></span></div>
+          <article id="shanghai" class="place-card subsection">
+            <div><p class="place-years">2002 — 2021</p><h3>Shanghai</h3><p>Born and grew up.</p></div>
+            <ul><li>Xuhui — born</li><li>Minhang — kindergarten</li><li>Xuhui — primary school</li><li>Minhang — middle &amp; high school</li></ul>
+          </article>
+          <article id="atlanta" class="place-card subsection">
+            <div><p class="place-years">2021 — 2026</p><h3>Atlanta area</h3><p>Emory and Georgia Tech.</p></div>
+            <ul><li>Oxford College</li><li>Emory University · B.S.</li><li>Georgia Tech · M.S. CS</li></ul>
+          </article>
+          <article id="bay-area" class="place-card subsection">
+            <div><p class="place-years">2026</p><h3>Bay Area</h3><p>Mountain View, California.</p></div>
+            <ul><li>LinkedIn Feed AI</li><li>The journey continues →</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="personal" class="onepage-section" data-section="personal">
+        <div class="section-kicker">06 / Personal</div>
+        <div class="section-body">
+          <h2>Off the clock.</h2>
+          <div id="hobbies" class="subsection personal-card">
+            <p class="card-index">Hobbies</p>
+            <h3>Big landscapes, small creatures, good company.</h3>
+            <p>Usually outdoors with a camera — mountains, rivers, lakes, the sea, animals, travel, and sharing it
+            all with the people I love. Next up: learning guitar and trying my hand at rock.</p>
+            <div class="tags"><span class="chip">Photography</span><span class="chip">Outdoors</span><span class="chip">Animals</span><span class="chip">Adventure</span><span class="chip">Guitar</span></div>
+          </div>
+          <div id="music" class="subsection music-card">
+            <div class="music-copy">
+              <p class="card-index">Music</p>
+              <h3>我的夯歌分享！</h3>
+              <p>最近循环播放的歌，持续更新。</p>
+              <a href="https://open.spotify.com/playlist/5mvXtbOcZx8t4gBWIZTFZn?si=b447c6cfe7af4445">Open in Spotify ↗</a>
+            </div>
+            <iframe class="spotify-embed" src="https://open.spotify.com/embed/playlist/5mvXtbOcZx8t4gBWIZTFZn?utm_source=generator&amp;theme=0" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Tianyi's Spotify playlist"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section id="resume" class="onepage-section" data-section="resume">
+        <div class="section-kicker">07 / CV</div>
+        <div class="section-body">
+          <h2>Education and full résumé.</h2>
+          <div id="education" class="education-grid subsection">
+            <article><p class="card-index">2025 — 2026</p><h3>Georgia Institute of Technology</h3><p>M.S. Computer Science</p></article>
+            <article><p class="card-index">2021 — 2025</p><h3>Emory University</h3><p>B.S. Quantitative Sciences</p></article>
+          </div>
+          <div id="downloads" class="download-row subsection">
+            <a class="download-card" href="resume.pdf"><span>1 page</span><strong>Download résumé</strong></a>
+            <a class="download-card" href="cv.pdf"><span>Full version</span><strong>Download CV</strong></a>
+            <a class="download-card" href="resume.html"><span>HTML</span><strong>View detailed CV</strong></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="onepage-footer">
+      <span>© <span id="yr">2026</span> Tianyi Zhang</span>
+      <span>Shanghai · Atlanta · Bay Area</span>
+    </footer>
+  </div>
 </div>
 
 <script src="script.js"></script>
-<script src="toc.js"></script>
-<script>
-(function () {
-  var box = document.querySelector('.reveal');
-  if (!box) return;
-  var range = box.querySelector('.rv-range');
-  var vid = box.querySelector('video');
-  function update() {
-    box.style.setProperty('--pos', range.value + '%');
-    if (parseFloat(range.value) >= 96) {
-      box.classList.add('unlocked');
-      if (vid.paused) { vid.play().catch(function () {}); }
-    } else {
-      box.classList.remove('unlocked');
-    }
-  }
-  range.addEventListener('input', update);
-  update();
-})();
-</script>
+<script src="stars.js"></script>
 </body>
 </html>
