@@ -691,3 +691,53 @@ footer a:hover{color:var(--accent)}
   .detail-card-grid{grid-template-columns:1fr}
   .detail-footer{align-items:flex-start;flex-direction:column}
 }
+
+/* ---------- plain academic / engineering CV ---------- */
+.detail-cv-page{background:var(--paper)}
+.detail-cv-document{max-width:980px;margin:0 auto;padding:62px 24px 86px}
+.detail-cv-header{
+  display:flex;justify-content:space-between;gap:44px;align-items:flex-end;padding-bottom:28px;border-bottom:2px solid var(--ink)
+}
+.detail-cv-header h1{font:600 46px/1 var(--serif);letter-spacing:-.04em;text-transform:none}
+.detail-cv-header>div>p{margin-top:9px;font-size:17px;color:var(--muted)}
+.detail-cv-contact{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:7px 15px;max-width:390px}
+.detail-cv-contact a{font:400 9.5px/1.35 var(--mono);letter-spacing:.045em;color:var(--ink);text-decoration:none}
+.detail-cv-contact a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.plain-cv-section{
+  display:grid;grid-template-columns:158px minmax(0,1fr);gap:38px;padding:38px 0;border-bottom:1px solid var(--line);scroll-margin-top:76px
+}
+.plain-cv-section>h2{
+  padding:4px 0 0;font:700 10px/1.45 var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--ink)
+}
+.plain-cv-body{min-width:0}
+.plain-cv-entry,.plain-cv-publication{margin:0}
+.plain-cv-entry+.plain-cv-entry,.plain-cv-publication+.plain-cv-publication{margin-top:26px;padding-top:26px;border-top:1px solid var(--line)}
+.plain-cv-entry-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}
+.plain-cv-entry-head h3,.plain-cv-publication h3{font:600 18px/1.3 var(--serif);max-width:none}
+.plain-cv-entry-head h3 a,.plain-cv-publication h3 a{color:var(--ink);text-decoration:none}
+.plain-cv-entry-head h3 a:hover,.plain-cv-publication h3 a:hover{color:var(--accent)}
+.plain-cv-entry-head div>p{margin-top:3px;font-size:14px;line-height:1.45;color:var(--muted)}
+.plain-cv-entry-head time{flex:none;padding-top:2px;font:400 9px/1.45 var(--mono);letter-spacing:.045em;color:var(--muted)}
+.plain-cv-entry>p{margin-top:10px;font-size:15.5px;line-height:1.55;color:var(--muted);max-width:690px}
+.plain-cv-inline-link{flex:none;font:400 9px/1.45 var(--mono);letter-spacing:.04em;text-decoration:none}
+.plain-cv-publication>p:first-child{font:400 9px/1.45 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.plain-cv-publication h3{margin-top:6px;line-height:1.4}
+.plain-cv-publication>p:last-child{margin-top:6px;font-size:14px;line-height:1.5;color:var(--muted)}
+.plain-cv-skills{min-width:0}
+.plain-cv-skills>div{display:grid;grid-template-columns:145px minmax(0,1fr);gap:20px;padding:8px 0}
+.plain-cv-skills>div:first-child{padding-top:0}
+.plain-cv-skills dt{font:600 14px/1.5 var(--serif)}
+.plain-cv-skills dd{font-size:14px;line-height:1.5;color:var(--muted)}
+.detail-cv-document .detail-footer{margin-top:0}
+
+@media (max-width:720px){
+  .detail-cv-document{padding:42px 18px 64px}
+  .detail-cv-header{display:block;padding-bottom:24px}
+  .detail-cv-header h1{font-size:39px}
+  .detail-cv-contact{justify-content:flex-start;max-width:none;margin-top:20px}
+  .plain-cv-section{grid-template-columns:1fr;gap:18px;padding:32px 0;scroll-margin-top:68px}
+  .plain-cv-section>h2{padding:0}
+  .plain-cv-entry-head{display:block}
+  .plain-cv-entry-head time{display:block;margin-top:5px}
+  .plain-cv-skills>div{grid-template-columns:1fr;gap:2px;padding:10px 0}
+}
