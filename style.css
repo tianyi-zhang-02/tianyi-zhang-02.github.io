@@ -17,8 +17,8 @@
   --mono:'Martian Mono', ui-monospace, 'SF Mono', Menlo, monospace;
   --serif:'Source Serif 4', Georgia, 'Times New Roman', serif;
 
-  --t-2xs:9.5px;    /* mono micro-label — legibility floor, do not go below */
-  --t-xs:10.5px;    /* mono label, nav item */
+  --t-2xs:11px;     /* mono micro-label — legibility floor, do not go below */
+  --t-xs:12px;      /* mono label, nav item */
   --t-sm:13.5px;    /* dense secondary text */
   --t-base:15px;    /* card body, list item */
   --t-md:16.5px;    /* running body copy */
@@ -244,21 +244,13 @@ img,video,svg{max-width:100%}
 }
 
 .side-nav{margin-top:var(--s-7);padding-right:34px;overflow-y:auto}
-.side-group{border-top:1px solid var(--line);padding:var(--s-3) 0}
+.side-group{border-top:1px solid var(--line);padding:var(--s-4) 0}
 .side-group:last-child{border-bottom:1px solid var(--line)}
 .side-main{
-  display:block;font:500 11px/1.4 var(--mono);letter-spacing:var(--tr-mono);text-transform:uppercase;
+  display:block;font:500 13px/1.4 var(--mono);letter-spacing:var(--tr-mono);text-transform:uppercase;
   color:var(--muted);text-decoration:none;transition:color var(--dur-fast) var(--ease);
 }
 .side-main:hover,.side-group.active>.side-main{color:var(--accent)}
-.side-sub{max-height:0;overflow:hidden;opacity:0;transition:max-height var(--dur) var(--ease),opacity .2s var(--ease),padding .2s var(--ease)}
-.side-group.is-open .side-sub{max-height:180px;opacity:1;padding-top:7px}
-.side-sub a{
-  display:block;padding:5px 0 5px var(--s-3);border-left:1px solid var(--line);
-  font:500 var(--t-xs)/1.4 var(--mono);letter-spacing:.015em;color:var(--muted);text-decoration:none;
-  transition:color var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease);
-}
-.side-sub a:hover,.side-sub a.active{color:var(--ink);border-left-color:var(--accent)}
 
 .side-contact{margin-top:auto;padding:var(--s-5) var(--s-6) 0 0;display:grid}
 .side-contact-label{
@@ -371,10 +363,12 @@ figure.sig figcaption{
    6. Sections
    -------------------------------------------------------------------------- */
 .onepage-section{
-  display:grid;grid-template-columns:132px minmax(0,1fr);gap:var(--s-7);
+  display:grid;grid-template-columns:200px minmax(0,1fr);gap:var(--s-7);
   padding:var(--s-9) 0;border-top:1px solid var(--line);scroll-margin-top:16px;
 }
-.onepage-section .section-kicker{padding-top:var(--s-3)}
+.onepage-section .section-kicker{
+  padding-top:9px;font-size:15px;letter-spacing:.08em;color:var(--ink);
+}
 .onepage-section h2{
   font:700 var(--t-3xl)/1.07 var(--serif);letter-spacing:-.035em;
   text-transform:none;color:var(--ink);max-width:15em;text-wrap:balance;
@@ -546,8 +540,6 @@ figure.sig figcaption{
   .site-sidebar{padding-top:var(--s-6);padding-bottom:var(--s-5)}
   .side-nav{margin-top:var(--s-6)}
   .side-group{padding:9px 0}
-  .side-group.is-open .side-sub{padding-top:var(--s-1)}
-  .side-sub a{padding-top:3px;padding-bottom:3px}
   .side-contact{padding-top:var(--s-4)}
   .side-contact a{padding-top:6px;padding-bottom:6px}
 }
