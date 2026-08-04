@@ -64,12 +64,14 @@
     </div>
   </section>
 
-  <section id="projects" class="plain-cv-section">
-    <h2>Projects &amp; Open Source</h2>
+  <section id="open-source" class="plain-cv-section">
+    <h2>Open Source</h2>
     <div class="plain-cv-body">
-      <article class="plain-cv-entry"><div class="plain-cv-entry-head"><div><h3><a href="https://github.com/tianyi-zhang-02/coact">CoAct</a></h3><p>Agent orchestration · Go</p></div></div><p>A governance substrate for Claude Code and Codex working in the same repository through capability policies, locks, worktree isolation, shared task state, and an append-only journal.</p></article>
-      <article class="plain-cv-entry"><div class="plain-cv-entry-head"><div><h3><a href="https://github.com/NVIDIA-NeMo/RL">NVIDIA NeMo RL</a></h3><p>Open-source contributor · LLM post-training</p></div><a class="plain-cv-inline-link" href="https://github.com/NVIDIA-NeMo/RL/commits/main/?author=tianyi-zhang-02">Merged commits</a></div><p>Merged upstream improvements across checkpointing, response-dataset integration, configuration validation, and regression coverage.</p></article>
-      <article class="plain-cv-entry"><div class="plain-cv-entry-head"><div><h3><a href="https://github.com/tianyi-zhang-02/accretia">Wealth Projection Simulator</a></h3><p>Personal finance · Client-side</p></div></div><p>A privacy-first wealth projector with equity compensation, housing scenarios, Monte Carlo analysis, stress tests, FIRE planning, and goal-seek.</p></article>
+      <article class="plain-cv-entry">
+        <div class="plain-cv-entry-head"><div><h3><a href="https://github.com/NVIDIA-NeMo/RL">NVIDIA NeMo RL</a></h3><p>Open-source contributor · LLM post-training</p></div><a class="plain-cv-inline-link" href="https://github.com/NVIDIA-NeMo/RL/commits/main/?author=tianyi-zhang-02">Merged commits</a></div>
+        <p>Strengthened correctness across dataset configuration and checkpoint boundaries by replacing silent behavior with explicit compatibility warnings, extending verifiable-math data support, and making checkpoint selection deterministic.</p>
+        <p>Redesigned same-vocabulary top-k distillation to gather only teacher-selected student logits rather than materializing a full-vocabulary log-softmax, preserving mathematical and gradient semantics while reducing distributed memory and communication.</p>
+      </article>
     </div>
   </section>
 
