@@ -2,6 +2,42 @@
 var yr = document.getElementById('yr');
 if (yr) yr.textContent = new Date().getFullYear();
 
+// Theme toggle. No stored preference means "follow the system"; clicking pins an
+// explicit choice, which the CSS honours over prefers-color-scheme in both
+// directions. The pre-paint script in <head> applies the stored value.
+(function () {
+  var buttons = document.querySelectorAll('.theme-toggle');
+  if (!buttons.length) return;
+
+  var media = window.matchMedia('(prefers-color-scheme: dark)');
+
+  function current() {
+    var pinned = document.documentElement.getAttribute('data-theme');
+    return pinned === 'light' || pinned === 'dark' ? pinned : (media.matches ? 'dark' : 'light');
+  }
+
+  function label() {
+    var next = current() === 'dark' ? 'light' : 'dark';
+    buttons.forEach(function (b) {
+      b.setAttribute('aria-label', 'Switch to ' + next + ' theme');
+      b.setAttribute('title', 'Switch to ' + next + ' theme');
+    });
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      label();
+    });
+  });
+
+  // Keep the label right when the system flips and nothing is pinned.
+  if (media.addEventListener) media.addEventListener('change', label);
+  label();
+})();
+
 // Draw-on animation for the Fig. 1 ROC curves (home only); skipped for reduced-motion users.
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.querySelectorAll('.draw').forEach(function (p, i) {
