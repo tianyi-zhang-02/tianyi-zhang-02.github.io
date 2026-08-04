@@ -69,8 +69,8 @@
     <div class="plain-cv-body">
       <article class="plain-cv-entry">
         <div class="plain-cv-entry-head"><div><h3><a href="https://github.com/NVIDIA-NeMo/RL">NVIDIA NeMo RL</a></h3><p>Open-source contributor · LLM post-training</p></div><a class="plain-cv-inline-link" href="https://github.com/NVIDIA-NeMo/RL/commits/main/?author=tianyi-zhang-02">Merged commits</a></div>
-        <p>Strengthened correctness across dataset configuration and checkpoint boundaries by replacing silent behavior with explicit compatibility warnings, extending verifiable-math data support, and making checkpoint selection deterministic.</p>
-        <p>Redesigned same-vocabulary top-k distillation to gather only teacher-selected student logits rather than materializing a full-vocabulary log-softmax, preserving mathematical and gradient semantics while reducing distributed memory and communication.</p>
+        <p><strong>Maintenance and correctness:</strong> added verifiable-math response data, surfaced silently ignored dataset configuration through backward-compatible warnings, fixed subset propagation and validation-split documentation, and made best-checkpoint selection deterministic under metric ties, with focused regression coverage.</p>
+        <p><strong>Loss-system performance:</strong> used an algebraic invariance in same-vocabulary top-k distillation to replace full-vocabulary student log-softmax with a differentiable tensor-parallel gather of teacher-selected logits, reducing the dominant intermediate from O(TV) to O(TK) while preserving forward and gradient semantics.</p>
       </article>
     </div>
   </section>
