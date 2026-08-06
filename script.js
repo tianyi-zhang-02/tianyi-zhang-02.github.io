@@ -56,7 +56,7 @@ if (yr) yr.textContent = new Date().getFullYear();
     world: { box: '380 120 1240 380', label: 'Choose a region to separate nearby stops.' },
     china: { box: '440 230 411 126', label: 'East Asia — western landscapes, mainland cities, Hong Kong, Macau, and Taiwan.' },
     europe: { box: '960 245 205 63', label: 'Europe — Italy and Greece.' },
-    us: { box: '1175 245 410 126', label: 'North America — West Coast, Southwest road trips, the Southeast, and major cities.' },
+    us: { box: '1175 245 410 126', label: 'North America & Caribbean — road trips, major cities, Florida, and Puerto Rico.' },
     asia: { box: '560 330 360 110', label: 'Asia-Pacific — Southeast Asia and Australia.' }
   };
   var caption = map.querySelector('[data-map-caption]');
@@ -69,6 +69,7 @@ if (yr) yr.textContent = new Date().getFullYear();
     '#travel-us-west': 'California & Nevada',
     '#travel-us-southeast': 'Southeast & Florida',
     '#travel-us-cities': 'Midwest & East',
+    '#travel-caribbean': 'Puerto Rico',
     '#travel-europe': 'Italy & Greece',
     '#travel-oceania': 'Australia'
   };
