@@ -75,16 +75,16 @@ if (yr) yr.textContent = new Date().getFullYear();
     '#travel-oceania': 'Australia'
   };
   var scenes = {
-    '#travel-china': { type: 'mountain', place: 'Western China', title: 'High plateaus & deep valleys', description: 'A layered mountain scene inspired by Tibet, Nyingchi, and Qinghai.' },
-    '#travel-china-cities': { type: 'city', place: 'East Asian cities', title: 'Cities in motion', description: 'Dense skylines, old neighborhoods, and coastal city rhythms.' },
-    '#travel-sea': { type: 'coast', place: 'Southeast Asia', title: 'Heat, water & island light', description: 'A tropical coast inspired by Bali, Brunei, and Thailand.' },
-    '#travel-us': { type: 'canyon', place: 'The Grand Circle', title: 'Desert carved by time', description: 'Layered canyon country across Utah, Arizona, and Nevada.' },
-    '#travel-us-west': { type: 'mountain', place: 'California & Nevada', title: 'Bay to alpine blue', description: 'A mountain-and-water scene inspired by the Lake Tahoe loop.' },
-    '#travel-us-southeast': { type: 'forest', place: 'Southeast & Florida', title: 'Forest, mist & wetlands', description: 'Appalachian ridges meeting the green waterways of the Everglades.' },
-    '#travel-us-cities': { type: 'city', place: 'Midwest & East', title: 'Two American skylines', description: 'A city scene shaped by Chicago and Washington, DC.' },
-    '#travel-caribbean': { type: 'forest', place: 'Puerto Rico', title: 'Rainforest into sea', description: 'El Yunque green, Caribbean air, and an offshore island day.' },
-    '#travel-europe': { type: 'cathedral', place: 'Italy & Greece', title: 'Stone, domes & time', description: 'Cathedral spires, ancient streets, and Mediterranean light.' },
-    '#travel-oceania': { type: 'coast', place: 'Australia', title: 'Long coast, open sky', description: 'A bright shoreline inspired by the Gold Coast.' }
+    '#travel-china': { place: 'Nyingchi · Tibet', title: 'High plateaus & deep valleys', description: 'Namcha Barwa rising above the valleys of southeastern Tibet.', image: 'images/namcha-barwa.jpg', full: 'images/namcha-barwa-full.jpg', position: '50% 48%', credit: 'Tianyi Zhang', source: 'images/namcha-barwa-full.jpg' },
+    '#travel-china-cities': { place: 'Shanghai', title: 'A city always in motion', description: 'Lujiazui across the Huangpu River, where the journey began.', image: 'images/travel/shanghai.jpg', position: '50% 52%', credit: 'Adi Constantin · CC0', source: 'https://commons.wikimedia.org/wiki/File:Shanghai_skyline_unsplash.jpg' },
+    '#travel-sea': { place: 'Bali · Indonesia', title: 'Heat, water & island light', description: 'Fishing boats and clear water along the coast of Padangbai.', image: 'images/travel/bali.jpg', position: '50% 58%', credit: 'Lasthib · CC0', source: 'https://commons.wikimedia.org/wiki/File:Beach_in_Bali.jpg' },
+    '#travel-us': { place: 'Grand Canyon · Arizona', title: 'Desert carved by time', description: 'One real view from the larger Utah–Arizona–Nevada loop.', image: 'images/travel/grand-canyon.jpg', position: '50% 52%', credit: 'Jon Sullivan · Public domain', source: 'https://commons.wikimedia.org/wiki/File:Grand_canyon_landscape.jpg' },
+    '#travel-us-west': { place: 'Lake Tahoe · California', title: 'Bay to alpine blue', description: 'Emerald Bay framed by pine, snow, and the lake loop.', image: 'images/travel/lake-tahoe.jpg', position: '50% 54%', credit: 'Blake Everett · CC0', source: 'https://commons.wikimedia.org/wiki/File:Emerald_Bay,_Lake_Tahoe_01.jpg' },
+    '#travel-us-southeast': { place: 'Great Smoky Mountains', title: 'Forest, mist & ridgelines', description: 'The layered Appalachian landscape behind the name Smokies.', image: 'images/travel/smokies.jpg', position: '50% 50%', credit: 'Mark Olsen · CC0', source: 'https://commons.wikimedia.org/wiki/File:Great_Smoky_Mountains,_United_States_(Unsplash_Jf9A_BTSzcI).jpg' },
+    '#travel-us-cities': { place: 'Chicago · Illinois', title: 'City at the edge of water', description: 'Chicago at dusk from Lake Michigan.', image: 'images/travel/chicago.jpg', position: '50% 56%', credit: 'Alanthebox · CC0', source: 'https://commons.wikimedia.org/wiki/File:Chicago_Skyline_-_Dusk.JPG' },
+    '#travel-caribbean': { place: 'El Yunque · Puerto Rico', title: 'Rainforest into cloud', description: 'The tropical canopy of El Yunque before the road turns back toward the sea.', image: 'images/travel/el-yunque.jpg', position: '50% 58%', credit: 'Šarūnas Burdulis · CC BY-SA 2.0', source: 'https://commons.wikimedia.org/wiki/File:El_Yunque_in_Puerto_Rico.jpg' },
+    '#travel-europe': { place: 'Duomo di Milano · Italy', title: 'Stone, spires & time', description: 'The real façade of Milan Cathedral — one landmark from a longer route through Italy and Greece.', image: 'images/travel/milan-duomo.jpg', position: '50% 46%', credit: 'Skarkkai · CC0', source: 'https://commons.wikimedia.org/wiki/File:Milan-duomo-front-facade.jpg' },
+    '#travel-oceania': { place: 'Gold Coast · Australia', title: 'Long coast, open sky', description: 'The skyline following the shoreline at Surfers Paradise.', image: 'images/travel/gold-coast.jpg', position: '50% 54%', credit: 'Jordan Gellie · CC0', source: 'https://commons.wikimedia.org/wiki/File:Gold_Coast_skyline_(Unsplash).jpg' }
   };
   var pinGroups = {};
 
@@ -118,11 +118,20 @@ if (yr) yr.textContent = new Date().getFullYear();
     var data = scenes[target];
     if (!scene || !data) return;
     scene.hidden = false;
-    scene.setAttribute('data-scene-type', data.type);
+    var image = scene.querySelector('[data-scene-image]');
+    var photoLink = scene.querySelector('[data-scene-photo-link]');
+    var credit = scene.querySelector('[data-scene-credit]');
     scene.querySelector('[data-scene-place]').textContent = data.place;
     scene.querySelector('[data-scene-title]').textContent = data.title;
     scene.querySelector('[data-scene-description]').textContent = data.description;
     scene.querySelector('[data-scene-link]').setAttribute('href', target);
+    image.src = data.image;
+    image.alt = data.place;
+    image.style.objectPosition = data.position;
+    photoLink.href = data.full || data.image;
+    photoLink.setAttribute('aria-label', 'Open full photo of ' + data.place);
+    credit.textContent = 'Photo: ' + data.credit;
+    credit.href = data.source;
   }
 
   document.querySelectorAll('.travel-cluster').forEach(function (pin) {
@@ -140,12 +149,12 @@ if (yr) yr.textContent = new Date().getFullYear();
       var box = sceneCard.getBoundingClientRect();
       var x = (event.clientX - box.left) / box.width - .5;
       var y = (event.clientY - box.top) / box.height - .5;
-      sceneCard.style.setProperty('--ry', (x * 9).toFixed(2) + 'deg');
-      sceneCard.style.setProperty('--rx', (-y * 7).toFixed(2) + 'deg');
+      sceneCard.style.setProperty('--scene-x', (-x * 18).toFixed(2) + 'px');
+      sceneCard.style.setProperty('--scene-y', (-y * 12).toFixed(2) + 'px');
     });
     sceneCard.addEventListener('pointerleave', function () {
-      sceneCard.style.setProperty('--ry', '0deg');
-      sceneCard.style.setProperty('--rx', '0deg');
+      sceneCard.style.setProperty('--scene-x', '0px');
+      sceneCard.style.setProperty('--scene-y', '0px');
     });
   }
 

@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=40">
+  <link rel="stylesheet" href="style.css?v=41">
 </head>
 <body>
 
@@ -181,59 +181,25 @@
           </g>
         </g>
         </svg>
-        <figcaption><span data-map-caption>Shanghai → Atlanta → Bay Area</span><span>Tap a region to open a 3D scene.</span></figcaption>
+        <figcaption><span data-map-caption>Shanghai → Atlanta → Bay Area</span><span>Tap a region to open a real place.</span></figcaption>
         </figure>
-        <div id="travel-scene" class="travel-scene" data-scene-type="cathedral" hidden aria-live="polite">
+        <div id="travel-scene" class="travel-scene" hidden aria-live="polite">
           <div class="scene-stage">
             <div class="scene-card">
-              <div class="scene-light"></div>
-              <svg class="scene-art" viewBox="0 0 640 360" aria-hidden="true">
-                <g class="scene-art-group" data-scene-art="cathedral">
-                  <path class="scene-far" d="M0 280L80 250L150 266L220 226L300 256L390 210L470 250L550 224L640 250V360H0Z"/>
-                  <path class="scene-mid" d="M170 292V174H215V292M425 292V174H470V292M228 292V222Q320 126 412 222V292Z"/>
-                  <path class="scene-front" d="M150 304H490V330H150ZM190 174L215 110L240 174ZM400 174L425 86L450 174ZM445 174L470 110L495 174ZM286 214Q320 174 354 214V292H286Z"/>
-                  <circle class="scene-window" cx="320" cy="228" r="24"/>
-                </g>
-                <g class="scene-art-group" data-scene-art="canyon">
-                  <path class="scene-far" d="M0 172L92 134L158 162L238 116L318 158L398 124L485 158L570 130L640 162V360H0Z"/>
-                  <path class="scene-mid" d="M0 222L96 196L164 220L245 174L328 214L420 178L510 210L580 188L640 206V360H0Z"/>
-                  <path class="scene-front" d="M0 286L92 248L180 270L274 230L355 278L438 238L520 270L640 238V360H0Z"/>
-                  <path class="scene-river" d="M272 360Q320 302 368 360"/>
-                </g>
-                <g class="scene-art-group" data-scene-art="mountain">
-                  <path class="scene-far" d="M0 276L110 190L180 240L300 90L390 222L480 150L640 280V360H0Z"/>
-                  <path class="scene-snow" d="M244 150L300 90L354 164L321 148L300 170L278 146Z"/>
-                  <path class="scene-mid" d="M0 306L128 244L212 286L338 204L430 278L530 226L640 296V360H0Z"/>
-                  <path class="scene-water" d="M0 304Q160 284 320 310T640 300V360H0Z"/>
-                </g>
-                <g class="scene-art-group" data-scene-art="forest">
-                  <path class="scene-far" d="M0 250Q80 180 160 242Q240 154 320 238Q400 164 480 238Q560 176 640 246V360H0Z"/>
-                  <g class="scene-mid"><circle cx="112" cy="222" r="56"/><circle cx="212" cy="194" r="72"/><circle cx="330" cy="218" r="66"/><circle cx="448" cy="186" r="78"/><circle cx="560" cy="226" r="60"/></g>
-                  <path class="scene-front" d="M0 300Q90 270 170 304Q260 262 350 300Q450 252 530 296Q590 266 640 284V360H0Z"/>
-                  <path class="scene-river" d="M250 360Q316 286 390 360"/>
-                </g>
-                <g class="scene-art-group" data-scene-art="coast">
-                  <circle class="scene-sun" cx="474" cy="118" r="48"/>
-                  <path class="scene-far" d="M0 270L120 210L210 254L310 194L410 252L520 188L640 258V360H0Z"/>
-                  <path class="scene-water" d="M0 256Q80 230 160 260T320 260T480 250T640 258V360H0Z"/>
-                  <path class="scene-front" d="M0 326Q130 294 250 324Q390 286 520 322Q590 304 640 312V360H0Z"/>
-                </g>
-                <g class="scene-art-group" data-scene-art="city">
-                  <path class="scene-far" d="M0 292V222H54V292H78V176H142V292H166V236H224V292H250V148H320V292H346V204H410V292H438V162H508V292H532V226H594V292H640V360H0Z"/>
-                  <path class="scene-mid" d="M0 310H640V360H0Z"/>
-                  <path class="scene-front" d="M300 148L320 96L340 148Z"/>
-                </g>
-              </svg>
-              <div class="scene-depth-lines" aria-hidden="true"></div>
-              <div class="scene-place"><span>Interactive travel scene</span><strong data-scene-place>Italy &amp; Greece</strong></div>
+              <a class="scene-photo-link" data-scene-photo-link href="images/travel/milan-duomo.jpg" target="_blank" rel="noopener" aria-label="Open full photo of Duomo di Milano">
+                <img class="scene-photo" data-scene-image src="images/travel/milan-duomo.jpg" alt="Duomo di Milano · Italy" loading="lazy" width="1920" height="1280">
+                <span class="scene-open">Open photo ↗</span>
+              </a>
+              <div class="scene-place"><span>Real place</span><strong data-scene-place>Duomo di Milano · Italy</strong></div>
             </div>
           </div>
           <div class="scene-copy">
             <p class="scene-kicker">Selected region</p>
-            <h3 data-scene-title>Stone, domes &amp; time</h3>
-            <p data-scene-description>Cathedral spires, ancient streets, and Mediterranean light.</p>
+            <h3 data-scene-title>Stone, spires &amp; time</h3>
+            <p data-scene-description>The real façade of Milan Cathedral — one landmark from a longer route through Italy and Greece.</p>
             <a data-scene-link href="#travel-europe">View travel notes →</a>
-            <p class="scene-hint">Move your pointer across the scene.</p>
+            <a class="scene-credit" data-scene-credit href="https://commons.wikimedia.org/wiki/File:Milan-duomo-front-facade.jpg" target="_blank" rel="noopener">Photo: Skarkkai · CC0</a>
+            <p class="scene-hint">Move to explore · click to open.</p>
           </div>
         </div>
       </div>
@@ -406,7 +372,7 @@
 
 </div>
 
-<script src="script.js?v=34"></script>
+<script src="script.js?v=35"></script>
 <script src="toc.js?v=28"></script>
 </body>
 </html>
