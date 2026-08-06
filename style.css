@@ -843,6 +843,8 @@ mark.hl{background:none;color:inherit;font-weight:600}
 .travel-intro{color:var(--muted);max-width:42em}
 .travel-regions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-3);margin-top:var(--s-5)}
 .travel-region{min-width:0;padding:20px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface-2);scroll-margin-top:28px;transition:transform var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease),box-shadow var(--dur-fast) var(--ease)}
+.travel-region-featured{grid-column:1/-1;display:grid;grid-template-columns:minmax(180px,.75fr) minmax(0,2fr);gap:var(--s-6);align-items:start;border-color:color-mix(in srgb,var(--gold) 46%,var(--line));background:color-mix(in srgb,var(--surface-2) 88%,var(--gold))}
+.travel-region-featured>div:last-child>p{margin-top:0}
 .travel-region:hover,.travel-region:target{transform:translateY(-3px);border-color:var(--gold);box-shadow:var(--shadow-card)}
 .travel-region-index{font:600 var(--t-2xs)/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
 .travel-region h3{margin-top:var(--s-3);font:700 20px/1.25 var(--serif)}
@@ -865,6 +867,7 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
   .pagehead{padding:40px 0 6px}
   .fprow{grid-template-columns:1fr;gap:var(--s-3);padding:18px 0}
   .travel-regions{grid-template-columns:1fr}
+  .travel-region-featured{grid-template-columns:1fr;gap:var(--s-3)}
 }
 
 /* -----------------------------------------------------------------------------
