@@ -38,6 +38,34 @@ if (yr) yr.textContent = new Date().getFullYear();
   label();
 })();
 
+(function () {
+  var map = document.querySelector('.journeymap');
+  var buttons = document.querySelectorAll('[data-map-layer]');
+  if (!map || !buttons.length) return;
+
+  var captions = {
+    life: 'Shanghai → Atlanta → Bay Area',
+    travel: 'China · Southeast Asia · United States',
+    all: 'Where life and curiosity have taken me'
+  };
+  var caption = map.querySelector('[data-map-caption]');
+
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var layer = button.getAttribute('data-map-layer');
+      map.setAttribute('data-layer', layer);
+      buttons.forEach(function (item) {
+        var active = item === button;
+        item.classList.toggle('is-active', active);
+        item.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      if (caption) caption.textContent = captions[layer];
+    });
+  });
+
+  map.setAttribute('data-layer', 'life');
+})();
+
 // Draw-on animation for the Fig. 1 ROC curves (home only); skipped for reduced-motion users.
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.querySelectorAll('.draw').forEach(function (p, i) {

@@ -759,6 +759,10 @@ body:not(.one-page) .authors strong{color:var(--ink);font-weight:600}
 article .desc{margin-top:var(--s-3);font-size:16px;max-width:42em}
 mark.hl{background:none;color:inherit;font-weight:600}
 
+.map-toolbar{display:flex;flex-wrap:wrap;gap:var(--s-2);margin-bottom:var(--s-3)}
+.map-layer-button{border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--muted);padding:8px 13px;font:600 var(--t-xs)/1 var(--mono);letter-spacing:.04em;cursor:pointer;transition:color var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease)}
+.map-layer-button:hover{color:var(--ink);border-color:var(--line-strong)}
+.map-layer-button.is-active{color:var(--paper);background:var(--accent);border-color:var(--accent)}
 .journeymap{width:100%;max-width:100%;min-width:0;margin:0;overflow-x:auto;scrollbar-width:thin}
 .journeymap svg{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface-2)}
 .journeymap svg>path:first-of-type{fill:var(--surface-2)!important;stroke:var(--line)!important}
@@ -774,6 +778,18 @@ mark.hl{background:none;color:inherit;font-weight:600}
 .map-stop-name{fill:var(--ink);font-size:12px;font-weight:700}
 .map-stop:hover .map-stop-label rect,.map-stop:focus .map-stop-label rect{stroke:var(--accent);transform:translateY(-3px)}
 .map-stop:hover .map-stop-halo,.map-stop:focus .map-stop-halo{opacity:.3}
+.travel-layer{display:none}
+.journeymap[data-layer="travel"] .life-layer{display:none}
+.journeymap[data-layer="travel"] .travel-layer,.journeymap[data-layer="all"] .travel-layer{display:block}
+.journeymap[data-layer="all"] .life-layer{opacity:.35}
+.travel-route{fill:none;stroke:var(--gold);stroke-width:1.6;stroke-dasharray:3 6;stroke-linecap:round;opacity:.52}
+.travel-pin{cursor:pointer;text-decoration:none;outline:none}
+.travel-pin circle{fill:var(--gold);stroke:var(--paper);stroke-width:2;transition:r var(--dur-fast) var(--ease),filter var(--dur-fast) var(--ease)}
+.travel-pin text{fill:#fff;font-size:7px;font-weight:700;text-anchor:middle;pointer-events:none}
+.travel-pin:hover circle,.travel-pin:focus circle{r:11;filter:drop-shadow(0 4px 6px rgba(20,24,33,.22))}
+.travel-map-key rect{fill:var(--paper);stroke:var(--line-strong)}
+.travel-map-title{fill:var(--gold);font-size:9px;font-weight:700;letter-spacing:1.3px}
+.travel-map-copy{fill:var(--ink);font-size:11px;font-weight:600}
 .journeymap figcaption{display:flex;justify-content:space-between;gap:var(--s-4);margin-top:var(--s-3);font-size:14px;color:var(--muted)}
 .journeymap figcaption span:last-child{font:500 var(--t-2xs)/1.6 var(--mono);letter-spacing:.04em;text-transform:uppercase}
 @keyframes map-pulse{0%{transform:scale(.7);opacity:.28}70%,100%{transform:scale(1.75);opacity:0}}
@@ -799,6 +815,16 @@ mark.hl{background:none;color:inherit;font-weight:600}
 .fp-list li+li{border-top:1px solid var(--line)}
 .fp-cont{margin-top:18px;color:var(--muted);font-size:var(--t-base)}
 
+.travel-intro{color:var(--muted);max-width:42em}
+.travel-regions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-3);margin-top:var(--s-5)}
+.travel-region{min-width:0;padding:20px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface-2);scroll-margin-top:28px;transition:transform var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease),box-shadow var(--dur-fast) var(--ease)}
+.travel-region:hover,.travel-region:target{transform:translateY(-3px);border-color:var(--gold);box-shadow:var(--shadow-card)}
+.travel-region-index{font:600 var(--t-2xs)/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.travel-region h3{margin-top:var(--s-3);font:700 20px/1.25 var(--serif)}
+.travel-region p{margin-top:var(--s-2);font-size:15px;line-height:1.55;color:var(--muted)}
+.travel-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:var(--s-4)}
+.travel-tags span{border:1px solid var(--line);border-radius:999px;background:var(--paper);padding:5px 8px;font:500 10px/1 var(--mono);letter-spacing:.02em;color:var(--ink)}
+
 body:not(.one-page) footer{
   border-top:1px solid var(--line);margin-top:var(--s-2);padding:30px 0 var(--s-8);
   display:flex;justify-content:space-between;gap:var(--s-4);flex-wrap:wrap;
@@ -813,6 +839,7 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
   body:not(.one-page) section h2{padding-top:0}
   .pagehead{padding:40px 0 6px}
   .fprow{grid-template-columns:1fr;gap:var(--s-3);padding:18px 0}
+  .travel-regions{grid-template-columns:1fr}
 }
 
 /* -----------------------------------------------------------------------------
