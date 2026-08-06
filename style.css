@@ -251,6 +251,9 @@ img,video,svg{max-width:100%}
   color:var(--muted);text-decoration:none;transition:color var(--dur-fast) var(--ease);
 }
 .side-main:hover,.side-group.active>.side-main{color:var(--accent)}
+.side-subnav{display:grid;gap:7px;margin-top:var(--s-3);padding-left:var(--s-3);border-left:1px solid var(--line)}
+.side-subnav a{font:500 var(--t-2xs)/1.35 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.side-subnav a:hover{color:var(--accent)}
 
 .side-contact{margin-top:auto;padding:var(--s-5) var(--s-6) 0 0;display:grid}
 .side-contact-label{
@@ -268,6 +271,8 @@ img,video,svg{max-width:100%}
 .side-contact a:hover span:last-child{transform:translate(2px,-2px);color:var(--accent)}
 
 .one-page-content{min-width:0}
+.journey-page-content{min-width:0;padding-top:1px}
+.journey-page .pagehead{padding-top:clamp(56px,8vh,96px)}
 
 /* -----------------------------------------------------------------------------
    4. Hero
@@ -721,11 +726,11 @@ body.panorama-open{overflow:hidden}
 
 main{position:relative}
 main section[id],main article[id]{scroll-margin-top:var(--s-4)}
-body:not(.one-page) section{
+body:not(.one-page) section,.journey-page .journey-main section{
   display:grid;grid-template-columns:168px 1fr;gap:var(--s-7);
   padding:var(--s-7) 0;border-top:1px solid var(--line);
 }
-body:not(.one-page) section h2{
+body:not(.one-page) section h2,.journey-page .journey-main section h2{
   font:500 11px/1 var(--mono);letter-spacing:.22em;color:var(--muted);text-transform:uppercase;padding-top:7px;
 }
 .content>*+*{margin-top:var(--s-4)}
@@ -758,12 +763,12 @@ body:not(.one-page) section h2{
   color:var(--muted);font-style:normal;margin-left:var(--s-2);white-space:nowrap;
 }
 
-body:not(.one-page) article+article{margin-top:34px}
-body:not(.one-page) article h3{font:700 var(--t-lg)/1.35 var(--serif);max-width:36em}
-body:not(.one-page) article h3 a{color:inherit;text-decoration:none}
-body:not(.one-page) article h3 a:hover{color:var(--accent)}
-body:not(.one-page) .authors{margin-top:5px;color:var(--muted);font-size:15.5px;max-width:40em}
-body:not(.one-page) .authors strong{color:var(--ink);font-weight:600}
+body:not(.one-page) article+article,.journey-page article+article{margin-top:34px}
+body:not(.one-page) article h3,.journey-page article h3{font:700 var(--t-lg)/1.35 var(--serif);max-width:36em}
+body:not(.one-page) article h3 a,.journey-page article h3 a{color:inherit;text-decoration:none}
+body:not(.one-page) article h3 a:hover,.journey-page article h3 a:hover{color:var(--accent)}
+body:not(.one-page) .authors,.journey-page .authors{margin-top:5px;color:var(--muted);font-size:15.5px;max-width:40em}
+body:not(.one-page) .authors strong,.journey-page .authors strong{color:var(--ink);font-weight:600}
 .pubmeta{margin-top:9px;display:flex;flex-wrap:wrap;gap:var(--s-2);align-items:center}
 .pubmeta a{
   font:500 var(--t-2xs)/1 var(--mono);letter-spacing:var(--tr-mono);text-transform:uppercase;
@@ -875,18 +880,18 @@ mark.hl{background:none;color:inherit;font-weight:600}
 .travel-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:var(--s-4)}
 .travel-tags span{border:1px solid var(--line);border-radius:999px;background:var(--paper);padding:5px 8px;font:500 10px/1 var(--mono);letter-spacing:.02em;color:var(--ink)}
 
-body:not(.one-page) footer{
+body:not(.one-page) footer,.journey-page footer{
   border-top:1px solid var(--line);margin-top:var(--s-2);padding:30px 0 var(--s-8);
   display:flex;justify-content:space-between;gap:var(--s-4);flex-wrap:wrap;
   font:500 var(--t-2xs)/1.8 var(--mono);letter-spacing:.12em;color:var(--muted);text-transform:uppercase;
 }
-body:not(.one-page) footer .footlinks{display:flex;gap:var(--s-4);flex-wrap:wrap}
-body:not(.one-page) footer a{color:var(--muted);text-decoration:none}
-body:not(.one-page) footer a:hover{color:var(--accent)}
+body:not(.one-page) footer .footlinks,.journey-page footer .footlinks{display:flex;gap:var(--s-4);flex-wrap:wrap}
+body:not(.one-page) footer a,.journey-page footer a{color:var(--muted);text-decoration:none}
+body:not(.one-page) footer a:hover,.journey-page footer a:hover{color:var(--accent)}
 
 @media (max-width:820px){
-  body:not(.one-page) section{grid-template-columns:1fr;gap:var(--s-4);padding:36px 0}
-  body:not(.one-page) section h2{padding-top:0}
+  body:not(.one-page) section,.journey-page .journey-main section{grid-template-columns:1fr;gap:var(--s-4);padding:36px 0}
+  body:not(.one-page) section h2,.journey-page .journey-main section h2{padding-top:0}
   .pagehead{padding:40px 0 6px}
   .fprow{grid-template-columns:1fr;gap:var(--s-3);padding:18px 0}
   .travel-regions{grid-template-columns:1fr}

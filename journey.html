@@ -11,26 +11,56 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=42">
+  <link rel="stylesheet" href="style.css?v=43">
 </head>
-<body>
+<body class="one-page journey-page">
 
-<div class="wrap">
+<a class="skip-link" href="#map">Skip to journey</a>
 
-  <div class="topbar">
-  <nav class="sitenav" aria-label="Primary">
-    <a class="brand" href="index.html">Tianyi Zhang</a>
-    <div class="pages">
-      <a href="index.html#about">About</a>
-      <a href="index.html#experience">Experience</a>
-      <a href="index.html#research">Publications</a>
-      <a href="index.html#projects">Open Source</a>
-      <a href="detailed-cv.html">CV</a>
-      <a href="journey.html" aria-current="page">Journey</a>
-      <a href="index.html#personal">Hobbies</a>
+<div class="site-shell journey-shell">
+  <aside class="site-sidebar" aria-label="Site navigation">
+    <div class="sidebar-head">
+      <div>
+        <a class="side-brand" href="index.html#top">Tianyi Zhang</a>
+        <p class="side-role">AI Builder</p>
+      </div>
+      <div class="head-actions">
+        <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+          <svg class="tt-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M4.2 12H2M22 12h-2.2M6.5 6.5 4.9 4.9M19.1 19.1l-1.6-1.6M17.5 6.5l1.6-1.6M4.9 19.1l1.6-1.6"/></svg>
+          <svg class="tt-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.4A8.4 8.4 0 0 1 9.6 4a8.4 8.4 0 1 0 10.4 10.4Z"/></svg>
+        </button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="side-nav">Menu</button>
+      </div>
     </div>
-  </nav>
-  </div>
+
+    <nav id="side-nav" class="side-nav">
+      <div class="side-group"><a class="side-main" href="index.html#about">About</a></div>
+      <div class="side-group"><a class="side-main" href="index.html#experience">Experience</a></div>
+      <div class="side-group"><a class="side-main" href="index.html#research">Research</a></div>
+      <div class="side-group"><a class="side-main" href="index.html#projects">Open Source</a></div>
+      <div class="side-group active">
+        <a class="side-main" href="#map" aria-current="page">Journey</a>
+        <nav class="side-subnav" aria-label="Journey sections">
+          <a href="#map">Map</a>
+          <a href="#travels">Travels</a>
+          <a href="#footprints">Footprints</a>
+        </nav>
+      </div>
+      <div class="side-group"><a class="side-main" href="index.html#personal">Personal</a></div>
+      <div class="side-group"><a class="side-main" href="index.html#education">Education</a></div>
+      <div class="side-group"><a class="side-main" href="index.html#resume">Résumé / CV</a></div>
+    </nav>
+
+    <nav class="side-contact" aria-label="Contact links">
+      <p class="side-contact-label">Connect</p>
+      <a href="mailto:zhangtianyi975@gmail.com"><span>Email</span><span aria-hidden="true">↗</span></a>
+      <a href="https://scholar.google.com/citations?hl=en&amp;view_op=list_works&amp;user=46rbYk0AAAAJ"><span>Google Scholar</span><span aria-hidden="true">↗</span></a>
+      <a href="https://github.com/tianyi-zhang-02"><span>GitHub</span><span aria-hidden="true">↗</span></a>
+      <a href="https://www.linkedin.com/in/tianyi-zhang2002/"><span>LinkedIn</span><span aria-hidden="true">↗</span></a>
+    </nav>
+  </aside>
+
+  <div class="one-page-content journey-page-content">
 
   <header class="pagehead">
     <h1>Journey</h1>
@@ -38,8 +68,7 @@
     to Atlanta to the Bay Area.</p>
   </header>
 
-  <main>
-    <aside id="toc" class="toc" aria-label="On this page"></aside>
+  <main class="journey-main">
 
     <section id="map">
       <h2>Map</h2>
@@ -352,9 +381,9 @@
     </nav>
   </footer>
 
+  </div>
 </div>
 
-<script src="script.js?v=36"></script>
-<script src="toc.js?v=28"></script>
+<script src="script.js?v=37"></script>
 </body>
 </html>
