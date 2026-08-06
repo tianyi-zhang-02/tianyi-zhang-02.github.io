@@ -759,9 +759,29 @@ body:not(.one-page) .authors strong{color:var(--ink);font-weight:600}
 article .desc{margin-top:var(--s-3);font-size:16px;max-width:42em}
 mark.hl{background:none;color:inherit;font-weight:600}
 
-.journeymap{margin:0}
+.journeymap{width:100%;max-width:100%;min-width:0;margin:0;overflow-x:auto;scrollbar-width:thin}
 .journeymap svg{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface-2)}
-.journeymap figcaption{margin-top:var(--s-3);font-size:14px;color:var(--muted);max-width:44em}
+.journeymap svg>path:first-of-type{fill:var(--surface-2)!important;stroke:var(--line)!important}
+.journey-route{fill:none;stroke:var(--accent);stroke-width:2.4;stroke-dasharray:4 7;stroke-linecap:round;opacity:.72}
+.route-note{fill:var(--muted);font-size:10px;font-weight:600;letter-spacing:1.5px}
+.route-signal{fill:var(--accent);stroke:var(--paper);stroke-width:2;filter:drop-shadow(0 0 6px color-mix(in srgb,var(--accent) 65%,transparent))}
+.route-signal-second{opacity:.85}
+.map-stop{cursor:pointer;text-decoration:none;outline:none}
+.map-stop-halo{fill:var(--accent);opacity:.16;transform-box:fill-box;transform-origin:center;animation:map-pulse 2.8s ease-out infinite}
+.map-stop-dot{fill:var(--accent);stroke:var(--paper);stroke-width:2}
+.map-stop-label rect{fill:var(--paper);stroke:var(--line-strong);stroke-width:1;filter:drop-shadow(0 5px 10px rgba(20,24,33,.08));transition:stroke var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
+.map-stop-role{fill:var(--accent);font-size:9px;font-weight:700;letter-spacing:1.4px}
+.map-stop-name{fill:var(--ink);font-size:12px;font-weight:700}
+.map-stop:hover .map-stop-label rect,.map-stop:focus .map-stop-label rect{stroke:var(--accent);transform:translateY(-3px)}
+.map-stop:hover .map-stop-halo,.map-stop:focus .map-stop-halo{opacity:.3}
+.journeymap figcaption{display:flex;justify-content:space-between;gap:var(--s-4);margin-top:var(--s-3);font-size:14px;color:var(--muted)}
+.journeymap figcaption span:last-child{font:500 var(--t-2xs)/1.6 var(--mono);letter-spacing:.04em;text-transform:uppercase}
+@keyframes map-pulse{0%{transform:scale(.7);opacity:.28}70%,100%{transform:scale(1.75);opacity:0}}
+@media (max-width:720px){
+  #map .content{min-width:0;max-width:100%}
+  .journeymap svg{width:760px;max-width:none}
+  .journeymap figcaption{position:sticky;left:0;width:100%;flex-direction:column;gap:2px}
+}
 .zh{font-family:'Source Serif 4','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif}
 .lifebar{display:flex;height:26px;border-radius:var(--r-sm);overflow:hidden;margin-top:2px;border:1px solid var(--line)}
 .lifebar span{display:block;min-width:22px}
@@ -828,4 +848,5 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
     transition-duration:.01ms!important;
   }
   .download-card:hover{transform:none}
+  .route-signal{display:none}
 }
