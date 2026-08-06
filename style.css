@@ -767,9 +767,17 @@ mark.hl{background:none;color:inherit;font-weight:600}
 .map-layer-button{border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--muted);padding:8px 13px;font:600 var(--t-xs)/1 var(--mono);letter-spacing:.04em;cursor:pointer;transition:color var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease)}
 .map-layer-button:hover{color:var(--ink);border-color:var(--line-strong)}
 .map-layer-button.is-active{color:var(--paper);background:var(--accent);border-color:var(--accent)}
+.map-region-toolbar{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:var(--s-2) var(--s-3);margin:-2px 0 var(--s-3);padding:11px 13px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface-2)}
+.map-region-toolbar[hidden]{display:none}
+.map-region-toolbar>span{font:700 var(--t-2xs)/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.map-region-toolbar>div{display:flex;flex-wrap:wrap;gap:6px}
+.map-region-button{border:0;border-bottom:1px solid transparent;background:none;color:var(--muted);padding:5px 7px;font:600 11px/1 var(--mono);letter-spacing:.03em;cursor:pointer}
+.map-region-button:hover{color:var(--ink)}
+.map-region-button.is-active{color:var(--ink);border-color:var(--gold)}
+.map-region-status{grid-column:2;margin:0;font-size:13px;line-height:1.45;color:var(--muted)}
 .journeymap{width:100%;max-width:100%;min-width:0;margin:0;overflow-x:auto;scrollbar-width:thin}
 .journeymap svg{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface-2)}
-.journeymap svg>path:first-of-type{fill:var(--surface-2)!important;stroke:var(--line)!important}
+.journeymap svg>path:first-of-type{fill:color-mix(in srgb,var(--surface-2) 94%,var(--ink))!important;stroke:var(--line-strong)!important}
 .journey-route{fill:none;stroke:var(--accent);stroke-width:2.4;stroke-dasharray:4 7;stroke-linecap:round;opacity:.72}
 .route-note{fill:var(--muted);font-size:10px;font-weight:600;letter-spacing:1.5px}
 .route-signal{fill:var(--accent);stroke:var(--paper);stroke-width:2;filter:drop-shadow(0 0 6px color-mix(in srgb,var(--accent) 65%,transparent))}
@@ -791,6 +799,13 @@ mark.hl{background:none;color:inherit;font-weight:600}
 .travel-pin circle{fill:var(--gold);stroke:var(--paper);stroke-width:2;transition:r var(--dur-fast) var(--ease),filter var(--dur-fast) var(--ease)}
 .travel-pin text{fill:#fff;font-size:7px;font-weight:700;text-anchor:middle;pointer-events:none}
 .travel-pin:hover circle,.travel-pin:focus circle{r:11;filter:drop-shadow(0 4px 6px rgba(20,24,33,.22))}
+.journeymap:not([data-view="world"]) .travel-map-key{display:none}
+.journeymap:not([data-view="world"]) .travel-route{stroke-width:.6}
+.journeymap:not([data-view="world"]) .travel-pin circle{r:2.7px;stroke-width:.65}
+.journeymap:not([data-view="world"]) .travel-pin text{display:none}
+.journeymap:not([data-view="world"]) .travel-pin:hover circle,.journeymap:not([data-view="world"]) .travel-pin:focus circle{r:4px}
+.journeymap[data-view="europe"] .travel-pin circle{r:1.55px;stroke-width:.4}
+.journeymap[data-view="europe"] .travel-pin:hover circle,.journeymap[data-view="europe"] .travel-pin:focus circle{r:2.4px}
 .travel-map-key rect{fill:var(--paper);stroke:var(--line-strong)}
 .travel-map-title{fill:var(--gold);font-size:9px;font-weight:700;letter-spacing:1.3px}
 .travel-map-copy{fill:var(--ink);font-size:11px;font-weight:600}
@@ -799,6 +814,10 @@ mark.hl{background:none;color:inherit;font-weight:600}
 @keyframes map-pulse{0%{transform:scale(.7);opacity:.28}70%,100%{transform:scale(1.75);opacity:0}}
 @media (max-width:720px){
   #map .content{min-width:0;max-width:100%}
+  .map-region-toolbar{grid-template-columns:1fr;align-items:start}
+  .map-region-toolbar>div{flex-wrap:nowrap;overflow-x:auto;padding-bottom:3px;scrollbar-width:thin}
+  .map-region-toolbar>span,.map-region-status{grid-column:1}
+  .map-region-button{white-space:nowrap}
   .journeymap svg{width:760px;max-width:none}
   .journeymap figcaption{position:sticky;left:0;width:100%;flex-direction:column;gap:2px}
 }

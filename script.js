@@ -41,6 +41,10 @@ if (yr) yr.textContent = new Date().getFullYear();
 (function () {
   var map = document.querySelector('.journeymap');
   var buttons = document.querySelectorAll('[data-map-layer]');
+  var regionToolbar = document.querySelector('.map-region-toolbar');
+  var regionButtons = document.querySelectorAll('[data-map-region]');
+  var regionStatus = document.querySelector('.map-region-status');
+  var svg = document.getElementById('journey-map-svg');
   if (!map || !buttons.length) return;
 
   var captions = {
@@ -48,7 +52,27 @@ if (yr) yr.textContent = new Date().getFullYear();
     travel: 'China · Asia-Pacific · Europe · United States',
     all: 'Where life and curiosity have taken me'
   };
+  var views = {
+    world: { box: '380 120 1240 380', label: 'Choose a region to separate nearby stops.' },
+    china: { box: '440 230 411 126', label: 'China & East Asia — western landscapes, major cities, Hong Kong, Macau, and Taiwan.' },
+    europe: { box: '960 245 205 63', label: 'Europe — northern Italy, Milan, Florence, Siena, Rome, Vatican City, Pompeii, and Santorini.' },
+    us: { box: '1175 245 410 126', label: 'United States — California, the Grand Circle, the Southeast, Florida, Chicago, and DC.' },
+    asia: { box: '560 330 360 110', label: 'Asia-Pacific — Thailand, Brunei, Bali, and Australia\'s Gold Coast.' }
+  };
   var caption = map.querySelector('[data-map-caption]');
+
+  function setRegion(region) {
+    var view = views[region] || views.world;
+    map.setAttribute('data-view', region);
+    if (svg) svg.setAttribute('viewBox', view.box);
+    regionButtons.forEach(function (item) {
+      var active = item.getAttribute('data-map-region') === region;
+      item.classList.toggle('is-active', active);
+      item.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    if (regionStatus) regionStatus.textContent = view.label;
+    map.scrollLeft = 0;
+  }
 
   buttons.forEach(function (button) {
     button.addEventListener('click', function () {
@@ -60,10 +84,19 @@ if (yr) yr.textContent = new Date().getFullYear();
         item.setAttribute('aria-pressed', active ? 'true' : 'false');
       });
       if (caption) caption.textContent = captions[layer];
+      if (regionToolbar) regionToolbar.hidden = layer === 'life';
+      if (layer === 'life') setRegion('world');
+    });
+  });
+
+  regionButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      setRegion(button.getAttribute('data-map-region'));
     });
   });
 
   map.setAttribute('data-layer', 'life');
+  setRegion('world');
 })();
 
 // Draw-on animation for the Fig. 1 ROC curves (home only); skipped for reduced-motion users.
