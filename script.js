@@ -49,17 +49,56 @@ if (yr) yr.textContent = new Date().getFullYear();
 
   var captions = {
     life: 'Shanghai → Atlanta → Bay Area',
-    travel: 'China · Asia-Pacific · Europe · United States',
+    travel: 'East Asia · Asia-Pacific · Europe · North America',
     all: 'Where life and curiosity have taken me'
   };
   var views = {
     world: { box: '380 120 1240 380', label: 'Choose a region to separate nearby stops.' },
-    china: { box: '440 230 411 126', label: 'China & East Asia — western landscapes, major cities, Hong Kong, Macau, and Taiwan.' },
-    europe: { box: '960 245 205 63', label: 'Europe — northern Italy, Milan, Florence, Siena, Rome, Vatican City, Pompeii, and Santorini.' },
-    us: { box: '1175 245 410 126', label: 'United States — California, the Grand Circle, the Southeast, Florida, Chicago, and DC.' },
-    asia: { box: '560 330 360 110', label: 'Asia-Pacific — Thailand, Brunei, Bali, and Australia\'s Gold Coast.' }
+    china: { box: '440 230 411 126', label: 'East Asia — western landscapes, mainland cities, Hong Kong, Macau, and Taiwan.' },
+    europe: { box: '960 245 205 63', label: 'Europe — Italy and Greece.' },
+    us: { box: '1175 245 410 126', label: 'North America — West Coast, Southwest road trips, the Southeast, and major cities.' },
+    asia: { box: '560 330 360 110', label: 'Asia-Pacific — Southeast Asia and Australia.' }
   };
   var caption = map.querySelector('[data-map-caption]');
+
+  var clusterLabels = {
+    '#travel-china': 'Western China',
+    '#travel-china-cities': 'East Asian cities',
+    '#travel-sea': 'Southeast Asia',
+    '#travel-us': 'Grand Circle',
+    '#travel-us-west': 'California & Nevada',
+    '#travel-us-southeast': 'Southeast & Florida',
+    '#travel-us-cities': 'Midwest & East',
+    '#travel-europe': 'Italy & Greece',
+    '#travel-oceania': 'Australia'
+  };
+  var pinGroups = {};
+
+  document.querySelectorAll('.travel-pin').forEach(function (pin) {
+    var target = pin.getAttribute('href');
+    if (!pinGroups[target]) pinGroups[target] = [];
+    pinGroups[target].push(pin);
+  });
+
+  Object.keys(pinGroups).forEach(function (target) {
+    var group = pinGroups[target];
+    var leader = group[0];
+    var circles = group.map(function (pin) { return pin.querySelector('circle'); });
+    var centerX = circles.reduce(function (sum, circle) { return sum + Number(circle.getAttribute('cx')); }, 0) / circles.length;
+    var centerY = circles.reduce(function (sum, circle) { return sum + Number(circle.getAttribute('cy')); }, 0) / circles.length;
+    var circle = leader.querySelector('circle');
+    var text = leader.querySelector('text');
+    var title = leader.querySelector('title');
+    circle.setAttribute('cx', centerX.toFixed(1));
+    circle.setAttribute('cy', centerY.toFixed(1));
+    text.setAttribute('x', centerX.toFixed(1));
+    text.setAttribute('y', (centerY + 3).toFixed(1));
+    text.textContent = group.length;
+    leader.classList.add('travel-cluster');
+    leader.setAttribute('aria-label', clusterLabels[target] + ', ' + group.length + ' places');
+    if (title) title.textContent = clusterLabels[target] + ' · ' + group.length + ' places';
+    group.slice(1).forEach(function (pin) { pin.style.display = 'none'; });
+  });
 
   function setRegion(region) {
     var view = views[region] || views.world;

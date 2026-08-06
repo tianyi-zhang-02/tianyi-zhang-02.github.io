@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=34">
+<link rel="stylesheet" href="style.css?v=35">
 </head>
 <body>
 
@@ -53,9 +53,9 @@
           <span>Zoom</span>
           <div role="group" aria-label="Zoom map to a region">
             <button class="map-region-button is-active" type="button" data-map-region="world" aria-pressed="true">World</button>
-            <button class="map-region-button" type="button" data-map-region="china" aria-pressed="false">China</button>
+            <button class="map-region-button" type="button" data-map-region="china" aria-pressed="false">East Asia</button>
             <button class="map-region-button" type="button" data-map-region="europe" aria-pressed="false">Europe</button>
-            <button class="map-region-button" type="button" data-map-region="us" aria-pressed="false">United States</button>
+            <button class="map-region-button" type="button" data-map-region="us" aria-pressed="false">North America</button>
             <button class="map-region-button" type="button" data-map-region="asia" aria-pressed="false">Asia-Pacific</button>
           </div>
           <p class="map-region-status" aria-live="polite">Choose a region to separate nearby stops.</p>
@@ -174,7 +174,7 @@
           <g class="travel-map-key" transform="translate(830 135)">
             <rect width="392" height="54" rx="12"/>
             <text class="travel-map-title" x="18" y="22">TRAVEL NOTES</text>
-            <text class="travel-map-copy" x="18" y="41">Hover for a place · tap a pin for the story</text>
+            <text class="travel-map-copy" x="18" y="41">Hover a region · tap to explore</text>
           </g>
         </g>
         </svg>
@@ -186,28 +186,28 @@
     <section id="travels">
       <h2>Travels</h2>
       <div class="content">
-        <p class="travel-intro">A growing collection of landscapes, cities, long drives, and places that stayed with me.</p>
+        <p class="travel-intro">Broad regions and memorable routes — not a complete travel log.</p>
         <div class="travel-regions">
           <article id="travel-china" class="travel-region" data-toc-hidden>
             <div class="travel-region-index">01A · China / West</div>
             <h3>Westward from Shanghai</h3>
-            <p>Chengdu, Chongqing, Lhasa, Nyingchi, and Qinghai's salt-lake landscapes.</p>
+            <p>Western cities, Tibetan landscapes, and Qinghai's salt lakes.</p>
             <div class="travel-tags" aria-label="Places in China">
-              <span>Chengdu</span><span>Chongqing</span><span>Lhasa</span><span>Nyingchi</span><span>Qinghai</span>
+              <span>Sichuan &amp; Chongqing</span><span>Tibet</span><span>Qinghai</span>
             </div>
           </article>
           <article id="travel-china-cities" class="travel-region" data-toc-hidden>
             <div class="travel-region-index">01B · East Asia / Cities</div>
             <h3>Cities across East Asia</h3>
-            <p>From Harbin to the Yangtze Delta and Shandong, then Hong Kong, Macau, Taipei, and Kaohsiung — plus Yantai and several Taiwanese coastal stops that survive mostly as fuzzy memories.</p>
+            <p>Northern and eastern China, the Yangtze Delta, Hong Kong, Macau, and Taiwan.</p>
             <div class="travel-tags" aria-label="Cities visited in East Asia">
-              <span>Qingdao</span><span>Zaozhuang</span><span>Yantai</span><span>Tai'an</span><span>Suzhou</span><span>Hangzhou</span><span>Nanjing</span><span>Harbin</span><span>Hong Kong</span><span>Macau</span><span>Taipei</span><span>Kaohsiung</span><span>Taiwan coast</span>
+              <span>Mainland cities</span><span>Hong Kong &amp; Macau</span><span>Taiwan</span>
             </div>
           </article>
           <article id="travel-sea" class="travel-region" data-toc-hidden>
             <div class="travel-region-index">02 · Southeast Asia</div>
             <h3>Islands &amp; equatorial cities</h3>
-            <p>Brunei, Bali, and Thailand — three very different ways of slowing down in Southeast Asia.</p>
+            <p>Tropical cities, islands, and coastlines across Southeast Asia.</p>
             <div class="travel-tags" aria-label="Places in Southeast Asia">
               <span>Brunei</span><span>Bali</span><span>Thailand</span>
             </div>
@@ -215,41 +215,41 @@
           <article id="travel-us" class="travel-region" data-toc-hidden>
             <div class="travel-region-index">03 · Southwest</div>
             <h3>The Grand Circle</h3>
-            <p>A full Utah–Arizona–Nevada loop through Zion, Bryce Canyon, Arches, Death Valley, the Grand Canyon, Antelope Canyon, and Page by Lake Powell.</p>
+            <p>A full Utah–Arizona–Nevada loop through desert, canyon, and national-park country.</p>
             <div class="travel-tags" aria-label="Places in the American Southwest">
-              <span>Grand Circle</span><span>Zion</span><span>Bryce Canyon</span><span>Arches</span><span>Death Valley</span><span>Grand Canyon</span><span>Antelope Canyon</span><span>Page / Lake Powell</span>
+              <span>Grand Circle</span><span>National parks</span><span>Desert road trip</span>
             </div>
           </article>
           <article id="travel-us-west" class="travel-region" data-toc-hidden>
             <div class="travel-region-index">04 · CA / NV</div>
             <h3>Bay to mountain</h3>
-            <p>San Francisco and the South Bay, then a full loop around Lake Tahoe with a stop in Carson City.</p>
+            <p>The Bay Area, a Lake Tahoe loop, and the California–Nevada transition.</p>
             <div class="travel-tags" aria-label="Places in California and Nevada">
-              <span>San Francisco</span><span>South Bay</span><span>Lake Tahoe loop</span><span>Carson City</span>
+              <span>Bay Area</span><span>Lake Tahoe</span><span>California &amp; Nevada</span>
             </div>
           </article>
           <article id="travel-us-southeast" class="travel-region" data-toc-hidden>
             <div class="travel-region-index">05 · Southeast</div>
             <h3>Cities close to home</h3>
-            <p>Atlanta, Conyers, Covington, Chattanooga, and the Smokies — plus Miami and Fort Lauderdale farther south.</p>
+            <p>Georgia and Tennessee road trips, the Smokies, and South Florida.</p>
             <div class="travel-tags" aria-label="Places in the Southeastern United States">
-              <span>Atlanta</span><span>Conyers</span><span>Covington</span><span>Chattanooga</span><span>Smokies</span><span>Miami</span><span>Fort Lauderdale</span>
+              <span>Georgia</span><span>Smokies</span><span>South Florida</span>
             </div>
           </article>
           <article id="travel-us-cities" class="travel-region" data-toc-hidden>
             <div class="travel-region-index">06 · Midwest / East</div>
             <h3>Two city breaks</h3>
-            <p>Chicago and Washington, DC — different skylines, different rhythms.</p>
+            <p>Chicago and Washington, DC — two very different city breaks.</p>
             <div class="travel-tags" aria-label="Cities in the United States">
               <span>Chicago</span><span>Washington, DC</span>
             </div>
           </article>
           <article id="travel-europe" class="travel-region" data-toc-hidden>
             <div class="travel-region-index">07 · Europe</div>
-            <h3>Cathedrals, ruins &amp; blue water</h3>
-            <p>From Milan's Duomo and a northern Italian lake to Florence, Siena's shell-shaped Piazza del Campo and Torre del Mangia, Rome and Vatican City, the ruins of Pompeii, and finally Santorini.</p>
+            <h3>Italy &amp; Greece</h3>
+            <p>Northern Italy, Renaissance cities, Rome and Pompeii, then the blue-and-white cliffs of Santorini.</p>
             <div class="travel-tags" aria-label="Places in Europe">
-              <span>Milan Duomo</span><span>Northern Italy</span><span>Florence Duomo</span><span>Piazza del Campo</span><span>Torre del Mangia</span><span>Colosseum</span><span>Pantheon</span><span>Trevi Fountain</span><span>Vatican City</span><span>St. Peter's Basilica</span><span>Pompeii</span><span>Santorini</span>
+              <span>Northern Italy</span><span>Central &amp; southern Italy</span><span>Santorini</span>
             </div>
           </article>
           <article id="travel-oceania" class="travel-region" data-toc-hidden>
@@ -330,7 +330,7 @@
 
 </div>
 
-<script src="script.js?v=30"></script>
+<script src="script.js?v=31"></script>
 <script src="toc.js?v=28"></script>
 </body>
 </html>

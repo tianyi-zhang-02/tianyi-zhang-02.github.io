@@ -798,6 +798,8 @@ mark.hl{background:none;color:inherit;font-weight:600}
 .travel-pin{cursor:pointer;text-decoration:none;outline:none}
 .travel-pin circle{fill:var(--gold);stroke:var(--paper);stroke-width:2;transition:r var(--dur-fast) var(--ease),filter var(--dur-fast) var(--ease)}
 .travel-pin text{fill:#fff;font-size:7px;font-weight:700;text-anchor:middle;pointer-events:none}
+.travel-cluster circle{r:10px}
+.travel-cluster text{font-size:8px}
 .travel-pin:hover circle,.travel-pin:focus circle{r:11;filter:drop-shadow(0 4px 6px rgba(20,24,33,.22))}
 .journeymap:not([data-view="world"]) .travel-map-key{display:none}
 .journeymap:not([data-view="world"]) .travel-route{stroke-width:.6}
