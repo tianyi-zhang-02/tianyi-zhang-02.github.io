@@ -45,7 +45,7 @@ if (yr) yr.textContent = new Date().getFullYear();
 
   var captions = {
     life: 'Shanghai → Atlanta → Bay Area',
-    travel: 'China · Southeast Asia · United States',
+    travel: 'China · Asia-Pacific · Europe · United States',
     all: 'Where life and curiosity have taken me'
   };
   var caption = map.querySelector('[data-map-caption]');

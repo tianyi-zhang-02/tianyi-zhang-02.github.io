@@ -96,7 +96,8 @@
 
         <g class="map-layer travel-layer" aria-label="Places explored">
           <path class="travel-route" d="M592 326 Q555 245 492 305 Q530 350 555 321 Q575 290 592 326"/>
-          <path class="travel-route" d="M592 326 Q625 350 632 386 Q650 410 665 420"/>
+          <path class="travel-route" d="M592 326 Q610 350 605 366 Q625 378 632 386 Q650 410 665 420 Q735 430 790 432"/>
+          <path class="travel-route" d="M592 326 Q790 205 1008 274 Q1030 282 1052 292"/>
           <path class="travel-route" d="M1238 292 Q1320 288 1370 308 Q1420 326 1470 298 Q1480 330 1462 356"/>
 
           <a class="travel-pin" href="#travel-china" aria-label="Lhasa, Tibet"><title>Lhasa · Tibet</title><circle cx="487" cy="307" r="8"/><text x="487" y="310">1</text></a>
@@ -107,13 +108,19 @@
 
           <a class="travel-pin" href="#travel-sea" aria-label="Brunei"><title>Brunei</title><circle cx="632" cy="386" r="8"/><text x="632" y="389">6</text></a>
           <a class="travel-pin" href="#travel-sea" aria-label="Bali, Indonesia"><title>Bali · Indonesia</title><circle cx="665" cy="420" r="8"/><text x="665" y="423">7</text></a>
+          <a class="travel-pin" href="#travel-sea" aria-label="Thailand"><title>Thailand</title><circle cx="605" cy="366" r="8"/><text x="605" y="369">12</text></a>
 
           <a class="travel-pin" href="#travel-us" aria-label="Grand Circle and Zion"><title>Grand Circle · Zion</title><circle cx="1305" cy="309" r="8"/><text x="1305" y="312">8</text></a>
           <a class="travel-pin" href="#travel-us" aria-label="Great Smoky Mountains"><title>Great Smoky Mountains</title><circle cx="1418" cy="325" r="8"/><text x="1418" y="328">9</text></a>
           <a class="travel-pin" href="#travel-us" aria-label="Washington, DC"><title>Washington, DC</title><circle cx="1470" cy="298" r="8"/><text x="1470" y="301">10</text></a>
           <a class="travel-pin" href="#travel-us" aria-label="Florida"><title>Florida</title><circle cx="1462" cy="356" r="8"/><text x="1462" y="359">11</text></a>
 
-          <g class="travel-map-key" transform="translate(720 405)">
+          <a class="travel-pin" href="#travel-europe" aria-label="Milan, Italy"><title>Milan · Italy</title><circle cx="1008" cy="274" r="8"/><text x="1008" y="277">13</text></a>
+          <a class="travel-pin" href="#travel-europe" aria-label="Northern Italian lake"><title>Northern Italian lake</title><circle cx="1018" cy="263" r="8"/><text x="1018" y="266">14</text></a>
+          <a class="travel-pin" href="#travel-europe" aria-label="Greece"><title>Greece</title><circle cx="1052" cy="292" r="8"/><text x="1052" y="295">15</text></a>
+          <a class="travel-pin" href="#travel-oceania" aria-label="Gold Coast, Australia"><title>Gold Coast · Australia</title><circle cx="790" cy="432" r="8"/><text x="790" y="435">16</text></a>
+
+          <g class="travel-map-key" transform="translate(830 135)">
             <rect width="392" height="54" rx="12"/>
             <text class="travel-map-title" x="18" y="22">TRAVEL NOTES</text>
             <text class="travel-map-copy" x="18" y="41">Hover for a place · tap a pin for the story</text>
@@ -141,9 +148,9 @@
           <article id="travel-sea" class="travel-region">
             <div class="travel-region-index">02 · Southeast Asia</div>
             <h3>Islands &amp; equatorial cities</h3>
-            <p>Brunei and Bali — two very different ways of slowing down near the equator.</p>
+            <p>Brunei, Bali, and Thailand — three very different ways of slowing down in Southeast Asia.</p>
             <div class="travel-tags" aria-label="Places in Southeast Asia">
-              <span>Brunei</span><span>Bali</span>
+              <span>Brunei</span><span>Bali</span><span>Thailand</span>
             </div>
           </article>
           <article id="travel-us" class="travel-region">
@@ -152,6 +159,22 @@
             <p>A Grand Circle drive through Zion and the Southwest, plus Florida, the Great Smoky Mountains, and Washington, DC.</p>
             <div class="travel-tags" aria-label="Places in the United States">
               <span>Grand Circle</span><span>Zion</span><span>Florida</span><span>Smokies</span><span>Washington, DC</span>
+            </div>
+          </article>
+          <article id="travel-europe" class="travel-region">
+            <div class="travel-region-index">04 · Europe</div>
+            <h3>Old cities &amp; blue water</h3>
+            <p>Milan, a beautiful lake in northern Italy, and Greece.</p>
+            <div class="travel-tags" aria-label="Places in Europe">
+              <span>Milan</span><span>Northern Italy</span><span>Greece</span>
+            </div>
+          </article>
+          <article id="travel-oceania" class="travel-region">
+            <div class="travel-region-index">05 · Australia</div>
+            <h3>Coastlines down under</h3>
+            <p>The Gold Coast and a few nearby stops whose names have faded faster than the coastline.</p>
+            <div class="travel-tags" aria-label="Places in Australia">
+              <span>Gold Coast</span><span>Australia</span>
             </div>
           </article>
         </div>
@@ -224,7 +247,7 @@
 
 </div>
 
-<script src="script.js?v=28"></script>
+<script src="script.js?v=29"></script>
 <script src="toc.js?v=27"></script>
 </body>
 </html>
