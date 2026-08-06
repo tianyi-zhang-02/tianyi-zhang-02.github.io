@@ -264,3 +264,156 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   range.addEventListener('input', updateReveal);
   updateReveal();
 })();
+
+(function () {
+  var dialog = document.querySelector('.panorama-dialog');
+  var openButton = document.querySelector('[data-panorama-open]');
+  if (!dialog || !openButton || typeof dialog.showModal !== 'function') return;
+
+  var viewport = dialog.querySelector('.panorama-viewport');
+  var image = dialog.querySelector('.panorama-image');
+  var level = dialog.querySelector('[data-panorama-level]');
+  var status = dialog.querySelector('[data-panorama-status]');
+  var scale = 1;
+  var offsetX = 0;
+  var offsetY = 0;
+  var fullLoaded = false;
+  var pointers = new Map();
+  var dragStart = null;
+  var pinchStart = null;
+
+  function baseSize() {
+    return { width: image.offsetWidth, height: image.offsetHeight };
+  }
+
+  function clampOffsets() {
+    var base = baseSize();
+    var maxX = Math.max(0, (base.width * scale - viewport.clientWidth) / 2);
+    var maxY = Math.max(0, (base.height * scale - viewport.clientHeight) / 2);
+    offsetX = Math.max(-maxX, Math.min(maxX, offsetX));
+    offsetY = Math.max(-maxY, Math.min(maxY, offsetY));
+  }
+
+  function renderPanorama() {
+    clampOffsets();
+    image.style.transform = 'translate(-50%,-50%) translate3d(' + offsetX + 'px,' + offsetY + 'px,0) scale(' + scale + ')';
+    level.textContent = Math.round(scale * 100) + '%';
+  }
+
+  function loadFull() {
+    if (fullLoaded) return;
+    fullLoaded = true;
+    status.textContent = 'Loading 18,493px original…';
+    var full = image.getAttribute('data-full-src');
+    var loader = new Image();
+    loader.onload = function () {
+      image.src = full;
+      status.textContent = 'Full-resolution original';
+      renderPanorama();
+    };
+    loader.onerror = function () {
+      fullLoaded = false;
+      status.textContent = 'Preview mode · original unavailable';
+    };
+    loader.src = full;
+  }
+
+  function setZoom(next, clientX, clientY) {
+    var previous = scale;
+    scale = Math.max(1, Math.min(20, next));
+    if (clientX != null && clientY != null) {
+      var rect = viewport.getBoundingClientRect();
+      var pointX = clientX - rect.left - rect.width / 2;
+      var pointY = clientY - rect.top - rect.height / 2;
+      offsetX = pointX - (pointX - offsetX) * (scale / previous);
+      offsetY = pointY - (pointY - offsetY) * (scale / previous);
+    }
+    if (scale >= 2.5) loadFull();
+    else if (scale > 1) status.textContent = image.naturalWidth > 3000 ? 'Zoomed view · full-resolution original' : 'Zoomed view · 3000px preview';
+    renderPanorama();
+  }
+
+  function fitPanorama() {
+    scale = 1;
+    offsetX = 0;
+    offsetY = 0;
+    status.textContent = image.naturalWidth > 3000 ? 'Fit view · full-resolution original' : 'Fit view · 3000px preview';
+    renderPanorama();
+  }
+
+  openButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    dialog.showModal();
+    document.body.classList.add('panorama-open');
+    requestAnimationFrame(fitPanorama);
+  });
+
+  dialog.querySelector('[data-panorama-close]').addEventListener('click', function () { dialog.close(); });
+  dialog.querySelector('[data-panorama-fit]').addEventListener('click', fitPanorama);
+  dialog.querySelector('[data-panorama-in]').addEventListener('click', function () { setZoom(scale * 1.35); });
+  dialog.querySelector('[data-panorama-out]').addEventListener('click', function () { setZoom(scale / 1.35); });
+  dialog.querySelector('[data-panorama-actual]').addEventListener('click', function () {
+    loadFull();
+    setZoom(Math.min(20, 18493 / Math.max(1, baseSize().width)));
+  });
+
+  dialog.addEventListener('close', function () {
+    document.body.classList.remove('panorama-open');
+    fitPanorama();
+  });
+
+  dialog.addEventListener('click', function (event) {
+    if (event.target === dialog) dialog.close();
+  });
+
+  viewport.addEventListener('wheel', function (event) {
+    event.preventDefault();
+    setZoom(scale * Math.exp(-event.deltaY * .0015), event.clientX, event.clientY);
+  }, { passive: false });
+
+  viewport.addEventListener('dblclick', function (event) {
+    setZoom(scale > 1.1 ? 1 : 2.5, event.clientX, event.clientY);
+  });
+
+  viewport.addEventListener('pointerdown', function (event) {
+    viewport.setPointerCapture(event.pointerId);
+    pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    viewport.classList.add('is-dragging');
+    if (pointers.size === 1) dragStart = { x: event.clientX, y: event.clientY, offsetX: offsetX, offsetY: offsetY };
+    if (pointers.size === 2) {
+      var points = Array.from(pointers.values());
+      pinchStart = { distance: Math.hypot(points[1].x - points[0].x, points[1].y - points[0].y), scale: scale };
+    }
+  });
+
+  viewport.addEventListener('pointermove', function (event) {
+    if (!pointers.has(event.pointerId)) return;
+    pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    if (pointers.size === 2 && pinchStart) {
+      var points = Array.from(pointers.values());
+      var distance = Math.hypot(points[1].x - points[0].x, points[1].y - points[0].y);
+      setZoom(pinchStart.scale * distance / Math.max(1, pinchStart.distance));
+    } else if (dragStart && scale > 1) {
+      offsetX = dragStart.offsetX + event.clientX - dragStart.x;
+      offsetY = dragStart.offsetY + event.clientY - dragStart.y;
+      renderPanorama();
+    }
+  });
+
+  function releasePointer(event) {
+    pointers.delete(event.pointerId);
+    if (!pointers.size) {
+      dragStart = null;
+      pinchStart = null;
+      viewport.classList.remove('is-dragging');
+    } else if (pointers.size === 1) {
+      var point = Array.from(pointers.values())[0];
+      dragStart = { x: point.x, y: point.y, offsetX: offsetX, offsetY: offsetY };
+      pinchStart = null;
+    }
+  }
+
+  viewport.addEventListener('pointerup', releasePointer);
+  viewport.addEventListener('pointercancel', releasePointer);
+  window.addEventListener('resize', renderPanorama);
+})();

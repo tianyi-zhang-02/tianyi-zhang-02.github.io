@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=37">
+<link rel="stylesheet" href="style.css?v=38">
 <script>/* Apply the saved theme before first paint so there is no flash. */
 (function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
 </head>
@@ -99,9 +99,36 @@
       </div>
       <figcaption>
         <span>Namcha Barwa 南迦巴瓦峰</span>
-        <a class="fig-link" href="images/namcha-barwa-full.jpg" target="_blank" rel="noopener">Full resolution · 18493 × 4519 · 62 MB ↗</a>
+        <a class="fig-link" data-panorama-open href="images/namcha-barwa-full.jpg" target="_blank" rel="noopener">Explore panorama · 18493 × 4519</a>
       </figcaption>
     </figure>
+
+    <dialog class="panorama-dialog" aria-labelledby="panorama-title">
+      <div class="panorama-shell">
+        <header class="panorama-head">
+          <div>
+            <p>Interactive panorama</p>
+            <h2 id="panorama-title">Namcha Barwa · 南迦巴瓦峰</h2>
+          </div>
+          <div class="panorama-controls" aria-label="Panorama controls">
+            <button type="button" data-panorama-fit>Fit</button>
+            <button type="button" data-panorama-actual>1:1</button>
+            <button type="button" data-panorama-out aria-label="Zoom out">−</button>
+            <output data-panorama-level>100%</output>
+            <button type="button" data-panorama-in aria-label="Zoom in">＋</button>
+            <button class="panorama-close" type="button" data-panorama-close aria-label="Close panorama">×</button>
+          </div>
+        </header>
+        <div class="panorama-viewport">
+          <img class="panorama-image" src="images/namcha-barwa.jpg" data-full-src="images/namcha-barwa-full.jpg" alt="Full panorama of Namcha Barwa in Tibet" draggable="false">
+          <div class="panorama-status" data-panorama-status>Fit view · 3000px preview</div>
+        </div>
+        <footer class="panorama-foot">
+          <span>Scroll or pinch to zoom · drag to explore · double-click to focus</span>
+          <span>Original: 18,493 × 4,519 · 62 MB</span>
+        </footer>
+      </div>
+    </dialog>
 
     <main>
       <section id="about" class="onepage-section" data-section="about">
@@ -307,7 +334,7 @@
   </div>
 </div>
 
-<script src="script.js?v=27"></script>
+<script src="script.js?v=28"></script>
 <script src="stars.js?v=27"></script>
 </body>
 </html>

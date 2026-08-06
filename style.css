@@ -326,7 +326,7 @@ figure.sig figcaption{
 .fig-link{
   font:500 var(--t-2xs)/1.5 var(--mono);letter-spacing:var(--tr-mono);text-transform:uppercase;
   font-style:normal;color:var(--muted);text-decoration:none;
-  border-bottom:1px solid var(--line);transition:color var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease);
+  border:0;border-bottom:1px solid var(--line);background:none;padding:0;cursor:pointer;transition:color var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease);
 }
 .fig-link:hover{color:var(--accent);border-bottom-color:var(--accent)}
 .reveal{
@@ -358,6 +358,24 @@ figure.sig figcaption{
   pointer-events:none;transition:opacity .3s var(--ease);
 }
 .reveal.unlocked .rv-hint{opacity:0}
+.panorama-dialog{width:min(96vw,1500px);height:min(92vh,920px);max-width:none;max-height:none;margin:auto;padding:0;border:1px solid color-mix(in srgb,#fff 14%,transparent);border-radius:16px;background:#0b0d12;color:#fff;box-shadow:0 40px 120px rgba(0,0,0,.55);overflow:hidden}
+.panorama-dialog::backdrop{background:rgba(5,7,12,.82);backdrop-filter:blur(9px)}
+.panorama-shell{display:grid;grid-template-rows:auto minmax(0,1fr) auto;height:100%}
+.panorama-head{display:flex;align-items:center;justify-content:space-between;gap:var(--s-4);padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.12);background:rgba(9,12,18,.94)}
+.panorama-head p{font:600 9px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:#9ca7b8}
+.panorama-head h2{margin-top:5px;font:600 18px/1.2 var(--serif);color:#fff}
+.panorama-controls{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.panorama-controls button,.panorama-controls output{min-width:38px;height:34px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.14);border-radius:8px;background:rgba(255,255,255,.06);color:#fff;padding:0 10px;font:600 10px/1 var(--mono);letter-spacing:.04em}
+.panorama-controls button{cursor:pointer}
+.panorama-controls button:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.3)}
+.panorama-controls output{min-width:56px;color:#cbd3df}
+.panorama-controls .panorama-close{margin-left:6px;font-size:19px;color:#cbd3df}
+.panorama-viewport{position:relative;min-height:0;overflow:hidden;background:radial-gradient(circle at 50% 50%,#1b202a,#06070a 72%);touch-action:none;cursor:grab;user-select:none}
+.panorama-viewport.is-dragging{cursor:grabbing}
+.panorama-image{position:absolute;left:50%;top:50%;display:block;max-width:100%;max-height:100%;width:auto;height:auto;transform:translate(-50%,-50%) translate3d(0,0,0) scale(1);transform-origin:center;will-change:transform;pointer-events:none}
+.panorama-status{position:absolute;left:14px;bottom:12px;padding:7px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(7,9,14,.68);backdrop-filter:blur(8px);font:500 9px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#d7dde7;pointer-events:none}
+.panorama-foot{display:flex;justify-content:space-between;gap:var(--s-4);padding:10px 16px;border-top:1px solid rgba(255,255,255,.12);background:rgba(9,12,18,.94);font:500 9px/1.5 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:#8f99a9}
+body.panorama-open{overflow:hidden}
 
 /* -----------------------------------------------------------------------------
    6. Sections
@@ -571,6 +589,12 @@ figure.sig figcaption{
   .onepage-hero .idline span:nth-child(2)::before{display:none}
   .onepage-hero .sig{display:none}
   .hero-reveal{margin-bottom:var(--s-6)}
+  .panorama-dialog{width:100vw;height:100dvh;border:0;border-radius:0}
+  .panorama-head{align-items:flex-start;padding:12px;flex-direction:column}
+  .panorama-controls{width:100%;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px}
+  .panorama-controls .panorama-close{margin-left:auto}
+  .panorama-foot{padding:9px 12px}
+  .panorama-foot span:last-child{display:none}
   .onepage-section{grid-template-columns:1fr;gap:var(--s-5);padding:var(--s-8) 0}
   .onepage-section .section-kicker{padding:0}
   .focus-grid,.education-grid{grid-template-columns:1fr}
