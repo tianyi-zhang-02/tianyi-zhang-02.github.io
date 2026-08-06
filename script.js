@@ -219,8 +219,8 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 
 (function () {
   var dialog = document.querySelector('.panorama-dialog');
-  var openButton = document.querySelector('[data-panorama-open]');
-  if (!dialog || !openButton || typeof dialog.showModal !== 'function') return;
+  var openButtons = document.querySelectorAll('[data-panorama-open]');
+  if (!dialog || !openButtons.length || typeof dialog.showModal !== 'function') return;
 
   var viewport = dialog.querySelector('.panorama-viewport');
   var image = dialog.querySelector('.panorama-image');
@@ -293,11 +293,13 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     renderPanorama();
   }
 
-  openButton.addEventListener('click', function (event) {
-    event.preventDefault();
-    dialog.showModal();
-    document.body.classList.add('panorama-open');
-    requestAnimationFrame(fitPanorama);
+  openButtons.forEach(function (openButton) {
+    openButton.addEventListener('click', function (event) {
+      event.preventDefault();
+      dialog.showModal();
+      document.body.classList.add('panorama-open');
+      requestAnimationFrame(fitPanorama);
+    });
   });
 
   dialog.querySelector('[data-panorama-close]').addEventListener('click', function () { dialog.close(); });

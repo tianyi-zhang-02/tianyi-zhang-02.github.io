@@ -363,6 +363,15 @@ figure.sig figcaption{
   pointer-events:none;transition:opacity .3s var(--ease);
 }
 .reveal.unlocked .rv-hint{opacity:0}
+.panorama-open-button{
+  position:absolute;z-index:3;right:var(--s-3);bottom:var(--s-3);display:flex;align-items:center;gap:8px;
+  min-height:38px;padding:0 14px;border:1px solid rgba(255,255,255,.45);border-radius:var(--r-pill);
+  background:rgba(12,15,22,.72);backdrop-filter:blur(10px);color:#fff;cursor:pointer;
+  font:600 var(--t-2xs)/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;
+  transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease);
+}
+.panorama-open-button:hover{background:rgba(12,15,22,.9);transform:translateY(-1px)}
+.panorama-open-button:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .panorama-dialog{width:min(96vw,1500px);height:min(92vh,920px);max-width:none;max-height:none;margin:auto;padding:0;border:1px solid color-mix(in srgb,#fff 14%,transparent);border-radius:16px;background:#0b0d12;color:#fff;box-shadow:0 40px 120px rgba(0,0,0,.55);overflow:hidden}
 .panorama-dialog::backdrop{background:rgba(5,7,12,.82);backdrop-filter:blur(9px)}
 .panorama-shell{display:grid;grid-template-rows:auto minmax(0,1fr) auto;height:100%}
@@ -469,6 +478,7 @@ body.panorama-open{overflow:hidden}
 .place-card ul{list-style:none}
 .place-card li{padding:7px 0;font-size:var(--t-base)}
 .place-card li+li{border-top:1px solid var(--line)}
+.journey-note{max-width:44em;color:var(--muted);font-style:italic}
 
 .personal-card>p{margin-top:var(--s-3);max-width:42em}
 
@@ -593,6 +603,8 @@ body.panorama-open{overflow:hidden}
   .onepage-hero .idline span:nth-child(2)::before{display:none}
   .onepage-hero .sig{display:none}
   .hero-reveal{margin-bottom:var(--s-6)}
+  .rv-hint{display:none}
+  .panorama-open-button{right:10px;bottom:10px;min-height:34px;padding:0 11px}
   .panorama-dialog{width:100vw;height:100dvh;border:0;border-radius:0}
   .panorama-head{align-items:flex-start;padding:12px;flex-direction:column}
   .panorama-controls{width:100%;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px}
