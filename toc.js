@@ -6,7 +6,7 @@
   if (!toc) return;
 
   var nodes = Array.prototype.slice.call(
-    document.querySelectorAll('main section[id], main article[id]')
+    document.querySelectorAll('main section[id], main article[id]:not([data-toc-hidden])')
   );
   if (nodes.length < 2) { toc.style.display = 'none'; return; }
 

@@ -99,6 +99,8 @@
           <path class="travel-route" d="M592 326 Q610 350 605 366 Q625 378 632 386 Q650 410 665 420 Q735 430 790 432"/>
           <path class="travel-route" d="M592 326 Q790 205 1008 274 Q1030 282 1052 292"/>
           <path class="travel-route" d="M1238 292 Q1320 288 1370 308 Q1420 326 1470 298 Q1480 330 1462 356"/>
+          <path class="travel-route" d="M1238 292 Q1250 281 1260 291 Q1266 296 1266 298"/>
+          <path class="travel-route" d="M1445 307 Q1452 312 1459 317 Q1442 325 1428 315 Q1450 340 1472 363"/>
 
           <a class="travel-pin" href="#travel-china" aria-label="Lhasa, Tibet"><title>Lhasa · Tibet</title><circle cx="487" cy="307" r="8"/><text x="487" y="310">1</text></a>
           <a class="travel-pin" href="#travel-china" aria-label="Nyingchi, Tibet"><title>Nyingchi · Tibet</title><circle cx="510" cy="318" r="8"/><text x="510" y="321">2</text></a>
@@ -111,9 +113,20 @@
           <a class="travel-pin" href="#travel-sea" aria-label="Thailand"><title>Thailand</title><circle cx="605" cy="366" r="8"/><text x="605" y="369">12</text></a>
 
           <a class="travel-pin" href="#travel-us" aria-label="Grand Circle and Zion"><title>Grand Circle · Zion</title><circle cx="1305" cy="309" r="8"/><text x="1305" y="312">8</text></a>
-          <a class="travel-pin" href="#travel-us" aria-label="Great Smoky Mountains"><title>Great Smoky Mountains</title><circle cx="1418" cy="325" r="8"/><text x="1418" y="328">9</text></a>
-          <a class="travel-pin" href="#travel-us" aria-label="Washington, DC"><title>Washington, DC</title><circle cx="1470" cy="298" r="8"/><text x="1470" y="301">10</text></a>
-          <a class="travel-pin" href="#travel-us" aria-label="Florida"><title>Florida</title><circle cx="1462" cy="356" r="8"/><text x="1462" y="359">11</text></a>
+          <a class="travel-pin" href="#travel-us-southeast" aria-label="Great Smoky Mountains"><title>Great Smoky Mountains</title><circle cx="1418" cy="325" r="8"/><text x="1418" y="328">9</text></a>
+          <a class="travel-pin" href="#travel-us-cities" aria-label="Washington, DC"><title>Washington, DC</title><circle cx="1470" cy="298" r="8"/><text x="1470" y="301">10</text></a>
+          <a class="travel-pin" href="#travel-us-southeast" aria-label="Miami and Fort Lauderdale"><title>Miami · Fort Lauderdale</title><circle cx="1472" cy="363" r="8"/><text x="1472" y="366">11</text></a>
+
+          <a class="travel-pin" href="#travel-us-west" aria-label="San Francisco"><title>San Francisco</title><circle cx="1238" cy="292" r="8"/><text x="1238" y="295">17</text></a>
+          <a class="travel-pin" href="#travel-us-west" aria-label="South Bay"><title>South Bay</title><circle cx="1245" cy="301" r="8"/><text x="1245" y="304">18</text></a>
+          <a class="travel-pin" href="#travel-us-west" aria-label="Lake Tahoe"><title>Lake Tahoe · loop drive</title><circle cx="1260" cy="291" r="8"/><text x="1260" y="294">19</text></a>
+          <a class="travel-pin" href="#travel-us-west" aria-label="Carson City, Nevada"><title>Carson City · Nevada</title><circle cx="1267" cy="300" r="8"/><text x="1267" y="303">20</text></a>
+
+          <a class="travel-pin" href="#travel-us-southeast" aria-label="Atlanta"><title>Atlanta</title><circle cx="1445" cy="307" r="8"/><text x="1445" y="310">21</text></a>
+          <a class="travel-pin" href="#travel-us-southeast" aria-label="Conyers, Georgia"><title>Conyers · Georgia</title><circle cx="1452" cy="314" r="8"/><text x="1452" y="317">22</text></a>
+          <a class="travel-pin" href="#travel-us-southeast" aria-label="Covington, Georgia"><title>Covington · Georgia</title><circle cx="1460" cy="320" r="8"/><text x="1460" y="323">23</text></a>
+          <a class="travel-pin" href="#travel-us-southeast" aria-label="Chattanooga, Tennessee"><title>Chattanooga · Tennessee</title><circle cx="1428" cy="315" r="8"/><text x="1428" y="318">24</text></a>
+          <a class="travel-pin" href="#travel-us-cities" aria-label="Chicago"><title>Chicago</title><circle cx="1400" cy="270" r="8"/><text x="1400" y="273">25</text></a>
 
           <a class="travel-pin" href="#travel-europe" aria-label="Milan, Italy"><title>Milan · Italy</title><circle cx="1008" cy="274" r="8"/><text x="1008" y="277">13</text></a>
           <a class="travel-pin" href="#travel-europe" aria-label="Northern Italian lake"><title>Northern Italian lake</title><circle cx="1018" cy="263" r="8"/><text x="1018" y="266">14</text></a>
@@ -137,7 +150,7 @@
       <div class="content">
         <p class="travel-intro">A growing collection of landscapes, cities, long drives, and places that stayed with me.</p>
         <div class="travel-regions">
-          <article id="travel-china" class="travel-region">
+          <article id="travel-china" class="travel-region" data-toc-hidden>
             <div class="travel-region-index">01 · China</div>
             <h3>Westward from Shanghai</h3>
             <p>Chengdu, Chongqing, Lhasa, Nyingchi, and Qinghai's salt-lake landscapes.</p>
@@ -145,7 +158,7 @@
               <span>Chengdu</span><span>Chongqing</span><span>Lhasa</span><span>Nyingchi</span><span>Qinghai</span>
             </div>
           </article>
-          <article id="travel-sea" class="travel-region">
+          <article id="travel-sea" class="travel-region" data-toc-hidden>
             <div class="travel-region-index">02 · Southeast Asia</div>
             <h3>Islands &amp; equatorial cities</h3>
             <p>Brunei, Bali, and Thailand — three very different ways of slowing down in Southeast Asia.</p>
@@ -153,24 +166,48 @@
               <span>Brunei</span><span>Bali</span><span>Thailand</span>
             </div>
           </article>
-          <article id="travel-us" class="travel-region">
-            <div class="travel-region-index">03 · United States</div>
-            <h3>Roads, coasts &amp; mountains</h3>
-            <p>A Grand Circle drive through Zion and the Southwest, plus Florida, the Great Smoky Mountains, and Washington, DC.</p>
-            <div class="travel-tags" aria-label="Places in the United States">
-              <span>Grand Circle</span><span>Zion</span><span>Florida</span><span>Smokies</span><span>Washington, DC</span>
+          <article id="travel-us" class="travel-region" data-toc-hidden>
+            <div class="travel-region-index">03 · Southwest</div>
+            <h3>The Grand Circle</h3>
+            <p>A road trip through Zion and the wide-open landscapes of the Southwest.</p>
+            <div class="travel-tags" aria-label="Places in the American Southwest">
+              <span>Grand Circle</span><span>Zion</span><span>Road trip</span>
             </div>
           </article>
-          <article id="travel-europe" class="travel-region">
-            <div class="travel-region-index">04 · Europe</div>
+          <article id="travel-us-west" class="travel-region" data-toc-hidden>
+            <div class="travel-region-index">04 · CA / NV</div>
+            <h3>Bay to mountain</h3>
+            <p>San Francisco and the South Bay, then a full loop around Lake Tahoe with a stop in Carson City.</p>
+            <div class="travel-tags" aria-label="Places in California and Nevada">
+              <span>San Francisco</span><span>South Bay</span><span>Lake Tahoe loop</span><span>Carson City</span>
+            </div>
+          </article>
+          <article id="travel-us-southeast" class="travel-region" data-toc-hidden>
+            <div class="travel-region-index">05 · Southeast</div>
+            <h3>Cities close to home</h3>
+            <p>Atlanta, Conyers, Covington, Chattanooga, and the Smokies — plus Miami and Fort Lauderdale farther south.</p>
+            <div class="travel-tags" aria-label="Places in the Southeastern United States">
+              <span>Atlanta</span><span>Conyers</span><span>Covington</span><span>Chattanooga</span><span>Smokies</span><span>Miami</span><span>Fort Lauderdale</span>
+            </div>
+          </article>
+          <article id="travel-us-cities" class="travel-region" data-toc-hidden>
+            <div class="travel-region-index">06 · Midwest / East</div>
+            <h3>Two city breaks</h3>
+            <p>Chicago and Washington, DC — different skylines, different rhythms.</p>
+            <div class="travel-tags" aria-label="Cities in the United States">
+              <span>Chicago</span><span>Washington, DC</span>
+            </div>
+          </article>
+          <article id="travel-europe" class="travel-region" data-toc-hidden>
+            <div class="travel-region-index">07 · Europe</div>
             <h3>Old cities &amp; blue water</h3>
             <p>Milan, a beautiful lake in northern Italy, and Greece.</p>
             <div class="travel-tags" aria-label="Places in Europe">
               <span>Milan</span><span>Northern Italy</span><span>Greece</span>
             </div>
           </article>
-          <article id="travel-oceania" class="travel-region">
-            <div class="travel-region-index">05 · Australia</div>
+          <article id="travel-oceania" class="travel-region" data-toc-hidden>
+            <div class="travel-region-index">08 · Australia</div>
             <h3>Coastlines down under</h3>
             <p>The Gold Coast and a few nearby stops whose names have faded faster than the coastline.</p>
             <div class="travel-tags" aria-label="Places in Australia">
@@ -248,6 +285,6 @@
 </div>
 
 <script src="script.js?v=29"></script>
-<script src="toc.js?v=27"></script>
+<script src="toc.js?v=28"></script>
 </body>
 </html>
