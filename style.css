@@ -424,6 +424,10 @@ figure.sig figcaption{
 .publication-card .authors strong{color:var(--ink);font-weight:600}
 .publication-card h3 a,.project-card h3 a{color:var(--ink);text-decoration:none}
 .publication-card h3 a:hover,.project-card h3 a:hover{color:var(--accent)}
+.project-card .project-title a{display:inline-flex;align-items:center;gap:var(--s-3)}
+.project-logo{display:grid;place-items:center;flex:0 0 auto;width:38px;height:38px;padding:6px;border:1px solid var(--line);border-radius:10px;background:#fff;transition:transform var(--dur) var(--ease),border-color var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
+.project-logo img{display:block;max-width:100%;max-height:100%;object-fit:contain}
+.project-title a:hover .project-logo{transform:translateY(-2px);border-color:var(--accent);box-shadow:var(--shadow-card)}
 .section-body .section-link{margin-top:var(--s-4)!important}
 .project-head .starnum{font:500 var(--t-xs)/1 var(--mono);color:var(--gold)}
 
