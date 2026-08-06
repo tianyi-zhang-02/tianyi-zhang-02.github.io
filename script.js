@@ -45,6 +45,7 @@ if (yr) yr.textContent = new Date().getFullYear();
   var regionButtons = document.querySelectorAll('[data-map-region]');
   var regionStatus = document.querySelector('.map-region-status');
   var svg = document.getElementById('journey-map-svg');
+  var scene = document.getElementById('travel-scene');
   if (!map || !buttons.length) return;
 
   var captions = {
@@ -73,6 +74,18 @@ if (yr) yr.textContent = new Date().getFullYear();
     '#travel-europe': 'Italy & Greece',
     '#travel-oceania': 'Australia'
   };
+  var scenes = {
+    '#travel-china': { type: 'mountain', place: 'Western China', title: 'High plateaus & deep valleys', description: 'A layered mountain scene inspired by Tibet, Nyingchi, and Qinghai.' },
+    '#travel-china-cities': { type: 'city', place: 'East Asian cities', title: 'Cities in motion', description: 'Dense skylines, old neighborhoods, and coastal city rhythms.' },
+    '#travel-sea': { type: 'coast', place: 'Southeast Asia', title: 'Heat, water & island light', description: 'A tropical coast inspired by Bali, Brunei, and Thailand.' },
+    '#travel-us': { type: 'canyon', place: 'The Grand Circle', title: 'Desert carved by time', description: 'Layered canyon country across Utah, Arizona, and Nevada.' },
+    '#travel-us-west': { type: 'mountain', place: 'California & Nevada', title: 'Bay to alpine blue', description: 'A mountain-and-water scene inspired by the Lake Tahoe loop.' },
+    '#travel-us-southeast': { type: 'forest', place: 'Southeast & Florida', title: 'Forest, mist & wetlands', description: 'Appalachian ridges meeting the green waterways of the Everglades.' },
+    '#travel-us-cities': { type: 'city', place: 'Midwest & East', title: 'Two American skylines', description: 'A city scene shaped by Chicago and Washington, DC.' },
+    '#travel-caribbean': { type: 'forest', place: 'Puerto Rico', title: 'Rainforest into sea', description: 'El Yunque green, Caribbean air, and an offshore island day.' },
+    '#travel-europe': { type: 'cathedral', place: 'Italy & Greece', title: 'Stone, domes & time', description: 'Cathedral spires, ancient streets, and Mediterranean light.' },
+    '#travel-oceania': { type: 'coast', place: 'Australia', title: 'Long coast, open sky', description: 'A bright shoreline inspired by the Gold Coast.' }
+  };
   var pinGroups = {};
 
   document.querySelectorAll('.travel-pin').forEach(function (pin) {
@@ -100,6 +113,41 @@ if (yr) yr.textContent = new Date().getFullYear();
     if (title) title.textContent = clusterLabels[target] + ' · ' + group.length + ' places';
     group.slice(1).forEach(function (pin) { pin.style.display = 'none'; });
   });
+
+  function showScene(target) {
+    var data = scenes[target];
+    if (!scene || !data) return;
+    scene.hidden = false;
+    scene.setAttribute('data-scene-type', data.type);
+    scene.querySelector('[data-scene-place]').textContent = data.place;
+    scene.querySelector('[data-scene-title]').textContent = data.title;
+    scene.querySelector('[data-scene-description]').textContent = data.description;
+    scene.querySelector('[data-scene-link]').setAttribute('href', target);
+  }
+
+  document.querySelectorAll('.travel-cluster').forEach(function (pin) {
+    pin.setAttribute('aria-controls', 'travel-scene');
+    pin.addEventListener('click', function (event) {
+      event.preventDefault();
+      showScene(pin.getAttribute('href'));
+      scene.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+
+  if (scene) {
+    var sceneCard = scene.querySelector('.scene-card');
+    sceneCard.addEventListener('pointermove', function (event) {
+      var box = sceneCard.getBoundingClientRect();
+      var x = (event.clientX - box.left) / box.width - .5;
+      var y = (event.clientY - box.top) / box.height - .5;
+      sceneCard.style.setProperty('--ry', (x * 9).toFixed(2) + 'deg');
+      sceneCard.style.setProperty('--rx', (-y * 7).toFixed(2) + 'deg');
+    });
+    sceneCard.addEventListener('pointerleave', function () {
+      sceneCard.style.setProperty('--ry', '0deg');
+      sceneCard.style.setProperty('--rx', '0deg');
+    });
+  }
 
   function setRegion(region) {
     var view = views[region] || views.world;
