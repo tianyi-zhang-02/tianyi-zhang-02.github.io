@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=28">
+<link rel="stylesheet" href="style.css?v=29">
 <script>/* Apply the saved theme before first paint so there is no flash. */
 (function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
 </head>
@@ -41,7 +41,8 @@
       <div class="side-group" data-nav-section="projects"><a class="side-main" href="#projects">Open Source</a></div>
       <div class="side-group" data-nav-section="journey"><a class="side-main" href="#journey">Journey</a></div>
       <div class="side-group" data-nav-section="personal"><a class="side-main" href="#personal">Personal</a></div>
-      <div class="side-group" data-nav-section="resume"><a class="side-main" href="#resume">CV</a></div>
+      <div class="side-group" data-nav-section="education"><a class="side-main" href="#education">Education</a></div>
+      <div class="side-group" data-nav-section="resume"><a class="side-main" href="#resume">Résumé / CV</a></div>
     </nav>
 
     <nav class="side-contact" aria-label="Contact links">
@@ -117,16 +118,6 @@
               <article><span>03</span><h3>Systems</h3><p>Reliable implementations, tests, observability, and measured behavior.</p></article>
               <article><span>04</span><h3>Context</h3><p>Workloads, constraints, tradeoffs, and responsibility for the outcome.</p></article>
             </div>
-          </div>
-          <div id="now" class="subsection now-block">
-            <h3>Now</h3>
-            <p>Finishing an <strong>M.S. in Computer Science at Georgia Tech</strong> (Dec 2026). Current interests:
-            representation learning, recommender systems, training data and post-training, agent evaluation, and
-            research that connects algorithmic ideas to reproducible evidence.</p>
-            <ul class="news compact-news">
-              <li><span class="yr">2026</span><span><em>AgentSuite</em> accepted at ICML 2026.</span></li>
-              <li><span class="yr">2025</span><span>IEEE EMBC oral and AIME publication on neuroimaging.</span></li>
-            </ul>
           </div>
         </div>
       </section>
@@ -253,15 +244,38 @@
         </div>
       </section>
 
-      <section id="resume" class="onepage-section" data-section="resume">
-        <div class="section-kicker">07 / CV</div>
+      <section id="education" class="onepage-section" data-section="education">
+        <div class="section-kicker">07 / Education</div>
         <div class="section-body">
-          <h2>Education and full résumé.</h2>
-          <div id="education" class="education-grid subsection">
-            <article><p class="card-index">2025 — 2026</p><h3>Georgia Institute of Technology</h3><p>M.S. Computer Science</p></article>
-            <article><p class="card-index">2021 — 2025</p><h3>Emory University</h3><p>B.S. Quantitative Sciences</p></article>
+          <h2>From Emory to Georgia Tech.</h2>
+          <div class="education-grid subsection">
+            <article class="education-card">
+              <div class="education-head">
+                <span class="school-logo"><img src="images/emory.svg" alt="Emory University logo"></span>
+                <p class="card-index">2021 — 2025</p>
+              </div>
+              <h3>Emory University</h3>
+              <p>B.S. Quantitative Sciences</p>
+              <p class="education-status">Graduated May 2025</p>
+            </article>
+            <article class="education-card">
+              <div class="education-head">
+                <span class="school-logo"><img src="images/gatech.ico" alt="Georgia Tech logo"></span>
+                <p class="card-index">2025 — 2026</p>
+              </div>
+              <h3>Georgia Institute of Technology</h3>
+              <p>M.S. Computer Science</p>
+              <p class="education-status">Expected December 2026</p>
+            </article>
           </div>
-          <div id="downloads" class="download-row subsection">
+        </div>
+      </section>
+
+      <section id="resume" class="onepage-section" data-section="resume">
+        <div class="section-kicker">08 / Résumé &amp; CV</div>
+        <div class="section-body">
+          <h2>Documents.</h2>
+          <div class="download-row subsection">
             <a class="download-card" href="resume.pdf"><span>1 page</span><strong>Download résumé</strong></a>
             <a class="download-card" href="cv.pdf"><span>Full version</span><strong>Download CV</strong></a>
             <a class="download-card" href="detailed-cv.html"><span>HTML</span><strong>View detailed CV</strong></a>
