@@ -320,6 +320,7 @@ figure.sig figcaption{
    5. Slide-to-reveal figure
    -------------------------------------------------------------------------- */
 .hero-reveal{margin:0 0 var(--s-9)}
+.personal-panorama.hero-reveal{margin:var(--s-6) 0 0}
 .hero-reveal figcaption{
   display:flex;justify-content:space-between;align-items:baseline;gap:var(--s-4);flex-wrap:wrap;
   margin-top:var(--s-3);font:italic 400 14px/1.5 var(--serif);color:var(--muted);
@@ -582,6 +583,7 @@ body.panorama-open{overflow:hidden}
   .onepage-hero .idline span:nth-child(2)::before{display:none}
   .onepage-hero .sig{display:none}
   .hero-reveal{margin-bottom:var(--s-6)}
+  .personal-panorama.hero-reveal{margin:var(--s-5) 0 0}
   .rv-hint{display:none}
   .panorama-open-button{right:10px;bottom:10px;min-height:34px;padding:0 11px}
   .panorama-dialog{width:100vw;height:100dvh;border:0;border-radius:0}
