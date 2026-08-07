@@ -403,11 +403,9 @@ body.panorama-open{overflow:hidden}
   text-transform:none;color:var(--ink);max-width:15em;text-wrap:balance;
 }
 .section-body>*+*{margin-top:var(--s-6)}
-.section-lede{font-size:var(--t-lg);line-height:1.62;max-width:38em;text-wrap:pretty}
 .subsection{scroll-margin-top:var(--s-5)}
 
 /* card surfaces — one shared recipe */
-.focus-grid article,
 .education-grid article,
 .download-card{
   background:var(--surface);
@@ -415,12 +413,6 @@ body.panorama-open{overflow:hidden}
   border-radius:var(--r-xs);
   box-shadow:var(--shadow-card);
 }
-
-.focus-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-3);margin-top:var(--s-6)}
-.focus-grid article{padding:var(--s-5);margin:0}
-.focus-grid article span{font:500 var(--t-2xs)/1 var(--mono);color:var(--accent);letter-spacing:var(--tr-label)}
-.focus-grid h3{margin-top:var(--s-4);font:700 var(--t-lg)/var(--lh-snug) var(--serif)}
-.focus-grid p{margin-top:7px;font-size:var(--t-base);line-height:1.5;color:var(--muted)}
 
 /* record cards — experience, publications, projects, personal */
 .timeline-card,.publication-card,.project-card,.personal-card,.music-card{
@@ -594,7 +586,7 @@ body.panorama-open{overflow:hidden}
   .panorama-foot span:last-child{display:none}
   .onepage-section{grid-template-columns:1fr;gap:var(--s-5);padding:var(--s-8) 0}
   .onepage-section .section-kicker{padding:0}
-  .focus-grid,.education-grid{grid-template-columns:1fr}
+  .education-grid{grid-template-columns:1fr}
   .timeline-card{grid-template-columns:1fr;gap:var(--s-3)}
   .experience-brand{min-height:auto;padding-top:0}
   .timeline-meta,.project-head{grid-template-columns:1fr;align-items:start;gap:3px}
