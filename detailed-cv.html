@@ -32,7 +32,7 @@
   <header class="detail-cv-header">
     <div>
       <h1>Tianyi Zhang</h1>
-      <p>AI Researcher &amp; Engineer</p>
+      <p>Machine Learning · Research × Systems</p>
     </div>
     <nav class="detail-cv-contact" aria-label="Contact links">
       <a href="mailto:zhangtianyi975@gmail.com">Email</a>
@@ -48,8 +48,9 @@
     <div class="plain-cv-body">
       <article class="plain-cv-entry">
         <div class="plain-cv-entry-head"><div><h3>Machine Learning Engineer Intern</h3><p>LinkedIn · Topicality AI · Mountain View, CA</p></div><time>May 2026 — Present</time></div>
-        <p><strong>Algorithm layer:</strong> designed a multi-intent member representation that replaces the legacy single fused embedding with multiple learned latent intent embeddings, preserving distinct profile- and history-conditioned interests until retrieval instead of collapsing them into one candidate neighborhood. Lifecycle evaluation showed Semi-cold and new members already have strong relevance but weak breadth, reframing the problem from recall lift to over-concentration; the design therefore moved toward lifecycle-aware routing and quotas that preserve profile coverage when history is sparse and use engagement-history intents for relevance, gated by shared-item-tower complementarity tests.</p>
-        <p><strong>Data infrastructure layer:</strong> separately designing and delivering an objective-aware training data compiler that turns shared raw sources plus an explicit learning objective into versioned datasets for continued pretraining, co-training, and reinforcement learning, with standardized objective definitions, sampling, lineage, experiment manifests, and train/serve contracts.</p>
+        <p><strong>Representation:</strong> framed out-of-network discovery as preference inference under sparse context; designed and handed off a Qwen multi-tower model with separate profile/history encoders and learnable routing, with complementary signals motivating latent topic abstraction beyond direct member–item matching.</p>
+        <p><strong>Evaluation:</strong> developed a production-scale behavioral evaluation framework for the end-to-end content policy, measuring how model behavior changes with feedback density, lifecycle, and available signal. Matched relevance, coverage, intra-list, and topical-diversity analysis showed higher relevance but narrower semantic breadth for Semi-cold/new members.</p>
+        <p><strong>Learning and data:</strong> formulated audience-conditioned multimodal content value from sparse, imperfect feedback through multi-task targets for professional relevance, sustained reading, audience–topic alignment, and diversity. Architected an objective-aware data compiler for reproducible continued pretraining, SFT, co-training, and RL datasets with lineage and train–serve contracts.</p>
       </article>
       <article class="plain-cv-entry">
         <div class="plain-cv-entry-head"><div><h3>Student Researcher</h3><p>Georgia Tech EIC Lab · NVIDIA AI Research collaboration · Atlanta, GA</p></div><time>Jul — Dec 2025</time></div>

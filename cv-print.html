@@ -37,10 +37,9 @@
   </div>
 
   <h2>Research Interests</h2>
-  <p><strong>Machine learning research grounded in engineering.</strong> I study how representations, training data,
-  learning objectives, and evaluation shape model behavior. My work spans user representation and retrieval,
-  data-centric training and post-training, agent evaluation, and graph learning, with systems work used to build
-  reproducible experiments and practical methods.</p>
+  <p><strong>Multimodal learning and post-training.</strong> I build systems that infer useful content and model
+  behavior from sparse, imperfect human feedback, spanning representation learning, training data, learning
+  objectives, and distribution-aware evaluation.</p>
 
   <h2>Education</h2>
   <div class="entry">
@@ -55,23 +54,16 @@
   <h2>Professional Experience</h2>
   <div class="entry">
     <div class="row"><span class="title">LinkedIn</span><span class="where">Mountain View, CA</span></div>
-    <div class="sub"><span>Machine Learning Engineer Intern | Topicality AI, LLM Retrieval</span><span>May 2026 - Present</span></div>
+    <div class="sub"><span>Machine Learning Engineer Intern</span><span>May 2026 - Present</span></div>
     <ul>
-      <li>Built a backend-agnostic <strong>Adaptive User Representation Layer</strong> that decouples user
-      understanding from candidate generation. Its compact user-state contract captures short- and long-term
-      intents, lifecycle, confidence/freshness, and evidence provenance as shared conditioning for embedding
-      retrieval and generative recommendation; implemented the first producer with profile/history multi-tower
-      Qwen3 encoding, allowing
-      retrieval backends and model capacity to evolve without rebuilding the user-understanding layer.</li>
-      <li>Built and production-scale validated a backward-compatible <strong>PySpark retrieval scorecard over
-      2.7B member-candidate pairs</strong>, then used matched lifecycle evaluation to correct a
-      <strong>30x population imbalance</strong>; exposed <strong>+25.1% Recall@10 and +26.8% NDCG@10</strong>
-      but <strong>21.6% lower ILD</strong> for Semi-cold versus matched Active members, informing model selection
-      and lifecycle strategy that balance relevance with feed breadth.</li>
-      <li>Improved distributed training and model-serving reliability through layered configuration, dry-run
-      validation, reproducible manifests, execution tracking, searchable run catalogs, train/serve parity checks,
-      and serving observability while preserving legacy workflow compatibility; defined one-axis-at-a-time
-      validation across representation, model capacity, retrieval backend, and lifecycle policy.</li>
+      <li>Framed out-of-network discovery as <strong>preference inference under sparse context</strong>; designed and
+      handed off a Qwen multi-tower representation architecture with separate profile/history signals and learnable routing.</li>
+      <li>Developed a production-scale <strong>behavioral evaluation framework</strong> for the end-to-end content
+      policy, combining lifecycle and signal-strength slices with relevance, coverage, intra-list, and topical-diversity
+      analysis; surfaced higher matched relevance but narrower semantic breadth for Semi-cold/new members.</li>
+      <li>Formulated <strong>audience-conditioned multimodal content value</strong> as a weakly supervised, multi-task
+      learning problem and architected an objective-aware data compiler for reproducible continued pretraining, SFT,
+      co-training, and RL with explicit lineage and train-serve contracts.</li>
     </ul>
   </div>
   <div class="entry">
