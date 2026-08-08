@@ -1,9 +1,8 @@
 /* =============================================================================
    Tianyi Zhang — personal site
-   Design tokens first, then base, then the three surfaces:
+   Design tokens first, then base, then the primary surfaces:
      1. one-page portfolio  (index.html)
-     2. detailed CV         (detailed-cv.html)
-     3. legacy sub-pages    (experience/publications/projects/hobbies)
+     2. legacy sub-pages
    ========================================================================== */
 
 /* -----------------------------------------------------------------------------
@@ -597,94 +596,7 @@ body.panorama-open{overflow:hidden}
 }
 
 /* -----------------------------------------------------------------------------
-   10. Detailed CV (detailed-cv.html)
-   -------------------------------------------------------------------------- */
-.detail-cv-page{background:var(--paper)}
-.detail-topbar{
-  position:sticky;z-index:30;top:0;display:flex;align-items:center;justify-content:space-between;gap:var(--s-5);
-  min-height:58px;padding:var(--s-3) max(var(--s-5),calc((100vw - 1180px)/2));
-  border-bottom:1px solid var(--line);
-  background:var(--paper);
-  background:color-mix(in srgb,var(--paper) 92%,transparent);
-  backdrop-filter:blur(14px);
-}
-.detail-topbar a{font:500 var(--t-2xs)/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
-.detail-back{color:var(--ink)!important}
-.detail-back:hover{color:var(--accent)!important}
-.detail-actions{display:flex;align-items:center;gap:var(--s-2)}
-.detail-actions a{padding:7px var(--s-3);border:1px solid var(--line);border-radius:var(--r-xs);color:var(--muted)}
-.detail-actions a:hover{border-color:var(--accent);color:var(--accent)}
-.detail-actions .theme-toggle{width:30px;height:30px}
-
-.detail-cv-document{max-width:1020px;margin:0 auto;padding:var(--s-7) var(--s-5) var(--s-8)}
-.detail-cv-header{
-  display:flex;justify-content:space-between;gap:var(--s-7);align-items:flex-end;
-  padding-bottom:var(--s-5);border-bottom:2px solid var(--ink);
-}
-.detail-cv-header h1{font:700 46px/1 var(--serif);letter-spacing:-.04em;text-transform:none}
-.detail-cv-header>div>p{margin-top:9px;font-size:var(--t-md);color:var(--muted)}
-.detail-cv-contact{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:7px var(--s-4);max-width:390px}
-.detail-cv-contact a{font:500 var(--t-2xs)/1.35 var(--mono);letter-spacing:.045em;color:var(--ink);text-decoration:none}
-.detail-cv-contact a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
-
-.plain-cv-section{
-  display:grid;grid-template-columns:142px minmax(0,1fr);gap:28px;
-  padding:26px 0;border-bottom:1px solid var(--line);scroll-margin-top:76px;
-}
-.plain-cv-section>h2{
-  padding:var(--s-1) 0 0;
-  font:700 var(--t-xs)/1.45 var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--ink);
-}
-.plain-cv-body{min-width:0}
-.plain-cv-entry,.plain-cv-publication{margin:0}
-.plain-cv-entry+.plain-cv-entry,
-.plain-cv-publication+.plain-cv-publication{margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
-.plain-cv-entry-head{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--s-5)}
-.plain-cv-entry-head h3,.plain-cv-publication h3{font:700 var(--t-lg)/1.3 var(--serif);max-width:none}
-.plain-cv-entry-head h3 a,.plain-cv-publication h3 a{color:var(--ink);text-decoration:none}
-.plain-cv-entry-head h3 a:hover,.plain-cv-publication h3 a:hover{color:var(--accent)}
-.plain-cv-entry-head div>p{margin-top:3px;font-size:var(--t-sm);line-height:1.45;color:var(--muted)}
-.plain-cv-entry-head time{flex:none;padding-top:2px;font:500 var(--t-2xs)/1.45 var(--mono);letter-spacing:.045em;color:var(--muted)}
-.plain-cv-entry>p{margin-top:8px;font-size:var(--t-base);line-height:1.5;color:var(--muted);max-width:720px}
-.plain-cv-entry>p strong{color:var(--ink);font-weight:600}
-.plain-cv-inline-link{flex:none;font:500 var(--t-2xs)/1.45 var(--mono);letter-spacing:.04em;text-decoration:none}
-.plain-cv-publication>p:first-child{font:500 var(--t-2xs)/1.45 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
-.plain-cv-publication h3{margin-top:6px;line-height:1.4}
-.plain-cv-publication>p:last-child{margin-top:6px;font-size:var(--t-sm);line-height:1.5;color:var(--muted)}
-.plain-cv-publication>p:last-child strong{color:var(--ink);font-weight:600}
-.plain-cv-skills{min-width:0}
-.plain-cv-skills>div{display:grid;grid-template-columns:145px minmax(0,1fr);gap:var(--s-4);padding:6px 0}
-.plain-cv-skills>div:first-child{padding-top:0}
-.plain-cv-skills dt{font:700 var(--t-sm)/1.5 var(--serif)}
-.plain-cv-skills dd{font-size:var(--t-sm);line-height:1.5;color:var(--muted)}
-
-.detail-footer{
-  display:flex;justify-content:space-between;gap:var(--s-5);
-  margin-top:0;padding:34px 0 0;border-top:1px solid var(--line);
-}
-.detail-footer a,.detail-footer>span{
-  font:500 var(--t-2xs)/1.5 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);
-}
-.detail-footer a{text-decoration:none}
-.detail-footer a:hover{color:var(--accent)}
-
-@media (max-width:720px){
-  .detail-topbar{align-items:center;padding:11px 18px}
-  .detail-actions{gap:5px}
-  .detail-actions a{padding:6px 7px;font-size:var(--t-2xs)}
-  .detail-cv-document{padding:var(--s-6) 18px var(--s-7)}
-  .detail-cv-header{display:block;padding-bottom:var(--s-5)}
-  .detail-cv-header h1{font-size:39px}
-  .detail-cv-contact{justify-content:flex-start;max-width:none;margin-top:var(--s-5)}
-  .plain-cv-section{grid-template-columns:1fr;gap:12px;padding:22px 0;scroll-margin-top:68px}
-  .plain-cv-section>h2{padding:0}
-  .plain-cv-entry-head{display:block}
-  .plain-cv-entry-head time{display:block;margin-top:5px}
-  .plain-cv-skills>div{grid-template-columns:1fr;gap:2px;padding:var(--s-3) 0}
-}
-
-/* -----------------------------------------------------------------------------
-   11. Legacy sub-pages (experience / publications / projects / hobbies)
+   10. Legacy sub-pages
    Not linked from the portfolio, but still reachable by URL — kept on the same
    tokens so they follow the theme instead of breaking.
    -------------------------------------------------------------------------- */
@@ -711,11 +623,11 @@ body.panorama-open{overflow:hidden}
 
 main{position:relative}
 main section[id],main article[id]{scroll-margin-top:var(--s-4)}
-body:not(.one-page):not(.detail-cv-page) section{
+body:not(.one-page) section{
   display:grid;grid-template-columns:168px 1fr;gap:var(--s-7);
   padding:var(--s-7) 0;border-top:1px solid var(--line);
 }
-body:not(.one-page):not(.detail-cv-page) section h2{
+body:not(.one-page) section h2{
   font:500 11px/1 var(--mono);letter-spacing:.22em;color:var(--muted);text-transform:uppercase;padding-top:7px;
 }
 .content>*+*{margin-top:var(--s-4)}
@@ -776,18 +688,18 @@ body:not(.one-page) .authors strong{color:var(--ink);font-weight:600}
 article .desc{margin-top:var(--s-3);font-size:16px;max-width:42em}
 mark.hl{background:none;color:inherit;font-weight:600}
 
-body:not(.one-page):not(.detail-cv-page) footer{
+body:not(.one-page) footer{
   border-top:1px solid var(--line);margin-top:var(--s-2);padding:30px 0 var(--s-8);
   display:flex;justify-content:space-between;gap:var(--s-4);flex-wrap:wrap;
   font:500 var(--t-2xs)/1.8 var(--mono);letter-spacing:.12em;color:var(--muted);text-transform:uppercase;
 }
-body:not(.one-page):not(.detail-cv-page) footer .footlinks{display:flex;gap:var(--s-4);flex-wrap:wrap}
-body:not(.one-page):not(.detail-cv-page) footer a{color:var(--muted);text-decoration:none}
-body:not(.one-page):not(.detail-cv-page) footer a:hover{color:var(--accent)}
+body:not(.one-page) footer .footlinks{display:flex;gap:var(--s-4);flex-wrap:wrap}
+body:not(.one-page) footer a{color:var(--muted);text-decoration:none}
+body:not(.one-page) footer a:hover{color:var(--accent)}
 
 @media (max-width:820px){
-  body:not(.one-page):not(.detail-cv-page) section{grid-template-columns:1fr;gap:var(--s-4);padding:36px 0}
-  body:not(.one-page):not(.detail-cv-page) section h2{padding-top:0}
+  body:not(.one-page) section{grid-template-columns:1fr;gap:var(--s-4);padding:36px 0}
+  body:not(.one-page) section h2{padding-top:0}
   .pagehead{padding:40px 0 6px}
 }
 
@@ -806,7 +718,7 @@ body:not(.one-page):not(.detail-cv-page) footer a:hover{color:var(--accent)}
   .onepage-footer,.detail-footer,footer,noscript{display:none!important}
   [hidden]{display:none!important}
   body{background:#fff;font-size:12px}
-  .wrap,.site-shell,.detail-cv-document{max-width:none;padding:0;display:block}
+  .wrap,.site-shell{max-width:none;padding:0;display:block}
   a{color:#000;text-decoration:none}
   .onepage-section,.plain-cv-section,body:not(.one-page) section{
     grid-template-columns:1fr;padding:14px 0;break-inside:avoid;
@@ -828,123 +740,94 @@ body:not(.one-page):not(.detail-cv-page) footer a:hover{color:var(--accent)}
 }
 
 /* -----------------------------------------------------------------------------
-   14. Minimal home — compact academic portfolio
+   14. Minimal home — single-column academic profile
    -------------------------------------------------------------------------- */
 .minimal-home{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   font-size:16px;line-height:1.55;
 }
-.minimal-home .site-shell{display:block;max-width:1080px;margin:0 auto;padding:0 34px}
-.minimal-home .site-sidebar{display:none}
-.minimal-home .onepage-hero{max-width:920px;padding:54px 0 34px}
+.minimal-home .site-shell{display:block;max-width:860px;margin:0 auto;padding:0 28px}
+.minimal-home .onepage-hero{display:block;padding:58px 0 34px}
+.minimal-home .hero-topline{
+  display:flex;align-items:center;justify-content:space-between;gap:var(--s-4);
+  margin-bottom:30px;color:var(--muted);font-size:13px;
+}
+.minimal-home .theme-toggle{width:30px;height:30px}
 .minimal-home .onepage-hero h1{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size:48px;line-height:1.05;letter-spacing:-.035em;
+  font-size:48px;line-height:1.05;letter-spacing:-.04em;
 }
-.minimal-home .onepage-hero .eyebrow{display:none}
-.minimal-home .onepage-hero .tagline{margin-top:16px;max-width:52em;font-size:17px;line-height:1.55}
-.minimal-home .education-line{margin-top:12px;font-size:14px;line-height:1.45;color:var(--muted)}
+.minimal-home .onepage-hero .tagline{margin-top:16px;max-width:49em;font-size:17px;line-height:1.55}
+.minimal-home .education-line{margin-top:12px;font-size:14px;line-height:1.5;color:var(--muted)}
 .minimal-home .education-line strong{color:var(--ink);font-weight:600}
-.minimal-home nav.links{margin-top:14px;gap:8px 18px}
-.minimal-home nav.links a{
-  padding:0;border:0;border-radius:0;background:none;
+.minimal-home nav.links{margin-top:17px;display:flex;flex-wrap:wrap;gap:7px 18px}
+.minimal-home nav.links a,.minimal-home .section-heading>a{
+  padding:0;border:0;background:none;color:var(--accent);text-decoration:none;
   font:600 14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-  letter-spacing:0;color:var(--accent);text-decoration:none;
 }
-.minimal-home nav.links a:hover{text-decoration:underline;text-underline-offset:3px}
-.minimal-home .onepage-section{display:block;padding:30px 0;border-top:1px solid var(--line)}
-.minimal-home .section-kicker{display:none}
-.minimal-home .onepage-section h2{
+.minimal-home nav.links a:hover,.minimal-home .section-heading>a:hover{text-decoration:underline;text-underline-offset:3px}
+
+.minimal-home .compact-section{padding:30px 0;border-top:1px solid var(--line)}
+.minimal-home .compact-section h2{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size:26px;line-height:1.2;letter-spacing:-.02em;
+  font-size:22px;line-height:1.25;letter-spacing:-.02em;
 }
-.minimal-home .section-body>*+*{margin-top:12px}
-.minimal-home .timeline-card,.minimal-home .publication-card,
-.minimal-home .project-card,.minimal-home .personal-card{
-  padding:15px 0;border-top:0;border-bottom:1px solid var(--line);
+.minimal-home .section-heading{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s-4)}
+.minimal-home .compact-list{margin-top:12px}
+.minimal-home .compact-list>*+*{border-top:1px solid var(--line)}
+
+.minimal-home .compact-row{
+  display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:13px;align-items:center;padding:14px 0;
 }
-.minimal-home .timeline-card{display:block}
-.minimal-home .experience-brand{display:none}
-.minimal-home .timeline-meta{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.minimal-home .timeline-card h3,.minimal-home .publication-card h3,
-.minimal-home .project-card h3,.minimal-home .personal-card h3{
-  margin-top:5px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size:18px;line-height:1.3;letter-spacing:-.01em;
+.minimal-home .row-mark{
+  display:grid;place-items:center;width:30px;height:30px;color:inherit;text-decoration:none;overflow:hidden;
 }
-.minimal-home .timeline-card p,.minimal-home .publication-card>p:last-child,
-.minimal-home .project-card>p,.minimal-home .personal-card>p{
-  margin-top:6px;max-width:58em;font-size:15px;line-height:1.5;
+.minimal-home .row-mark img{display:block;max-width:100%;max-height:100%;object-fit:contain}
+.minimal-home .row-mark-pair{grid-template-columns:1fr 1fr;gap:3px;width:34px}
+.minimal-home .row-mark-pair img{width:16px;height:16px}
+.minimal-home .compact-row h3{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:16px;line-height:1.35;letter-spacing:-.01em;
 }
-.minimal-home .timeline-card .tags,.minimal-home .project-card .tags{display:none}
-.minimal-home .publication-card .authors{margin-top:4px;font-size:14px}
-.minimal-home .publication-card .card-index{font-size:10px}
-.minimal-home .project-title a{gap:10px}
-.minimal-home .project-logo{width:30px;height:30px}
-.minimal-home .education-grid{grid-template-columns:1fr 1fr;gap:22px}
-.minimal-home .education-grid article{
-  min-height:0;padding:14px 0;background:none;border:0;border-bottom:1px solid var(--line);box-shadow:none;
+.minimal-home .compact-row p{margin-top:2px;color:var(--muted);font-size:14px}
+.minimal-home .compact-row time{color:var(--muted);font-size:13px;white-space:nowrap}
+
+.minimal-home .publication-list article{padding:14px 0}
+.minimal-home .publication-list article>p{
+  margin-bottom:4px;color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
 }
-.minimal-home .school-logo{width:34px;height:34px}
-.minimal-home .education-grid h3{
-  margin-top:8px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:17px;
+.minimal-home .publication-list h3{
+  max-width:48em;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:16px;line-height:1.4;font-weight:600;
 }
+.minimal-home .publication-list h3 a{color:var(--ink);text-decoration:none}
+.minimal-home .publication-list h3 a:hover{color:var(--accent)}
+
+.minimal-home .link-list>a{
+  display:grid;grid-template-columns:150px minmax(0,1fr) auto;gap:14px;align-items:baseline;
+  padding:14px 0;color:var(--ink);text-decoration:none;
+}
+.minimal-home .link-list strong{font-size:15px}
+.minimal-home .link-list span{color:var(--muted);font-size:14px}
+.minimal-home .link-list b{color:var(--accent);font-weight:500}
+.minimal-home .link-list>a:hover strong{color:var(--accent)}
+
+.minimal-home .personal-intro{margin-top:10px;color:var(--muted);font-size:15px}
+.minimal-home .personal-panorama.hero-reveal{margin:20px 0 0}
+.minimal-home .music-card{margin-top:22px}
 .minimal-home .onepage-footer{padding:22px 0 30px}
+
 @media (max-width:720px){
   .minimal-home .site-shell{padding:0 20px}
-  .minimal-home .onepage-hero{padding:34px 0 26px}
+  .minimal-home .onepage-hero{padding:30px 0 26px}
+  .minimal-home .hero-topline{margin-bottom:24px}
   .minimal-home .onepage-hero h1{font-size:40px}
   .minimal-home .onepage-hero .tagline{font-size:16px}
-  .minimal-home .onepage-section{padding:25px 0}
-  .minimal-home .education-grid{grid-template-columns:1fr;gap:0}
-}
-
-/* Detailed CV shares the minimal homepage shell. */
-.minimal-cv{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size:16px;line-height:1.55;
-}
-.minimal-cv .detail-topbar{
-  position:static;max-width:980px;min-height:0;margin:0 auto;padding:28px 24px 12px;
-  border:0;background:none;backdrop-filter:none;
-}
-.minimal-cv .detail-topbar a{
-  padding:0;border:0;background:none;
-  font:600 14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-  letter-spacing:0;text-transform:none;color:var(--accent);
-}
-.minimal-cv .detail-actions{gap:18px}
-.minimal-cv .detail-actions .theme-toggle{display:none}
-.minimal-cv .detail-cv-document{max-width:980px;padding:18px 24px 54px}
-.minimal-cv .detail-cv-header{padding-bottom:22px;border-bottom:1px solid var(--line)}
-.minimal-cv .detail-cv-header h1{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size:42px;line-height:1.05;letter-spacing:-.035em;
-}
-.minimal-cv .detail-cv-header>div>p{margin-top:8px;font-size:16px}
-.minimal-cv .detail-cv-contact{gap:6px 16px}
-.minimal-cv .detail-cv-contact a{
-  font:600 14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-  letter-spacing:0;color:var(--accent);
-}
-.minimal-cv .plain-cv-section{display:block;padding:28px 0}
-.minimal-cv .plain-cv-section>h2{
-  padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size:24px;line-height:1.2;letter-spacing:-.02em;text-transform:none;
-}
-.minimal-cv .plain-cv-body,.minimal-cv .plain-cv-skills{margin-top:14px}
-.minimal-cv .plain-cv-entry+.plain-cv-entry,
-.minimal-cv .plain-cv-publication+.plain-cv-publication{margin-top:15px;padding-top:15px}
-.minimal-cv .plain-cv-entry-head h3,.minimal-cv .plain-cv-publication h3,
-.minimal-cv .plain-cv-skills dt{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-}
-.minimal-cv .plain-cv-entry>p{max-width:58em;font-size:15px;line-height:1.5}
-.minimal-cv .detail-footer{padding-top:22px}
-@media (max-width:720px){
-  .minimal-cv .detail-topbar{padding:22px 20px 10px}
-  .minimal-cv .detail-actions{gap:12px}
-  .minimal-cv .detail-cv-document{padding:14px 20px 42px}
-  .minimal-cv .detail-cv-header{display:block;padding-bottom:20px}
-  .minimal-cv .detail-cv-contact{margin-top:16px}
-  .minimal-cv .plain-cv-section{padding:24px 0}
+  .minimal-home .compact-section{padding:24px 0}
+  .minimal-home .compact-row{grid-template-columns:30px minmax(0,1fr);gap:11px}
+  .minimal-home .compact-row time{grid-column:2;margin-top:-4px}
+  .minimal-home .link-list>a{grid-template-columns:1fr auto;gap:3px 12px}
+  .minimal-home .link-list span{grid-column:1}
+  .minimal-home .link-list b{grid-column:2;grid-row:1/3}
+  .minimal-home .music-card{grid-template-columns:1fr;padding:var(--s-5)}
 }
