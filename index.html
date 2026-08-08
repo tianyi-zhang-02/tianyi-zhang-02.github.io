@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=51">
+  <link rel="stylesheet" href="style.css?v=52">
 <script>/* Apply the saved theme before first paint so there is no flash. */
 (function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
 </head>
@@ -35,12 +35,12 @@
     </div>
 
     <nav id="side-nav" class="side-nav">
+      <div class="side-group" data-nav-section="resume"><a class="side-main" href="#resume">Résumé / CV</a></div>
       <div class="side-group" data-nav-section="experience"><a class="side-main" href="#experience">Experience</a></div>
       <div class="side-group" data-nav-section="research"><a class="side-main" href="#research">Research</a></div>
       <div class="side-group" data-nav-section="projects"><a class="side-main" href="#projects">Open Source</a></div>
       <div class="side-group" data-nav-section="personal"><a class="side-main" href="#personal">Personal</a></div>
       <div class="side-group" data-nav-section="education"><a class="side-main" href="#education">Education</a></div>
-      <div class="side-group" data-nav-section="resume"><a class="side-main" href="#resume">Résumé / CV</a></div>
     </nav>
 
     <nav class="side-contact" aria-label="Contact links">
@@ -68,22 +68,6 @@
           <a href="https://www.linkedin.com/in/tianyi-zhang2002/">LinkedIn</a>
         </nav>
       </div>
-      <figure class="sig">
-        <svg viewBox="0 0 340 260" role="img" aria-labelledby="figtitle">
-          <title id="figtitle">An abstract graph connecting research, models, and learning.</title>
-          <path class="draw sig-edge" d="M52 198 L116 150 M116 150 L86 78 M116 150 L172 104 M116 150 L150 212 M172 104 L282 84 M172 104 L244 158 M244 158 L300 196 M244 158 L282 84 M150 212 L244 158"/>
-          <circle class="sig-halo" cx="172" cy="104" r="11"/>
-          <circle class="sig-halo" cx="282" cy="84" r="11"/>
-          <g class="sig-node">
-            <circle cx="52" cy="198" r="3.4"/><circle cx="116" cy="150" r="3.4"/>
-            <circle cx="86" cy="78" r="3.4"/><circle cx="150" cy="212" r="3.4"/>
-            <circle cx="244" cy="158" r="3.4"/><circle cx="300" cy="196" r="3.4"/>
-          </g>
-          <circle class="sig-key" cx="172" cy="104" r="4.8"/>
-          <circle class="sig-key" cx="282" cy="84" r="4.8"/>
-        </svg>
-        <figcaption>Research · Models · Learning</figcaption>
-      </figure>
     </header>
 
     <dialog class="panorama-dialog" aria-labelledby="panorama-title">
@@ -114,8 +98,20 @@
     </dialog>
 
     <main>
+      <section id="resume" class="onepage-section resume-section" data-section="resume">
+        <div class="section-kicker">01 / Résumé &amp; CV</div>
+        <div class="section-body">
+          <h2>Résumé and CV.</h2>
+          <div class="download-row subsection">
+            <a class="download-card" href="resume.pdf"><span>1 page</span><strong>Download résumé</strong></a>
+            <a class="download-card" href="cv.pdf"><span>Full version</span><strong>Download CV</strong></a>
+            <a class="download-card" href="detailed-cv.html"><span>HTML</span><strong>View detailed CV</strong></a>
+          </div>
+        </div>
+      </section>
+
       <section id="experience" class="onepage-section" data-section="experience">
-        <div class="section-kicker">01 / Experience</div>
+        <div class="section-kicker">02 / Experience</div>
         <div class="section-body">
           <h2>Industry and research labs.</h2>
           <article id="linkedin" class="timeline-card subsection">
@@ -161,7 +157,7 @@
       </section>
 
       <section id="research" class="onepage-section" data-section="research">
-        <div class="section-kicker">02 / Research</div>
+        <div class="section-kicker">03 / Research</div>
         <div class="section-body">
           <h2>Selected publications.</h2>
           <article id="agentsuite" class="publication-card subsection">
@@ -190,7 +186,7 @@
       </section>
 
       <section id="projects" class="onepage-section" data-section="projects">
-        <div class="section-kicker">03 / Open Source</div>
+        <div class="section-kicker">04 / Open Source</div>
         <div class="section-body">
           <h2>Upstream contributions.</h2>
           <article id="nemo-rl" class="project-card subsection">
@@ -206,7 +202,7 @@
       </section>
 
       <section id="personal" class="onepage-section" data-section="personal">
-        <div class="section-kicker">04 / Personal</div>
+        <div class="section-kicker">05 / Personal</div>
         <div class="section-body">
           <h2>Off the clock.</h2>
           <div id="hobbies" class="subsection personal-card">
@@ -250,7 +246,7 @@
       </section>
 
       <section id="education" class="onepage-section" data-section="education">
-        <div class="section-kicker">05 / Education</div>
+        <div class="section-kicker">06 / Education</div>
         <div class="section-body">
           <h2>From Emory to Georgia Tech.</h2>
           <div class="education-grid subsection">
@@ -276,17 +272,6 @@
         </div>
       </section>
 
-      <section id="resume" class="onepage-section" data-section="resume">
-        <div class="section-kicker">06 / Résumé &amp; CV</div>
-        <div class="section-body">
-          <h2>Documents.</h2>
-          <div class="download-row subsection">
-            <a class="download-card" href="resume.pdf"><span>1 page</span><strong>Download résumé</strong></a>
-            <a class="download-card" href="cv.pdf"><span>Full version</span><strong>Download CV</strong></a>
-            <a class="download-card" href="detailed-cv.html"><span>HTML</span><strong>View detailed CV</strong></a>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="onepage-footer">

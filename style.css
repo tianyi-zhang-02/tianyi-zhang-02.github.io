@@ -241,8 +241,8 @@ img,video,svg{max-width:100%}
   color:var(--ink);cursor:pointer;
 }
 
-.side-nav{margin-top:var(--s-7);padding-right:34px;overflow-y:auto}
-.side-group{border-top:1px solid var(--line);padding:var(--s-4) 0}
+.side-nav{margin-top:var(--s-5);padding-right:34px;overflow-y:auto}
+.side-group{border-top:1px solid var(--line);padding:var(--s-3) 0}
 .side-group:last-child{border-bottom:1px solid var(--line)}
 .side-main{
   display:block;font:500 13px/1.4 var(--mono);letter-spacing:var(--tr-mono);text-transform:uppercase;
@@ -274,27 +274,27 @@ img,video,svg{max-width:100%}
    4. Hero
    -------------------------------------------------------------------------- */
 .onepage-hero{
-  padding:clamp(56px,8vh,96px) 0 clamp(48px,7vh,80px);
-  display:grid;grid-template-columns:minmax(0,1.35fr) minmax(230px,.62fr);
-  gap:clamp(42px,6vw,76px);align-items:center;scroll-margin-top:20px;
+  padding:clamp(40px,6vh,64px) 0 clamp(30px,4vh,44px);
+  display:block;scroll-margin-top:20px;
 }
+.hero-copy{max-width:900px}
 .onepage-hero h1{
   font:700 var(--t-display)/.92 var(--serif);
   letter-spacing:-.055em;text-transform:none;text-wrap:balance;
 }
-.onepage-hero .eyebrow{margin-bottom:var(--s-5);color:var(--accent)}
+.onepage-hero .eyebrow{margin-bottom:var(--s-3);color:var(--accent)}
 .onepage-hero .tagline{
-  margin-top:var(--s-6);font-size:20px;line-height:1.55;max-width:33em;text-wrap:pretty;
+  margin-top:var(--s-4);font-size:19px;line-height:1.48;max-width:44em;text-wrap:pretty;
 }
 .onepage-hero .idline{
-  display:flex;flex-wrap:wrap;gap:5px 0;margin-top:var(--s-5);
+  display:flex;flex-wrap:wrap;gap:5px 0;margin-top:var(--s-4);
   font:500 var(--t-xs)/1.45 var(--mono);letter-spacing:var(--tr-label);
   text-transform:uppercase;color:var(--muted);
 }
 .onepage-hero .idline span{display:inline-flex;align-items:center;white-space:nowrap}
 .onepage-hero .idline span+span::before{content:'·';margin:0 11px;color:var(--accent)}
 
-nav.links{margin-top:var(--s-6);display:flex;flex-wrap:wrap;gap:var(--s-2)}
+nav.links{margin-top:var(--s-4);display:flex;flex-wrap:wrap;gap:var(--s-2)}
 nav.links a{
   font:500 var(--t-xs)/1 var(--mono);letter-spacing:var(--tr-mono);
   color:var(--ink);text-decoration:none;
@@ -392,17 +392,17 @@ body.panorama-open{overflow:hidden}
    6. Sections
    -------------------------------------------------------------------------- */
 .onepage-section{
-  display:grid;grid-template-columns:200px minmax(0,1fr);gap:var(--s-7);
-  padding:var(--s-9) 0;border-top:1px solid var(--line);scroll-margin-top:16px;
+  display:grid;grid-template-columns:160px minmax(0,1fr);gap:32px;
+  padding:46px 0;border-top:1px solid var(--line);scroll-margin-top:16px;
 }
 .onepage-section .section-kicker{
-  padding-top:9px;font-size:15px;letter-spacing:.08em;color:var(--ink);
+  padding-top:6px;font-size:13px;letter-spacing:.08em;color:var(--ink);
 }
 .onepage-section h2{
-  font:700 var(--t-3xl)/1.07 var(--serif);letter-spacing:-.035em;
+  font:700 var(--t-2xl)/1.1 var(--serif);letter-spacing:-.03em;
   text-transform:none;color:var(--ink);max-width:15em;text-wrap:balance;
 }
-.section-body>*+*{margin-top:var(--s-6)}
+.section-body>*+*{margin-top:var(--s-4)}
 .subsection{scroll-margin-top:var(--s-5)}
 
 /* card surfaces — one shared recipe */
@@ -416,20 +416,20 @@ body.panorama-open{overflow:hidden}
 
 /* record cards — experience, publications, projects, personal */
 .timeline-card,.publication-card,.project-card,.personal-card,.music-card{
-  margin-top:0;padding:var(--s-6) 0;border-top:1px solid var(--line);
+  margin-top:0;padding:20px 0;border-top:1px solid var(--line);
 }
-.timeline-card{display:grid;grid-template-columns:96px minmax(0,1fr);gap:var(--s-5);align-items:start}
+.timeline-card{display:grid;grid-template-columns:72px minmax(0,1fr);gap:var(--s-4);align-items:start}
 .experience-brand{display:flex;align-items:center;min-height:56px;padding-top:2px}
 .experience-brand-pair{gap:4px}
 .experience-logo{
-  display:grid;place-items:center;width:48px;height:48px;
+  display:grid;place-items:center;width:40px;height:40px;
   background:transparent;
   transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease);
 }
 .experience-logo:hover{transform:translateY(-2px);opacity:.78}
 .experience-logo img{display:block;max-width:100%;max-height:100%;object-fit:contain}
-.experience-brand-pair .experience-logo{width:40px;height:40px}
-.brand-cross{display:grid;place-items:center;width:8px;height:40px;font:400 12px/1 var(--sans);color:var(--muted)}
+.experience-brand-pair .experience-logo{width:34px;height:34px}
+.brand-cross{display:grid;place-items:center;width:7px;height:34px;font:400 11px/1 var(--sans);color:var(--muted)}
 .timeline-card:last-child,.publication-card:last-of-type,
 .project-card:last-of-type,.personal-card{border-bottom:1px solid var(--line)}
 .timeline-meta,.project-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s-5);align-items:baseline}
@@ -437,10 +437,10 @@ body.panorama-open{overflow:hidden}
   font:500 var(--t-2xs)/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
 }
 .timeline-card h3,.publication-card h3,.project-card h3,.personal-card h3{
-  margin-top:var(--s-3);font:700 var(--t-xl)/1.25 var(--serif);max-width:34em;text-wrap:balance;
+  margin-top:8px;font:700 var(--t-xl)/1.25 var(--serif);max-width:34em;text-wrap:balance;
 }
-.timeline-card p,.publication-card>p:last-child,.project-card>p{margin-top:var(--s-3);max-width:42em;text-wrap:pretty}
-.timeline-card .tags,.project-card .tags,.personal-card .tags{margin-top:var(--s-3)}
+.timeline-card p,.publication-card>p:last-child,.project-card>p{margin-top:8px;max-width:46em;text-wrap:pretty}
+.timeline-card .tags,.project-card .tags,.personal-card .tags{margin-top:8px}
 .publication-card .authors{margin-top:var(--s-2);color:var(--muted);font-size:15.5px;max-width:40em}
 .publication-card .authors strong{color:var(--ink);font-weight:600}
 .publication-card h3 a,.project-card h3 a{color:var(--ink);text-decoration:none}
@@ -508,7 +508,7 @@ body.panorama-open{overflow:hidden}
    8. CV block + footer
    -------------------------------------------------------------------------- */
 .education-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-4)}
-.education-grid article{margin:0;padding:var(--s-5);min-height:210px}
+.education-grid article{margin:0;padding:18px;min-height:160px}
 .education-head{display:flex;align-items:center;justify-content:space-between;gap:var(--s-4)}
 .school-logo{
   display:grid;place-items:center;width:48px;height:48px;background:transparent;
@@ -521,8 +521,8 @@ body.panorama-open{overflow:hidden}
 
 .download-row{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-3)}
 .download-card{
-  display:flex;min-height:116px;flex-direction:column;justify-content:space-between;
-  padding:var(--s-5);color:var(--ink);text-decoration:none;
+  display:flex;min-height:84px;flex-direction:column;justify-content:space-between;
+  padding:16px;color:var(--ink);text-decoration:none;
   transition:transform var(--dur) var(--ease),border-color var(--dur) var(--ease),box-shadow var(--dur) var(--ease);
 }
 .download-card span{font:500 var(--t-2xs)/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
@@ -566,11 +566,11 @@ body.panorama-open{overflow:hidden}
 @media (max-width:720px){
   .site-shell{padding:0 18px}
   .site-sidebar{margin:0 -18px;padding:var(--s-4) 18px}
-  .onepage-hero{display:block;padding:var(--s-7) 0 var(--s-6)}
+  .onepage-hero{display:block;padding:30px 0 26px}
   .onepage-hero h1{font-size:clamp(48px,14vw,60px);letter-spacing:-.05em}
   .onepage-hero .eyebrow{margin-bottom:var(--s-4)}
-  .onepage-hero .tagline{margin-top:var(--s-5);font-size:18.5px;line-height:1.58}
-  .onepage-hero .idline{margin-top:var(--s-5);gap:7px 0}
+  .onepage-hero .tagline{margin-top:var(--s-4);font-size:18px;line-height:1.5}
+  .onepage-hero .idline{margin-top:var(--s-4);gap:7px 0}
   .onepage-hero .idline span:first-child{flex-basis:100%}
   .onepage-hero .idline span:nth-child(2)::before{display:none}
   .onepage-hero .sig{display:none}
@@ -584,7 +584,7 @@ body.panorama-open{overflow:hidden}
   .panorama-controls .panorama-close{margin-left:auto}
   .panorama-foot{padding:9px 12px}
   .panorama-foot span:last-child{display:none}
-  .onepage-section{grid-template-columns:1fr;gap:var(--s-5);padding:var(--s-8) 0}
+  .onepage-section{grid-template-columns:1fr;gap:var(--s-3);padding:32px 0}
   .onepage-section .section-kicker{padding:0}
   .education-grid{grid-template-columns:1fr}
   .timeline-card{grid-template-columns:1fr;gap:var(--s-3)}
