@@ -826,3 +826,73 @@ body:not(.one-page):not(.detail-cv-page) footer a:hover{color:var(--accent)}
   .download-card:hover{transform:none}
   .route-signal{display:none}
 }
+
+/* -----------------------------------------------------------------------------
+   14. Minimal home — compact academic portfolio
+   -------------------------------------------------------------------------- */
+.minimal-home{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:16px;line-height:1.55;
+}
+.minimal-home .site-shell{display:block;max-width:1080px;margin:0 auto;padding:0 34px}
+.minimal-home .site-sidebar{display:none}
+.minimal-home .onepage-hero{max-width:920px;padding:54px 0 34px}
+.minimal-home .onepage-hero h1{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:48px;line-height:1.05;letter-spacing:-.035em;
+}
+.minimal-home .onepage-hero .eyebrow{display:none}
+.minimal-home .onepage-hero .tagline{margin-top:16px;max-width:52em;font-size:17px;line-height:1.55}
+.minimal-home .onepage-hero .idline{margin-top:14px;font-size:11px}
+.minimal-home nav.links{margin-top:18px;gap:8px 18px}
+.minimal-home nav.links a{
+  padding:0;border:0;border-radius:0;background:none;
+  font:600 14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  letter-spacing:0;color:var(--accent);text-decoration:none;
+}
+.minimal-home nav.links a:hover{text-decoration:underline;text-underline-offset:3px}
+.minimal-home .onepage-section{display:block;padding:30px 0;border-top:1px solid var(--line)}
+.minimal-home .section-kicker{display:none}
+.minimal-home .onepage-section h2{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:26px;line-height:1.2;letter-spacing:-.02em;
+}
+.minimal-home .section-body>*+*{margin-top:12px}
+.minimal-home .timeline-card,.minimal-home .publication-card,
+.minimal-home .project-card,.minimal-home .personal-card{
+  padding:15px 0;border-top:0;border-bottom:1px solid var(--line);
+}
+.minimal-home .timeline-card{display:block}
+.minimal-home .experience-brand{display:none}
+.minimal-home .timeline-meta{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.minimal-home .timeline-card h3,.minimal-home .publication-card h3,
+.minimal-home .project-card h3,.minimal-home .personal-card h3{
+  margin-top:5px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:18px;line-height:1.3;letter-spacing:-.01em;
+}
+.minimal-home .timeline-card p,.minimal-home .publication-card>p:last-child,
+.minimal-home .project-card>p,.minimal-home .personal-card>p{
+  margin-top:6px;max-width:58em;font-size:15px;line-height:1.5;
+}
+.minimal-home .timeline-card .tags,.minimal-home .project-card .tags{display:none}
+.minimal-home .publication-card .authors{margin-top:4px;font-size:14px}
+.minimal-home .publication-card .card-index{font-size:10px}
+.minimal-home .project-title a{gap:10px}
+.minimal-home .project-logo{width:30px;height:30px}
+.minimal-home .education-grid{grid-template-columns:1fr 1fr;gap:22px}
+.minimal-home .education-grid article{
+  min-height:0;padding:14px 0;background:none;border:0;border-bottom:1px solid var(--line);box-shadow:none;
+}
+.minimal-home .school-logo{width:34px;height:34px}
+.minimal-home .education-grid h3{
+  margin-top:8px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:17px;
+}
+.minimal-home .onepage-footer{padding:22px 0 30px}
+@media (max-width:720px){
+  .minimal-home .site-shell{padding:0 20px}
+  .minimal-home .onepage-hero{padding:34px 0 26px}
+  .minimal-home .onepage-hero h1{font-size:40px}
+  .minimal-home .onepage-hero .tagline{font-size:16px}
+  .minimal-home .onepage-section{padding:25px 0}
+  .minimal-home .education-grid{grid-template-columns:1fr;gap:0}
+}
