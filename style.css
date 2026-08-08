@@ -896,3 +896,54 @@ body:not(.one-page):not(.detail-cv-page) footer a:hover{color:var(--accent)}
   .minimal-home .onepage-section{padding:25px 0}
   .minimal-home .education-grid{grid-template-columns:1fr;gap:0}
 }
+
+/* Detailed CV shares the minimal homepage shell. */
+.minimal-cv{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:16px;line-height:1.55;
+}
+.minimal-cv .detail-topbar{
+  position:static;max-width:980px;min-height:0;margin:0 auto;padding:28px 24px 12px;
+  border:0;background:none;backdrop-filter:none;
+}
+.minimal-cv .detail-topbar a{
+  padding:0;border:0;background:none;
+  font:600 14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  letter-spacing:0;text-transform:none;color:var(--accent);
+}
+.minimal-cv .detail-actions{gap:18px}
+.minimal-cv .detail-actions .theme-toggle{display:none}
+.minimal-cv .detail-cv-document{max-width:980px;padding:18px 24px 54px}
+.minimal-cv .detail-cv-header{padding-bottom:22px;border-bottom:1px solid var(--line)}
+.minimal-cv .detail-cv-header h1{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:42px;line-height:1.05;letter-spacing:-.035em;
+}
+.minimal-cv .detail-cv-header>div>p{margin-top:8px;font-size:16px}
+.minimal-cv .detail-cv-contact{gap:6px 16px}
+.minimal-cv .detail-cv-contact a{
+  font:600 14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  letter-spacing:0;color:var(--accent);
+}
+.minimal-cv .plain-cv-section{display:block;padding:28px 0}
+.minimal-cv .plain-cv-section>h2{
+  padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:24px;line-height:1.2;letter-spacing:-.02em;text-transform:none;
+}
+.minimal-cv .plain-cv-body,.minimal-cv .plain-cv-skills{margin-top:14px}
+.minimal-cv .plain-cv-entry+.plain-cv-entry,
+.minimal-cv .plain-cv-publication+.plain-cv-publication{margin-top:15px;padding-top:15px}
+.minimal-cv .plain-cv-entry-head h3,.minimal-cv .plain-cv-publication h3,
+.minimal-cv .plain-cv-skills dt{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+.minimal-cv .plain-cv-entry>p{max-width:58em;font-size:15px;line-height:1.5}
+.minimal-cv .detail-footer{padding-top:22px}
+@media (max-width:720px){
+  .minimal-cv .detail-topbar{padding:22px 20px 10px}
+  .minimal-cv .detail-actions{gap:12px}
+  .minimal-cv .detail-cv-document{padding:14px 20px 42px}
+  .minimal-cv .detail-cv-header{display:block;padding-bottom:20px}
+  .minimal-cv .detail-cv-contact{margin-top:16px}
+  .minimal-cv .plain-cv-section{padding:24px 0}
+}
