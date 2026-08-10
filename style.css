@@ -746,17 +746,19 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   font-size:16px;line-height:1.55;
 }
-.minimal-home .site-shell{display:block;max-width:1040px;margin:0 auto;padding:0 32px}
-.minimal-home .onepage-hero{
+.minimal-home .site-shell{
   display:grid;grid-template-columns:250px minmax(0,1fr);gap:clamp(42px,7vw,84px);
-  padding:64px 0 46px;align-items:start;
+  max-width:1040px;margin:0 auto;padding:0 32px;align-items:start;
+}
+.minimal-home .onepage-hero{
+  display:block;padding:64px 0 28px;
 }
 .minimal-home .theme-toggle{width:30px;height:30px}
-.minimal-home .onepage-hero h1{
+.minimal-home .identity-card h1{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   font-size:31px;line-height:1.08;letter-spacing:-.035em;
 }
-.minimal-home .identity-card{padding-top:4px}
+.minimal-home .identity-card{position:sticky;top:0;align-self:start;padding:68px 0 40px}
 .minimal-home .identity-photo{
   display:block;width:156px;aspect-ratio:1;margin-bottom:22px;border-radius:28px;
   object-fit:cover;object-position:center 35%;background:var(--surface-2);box-shadow:0 0 0 1px var(--line);
@@ -771,7 +773,7 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
 }
 .minimal-home nav.links a:hover,.minimal-home .section-heading>a:hover{text-decoration:underline;text-underline-offset:3px}
 .minimal-home .about-panel{min-width:0}
-.minimal-home .about-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:23px}
+.minimal-home .about-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:23px}
 .minimal-home .about-heading h2{
   position:relative;padding-bottom:11px;font-size:30px;line-height:1.1;letter-spacing:-.035em;
 }
@@ -791,7 +793,8 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
 .minimal-home .entity-link-pair{gap:4px}
 .minimal-home .entity-link-pair img{width:14px;height:14px}
 .minimal-home .entity-link-pair>span{color:var(--muted);font-size:10px}
-.minimal-home .section-nav{display:flex;flex-wrap:wrap;gap:18px;margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+.minimal-home .about-actions{display:flex;align-items:center;gap:18px}
+.minimal-home .section-nav{display:flex;flex-wrap:wrap;gap:16px}
 .minimal-home .section-nav a{color:var(--muted);font-size:13px;font-weight:600;text-decoration:none}
 .minimal-home .section-nav a:hover{color:var(--accent)}
 
@@ -857,13 +860,16 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
 .minimal-home .onepage-footer{padding:22px 0 30px}
 
 @media (max-width:720px){
-  .minimal-home .site-shell{padding:0 20px}
-  .minimal-home .onepage-hero{grid-template-columns:1fr;gap:34px;padding:30px 0 28px}
+  .minimal-home .site-shell{display:block;padding:0 20px}
+  .minimal-home .identity-card{position:static;padding:30px 0 32px}
+  .minimal-home .onepage-hero{padding:0 0 24px}
   .minimal-home .identity-photo{width:112px;border-radius:22px;margin-bottom:17px}
-  .minimal-home .onepage-hero h1{font-size:34px}
+  .minimal-home .identity-card h1{font-size:34px}
   .minimal-home nav.links{display:flex}
   .minimal-home .about-heading{margin-bottom:18px}
   .minimal-home .about-heading h2{font-size:27px}
+  .minimal-home .section-nav{display:none}
+  .minimal-home .about-actions{gap:0}
   .minimal-home .compact-section{padding:24px 0}
   .minimal-home .compact-row{grid-template-columns:30px minmax(0,1fr);gap:11px}
   .minimal-home .compact-row time{grid-column:2;margin-top:-4px}
