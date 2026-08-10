@@ -837,6 +837,10 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
 }
 .minimal-home .publication-list h3 a{color:var(--ink);text-decoration:none}
 .minimal-home .publication-list h3 a:hover{color:var(--accent)}
+.minimal-home .publication-list .publication-authors{
+  margin-top:5px;color:var(--muted);font-size:13px;line-height:1.45;letter-spacing:0;text-transform:none;
+}
+.minimal-home .publication-list .publication-authors strong{color:var(--ink);font-weight:650}
 
 .minimal-home .link-list>a{
   display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:13px;align-items:center;
