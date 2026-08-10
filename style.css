@@ -781,17 +781,16 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
 .minimal-home .about-panel>p{max-width:43em;font-size:16px;line-height:1.62;text-wrap:pretty}
 .minimal-home .about-panel>p+p{margin-top:13px}
 .minimal-home .about-panel strong{font-weight:650;background:var(--accent-soft);box-shadow:3px 0 var(--accent-soft),-3px 0 var(--accent-soft)}
-.minimal-home .research-path{display:grid;gap:0;margin-top:22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.minimal-home .research-path article{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;align-items:center;padding:11px 0}
-.minimal-home .research-path article+article{border-top:1px solid var(--line)}
-.minimal-home .path-logos{display:flex;align-items:center;justify-content:center;width:64px;height:34px}
-.minimal-home .path-logos img{display:block;max-width:31px;max-height:28px;object-fit:contain}
-.minimal-home .path-logos-pair{gap:5px}
-.minimal-home .path-logos-pair img{max-width:22px;max-height:22px}
-.minimal-home .path-logos b{color:var(--muted);font-size:11px;font-weight:500}
-.minimal-home .research-path article>div>strong,.minimal-home .research-path article>div>span{display:block}
-.minimal-home .research-path strong{background:none;box-shadow:none;font-size:14px}
-.minimal-home .research-path div>span{margin-top:1px;color:var(--muted);font-size:13px;line-height:1.4}
+.minimal-home .entity-link{
+  display:inline-flex;align-items:center;gap:5px;padding:0 4px;border-radius:4px;
+  background:var(--accent-soft);color:var(--ink);text-decoration:none;white-space:nowrap;
+}
+.minimal-home .entity-link:hover{color:var(--accent)}
+.minimal-home .entity-link img{width:15px;height:15px;object-fit:contain;flex:0 0 auto}
+.minimal-home .entity-link strong{background:none;box-shadow:none}
+.minimal-home .entity-link-pair{gap:4px}
+.minimal-home .entity-link-pair img{width:14px;height:14px}
+.minimal-home .entity-link-pair>span{color:var(--muted);font-size:10px}
 .minimal-home .interest-block{margin-top:22px}
 .minimal-home .interest-block>span{
   display:block;margin-bottom:8px;color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
