@@ -757,9 +757,9 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
   font-size:31px;line-height:1.08;letter-spacing:-.035em;
 }
 .minimal-home .identity-card{padding-top:4px}
-.minimal-home .identity-monogram{
-  display:grid;place-items:center;width:76px;height:76px;margin-bottom:20px;border-radius:22px;
-  background:var(--accent);color:var(--accent-ink);font-size:22px;font-weight:750;letter-spacing:-.04em;
+.minimal-home .identity-photo{
+  display:block;width:156px;aspect-ratio:1;margin-bottom:22px;border-radius:28px;
+  object-fit:cover;object-position:center 35%;background:var(--surface-2);box-shadow:0 0 0 1px var(--line);
 }
 .minimal-home .identity-location{margin-top:9px;color:var(--muted);font-size:13px}
 .minimal-home .education-line{margin-top:18px;font-size:13px;line-height:1.45;color:var(--muted)}
@@ -781,6 +781,17 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
 .minimal-home .about-panel>p{max-width:43em;font-size:16px;line-height:1.62;text-wrap:pretty}
 .minimal-home .about-panel>p+p{margin-top:13px}
 .minimal-home .about-panel strong{font-weight:650;background:var(--accent-soft);box-shadow:3px 0 var(--accent-soft),-3px 0 var(--accent-soft)}
+.minimal-home .research-path{display:grid;gap:0;margin-top:22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.minimal-home .research-path article{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;align-items:center;padding:11px 0}
+.minimal-home .research-path article+article{border-top:1px solid var(--line)}
+.minimal-home .path-logos{display:flex;align-items:center;justify-content:center;width:64px;height:34px}
+.minimal-home .path-logos img{display:block;max-width:31px;max-height:28px;object-fit:contain}
+.minimal-home .path-logos-pair{gap:5px}
+.minimal-home .path-logos-pair img{max-width:22px;max-height:22px}
+.minimal-home .path-logos b{color:var(--muted);font-size:11px;font-weight:500}
+.minimal-home .research-path article>div>strong,.minimal-home .research-path article>div>span{display:block}
+.minimal-home .research-path strong{background:none;box-shadow:none;font-size:14px}
+.minimal-home .research-path div>span{margin-top:1px;color:var(--muted);font-size:13px;line-height:1.4}
 .minimal-home .interest-block{margin-top:22px}
 .minimal-home .interest-block>span{
   display:block;margin-bottom:8px;color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
@@ -851,7 +862,7 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
 @media (max-width:720px){
   .minimal-home .site-shell{padding:0 20px}
   .minimal-home .onepage-hero{grid-template-columns:1fr;gap:34px;padding:30px 0 28px}
-  .minimal-home .identity-monogram{width:60px;height:60px;border-radius:17px;margin-bottom:15px;font-size:18px}
+  .minimal-home .identity-photo{width:112px;border-radius:22px;margin-bottom:17px}
   .minimal-home .onepage-hero h1{font-size:34px}
   .minimal-home nav.links{display:flex}
   .minimal-home .about-heading{margin-bottom:18px}
