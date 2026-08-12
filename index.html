@@ -39,7 +39,6 @@
           <div class="about-actions">
             <nav class="section-nav" aria-label="Page sections">
               <a href="#experience">Experience</a>
-              <a href="#focus">Focus</a>
               <a href="#publications">Research</a>
               <a href="#work">Notes</a>
               <a href="#personal">Personal</a>
@@ -75,38 +74,6 @@
             <time>Dec 2023 — May 2025</time>
           </article>
         </div>
-      </section>
-
-      <section id="focus" class="compact-section focus-section">
-        <h2>Current Focus</h2>
-        <p class="focus-intro">A public, intentionally abstracted view of my current research direction: learning useful representations from imperfect feedback without moving expensive models onto the request path.</p>
-        <div class="research-flow" role="img" aria-label="Noisy feedback is converted into reliable supervision for an embedding retriever. Informative images are selectively enriched by a pretrained vision-language model offline. The retrieved candidates pass to an existing ranker, followed by behavioral evaluation and controlled online validation.">
-          <div class="flow-step">
-            <span>01</span>
-            <strong>Noisy feedback</strong>
-            <p>Construct confidence-aware supervision.</p>
-          </div>
-          <div class="flow-arrow" aria-hidden="true">→</div>
-          <div class="flow-step flow-step-model">
-            <span>02</span>
-            <strong>Post-trained retriever</strong>
-            <p>Learn complementary user and content representations.</p>
-            <small>Image router → selective offline VLM enrichment</small>
-          </div>
-          <div class="flow-arrow" aria-hidden="true">→</div>
-          <div class="flow-step">
-            <span>03</span>
-            <strong>Existing ranker</strong>
-            <p>Make fine-grained request-level decisions.</p>
-          </div>
-          <div class="flow-arrow" aria-hidden="true">→</div>
-          <div class="flow-step">
-            <span>04</span>
-            <strong>Behavioral evaluation</strong>
-            <p>Measure relevance, breadth, and subgroup behavior.</p>
-          </div>
-        </div>
-        <p class="focus-footnote">Sequential simulation is useful for stress testing; controlled online experiments remain the final validation.</p>
       </section>
 
       <section id="publications" class="compact-section">
