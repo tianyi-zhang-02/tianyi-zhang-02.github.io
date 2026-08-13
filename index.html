@@ -7,7 +7,7 @@
 <meta name="description" content="Tianyi Zhang works on post-training, representation, search, and evaluation from sparse human feedback.">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M5 27 L27 5' stroke='%23BDBFB8' stroke-dasharray='2 3' fill='none'/%3E%3Cpath d='M5 27 C 11 12 17 7 27 5' stroke='%231E3EC8' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css?v=63">
+<link rel="stylesheet" href="style.css?v=64">
 <script>
 (function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
 </script>
@@ -49,7 +49,7 @@
             </button>
           </div>
         </div>
-        <p>I am an M.S. student at <a class="entity-link" href="https://www.gatech.edu/"><img src="images/gatech.ico" alt=""><strong>Georgia Tech</strong></a> and an ML Engineer Intern at <a class="entity-link" href="https://www.linkedin.com/"><img src="images/linkedin.ico" alt=""><strong>LinkedIn</strong></a>, where I work on post-training and evaluation for relevance and retrieval. I am interested in turning sparse, noisy human feedback into reliable learning signals.</p>
+        <p>I am an M.S. student at <a class="entity-link" href="https://www.gatech.edu/"><img src="images/gatech.ico" alt=""><strong>Georgia Tech</strong></a> and an ML Engineer Intern at <a class="entity-link" href="https://www.linkedin.com/"><img src="images/linkedin.ico" alt=""><strong>LinkedIn</strong></a>, where I work on retrieval and relevance—improving how embedding models learn from sparse, noisy human feedback.</p>
         <p>Previously, at <a class="entity-link entity-link-pair" href="https://research.nvidia.com/"><img src="images/gatech.ico" alt=""><span aria-hidden="true">×</span><img src="images/nvidia.ico" alt=""><strong>GT EIC Lab × NVIDIA AI Research</strong></a>, I built evaluation and benchmark-auditing systems for AI agents. Before that, at <a class="entity-link" href="https://www.emory.edu/"><img src="images/emory.svg" alt=""><strong>Emory</strong></a>, I worked on graph neural networks for directed and temporal brain-network modeling.</p>
       </div>
     </header>
@@ -58,10 +58,19 @@
       <section id="experience" class="compact-section">
         <h2>Experience</h2>
         <div class="compact-list">
-          <article class="compact-row">
+          <article class="compact-row compact-row-featured">
             <a class="row-mark" href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="images/linkedin.ico" alt=""></a>
-            <div><h3>LinkedIn</h3><p>Machine Learning Engineer Intern · Post-training &amp; Evaluation</p></div>
+            <div><h3>LinkedIn</h3><p>Machine Learning Engineer Intern · Retrieval &amp; Relevance</p></div>
             <time>May 2026 — August 2026</time>
+            <div class="experience-case">
+              <p class="experience-case-lede">Improving a production two-tower embedding retriever by asking whether its supervision, representation, and offline metrics capture the signals that matter.</p>
+              <div class="experience-problems" aria-label="Retrieval problems investigated">
+                <div><span>Supervision</span><p>Dwell-heavy positives, missing rejection signals, positive-only histories, and imputed negatives made the learning target too narrow.</p></div>
+                <div><span>Representation</span><p>One fused member view and text-limited candidates could discard complementary profile, history, and visual evidence.</p></div>
+                <div><span>Measurement</span><p>Aggregate Recall and sampled negatives obscured who benefited and whether relevance came at the cost of semantic breadth.</p></div>
+              </div>
+              <p class="experience-response"><strong>Response.</strong> Tightened data and objective contracts; designed a multi-task, multi-tower teacher–student architecture with offline VLM enrichment; and shipped billion-scale behavioral evaluation to gate added signals by relevance, complementarity, coverage, and topical diversity.</p>
+            </div>
           </article>
           <article class="compact-row">
             <span class="row-mark row-mark-pair" aria-hidden="true"><img src="images/gatech.ico" alt=""><img src="images/nvidia.ico" alt=""></span>
