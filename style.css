@@ -849,20 +849,34 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
 }
 .minimal-home .publication-list .publication-authors strong{color:var(--ink);font-weight:650}
 
-.minimal-home .link-list>a{
-  display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:13px;align-items:center;
-  padding:14px 0;color:var(--ink);text-decoration:none;
+.minimal-home .oss-list{margin-top:12px}
+.minimal-home .oss-row{
+  display:grid;grid-template-columns:34px minmax(0,1fr);gap:13px;align-items:start;padding:15px 0;
 }
-.minimal-home .link-mark{
-  display:grid;place-items:center;width:30px;height:30px;border-radius:6px;overflow:hidden;
+.minimal-home .oss-row+.oss-row{border-top:1px solid var(--line)}
+.minimal-home .oss-mark{
+  display:grid;place-items:center;width:30px;height:30px;border-radius:7px;color:var(--ink);text-decoration:none;overflow:hidden;
 }
-.minimal-home .link-mark img{display:block;width:100%;height:100%;object-fit:contain}
-.minimal-home .link-copy{min-width:0}
-.minimal-home .link-copy strong,.minimal-home .link-copy>span{display:block}
-.minimal-home .link-copy strong{font-size:15px}
-.minimal-home .link-copy>span{margin-top:2px;color:var(--muted);font-size:14px}
-.minimal-home .link-list b{color:var(--accent);font-weight:500}
-.minimal-home .link-list>a:hover strong{color:var(--accent)}
+.minimal-home .oss-mark img{display:block;width:100%;height:100%;object-fit:contain}
+.minimal-home .oss-mark-text{
+  border:1px solid var(--line);background:var(--surface-2);font-size:11px;font-weight:750;letter-spacing:-.02em;
+}
+.minimal-home .oss-copy{min-width:0}
+.minimal-home .oss-heading{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.minimal-home .oss-heading h3{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:15px;line-height:1.35;letter-spacing:-.01em;
+}
+.minimal-home .oss-heading h3 a{color:var(--ink);text-decoration:none}
+.minimal-home .oss-heading h3 a:hover{color:var(--accent)}
+.minimal-home .oss-stars{
+  display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border:1px solid var(--line);border-radius:999px;
+  background:var(--surface-2);color:var(--gold);font-size:11px;font-weight:700;line-height:1.25;white-space:nowrap;
+}
+.minimal-home .oss-copy>p{margin-top:3px;color:var(--muted);font-size:14px;line-height:1.45}
+.minimal-home .oss-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:7px}
+.minimal-home .oss-actions a{color:var(--accent);font-size:12px;font-weight:650;text-decoration:none}
+.minimal-home .oss-actions a:hover{text-decoration:underline;text-underline-offset:3px}
 
 .minimal-home .personal-intro{margin-top:10px;color:var(--muted);font-size:15px}
 .minimal-home .personal-panorama.hero-reveal{margin:20px 0 0}
@@ -883,6 +897,6 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
   .minimal-home .compact-section{padding:24px 0}
   .minimal-home .compact-row{grid-template-columns:30px minmax(0,1fr);gap:11px}
   .minimal-home .compact-row time{grid-column:2;margin-top:-4px}
-  .minimal-home .link-list>a{grid-template-columns:30px minmax(0,1fr) auto;gap:11px}
+  .minimal-home .oss-row{grid-template-columns:30px minmax(0,1fr);gap:11px}
   .minimal-home .music-card{grid-template-columns:1fr;padding:var(--s-5)}
 }

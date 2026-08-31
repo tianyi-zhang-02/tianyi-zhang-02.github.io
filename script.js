@@ -271,6 +271,58 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   window.addEventListener('resize', renderPanorama);
 })();
 
+// Refresh public GitHub star counts without credentials. The checked-in values
+// remain visible when the API is unavailable or its anonymous rate limit is hit.
+(function () {
+  var projects = document.querySelectorAll('[data-github-repo]');
+  if (!projects.length || !window.fetch) return;
+
+  var maxAge = 6 * 60 * 60 * 1000;
+
+  function formatStars(count) {
+    return count >= 1000 ? (count / 1000).toFixed(1) + 'k' : count.toLocaleString('en-US');
+  }
+
+  function render(project, count) {
+    var value = project.querySelector('[data-github-star-count]');
+    var badge = project.querySelector('.oss-stars');
+    if (!value || !badge || !Number.isFinite(count)) return;
+    value.textContent = formatStars(count);
+    badge.setAttribute('aria-label', count.toLocaleString('en-US') + ' GitHub stars');
+  }
+
+  projects.forEach(function (project) {
+    var repo = project.getAttribute('data-github-repo');
+    if (!repo) return;
+
+    var cacheKey = 'github-stars:' + repo;
+    try {
+      var cached = JSON.parse(localStorage.getItem(cacheKey));
+      if (cached && Date.now() - cached.savedAt < maxAge && Number.isFinite(cached.count)) {
+        render(project, cached.count);
+        return;
+      }
+    } catch (error) {}
+
+    var path = repo.split('/').map(encodeURIComponent).join('/');
+    fetch('https://api.github.com/repos/' + path, {
+      headers: { Accept: 'application/vnd.github+json' },
+      referrerPolicy: 'no-referrer'
+    })
+      .then(function (response) {
+        if (!response.ok) throw new Error('GitHub API request failed');
+        return response.json();
+      })
+      .then(function (data) {
+        var count = data.stargazers_count;
+        if (!Number.isFinite(count)) return;
+        render(project, count);
+        try { localStorage.setItem(cacheKey, JSON.stringify({ count: count, savedAt: Date.now() })); } catch (error) {}
+      })
+      .catch(function () {});
+  });
+})();
+
 // Load the third-party Spotify player only after an explicit visitor action.
 (function () {
   var mount = document.querySelector('[data-spotify-embed]');
