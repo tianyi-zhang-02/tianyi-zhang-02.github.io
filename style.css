@@ -858,9 +858,6 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
   display:grid;place-items:center;width:30px;height:30px;border-radius:7px;color:var(--ink);text-decoration:none;overflow:hidden;
 }
 .minimal-home .oss-mark img{display:block;width:100%;height:100%;object-fit:contain}
-.minimal-home .oss-mark-text{
-  border:1px solid var(--line);background:var(--surface-2);font-size:11px;font-weight:750;letter-spacing:-.02em;
-}
 .minimal-home .oss-copy{min-width:0}
 .minimal-home .oss-heading{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
 .minimal-home .oss-heading h3{
