@@ -777,6 +777,8 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   font-size:31px;line-height:1.08;letter-spacing:-.035em;
 }
+.minimal-home .identity-alias{display:block;margin-top:6px;font-size:17px;font-weight:500;letter-spacing:0;color:var(--muted)}
+.minimal-home .identity-alias:empty{display:none}
 .minimal-home .identity-card{position:sticky;top:0;align-self:start;padding:68px 0 40px}
 .minimal-home .identity-photo{
   display:block;width:156px;aspect-ratio:1;margin-bottom:22px;border-radius:28px;
