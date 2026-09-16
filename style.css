@@ -897,6 +897,8 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
 }
 .minimal-home .oss-copy>p{margin-top:3px;color:var(--muted);font-size:14px;line-height:1.45}
 .minimal-home .oss-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:7px}
+.minimal-home .oss-contributions{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:14px;line-height:1.55}
+.minimal-home .oss-contributions li+li{margin-top:3px}
 .minimal-home .oss-actions a{color:var(--accent);font-size:12px;font-weight:650;text-decoration:none}
 .minimal-home .oss-actions a:hover{text-decoration:underline;text-underline-offset:3px}
 
