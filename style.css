@@ -771,7 +771,15 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
 .minimal-home .onepage-hero{
   display:block;padding:64px 0 28px;
 }
-.minimal-home .theme-toggle,.minimal-home .language-toggle{height:30px}
+.minimal-home .theme-toggle,.minimal-home .language-toggle{height:34px}
+.minimal-home .language-toggle{font-size:12px;padding:0 11px;white-space:nowrap}
+.minimal-home .about-glossary{margin-top:18px;font-size:13px}
+.minimal-home .about-glossary summary{width:fit-content;cursor:pointer;color:var(--accent);font-weight:600}
+.minimal-home .about-glossary dl{margin:14px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r-xs)}
+.minimal-home .about-glossary dl>div+div{margin-top:13px;padding-top:13px;border-top:1px solid var(--line)}
+.minimal-home .about-glossary dt{font-weight:600;line-height:1.6}
+.minimal-home .about-glossary dt span{display:inline-block;margin-left:8px;font-weight:400;color:var(--muted)}
+.minimal-home .about-glossary dd{margin:4px 0 0;color:var(--muted);line-height:1.65}
 .minimal-home .theme-toggle{width:30px}
 .minimal-home .identity-card h1{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;

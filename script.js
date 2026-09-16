@@ -25,15 +25,15 @@ if (yr) yr.textContent = new Date().getFullYear();
       node.setAttribute('aria-label', node.getAttribute('data-' + language + '-label'));
     });
 
-    button.textContent = language === 'zh' ? 'EN' : '中文';
-    button.setAttribute('aria-label', language === 'zh' ? 'Switch to English' : '切换至中文');
-    button.setAttribute('title', language === 'zh' ? 'Switch to English' : '切换至中文');
+    button.textContent = language === 'zh' ? 'View English' : '查看中文';
+    button.setAttribute('aria-label', language === 'zh' ? 'View English version' : '查看中文版');
+    button.setAttribute('title', language === 'zh' ? 'View English version' : '查看中文版');
 
     var description = document.querySelector('meta[name="description"]');
     if (description) {
       description.setAttribute('content', language === 'zh'
-        ? 'Tianyi Zhang 的个人主页：后训练、表征学习、检索与模型评估。'
-        : 'Tianyi Zhang works on post-training, representation, search, and evaluation from sparse human feedback.');
+        ? 'Tianyi Zhang 的个人主页：后训练、表征学习、检索与模型评估，从稀疏、带噪数据中提取可靠的学习信号。'
+        : 'Tianyi Zhang works on post-training, representation, search, and evaluation, extracting reliable learning signals from sparse, noisy data.');
     }
 
     try { localStorage.setItem('language', language); } catch (error) {}
