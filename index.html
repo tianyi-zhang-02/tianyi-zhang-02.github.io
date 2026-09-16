@@ -9,20 +9,20 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; frame-src https://open.spotify.com; connect-src https://api.github.com; font-src 'self'; worker-src 'none'; upgrade-insecure-requests">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M5 27 L27 5' stroke='%23BDBFB8' stroke-dasharray='2 3' fill='none'/%3E%3Cpath d='M5 27 C 11 12 17 7 27 5' stroke='%231E3EC8' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css?v=65">
+<link rel="stylesheet" href="style.css?v=66">
 <script src="theme-init.js"></script>
 </head>
 <body class="one-page minimal-home">
 
 <div class="site-shell">
-  <aside class="identity-card" aria-label="Profile">
+  <aside class="identity-card" aria-label="Profile" data-en-label="Profile" data-zh-label="个人信息">
     <img class="identity-photo" src="images/tianyi-zhang.jpg" alt="Portrait of Tianyi Zhang">
     <h1>Tianyi Zhang</h1>
-    <p class="identity-location">Shanghai · Atlanta · Bay Area</p>
-    <p class="education-line"><strong>Georgia Tech</strong><br>M.S. Computer Science · 2025–2027</p>
-    <p class="education-line"><strong>Emory University</strong><br>B.S. Quantitative Sciences<br>Data Science · 2021–2025</p>
+    <p class="identity-location" data-en="Shanghai · Atlanta · Bay Area" data-zh="上海 · 亚特兰大 · 湾区">Shanghai · Atlanta · Bay Area</p>
+    <p class="education-line"><strong data-en="Georgia Tech" data-zh="佐治亚理工学院">Georgia Tech</strong><br><span data-en="M.S. Computer Science · 2025–2027" data-zh="计算机科学硕士 · 2025–2027">M.S. Computer Science · 2025–2027</span></p>
+    <p class="education-line"><strong data-en="Emory University" data-zh="埃默里大学">Emory University</strong><br><span data-en="B.S. Quantitative Sciences" data-zh="定量科学理学学士">B.S. Quantitative Sciences</span><br><span data-en="Data Science · 2021–2025" data-zh="数据科学 · 2021–2025">Data Science · 2021–2025</span></p>
     <nav class="links" aria-label="Primary links">
-      <a href="https://scholar.google.com/citations?hl=en&amp;view_op=list_works&amp;user=46rbYk0AAAAJ">Scholar ↗</a>
+      <a href="https://scholar.google.com/citations?hl=en&amp;view_op=list_works&amp;user=46rbYk0AAAAJ" data-en="Scholar ↗" data-zh="学术主页 ↗">Scholar ↗</a>
       <a href="https://github.com/tianyi-zhang-02">GitHub ↗</a>
       <a href="https://www.linkedin.com/in/tianyi-zhang2002/">LinkedIn ↗</a>
     </nav>
@@ -32,49 +32,50 @@
     <header id="top" class="onepage-hero">
       <div class="about-panel">
         <div class="about-heading">
-          <h2>About</h2>
+          <h2 data-en="About" data-zh="关于我">About</h2>
           <div class="about-actions">
             <nav class="section-nav" aria-label="Page sections">
-              <a href="#experience">Experience</a>
-              <a href="#publications">Research</a>
-              <a href="#work">Open Source</a>
-              <a href="#personal">Personal</a>
+              <a href="#experience" data-en="Experience" data-zh="经历">Experience</a>
+              <a href="#publications" data-en="Research" data-zh="研究">Research</a>
+              <a href="#work" data-en="Open Source" data-zh="开源">Open Source</a>
+              <a href="#personal" data-en="Personal" data-zh="个人">Personal</a>
             </nav>
+            <button class="language-toggle" type="button" aria-label="切换至中文" title="切换至中文">中文</button>
             <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
               <svg class="tt-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M4.2 12H2M22 12h-2.2M6.5 6.5 4.9 4.9M19.1 19.1l-1.6-1.6M17.5 6.5l1.6-1.6M4.9 19.1l1.6-1.6"/></svg>
               <svg class="tt-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.4A8.4 8.4 0 0 1 9.6 4a8.4 8.4 0 1 0 10.4 10.4Z"/></svg>
             </button>
           </div>
         </div>
-        <p>I am an M.S. student at <a class="entity-link" href="https://www.gatech.edu/"><img src="images/gatech.ico" alt=""><strong>Georgia Tech</strong></a> and an ML Engineer Intern at <a class="entity-link" href="https://www.linkedin.com/"><img src="images/linkedin.ico" alt=""><strong>LinkedIn</strong></a>, where I work on post-training and evaluation for relevance and retrieval. I am interested in turning sparse, noisy human feedback into reliable learning signals.</p>
-        <p>Previously, at <a class="entity-link entity-link-pair" href="https://research.nvidia.com/"><img src="images/gatech.ico" alt=""><span aria-hidden="true">×</span><img src="images/nvidia.ico" alt=""><strong>GT EIC Lab × NVIDIA AI Research</strong></a>, I built evaluation and benchmark-auditing systems for AI agents. Before that, at <a class="entity-link" href="https://www.emory.edu/"><img src="images/emory.svg" alt=""><strong>Emory</strong></a>, I worked on graph neural networks for directed and temporal brain-network modeling.</p>
+        <p><span data-en="I am an M.S. student at " data-zh="我目前是">I am an M.S. student at </span><a class="entity-link" href="https://www.gatech.edu/"><img src="images/gatech.ico" alt=""><strong data-en="Georgia Tech" data-zh="佐治亚理工学院">Georgia Tech</strong></a><span data-en=" and an ML Engineer Intern at " data-zh="的计算机科学硕士研究生，并在"> and an ML Engineer Intern at </span><a class="entity-link" href="https://www.linkedin.com/"><img src="images/linkedin.ico" alt=""><strong>LinkedIn</strong></a><span data-en=", where I work on post-training and evaluation for relevance and retrieval. I am interested in turning sparse, noisy human feedback into reliable learning signals." data-zh="担任机器学习工程师实习生，主要从事相关性与检索方向的后训练和评估。我关注如何将稀疏、嘈杂的人类反馈转化为可靠的学习信号。">, where I work on post-training and evaluation for relevance and retrieval. I am interested in turning sparse, noisy human feedback into reliable learning signals.</span></p>
+        <p><span data-en="Previously, at " data-zh="此前，我在">Previously, at </span><a class="entity-link entity-link-pair" href="https://research.nvidia.com/"><img src="images/gatech.ico" alt=""><span aria-hidden="true">×</span><img src="images/nvidia.ico" alt=""><strong data-en="GT EIC Lab × NVIDIA AI Research" data-zh="佐治亚理工 EIC 实验室 × NVIDIA AI Research">GT EIC Lab × NVIDIA AI Research</strong></a><span data-en=", I built evaluation and benchmark-auditing systems for AI agents. Before that, at " data-zh="参与智能体评估与基准审计系统；更早在">, I built evaluation and benchmark-auditing systems for AI agents. Before that, at </span><a class="entity-link" href="https://www.emory.edu/"><img src="images/emory.svg" alt=""><strong data-en="Emory" data-zh="埃默里大学">Emory</strong></a><span data-en=", I worked on graph neural networks for directed and temporal brain-network modeling." data-zh="研究用于有向和时序脑网络建模的图神经网络。">, I worked on graph neural networks for directed and temporal brain-network modeling.</span></p>
       </div>
     </header>
 
     <main>
       <section id="experience" class="compact-section">
-        <h2>Experience</h2>
+        <h2 data-en="Experience" data-zh="专业经历">Experience</h2>
         <div class="compact-list">
           <article class="compact-row">
             <a class="row-mark" href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="images/linkedin.ico" alt=""></a>
-            <div><h3>LinkedIn</h3><p>Machine Learning Engineer Intern · Post-training &amp; Evaluation</p></div>
-            <time>May 2026 — August 2026</time>
+            <div><h3>LinkedIn</h3><p data-en="Machine Learning Engineer Intern · Post-training &amp; Evaluation" data-zh="机器学习工程师实习生 · 后训练与评估">Machine Learning Engineer Intern · Post-training &amp; Evaluation</p></div>
+            <time data-en="May 2026 — August 2026" data-zh="2026年5月 — 2026年8月">May 2026 — August 2026</time>
           </article>
           <article class="compact-row">
             <span class="row-mark row-mark-pair" aria-hidden="true"><img src="images/gatech.ico" alt=""><img src="images/nvidia.ico" alt=""></span>
-            <div><h3>Georgia Tech EIC Lab × NVIDIA AI Research</h3><p>Student Researcher</p></div>
-            <time>Jul 2025 — Dec 2025</time>
+            <div><h3 data-en="Georgia Tech EIC Lab × NVIDIA AI Research" data-zh="佐治亚理工 EIC 实验室 × NVIDIA AI Research">Georgia Tech EIC Lab × NVIDIA AI Research</h3><p data-en="Student Researcher" data-zh="学生研究员">Student Researcher</p></div>
+            <time data-en="Jul 2025 — Dec 2025" data-zh="2025年7月 — 2025年12月">Jul 2025 — Dec 2025</time>
           </article>
           <article class="compact-row">
             <a class="row-mark" href="https://www.emory.edu/" aria-label="Emory University"><img src="images/emory.svg" alt=""></a>
-            <div><h3>Emory · Graph Mining Lab</h3><p>Machine Learning Researcher</p></div>
-            <time>Dec 2023 — May 2025</time>
+            <div><h3 data-en="Emory · Graph Mining Lab" data-zh="埃默里大学 · 图挖掘实验室">Emory · Graph Mining Lab</h3><p data-en="Machine Learning Researcher" data-zh="机器学习研究员">Machine Learning Researcher</p></div>
+            <time data-en="Dec 2023 — May 2025" data-zh="2023年12月 — 2025年5月">Dec 2023 — May 2025</time>
           </article>
         </div>
       </section>
 
       <section id="publications" class="compact-section">
-        <div class="section-heading"><h2>Publications</h2><a href="https://scholar.google.com/citations?hl=en&amp;view_op=list_works&amp;user=46rbYk0AAAAJ">Google Scholar ↗</a></div>
+        <div class="section-heading"><h2 data-en="Publications" data-zh="论文发表">Publications</h2><a href="https://scholar.google.com/citations?hl=en&amp;view_op=list_works&amp;user=46rbYk0AAAAJ" data-en="Google Scholar ↗" data-zh="Google Scholar ↗">Google Scholar ↗</a></div>
         <div class="compact-list publication-list">
           <article>
             <p>ICML 2026</p>
@@ -95,7 +96,7 @@
       </section>
 
       <section id="work" class="compact-section">
-        <h2>Open Source</h2>
+        <h2 data-en="Open Source" data-zh="开源贡献">Open Source</h2>
         <div class="oss-list">
           <article class="oss-row" data-github-repo="NVIDIA-NeMo/RL">
             <a class="oss-mark" href="https://github.com/NVIDIA-NeMo/RL" aria-label="NVIDIA NeMo RL repository"><img src="images/nvidia.ico" alt=""></a>
@@ -104,10 +105,10 @@
                 <h3><a href="https://github.com/NVIDIA-NeMo/RL">NVIDIA NeMo RL</a></h3>
                 <span class="oss-stars" title="GitHub stars" aria-label="2.0 thousand GitHub stars">★ <span data-github-star-count>2.0k</span></span>
               </div>
-              <p>Scalable toolkit for efficient LLM reinforcement learning and post-training.</p>
+              <p data-en="Scalable toolkit for efficient LLM reinforcement learning and post-training." data-zh="面向大语言模型强化学习与后训练的高效可扩展工具包。">Scalable toolkit for efficient LLM reinforcement learning and post-training.</p>
               <div class="oss-actions">
-                <a href="https://github.com/NVIDIA-NeMo/RL/pulls?q=is:pr+is:merged+author:tianyi-zhang-02">Merged ↗</a>
-                <a href="https://github.com/NVIDIA-NeMo/RL/pulls?q=is:pr+is:open+author:tianyi-zhang-02">Open PRs ↗</a>
+                <a href="https://github.com/NVIDIA-NeMo/RL/pulls?q=is:pr+is:merged+author:tianyi-zhang-02" data-en="Merged ↗" data-zh="已合并 ↗">Merged ↗</a>
+                <a href="https://github.com/NVIDIA-NeMo/RL/pulls?q=is:pr+is:open+author:tianyi-zhang-02" data-en="Open PRs ↗" data-zh="审阅中 PR ↗">Open PRs ↗</a>
               </div>
             </div>
           </article>
@@ -119,8 +120,8 @@
                 <h3><a href="https://github.com/NVIDIA-NeMo/Speech">NVIDIA NeMo Speech</a></h3>
                 <span class="oss-stars" title="GitHub stars" aria-label="18.4 thousand GitHub stars">★ <span data-github-star-count>18.4k</span></span>
               </div>
-              <p>Research framework for ASR, TTS, and speaker diarization.</p>
-              <div class="oss-actions"><a href="https://github.com/NVIDIA-NeMo/Speech/pull/16174">Open PR ↗</a></div>
+              <p data-en="Research framework for ASR, TTS, and speaker diarization." data-zh="面向自动语音识别、语音合成与说话人分离标注的研究框架。">Research framework for ASR, TTS, and speaker diarization.</p>
+              <div class="oss-actions"><a href="https://github.com/NVIDIA-NeMo/Speech/pull/16174" data-en="Open PR ↗" data-zh="审阅中 PR ↗">Open PR ↗</a></div>
             </div>
           </article>
 
@@ -128,8 +129,8 @@
       </section>
 
       <section id="personal" class="compact-section personal-section">
-        <h2>Personal</h2>
-        <p class="personal-intro">Photography, mountains, rivers, animals, travel, music — and learning guitar.</p>
+        <h2 data-en="Personal" data-zh="个人">Personal</h2>
+        <p class="personal-intro" data-en="Photography, mountains, rivers, animals, travel, music — and learning guitar." data-zh="摄影、山川、动物、旅行、音乐，以及正在学习吉他。">Photography, mountains, rivers, animals, travel, music — and learning guitar.</p>
 
         <figure class="hero-reveal personal-panorama">
           <div class="reveal">
@@ -139,22 +140,22 @@
             <img class="rv-media rv-photo" src="images/namcha-barwa.jpg" alt="Namcha Barwa panorama, Tibet — photo by Tianyi Zhang">
             <div class="rv-handle" aria-hidden="true"><span class="rv-grip">↔</span></div>
             <input class="rv-range" type="range" min="0" max="100" value="0" step="0.5" aria-label="Slide to reveal the time-lapse">
-            <div class="rv-hint">slide to reveal the time-lapse ▸</div>
-            <button class="panorama-open-button" type="button" data-panorama-open>Open panorama <span aria-hidden="true">↗</span></button>
+            <div class="rv-hint" data-en="slide to reveal the time-lapse ▸" data-zh="滑动查看延时摄影 ▸">slide to reveal the time-lapse ▸</div>
+            <button class="panorama-open-button" type="button" data-panorama-open><span data-en="Open panorama" data-zh="打开全景图">Open panorama</span> <span aria-hidden="true">↗</span></button>
           </div>
-          <figcaption><span>Namcha Barwa 南迦巴瓦峰</span><span>Photo by Tianyi</span></figcaption>
+          <figcaption><span>Namcha Barwa 南迦巴瓦峰</span><span data-en="Photo by Tianyi" data-zh="摄影：Tianyi">Photo by Tianyi</span></figcaption>
         </figure>
 
         <div class="music-card">
           <div class="music-copy">
             <p class="card-index">Spotify</p>
             <h3>夯歌分享</h3>
-            <p>最近循环播放的歌，持续更新。</p>
-            <a href="https://open.spotify.com/playlist/5mvXtbOcZx8t4gBWIZTFZn?si=b447c6cfe7af4445">Open in Spotify ↗</a>
+            <p data-en="Songs currently on repeat, updated along the way." data-zh="最近循环播放的歌，持续更新。">最近循环播放的歌，持续更新。</p>
+            <a href="https://open.spotify.com/playlist/5mvXtbOcZx8t4gBWIZTFZn?si=b447c6cfe7af4445" data-en="Open in Spotify ↗" data-zh="在 Spotify 中打开 ↗">Open in Spotify ↗</a>
           </div>
           <div class="spotify-consent" data-spotify-embed data-src="https://open.spotify.com/embed/playlist/5mvXtbOcZx8t4gBWIZTFZn?utm_source=generator&amp;theme=0">
-            <button type="button" data-spotify-load>Play on this page</button>
-            <p>Spotify loads only after you choose to play.</p>
+            <button type="button" data-spotify-load data-en="Play on this page" data-zh="在本页播放">Play on this page</button>
+            <p data-en="Spotify loads only after you choose to play." data-zh="只有点击播放后才会加载 Spotify。">Spotify loads only after you choose to play.</p>
           </div>
         </div>
       </section>
@@ -167,9 +168,9 @@
 <dialog class="panorama-dialog" aria-labelledby="panorama-title">
   <div class="panorama-shell">
     <header class="panorama-head">
-      <div><p>Interactive panorama</p><h2 id="panorama-title">Namcha Barwa · 南迦巴瓦峰</h2></div>
+      <div><p data-en="Interactive panorama" data-zh="交互式全景图">Interactive panorama</p><h2 id="panorama-title">Namcha Barwa · 南迦巴瓦峰</h2></div>
       <div class="panorama-controls" aria-label="Panorama controls">
-        <button type="button" data-panorama-fit>Fit</button>
+        <button type="button" data-panorama-fit data-en="Fit" data-zh="适应">Fit</button>
         <button type="button" data-panorama-actual>1:1</button>
         <button type="button" data-panorama-out aria-label="Zoom out">−</button>
         <output data-panorama-level>100%</output>
@@ -179,12 +180,12 @@
     </header>
     <div class="panorama-viewport">
       <img class="panorama-image" src="images/namcha-barwa.jpg" data-full-src="images/namcha-barwa-full.jpg" alt="Full panorama of Namcha Barwa in Tibet" draggable="false">
-      <div class="panorama-status" data-panorama-status>Fit view · 3000px preview</div>
+      <div class="panorama-status" data-panorama-status data-en="Fit view · 3000px preview" data-zh="适应窗口 · 3000px 预览">Fit view · 3000px preview</div>
     </div>
-    <footer class="panorama-foot"><span>Scroll or pinch to zoom · drag to explore</span><span>18,493 × 4,519</span></footer>
+    <footer class="panorama-foot"><span data-en="Scroll or pinch to zoom · drag to explore" data-zh="滚轮或双指缩放 · 拖动浏览">Scroll or pinch to zoom · drag to explore</span><span>18,493 × 4,519</span></footer>
   </div>
 </dialog>
 
-<script src="script.js?v=42"></script>
+<script src="script.js?v=43"></script>
 </body>
 </html>

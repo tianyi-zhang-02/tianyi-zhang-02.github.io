@@ -2,6 +2,51 @@
 var yr = document.getElementById('yr');
 if (yr) yr.textContent = new Date().getFullYear();
 
+(function () {
+  var button = document.querySelector('.language-toggle');
+  if (!button) return;
+
+  var params = new URLSearchParams(window.location.search);
+  var requested = params.get('lang');
+  var stored = null;
+  try { stored = localStorage.getItem('language'); } catch (error) {}
+  var language = requested === 'zh' || requested === 'en' ? requested : (stored === 'zh' ? 'zh' : 'en');
+
+  function apply(next) {
+    language = next === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
+    document.body.setAttribute('data-language', language);
+
+    document.querySelectorAll('[data-en][data-zh]').forEach(function (node) {
+      node.textContent = node.getAttribute('data-' + language);
+    });
+
+    document.querySelectorAll('[data-en-label][data-zh-label]').forEach(function (node) {
+      node.setAttribute('aria-label', node.getAttribute('data-' + language + '-label'));
+    });
+
+    button.textContent = language === 'zh' ? 'EN' : '中文';
+    button.setAttribute('aria-label', language === 'zh' ? 'Switch to English' : '切换至中文');
+    button.setAttribute('title', language === 'zh' ? 'Switch to English' : '切换至中文');
+
+    var description = document.querySelector('meta[name="description"]');
+    if (description) {
+      description.setAttribute('content', language === 'zh'
+        ? 'Tianyi Zhang 的个人主页：后训练、表征学习、检索与模型评估。'
+        : 'Tianyi Zhang works on post-training, representation, search, and evaluation from sparse human feedback.');
+    }
+
+    try { localStorage.setItem('language', language); } catch (error) {}
+    window.dispatchEvent(new CustomEvent('languagechange', { detail: { language: language } }));
+  }
+
+  button.addEventListener('click', function () {
+    apply(language === 'zh' ? 'en' : 'zh');
+  });
+
+  apply(language);
+})();
+
 // Theme toggle. No stored preference means "follow the system"; clicking pins an
 // explicit choice, which the CSS honours over prefers-color-scheme in both
 // directions. The pre-paint script in <head> applies the stored value.
@@ -18,9 +63,11 @@ if (yr) yr.textContent = new Date().getFullYear();
 
   function label() {
     var next = current() === 'dark' ? 'light' : 'dark';
+    var chinese = document.documentElement.lang === 'zh-CN';
     buttons.forEach(function (b) {
-      b.setAttribute('aria-label', 'Switch to ' + next + ' theme');
-      b.setAttribute('title', 'Switch to ' + next + ' theme');
+      var text = chinese ? (next === 'light' ? '切换至浅色主题' : '切换至深色主题') : 'Switch to ' + next + ' theme';
+      b.setAttribute('aria-label', text);
+      b.setAttribute('title', text);
     });
   }
 
@@ -35,6 +82,7 @@ if (yr) yr.textContent = new Date().getFullYear();
 
   // Keep the label right when the system flips and nothing is pinned.
   if (media.addEventListener) media.addEventListener('change', label);
+  window.addEventListener('languagechange', label);
   label();
 })();
 
@@ -340,7 +388,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     frame.width = '100%';
     frame.height = '352';
     frame.loading = 'lazy';
-    frame.title = "Tianyi's Spotify playlist";
+    frame.title = document.documentElement.lang === 'zh-CN' ? 'Tianyi 的 Spotify 播放列表' : "Tianyi's Spotify playlist";
     frame.referrerPolicy = 'no-referrer';
     frame.allow = 'autoplay; encrypted-media; fullscreen; picture-in-picture';
     frame.allowFullscreen = true;
