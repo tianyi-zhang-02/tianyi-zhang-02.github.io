@@ -25,6 +25,11 @@ if (yr) yr.textContent = new Date().getFullYear();
       node.setAttribute('aria-label', node.getAttribute('data-' + language + '-label'));
     });
 
+    // The notes site has one page per language, so links into it follow the toggle.
+    document.querySelectorAll('[data-en-href][data-zh-href]').forEach(function (node) {
+      node.setAttribute('href', node.getAttribute('data-' + language + '-href'));
+    });
+
     button.textContent = language === 'zh' ? 'View English' : '查看中文';
     button.setAttribute('aria-label', language === 'zh' ? 'View English version' : '查看中文版');
     button.setAttribute('title', language === 'zh' ? 'View English version' : '查看中文版');
