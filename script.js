@@ -37,7 +37,7 @@ if (yr) yr.textContent = new Date().getFullYear();
     var description = document.querySelector('meta[name="description"]');
     if (description) {
       description.setAttribute('content', language === 'zh'
-        ? 'Tianyi Zhang 的个人主页：后训练、表征学习、检索与模型评估，从稀疏、带噪数据中提取可靠的学习信号。'
+        ? '张天毅（Tianyi Zhang）的个人主页：关注 post-training、表征学习、检索与模型评估，研究怎样从稀疏、带噪声的数据里提取可靠的学习信号。'
         : 'Tianyi Zhang works on post-training, representation, search, and evaluation, extracting reliable learning signals from sparse, noisy data.');
     }
 
@@ -186,6 +186,11 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   var dragStart = null;
   var pinchStart = null;
 
+  // Status lines follow the page language, like everything else on the page.
+  function say(en, zh) {
+    status.textContent = document.documentElement.lang === 'zh-CN' ? zh : en;
+  }
+
   function baseSize() {
     return { width: image.offsetWidth, height: image.offsetHeight };
   }
@@ -207,17 +212,17 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   function loadFull() {
     if (fullLoaded) return;
     fullLoaded = true;
-    status.textContent = 'Loading 18,493px original…';
+    say('Loading 18,493px original…', '正在加载 18,493px 原图…');
     var full = image.getAttribute('data-full-src');
     var loader = new Image();
     loader.onload = function () {
       image.src = full;
-      status.textContent = 'Full-resolution original';
+      say('Full-resolution original', '原始分辨率');
       renderPanorama();
     };
     loader.onerror = function () {
       fullLoaded = false;
-      status.textContent = 'Preview mode · original unavailable';
+      say('Preview mode · original unavailable', '预览模式 · 原图暂时加载不了');
     };
     loader.src = full;
   }
@@ -233,7 +238,10 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       offsetY = pointY - (pointY - offsetY) * (scale / previous);
     }
     if (scale >= 2.5) loadFull();
-    else if (scale > 1) status.textContent = image.naturalWidth > 3000 ? 'Zoomed view · full-resolution original' : 'Zoomed view · 3000px preview';
+    else if (scale > 1) {
+      if (image.naturalWidth > 3000) say('Zoomed view · full-resolution original', '放大浏览 · 原始分辨率');
+      else say('Zoomed view · 3000px preview', '放大浏览 · 3000px 预览');
+    }
     renderPanorama();
   }
 
@@ -241,7 +249,8 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     scale = 1;
     offsetX = 0;
     offsetY = 0;
-    status.textContent = image.naturalWidth > 3000 ? 'Fit view · full-resolution original' : 'Fit view · 3000px preview';
+    if (image.naturalWidth > 3000) say('Fit view · full-resolution original', '适应窗口 · 原始分辨率');
+    else say('Fit view · 3000px preview', '适应窗口 · 3000px 预览');
     renderPanorama();
   }
 
