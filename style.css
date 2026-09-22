@@ -10,7 +10,6 @@
    Light is the source of truth; the dark block below overrides colour only.
    -------------------------------------------------------------------------- */
 :root{
-  color-scheme:light dark;
 
   /* type ------------------------------------------------------------------ */
   --mono:'Martian Mono', ui-monospace, 'SF Mono', Menlo, monospace;
@@ -50,84 +49,54 @@
   --dur-fast:.15s;
   --dur:.25s;
 
-  /* colour — light -------------------------------------------------------- */
-  --paper:#FAFAF7;         /* page */
-  --surface:#FFFFFF;       /* raised card */
-  --surface-2:#F2F2EE;     /* recessed / hover */
-  --ink:#18191C;
-  --muted:#54575E;
-  --line:#E2E2DC;
-  --line-strong:#C7C9C2;
-  --accent:#1E3EC8;
-  --accent-ink:#FFFFFF;    /* text on an accent fill */
-  --accent-soft:rgba(30,62,200,.07);
-  --gold:#8A7124;
+  /* colour — the site is black; light is the pinned alternative (see block 15) --- */
+  color-scheme:dark;
+  --paper:#000000;         /* page */
+  --surface:#0B0B0B;       /* raised card */
+  --surface-2:#141414;     /* recessed / hover */
+  --ink:#F2F2F2;
+  --muted:#A6A6A6;
+  --line:#1E1E1E;
+  --line-strong:#2E2E2E;
+  --accent:#FFFFFF;
+  --accent-ink:#000000;    /* text on an accent fill */
+  --accent-soft:rgba(255,255,255,.08);
+  --gold:#CFCFCF;
 
   /* the deliberately inverted panel (music) */
-  --inverse-bg:#15161B;
+  --inverse-bg:#101010;
+  --inverse-ink:#F2F2F2;
+  --inverse-muted:rgba(242,242,242,.62);
+  --inverse-line:rgba(242,242,242,.14);
+  --inverse-accent:#FFFFFF;
+
+  --shadow-card:none;
+  --shadow-lift:0 12px 34px rgba(0,0,0,.5);
+  --band-1:#C88A5C;  --band-2:#3D6BC4;  --band-3:#4E9BE8;
+}
+
+:root[data-theme="light"]{
+  color-scheme:light;
+  --paper:#FFFFFF;
+  --surface:#FAFAFA;
+  --surface-2:#F1F1F1;
+  --ink:#0A0A0A;
+  --muted:#6B6B6B;
+  --line:#E6E6E6;
+  --line-strong:#CFCFCF;
+  --accent:#000000;
+  --accent-ink:#FFFFFF;
+  --accent-soft:rgba(0,0,0,.06);
+  --gold:#5A5A5A;
+
+  --inverse-bg:#0A0A0A;
   --inverse-ink:#F5F5F1;
   --inverse-muted:rgba(245,245,241,.64);
   --inverse-line:rgba(245,245,241,.16);
-  --inverse-accent:#9DAEFF;
+  --inverse-accent:#FFFFFF;
 
-  --shadow-card:0 1px 2px rgba(24,25,28,.04);
-  --shadow-lift:0 10px 30px rgba(24,25,28,.09);
-
-}
-
-/* colour — dark.
-   Two blocks on purpose: the media query serves visitors on system dark, the
-   attribute selector serves an explicit choice from the theme toggle and must
-   win in both directions. KEEP THE VALUES IN SYNC. */
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --paper:#111216;
-    --surface:#181A20;
-    --surface-2:#1E2027;
-    --ink:#E9E9E4;
-    --muted:#A7AAB2;
-    --line:#292B32;
-    --line-strong:#3B3E47;
-    --accent:#9DAEFF;
-    --accent-ink:#111216;
-    --accent-soft:rgba(157,174,255,.12);
-    --gold:#D6BC7C;
-
-    --inverse-bg:#1E2027;
-    --inverse-ink:#F1F1EE;
-    --inverse-muted:rgba(241,241,238,.62);
-    --inverse-line:rgba(241,241,238,.14);
-    --inverse-accent:#9DAEFF;
-
-    --shadow-card:0 1px 2px rgba(0,0,0,.4);
-    --shadow-lift:0 12px 34px rgba(0,0,0,.5);
-
-    --band-1:#C88A5C;  --band-2:#3D6BC4;  --band-3:#4E9BE8;
-  }
-}
-:root[data-theme="dark"]{
-  --paper:#111216;
-  --surface:#181A20;
-  --surface-2:#1E2027;
-  --ink:#E9E9E4;
-  --muted:#A7AAB2;
-  --line:#292B32;
-  --line-strong:#3B3E47;
-  --accent:#9DAEFF;
-  --accent-ink:#111216;
-  --accent-soft:rgba(157,174,255,.12);
-  --gold:#D6BC7C;
-
-  --inverse-bg:#1E2027;
-  --inverse-ink:#F1F1EE;
-  --inverse-muted:rgba(241,241,238,.62);
-  --inverse-line:rgba(241,241,238,.14);
-  --inverse-accent:#9DAEFF;
-
-  --shadow-card:0 1px 2px rgba(0,0,0,.4);
-  --shadow-lift:0 12px 34px rgba(0,0,0,.5);
-
-  --band-1:#C88A5C;  --band-2:#3D6BC4;  --band-3:#4E9BE8;
+  --shadow-card:0 1px 2px rgba(0,0,0,.04);
+  --shadow-lift:0 10px 30px rgba(0,0,0,.09);
 }
 
 /* -----------------------------------------------------------------------------
@@ -225,13 +194,9 @@ img,video,svg{max-width:100%}
 }
 .theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
 .theme-toggle svg{width:15px;height:15px;display:block;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round}
-.theme-toggle .tt-moon{display:none}
-:root[data-theme="dark"] .theme-toggle .tt-sun{display:none}
-:root[data-theme="dark"] .theme-toggle .tt-moon{display:block}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]) .theme-toggle .tt-sun{display:none}
-:root:not([data-theme="light"]) .theme-toggle .tt-moon{display:block}
-}
+.theme-toggle .tt-sun{display:none}
+:root[data-theme="light"] .theme-toggle .tt-sun{display:block}
+:root[data-theme="light"] .theme-toggle .tt-moon{display:none}
 
 .language-toggle{
   min-width:38px;height:32px;padding:0 9px;flex:0 0 auto;
@@ -919,119 +884,74 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
 }
 
 /* -----------------------------------------------------------------------------
-   15. Sky — the whole page sits under a night sky: near-black, layered stars,
-   a moon lit along one edge, a ridge line at the horizon with a little light
-   left above it. One star layer breathes over 9s (off under reduced motion);
-   nothing else moves. Light theme = a pale dawn: no stars, no moon.
-   KEEP THE DARK VALUES IN SYNC in both blocks, as with the colour tokens above.
+   15. Night sky + hero
+   A canvas (sky.js) behind the whole page: stars by magnitude, a Milky Way
+   band, the field turning very slowly about a pole, a ridge line at the
+   horizon. The first view is the sky alone with one line of text; once the
+   reader is into the profile the sky steps back (html.sky-back). Light theme
+   is plain white, no sky: the same page, the daytime version.
    -------------------------------------------------------------------------- */
-:root{--sky-1:#EEF2F9;--sky-2:#FAF6F0;--ridge-far:#E1E6EF;--ridge-near:#ECE8E1;--sky-horizon:rgba(200,80,30,.07);--stars:0;--moon:0}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){--sky-1:#04050C;--sky-2:#0B0E1C;--ridge-far:#10152A;--ridge-near:#05060E;--sky-horizon:rgba(125,145,255,.11);--stars:1;--moon:1}
-}
-:root[data-theme="dark"]{--sky-1:#04050C;--sky-2:#0B0E1C;--ridge-far:#10152A;--ridge-near:#05060E;--sky-horizon:rgba(125,145,255,.11);--stars:1;--moon:1}
-html{background:var(--sky-2)}
-body.has-sky{background:transparent}       /* the fixed backdrop below shows through */
-.sky-backdrop{
-  position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;
-  background:linear-gradient(var(--sky-1),var(--sky-2));
-}
-.sky-stars{position:absolute;inset:0;opacity:var(--stars)}
-.sky-stars::before,.sky-stars::after{content:"";position:absolute;inset:0}
-.sky-stars{                     /* dense and faint */
-  background-image:
-    radial-gradient(0.7px 0.7px at 119px 147px, rgba(255,255,255,0.5) 50%, transparent 51%),
-    radial-gradient(0.5px 0.5px at 134px 154px, rgba(255,255,255,0.35) 50%, transparent 51%),
-    radial-gradient(0.7px 0.7px at 209px 135px, rgba(255,255,255,0.65) 50%, transparent 51%),
-    radial-gradient(0.5px 0.5px at 161px 207px, rgba(255,255,255,0.35) 50%, transparent 51%),
-    radial-gradient(0.5px 0.5px at 118px 81px, rgba(255,255,255,0.35) 50%, transparent 51%),
-    radial-gradient(0.5px 0.5px at 141px 211px, rgba(255,255,255,0.65) 50%, transparent 51%),
-    radial-gradient(0.5px 0.5px at 105px 119px, rgba(255,255,255,0.65) 50%, transparent 51%),
-    radial-gradient(0.5px 0.5px at 7px 216px, rgba(255,255,255,0.35) 50%, transparent 51%),
-    radial-gradient(0.5px 0.5px at 13px 52px, rgba(255,255,255,0.65) 50%, transparent 51%),
-    radial-gradient(0.7px 0.7px at 11px 203px, rgba(255,255,255,0.5) 50%, transparent 51%),
-    radial-gradient(0.5px 0.5px at 116px 155px, rgba(255,255,255,0.65) 50%, transparent 51%),
-    radial-gradient(0.7px 0.7px at 63px 167px, rgba(255,255,255,0.5) 50%, transparent 51%),
-    radial-gradient(0.5px 0.5px at 5px 173px, rgba(255,255,255,0.5) 50%, transparent 51%),
-    radial-gradient(0.7px 0.7px at 171px 75px, rgba(255,255,255,0.65) 50%, transparent 51%);
-  background-size:220px 220px;
-}
-.sky-stars::before{             /* a few bright ones with a soft halo, plus three cool-tinted */
-  background-image:
-    radial-gradient(circle at 172px 432px, rgba(255,255,255,1.0) 0, rgba(255,255,255,1.0) 1.4px, rgba(255,255,255,0.18) 3.1px, transparent 5.0px),
-    radial-gradient(circle at 494px 225px, rgba(255,255,255,0.85) 0, rgba(255,255,255,0.85) 1.4px, rgba(255,255,255,0.15) 3.1px, transparent 5.0px),
-    radial-gradient(circle at 521px 544px, rgba(255,255,255,0.85) 0, rgba(255,255,255,0.85) 1.1px, rgba(255,255,255,0.15) 2.4px, transparent 4.0px),
-    radial-gradient(circle at 18px 383px, rgba(255,255,255,0.85) 0, rgba(255,255,255,0.85) 1.4px, rgba(255,255,255,0.15) 3.1px, transparent 5.0px),
-    radial-gradient(circle at 152px 241px, rgba(255,255,255,0.85) 0, rgba(255,255,255,0.85) 1.1px, rgba(255,255,255,0.15) 2.4px, transparent 4.0px),
-    radial-gradient(circle at 641px 265px, rgba(200,214,255,0.8) 0, rgba(200,214,255,0.8) 1.2px, rgba(200,214,255,0.14) 2.6px, transparent 4.3px),
-    radial-gradient(circle at 480px 259px, rgba(200,214,255,0.8) 0, rgba(200,214,255,0.8) 1.2px, rgba(200,214,255,0.14) 2.6px, transparent 4.3px),
-    radial-gradient(circle at 119px 384px, rgba(200,214,255,0.8) 0, rgba(200,214,255,0.8) 1.2px, rgba(200,214,255,0.14) 2.6px, transparent 4.3px);
-  background-size:620px 620px,760px 760px;
-}
-.sky-stars::after{              /* the middle layer breathes very slowly */
-  background-image:
-    radial-gradient(1.3px 1.3px at 125px 307px, rgba(255,255,255,0.6) 50%, transparent 51%),
-    radial-gradient(1.0px 1.0px at 193px 313px, rgba(255,255,255,0.95) 50%, transparent 51%),
-    radial-gradient(1.3px 1.3px at 301px 37px, rgba(255,255,255,0.6) 50%, transparent 51%),
-    radial-gradient(1.3px 1.3px at 244px 136px, rgba(255,255,255,0.6) 50%, transparent 51%),
-    radial-gradient(1.3px 1.3px at 102px 244px, rgba(255,255,255,0.95) 50%, transparent 51%),
-    radial-gradient(1.3px 1.3px at 247px 207px, rgba(255,255,255,0.6) 50%, transparent 51%),
-    radial-gradient(0.8px 0.8px at 122px 329px, rgba(255,255,255,0.95) 50%, transparent 51%),
-    radial-gradient(1.3px 1.3px at 203px 11px, rgba(255,255,255,0.6) 50%, transparent 51%),
-    radial-gradient(0.8px 0.8px at 85px 306px, rgba(255,255,255,0.8) 50%, transparent 51%);
-  background-size:340px 340px;
-  animation:sky-breathe 9s ease-in-out infinite alternate;
-}
-@keyframes sky-breathe{from{opacity:.35}to{opacity:1}}
-.sky-horizon{                   /* a little light left along the ridge line */
-  position:absolute;left:0;right:0;bottom:0;height:clamp(140px,26vh,320px);
-  background:linear-gradient(to top,var(--sky-horizon),transparent);
-}
-.sky-ridge{position:absolute;left:0;right:0;bottom:0}
-.sky-ridge-far{height:clamp(64px,13vh,150px);clip-path:polygon(0 100%, 0 62%, 6% 54%, 11% 60%, 17% 44%, 22% 52%, 28% 36%, 33% 47%, 39% 30%, 45% 42%, 52% 22%, 57% 35%, 63% 12%, 66.5% 0, 70% 16%, 76% 30%, 82% 20%, 88% 38%, 94% 28%, 100% 40%, 100% 100%);background:var(--ridge-far)}
-.sky-ridge-near{height:clamp(40px,8vh,96px);clip-path:polygon(0 100%, 0 78%, 7% 70%, 13% 77%, 20% 62%, 27% 72%, 34% 58%, 41% 70%, 48% 55%, 56% 68%, 64% 52%, 71% 64%, 79% 50%, 86% 63%, 93% 56%, 100% 66%, 100% 100%);background:var(--ridge-near)}
-@media (prefers-reduced-motion:reduce){.sky-stars::after{animation:none;opacity:.7}}
-@media print{.sky-backdrop{display:none}}
+html{background:var(--paper)}
+body.has-sky{background:transparent}
+.sky{position:fixed;inset:0;z-index:-1;width:100%;height:100%;display:block;background:#000;transition:opacity 1.1s var(--ease)}
+html.sky-back .sky{opacity:.16}
+:root[data-theme="light"] .sky{display:none}
+:root[data-theme="light"] body.has-sky{background:var(--paper)}
 
-/* -----------------------------------------------------------------------------
-   16. Cover — a full-screen first view: a 1-bit dithered moon over the ridge,
-   the name in monospace, and the profile below it. Nothing moves except a
-   one-time fade-in (skipped under reduced motion).
-   -------------------------------------------------------------------------- */
-.cover{
-  position:relative;min-height:100svh;display:grid;align-items:end;
-  width:min(1040px,100%);margin:0 auto;padding:0 32px clamp(64px,12vh,120px);
+.hero{
+  position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:64px 24px 26vh;
 }
-.cover-moon{
-  position:absolute;right:clamp(-40px,2vw,60px);top:50%;transform:translateY(-58%);
-  width:clamp(260px,46vw,620px);height:auto;
-  image-rendering:pixelated;image-rendering:crisp-edges;
-  opacity:.94;pointer-events:none;user-select:none;
-  animation:cover-in 1.4s var(--ease) both;
+.hero::before{                 /* a soft dark well behind the words, so the stars sit back */
+  content:"";position:absolute;left:50%;top:50%;width:min(92vw,980px);height:min(60vh,420px);transform:translate(-50%,-56%);
+  background:radial-gradient(ellipse at center,rgba(0,0,0,.62),rgba(0,0,0,.30) 45%,rgba(0,0,0,0) 72%);pointer-events:none;
 }
-:root[data-theme="light"] .cover-moon{filter:invert(1);opacity:.85}
-@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .cover-moon{filter:invert(1);opacity:.85}}
-.cover-text{position:relative;max-width:34ch;font-family:var(--mono);animation:cover-in 1.4s .15s var(--ease) both}
-.cover-kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.cover-title{margin-top:14px;font-size:clamp(40px,6.4vw,84px);line-height:1;letter-spacing:-.02em;font-weight:600;color:var(--ink)}
-.cover-line{margin-top:18px;font-size:clamp(14px,1.3vw,17px);line-height:1.6;color:var(--muted);text-wrap:pretty}
-.cover-scroll{
-  position:absolute;left:32px;bottom:clamp(24px,4vh,40px);
-  font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;
-  animation:cover-in 1.4s .6s var(--ease) both;
+.hero-kicker{
+  position:relative;font:500 12.5px/1.5 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#CFCFCF;
+  animation:hero-in 1.2s .1s var(--ease) both;
 }
-.cover-scroll:hover{color:var(--accent)}
-@keyframes cover-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.cover-moon{animation-name:cover-moon-in}
-@keyframes cover-moon-in{from{opacity:0;transform:translateY(-56%) scale(.985)}to{opacity:.94;transform:translateY(-58%)}}
-.minimal-home.has-sky .identity-card{padding-top:44px}
-.minimal-home.has-sky .onepage-hero{padding-top:40px}
+.hero-title{
+  max-width:16ch;margin-top:26px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  position:relative;font-size:clamp(36px,5.8vw,80px);line-height:1.04;letter-spacing:-.04em;font-weight:500;color:#FFFFFF;text-wrap:balance;
+  text-shadow:0 2px 28px rgba(0,0,0,.7),0 0 2px rgba(0,0,0,.6);
+  animation:hero-in 1.2s .25s var(--ease) both;
+}
+:root[lang="zh-CN"] .hero-title{font-weight:600;letter-spacing:-.01em;max-width:18ch}
+.hero-built{
+  position:relative;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;
+  width:min(100%,1040px);margin-top:48px;text-align:left;
+  border-top:1px solid rgba(255,255,255,.14);animation:hero-in 1.2s .5s var(--ease) both;
+}
+.hero-built li+li{border-left:1px solid rgba(255,255,255,.12)}
+.hero-built a{display:block;padding:18px 20px 6px;color:inherit;text-decoration:none;border-radius:6px;transition:background var(--dur-fast) var(--ease)}
+.hero-built a:hover{background:rgba(255,255,255,.05)}
+.hb-kicker{display:block;font:500 10.5px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#9C9C9C}
+.hero-built strong{display:block;margin-top:8px;font-size:16px;font-weight:600;letter-spacing:-.01em;color:#FFFFFF}
+.hero-built a:hover strong{text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.5)}
+.hb-line{display:block;margin-top:6px;font-size:12.5px;line-height:1.5;color:#B4B4B4;text-wrap:pretty}
+.hero::before{height:min(72vh,560px);transform:translate(-50%,-50%)}
+.hero-scroll{
+  position:absolute;left:50%;bottom:34px;width:22px;height:36px;margin-left:-11px;
+  border:1.5px solid var(--line-strong);border-radius:12px;animation:hero-in 1.2s .9s var(--ease) both;
+}
+.hero-scroll span{position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--muted);animation:hero-wheel 2.2s 1.2s ease-in-out infinite}
+.hero-scroll:hover{border-color:var(--ink)}
+@keyframes hero-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes hero-wheel{0%,20%{transform:translateY(0);opacity:1}70%{transform:translateY(12px);opacity:0}71%,100%{transform:translateY(0);opacity:0}}
+.minimal-home.has-sky .identity-card{padding-top:48px}
+.minimal-home.has-sky .onepage-hero{padding-top:44px}
+.minimal-home .identity-photo{border-radius:14px}
+.minimal-home .about-heading h2::after{background:var(--ink)}
+.minimal-home .about-panel strong{background:none;box-shadow:none}
 @media (max-width:720px){
-  .cover{padding:0 20px clamp(48px,10vh,80px)}
-  .cover-moon{right:-12vw;top:38%;width:78vw}
-  .cover-title{font-size:clamp(38px,12vw,56px)}
-  .cover-scroll{left:20px}
-  .minimal-home.has-sky .identity-card{padding-top:28px}
+  .hero{padding:72px 20px 96px}
+  .hero-title{font-size:clamp(30px,8.6vw,42px)}
+  .hero-built{grid-template-columns:1fr 1fr;margin-top:32px}
+  .hero-built li:nth-child(3){border-left:0}
+  .hero-built li:nth-child(n+3){border-top:1px solid rgba(255,255,255,.12)}
+  .hero-built a{padding:14px 12px 4px}
+  .minimal-home.has-sky .identity-card{padding-top:30px}
 }
-@media (prefers-reduced-motion:reduce){.cover-moon,.cover-text,.cover-scroll{animation:none}}
-@media print{.cover{display:none}}
+@media (prefers-reduced-motion:reduce){.hero-kicker,.hero-title,.hero-built,.hero-scroll,.hero-scroll span{animation:none}}
+@media print{.hero,.sky{display:none}}

@@ -5,25 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tianyi Zhang</title>
 <meta name="description" content="Tianyi Zhang works on post-training, representation, search, and evaluation, extracting reliable learning signals from sparse, noisy data.">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="dark light">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; frame-src https://open.spotify.com; connect-src https://api.github.com; font-src 'self'; worker-src 'none'; upgrade-insecure-requests">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M5 27 L27 5' stroke='%23BDBFB8' stroke-dasharray='2 3' fill='none'/%3E%3Cpath d='M5 27 C 11 12 17 7 27 5' stroke='%231E3EC8' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css?v=74">
+<link rel="stylesheet" href="style.css?v=78">
 <script src="theme-init.js"></script>
 </head>
 <body class="one-page minimal-home has-sky">
 
-<div class="sky-backdrop" aria-hidden="true"><i class="sky-stars"></i><i class="sky-horizon"></i><i class="sky-ridge sky-ridge-far"></i><i class="sky-ridge sky-ridge-near"></i></div>
+<canvas class="sky" aria-hidden="true"></canvas>
 
-<section class="cover" aria-label="Cover" data-en-label="Cover" data-zh-label="封面">
-  <img class="cover-moon" src="images/moon.png" alt="" width="648" height="648" decoding="async" fetchpriority="high">
-  <div class="cover-text">
-    <p class="cover-kicker" data-en="Tianyi Zhang · personal site" data-zh="张天毅 · 个人主页">Tianyi Zhang · personal site</p>
-    <h1 class="cover-title" data-en="Tianyi Zhang" data-zh="张天毅">Tianyi Zhang</h1>
-    <p class="cover-line" data-en="Reliable learning signals from sparse, noisy data." data-zh="从稀疏、带噪声的数据里，找可靠的学习信号。">Reliable learning signals from sparse, noisy data.</p>
-  </div>
-  <a class="cover-scroll" href="#top" data-en="scroll ↓" data-zh="往下看 ↓">scroll ↓</a>
+<section class="hero" aria-label="Cover" data-en-label="Cover" data-zh-label="封面">
+  <p class="hero-kicker" data-en="Tianyi Zhang · Georgia Tech · post-training, retrieval, evaluation" data-zh="张天毅 · Georgia Tech · post-training、检索、评估">Tianyi Zhang · Georgia Tech · post-training, retrieval, evaluation</p>
+  <h1 class="hero-title" data-en="I build post-training and evaluation systems for language models." data-zh="我做语言模型的 post-training 与评估系统。">I build post-training and evaluation systems for language models.</h1>
+  <ul class="hero-built" aria-label="Things I have built" data-en-label="Things I have built" data-zh-label="做过的东西">
+    <li><a href="https://github.com/NVIDIA-NeMo/RL/pulls?q=is:pr+is:merged+author:tianyi-zhang-02"><span class="hb-kicker" data-en="Open source · NVIDIA" data-zh="开源 · NVIDIA">Open source · NVIDIA</span><strong>NeMo RL</strong><span class="hb-line" data-en="Log-prob and top-k distillation optimizations, multi-reward GDPO, streamed PPO minibatches, merged upstream." data-zh="log-prob 与 top-k distillation 优化、多 reward GDPO、流式 PPO minibatch，已合入上游。">Log-prob and top-k distillation optimizations, multi-reward GDPO, streamed PPO minibatches, merged upstream.</span></a></li>
+    <li><a href="https://github.com/tianyi-zhang-02/wayfind"><span class="hb-kicker" data-en="Open source" data-zh="开源">Open source</span><strong>wayfind</strong><span class="hb-line" data-en="A plan AI agents can read and a memory they keep up to date. Claude Code plugin, MCP server, offline map." data-zh="AI agent 读得懂的计划、会自己更新的记忆。Claude Code 插件、MCP 服务、离线地图。">A plan AI agents can read and a memory they keep up to date. Claude Code plugin, MCP server, offline map.</span></a></li>
+    <li><a href="/cooking-agi/index.en.html" data-en-href="/cooking-agi/index.en.html" data-zh-href="/cooking-agi/index.html"><span class="hb-kicker" data-en="Study notes" data-zh="学习笔记">Study notes</span><strong data-en="AGI Study Notes" data-zh="AGI 学习笔记">AGI Study Notes</strong><span class="hb-line" data-en="Bilingual notes on modern AI systems, with an interactive Transformer lab and a quick review for interviews." data-zh="双语的现代 AI 系统笔记：交互式 Transformer 图解、面试前的速查。">Bilingual notes on modern AI systems, with an interactive Transformer lab and a quick review for interviews.</span></a></li>
+    <li><a href="https://openreview.net/pdf?id=2Exmr1eIKZ"><span class="hb-kicker" data-en="Research · ICML 2026" data-zh="研究 · ICML 2026">Research · ICML 2026</span><strong>AgentSuite</strong><span class="hb-line" data-en="A component-based benchmark auditing pipeline for more reliable agent evaluation, with GT EIC Lab × NVIDIA." data-zh="面向 agent 评估的组件化 benchmark 审计流程，GT EIC Lab × NVIDIA。">A component-based benchmark auditing pipeline for more reliable agent evaluation, with GT EIC Lab × NVIDIA.</span></a></li>
+  </ul>
+  <a class="hero-scroll" href="#top" aria-label="Scroll to the profile" data-en-label="Scroll to the profile" data-zh-label="往下看"><span></span></a>
 </section>
 
 <div class="site-shell">
@@ -236,6 +238,7 @@
   </div>
 </dialog>
 
-<script src="script.js?v=46"></script>
+<script src="script.js?v=47"></script>
+<script defer src="sky.js?v=4"></script>
 </body>
 </html>

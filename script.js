@@ -63,7 +63,7 @@ if (yr) yr.textContent = new Date().getFullYear();
 
   function current() {
     var pinned = document.documentElement.getAttribute('data-theme');
-    return pinned === 'light' || pinned === 'dark' ? pinned : (media.matches ? 'dark' : 'light');
+    return pinned === 'light' ? 'light' : 'dark';   // the site is dark unless light is pinned
   }
 
   function label() {
