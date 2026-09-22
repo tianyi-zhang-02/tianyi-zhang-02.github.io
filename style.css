@@ -198,14 +198,6 @@ img,video,svg{max-width:100%}
 :root[data-theme="light"] .theme-toggle .tt-sun{display:block}
 :root[data-theme="light"] .theme-toggle .tt-moon{display:none}
 
-.language-toggle{
-  min-width:38px;height:32px;padding:0 9px;flex:0 0 auto;
-  background:none;border:1px solid var(--line);border-radius:var(--r-xs);
-  color:var(--muted);cursor:pointer;font:650 11px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-  transition:border-color var(--dur-fast) var(--ease),color var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease);
-}
-.language-toggle:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
-
 .nav-toggle{
   display:none;min-height:38px;background:none;border:1px solid var(--line);border-radius:var(--r-xs);
   padding:9px var(--s-3);
@@ -736,15 +728,12 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
 .minimal-home .onepage-hero{
   display:block;padding:64px 0 28px;
 }
-.minimal-home .theme-toggle,.minimal-home .language-toggle{height:34px}
-.minimal-home .language-toggle{font-size:12px;padding:0 11px;white-space:nowrap}
+.minimal-home .theme-toggle{height:34px}
 .minimal-home .theme-toggle{width:30px}
 .minimal-home .identity-card .identity-name{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   font-size:31px;line-height:1.08;letter-spacing:-.035em;
 }
-.minimal-home .identity-alias{display:block;margin-top:6px;font-size:17px;font-weight:500;letter-spacing:0;color:var(--muted)}
-.minimal-home .identity-alias:empty{display:none}
 .minimal-home .identity-card{position:sticky;top:0;align-self:start;padding:68px 0 40px}
 .minimal-home .identity-photo{
   display:block;width:156px;aspect-ratio:1;margin-bottom:22px;border-radius:28px;
@@ -917,7 +906,6 @@ html.sky-back .sky{opacity:.16}
   text-shadow:0 2px 28px rgba(0,0,0,.7),0 0 2px rgba(0,0,0,.6);
   animation:hero-in 1.2s .25s var(--ease) both;
 }
-:root[lang="zh-CN"] .hero-title{font-weight:600;letter-spacing:-.01em;max-width:18ch}
 .hero-built{
   position:relative;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;
   width:min(100%,1040px);margin-top:48px;text-align:left;

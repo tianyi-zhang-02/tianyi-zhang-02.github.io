@@ -2,64 +2,11 @@
 var yr = document.getElementById('yr');
 if (yr) yr.textContent = new Date().getFullYear();
 
-(function () {
-  var button = document.querySelector('.language-toggle');
-  if (!button) return;
-
-  var params = new URLSearchParams(window.location.search);
-  var requested = params.get('lang');
-  var stored = null;
-  try { stored = localStorage.getItem('language'); } catch (error) {}
-  var language = requested === 'zh' || requested === 'en' ? requested : (stored === 'zh' ? 'zh' : 'en');
-
-  function apply(next) {
-    language = next === 'zh' ? 'zh' : 'en';
-    document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
-    document.body.setAttribute('data-language', language);
-
-    document.querySelectorAll('[data-en][data-zh]').forEach(function (node) {
-      node.textContent = node.getAttribute('data-' + language);
-    });
-
-    document.querySelectorAll('[data-en-label][data-zh-label]').forEach(function (node) {
-      node.setAttribute('aria-label', node.getAttribute('data-' + language + '-label'));
-    });
-
-    // The notes site has one page per language, so links into it follow the toggle.
-    document.querySelectorAll('[data-en-href][data-zh-href]').forEach(function (node) {
-      node.setAttribute('href', node.getAttribute('data-' + language + '-href'));
-    });
-
-    button.textContent = language === 'zh' ? 'View English' : '查看中文';
-    button.setAttribute('aria-label', language === 'zh' ? 'View English version' : '查看中文版');
-    button.setAttribute('title', language === 'zh' ? 'View English version' : '查看中文版');
-
-    var description = document.querySelector('meta[name="description"]');
-    if (description) {
-      description.setAttribute('content', language === 'zh'
-        ? '张天毅（Tianyi Zhang）的个人主页：关注 post-training、表征学习、检索与模型评估，研究怎样从稀疏、带噪声的数据里提取可靠的学习信号。'
-        : 'Tianyi Zhang works on post-training, representation, search, and evaluation, extracting reliable learning signals from sparse, noisy data.');
-    }
-
-    try { localStorage.setItem('language', language); } catch (error) {}
-    window.dispatchEvent(new CustomEvent('languagechange', { detail: { language: language } }));
-  }
-
-  button.addEventListener('click', function () {
-    apply(language === 'zh' ? 'en' : 'zh');
-  });
-
-  apply(language);
-})();
-
-// Theme toggle. No stored preference means "follow the system"; clicking pins an
-// explicit choice, which the CSS honours over prefers-color-scheme in both
-// directions. The pre-paint script in <head> applies the stored value.
+// Theme toggle. The site is dark unless a light theme is pinned; clicking pins an
+// explicit choice. The pre-paint script in <head> applies the stored value.
 (function () {
   var buttons = document.querySelectorAll('.theme-toggle');
   if (!buttons.length) return;
-
-  var media = window.matchMedia('(prefers-color-scheme: dark)');
 
   function current() {
     var pinned = document.documentElement.getAttribute('data-theme');
@@ -67,10 +14,8 @@ if (yr) yr.textContent = new Date().getFullYear();
   }
 
   function label() {
-    var next = current() === 'dark' ? 'light' : 'dark';
-    var chinese = document.documentElement.lang === 'zh-CN';
+    var text = 'Switch to ' + (current() === 'dark' ? 'light' : 'dark') + ' theme';
     buttons.forEach(function (b) {
-      var text = chinese ? (next === 'light' ? '切换至浅色主题' : '切换至深色主题') : 'Switch to ' + next + ' theme';
       b.setAttribute('aria-label', text);
       b.setAttribute('title', text);
     });
@@ -85,9 +30,6 @@ if (yr) yr.textContent = new Date().getFullYear();
     });
   });
 
-  // Keep the label right when the system flips and nothing is pinned.
-  if (media.addEventListener) media.addEventListener('change', label);
-  window.addEventListener('languagechange', label);
   label();
 })();
 
@@ -186,9 +128,8 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   var dragStart = null;
   var pinchStart = null;
 
-  // Status lines follow the page language, like everything else on the page.
-  function say(en, zh) {
-    status.textContent = document.documentElement.lang === 'zh-CN' ? zh : en;
+  function say(text) {
+    status.textContent = text;
   }
 
   function baseSize() {
@@ -212,17 +153,17 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   function loadFull() {
     if (fullLoaded) return;
     fullLoaded = true;
-    say('Loading 18,493px original…', '正在加载 18,493px 原图…');
+    say('Loading 18,493px original…');
     var full = image.getAttribute('data-full-src');
     var loader = new Image();
     loader.onload = function () {
       image.src = full;
-      say('Full-resolution original', '原始分辨率');
+      say('Full-resolution original');
       renderPanorama();
     };
     loader.onerror = function () {
       fullLoaded = false;
-      say('Preview mode · original unavailable', '预览模式 · 原图暂时加载不了');
+      say('Preview mode · original unavailable');
     };
     loader.src = full;
   }
@@ -239,8 +180,8 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     }
     if (scale >= 2.5) loadFull();
     else if (scale > 1) {
-      if (image.naturalWidth > 3000) say('Zoomed view · full-resolution original', '放大浏览 · 原始分辨率');
-      else say('Zoomed view · 3000px preview', '放大浏览 · 3000px 预览');
+      if (image.naturalWidth > 3000) say('Zoomed view · full-resolution original');
+      else say('Zoomed view · 3000px preview');
     }
     renderPanorama();
   }
@@ -249,8 +190,8 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     scale = 1;
     offsetX = 0;
     offsetY = 0;
-    if (image.naturalWidth > 3000) say('Fit view · full-resolution original', '适应窗口 · 原始分辨率');
-    else say('Fit view · 3000px preview', '适应窗口 · 3000px 预览');
+    if (image.naturalWidth > 3000) say('Fit view · full-resolution original');
+    else say('Fit view · 3000px preview');
     renderPanorama();
   }
 
@@ -402,7 +343,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     frame.width = '100%';
     frame.height = '352';
     frame.loading = 'lazy';
-    frame.title = document.documentElement.lang === 'zh-CN' ? 'Tianyi 的 Spotify 播放列表' : "Tianyi's Spotify playlist";
+    frame.title = "Tianyi's Spotify playlist";
     frame.referrerPolicy = 'no-referrer';
     frame.allow = 'autoplay; encrypted-media; fullscreen; picture-in-picture';
     frame.allowFullscreen = true;
