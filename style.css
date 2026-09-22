@@ -994,3 +994,5 @@ html.sky-back::after{content:"";position:fixed;left:0;right:0;bottom:0;height:42
 .minimal-home .personal-intro{margin-top:12px;font-size:15.5px}
 .minimal-home .onepage-footer{padding:30px 0 40px}
 @media (max-width:720px){.minimal-home .compact-section{padding:30px 0}}
+/* one line on what each role was about */
+.minimal-home .compact-row .row-detail{margin-top:5px;max-width:38em;color:var(--ink);opacity:.78;font-size:14px;line-height:1.55}
