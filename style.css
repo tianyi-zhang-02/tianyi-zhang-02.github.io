@@ -919,54 +919,55 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
 }
 
 /* -----------------------------------------------------------------------------
-   15. Sky band — a quiet night sky over a ridge line, shared with the notes site.
-   Deliberately restrained: sparse static stars, one layer that breathes over 7s
-   (off under reduced motion), two flat ridges. Light theme = a pale dawn, no stars.
+   15. Sky — the whole page sits under a quiet night sky, with a ridge line at
+   the horizon. Sparse static stars, one layer that breathes over 7s (off under
+   reduced motion), nothing else moves. Light theme = a pale dawn, no stars.
    KEEP THE DARK VALUES IN SYNC in both blocks, as with the colour tokens above.
    -------------------------------------------------------------------------- */
-:root{--sky-1:#E4EAF5;--sky-2:#F5EEE4;--ridge-far:#D5DBE8;--stars:0}
+:root{--sky-1:#EDF1F8;--sky-2:#F8F4EE;--ridge-far:#E1E6EF;--ridge-near:#EAE5DE;--sky-glow:rgba(30,62,200,.05);--stars:0}
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){--sky-1:#090D1B;--sky-2:#151B30;--ridge-far:#1B2236;--stars:1}
+  :root:not([data-theme="light"]){--sky-1:#070A17;--sky-2:#0F1428;--ridge-far:#151C36;--ridge-near:#0B0F22;--sky-glow:rgba(120,140,255,.09);--stars:1}
 }
-:root[data-theme="dark"]{--sky-1:#090D1B;--sky-2:#151B30;--ridge-far:#1B2236;--stars:1}
-.sky{position:relative;height:clamp(96px,12vw,140px);overflow:hidden;background:linear-gradient(var(--sky-1),var(--sky-2))}
-.sky-ridge-far{height:58%}
-.sky-ridge-near{height:44%;background:var(--paper)}
-
-.sky-stars {
-  position: absolute; inset: 0; opacity: var(--stars); pointer-events: none;
+:root[data-theme="dark"]{--sky-1:#070A17;--sky-2:#0F1428;--ridge-far:#151C36;--ridge-near:#0B0F22;--sky-glow:rgba(120,140,255,.09);--stars:1}
+html{background:var(--sky-2)}
+body.has-sky{background:transparent}       /* the fixed backdrop below shows through */
+.sky-backdrop{
+  position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;
+  background:
+    radial-gradient(70% 45% at 50% -10%,var(--sky-glow),transparent 70%),
+    linear-gradient(var(--sky-1),var(--sky-2));
+}
+.sky-stars{
+  position:absolute;inset:0;opacity:var(--stars);
   background-image:
-    radial-gradient(1.2px 1.2px at 64px 155px, rgba(255,255,255,0.55) 50%, transparent 51%),
-    radial-gradient(1.2px 1.2px at 98px 238px, rgba(255,255,255,0.7) 50%, transparent 51%),
-    radial-gradient(0.6px 0.6px at 164px 152px, rgba(255,255,255,0.9) 50%, transparent 51%),
-    radial-gradient(0.9px 0.9px at 7px 236px, rgba(255,255,255,0.7) 50%, transparent 51%),
-    radial-gradient(0.6px 0.6px at 145px 63px, rgba(255,255,255,0.9) 50%, transparent 51%),
-    radial-gradient(1.2px 1.2px at 124px 142px, rgba(255,255,255,0.7) 50%, transparent 51%),
-    radial-gradient(0.6px 0.6px at 105px 167px, rgba(255,255,255,0.55) 50%, transparent 51%),
-    radial-gradient(1.2px 1.2px at 166px 42px, rgba(255,255,255,0.7) 50%, transparent 51%),
-    radial-gradient(1.2px 1.2px at 193px 7px, rgba(255,255,255,0.55) 50%, transparent 51%);
-  background-size: 260px 260px;
+    radial-gradient(1.2px 1.2px at 64px 155px, rgba(255,255,255,0.5) 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 98px 238px, rgba(255,255,255,0.65) 50%, transparent 51%),
+    radial-gradient(0.6px 0.6px at 164px 152px, rgba(255,255,255,0.85) 50%, transparent 51%),
+    radial-gradient(0.9px 0.9px at 7px 236px, rgba(255,255,255,0.65) 50%, transparent 51%),
+    radial-gradient(0.6px 0.6px at 145px 63px, rgba(255,255,255,0.85) 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 124px 142px, rgba(255,255,255,0.65) 50%, transparent 51%),
+    radial-gradient(0.6px 0.6px at 105px 167px, rgba(255,255,255,0.5) 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 166px 42px, rgba(255,255,255,0.65) 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 193px 7px, rgba(255,255,255,0.5) 50%, transparent 51%);
+  background-size:260px 260px;
 }
-.sky-stars::after::after {      /* a second, sparser layer that breathes very slowly */
-  content: ""; position: absolute; inset: 0;
+.sky-stars::after{      /* a second, sparser layer that breathes very slowly */
+  content:"";position:absolute;inset:0;
   background-image:
-    radial-gradient(1.1px 1.1px at 120px 193px, rgba(255,255,255,0.55) 50%, transparent 51%),
-    radial-gradient(0.8px 0.8px at 102px 364px, rgba(255,255,255,0.55) 50%, transparent 51%),
-    radial-gradient(1.5px 1.5px at 74px 130px, rgba(255,255,255,0.55) 50%, transparent 51%),
-    radial-gradient(0.8px 0.8px at 209px 332px, rgba(255,255,255,0.7) 50%, transparent 51%),
-    radial-gradient(1.1px 1.1px at 253px 236px, rgba(255,255,255,0.7) 50%, transparent 51%),
-    radial-gradient(1.1px 1.1px at 297px 102px, rgba(255,255,255,0.55) 50%, transparent 51%),
-    radial-gradient(0.8px 0.8px at 252px 123px, rgba(255,255,255,0.9) 50%, transparent 51%),
-    radial-gradient(1.1px 1.1px at 140px 270px, rgba(255,255,255,0.7) 50%, transparent 51%);
-  background-size: 380px 380px;
-  animation: sky-breathe 7s ease-in-out infinite alternate;
+    radial-gradient(1.1px 1.1px at 120px 193px, rgba(255,255,255,0.5) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 102px 364px, rgba(255,255,255,0.5) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 74px 130px, rgba(255,255,255,0.5) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 209px 332px, rgba(255,255,255,0.65) 50%, transparent 51%),
+    radial-gradient(1.1px 1.1px at 253px 236px, rgba(255,255,255,0.65) 50%, transparent 51%),
+    radial-gradient(1.1px 1.1px at 297px 102px, rgba(255,255,255,0.5) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 252px 123px, rgba(255,255,255,0.85) 50%, transparent 51%),
+    radial-gradient(1.1px 1.1px at 140px 270px, rgba(255,255,255,0.65) 50%, transparent 51%);
+  background-size:380px 380px;
+  animation:sky-breathe 7s ease-in-out infinite alternate;
 }
-@keyframes sky-breathe { from { opacity: .25; } to { opacity: .95; } }
-@media (prefers-reduced-motion: reduce) { .sky-stars::after::after { animation: none; opacity: .6; } }
-.sky-ridge { position: absolute; left: 0; right: 0; bottom: 0; pointer-events: none; }
-.sky-ridge-far { clip-path: polygon(0 100%, 0 62%, 6% 54%, 11% 60%, 17% 44%, 22% 52%, 28% 36%, 33% 47%, 39% 30%, 45% 42%, 52% 22%, 57% 35%, 63% 12%, 66.5% 0, 70% 16%, 76% 30%, 82% 20%, 88% 38%, 94% 28%, 100% 40%, 100% 100%); background: var(--ridge-far); }
-.sky-ridge-near { clip-path: polygon(0 100%, 0 78%, 7% 70%, 13% 77%, 20% 62%, 27% 72%, 34% 58%, 41% 70%, 48% 55%, 56% 68%, 64% 52%, 71% 64%, 79% 50%, 86% 63%, 93% 56%, 100% 66%, 100% 100%); }
-.minimal-home.has-sky .identity-card{padding-top:44px}
-.minimal-home.has-sky .onepage-hero{padding-top:40px}
-@media (max-width:720px){.minimal-home.has-sky .identity-card{padding-top:28px}}
-@media print{.sky{display:none}}
+@keyframes sky-breathe{from{opacity:.25}to{opacity:.95}}
+.sky-ridge{position:absolute;left:0;right:0;bottom:0}
+.sky-ridge-far{height:clamp(64px,13vh,150px);clip-path:polygon(0 100%, 0 62%, 6% 54%, 11% 60%, 17% 44%, 22% 52%, 28% 36%, 33% 47%, 39% 30%, 45% 42%, 52% 22%, 57% 35%, 63% 12%, 66.5% 0, 70% 16%, 76% 30%, 82% 20%, 88% 38%, 94% 28%, 100% 40%, 100% 100%);background:var(--ridge-far)}
+.sky-ridge-near{height:clamp(40px,8vh,96px);clip-path:polygon(0 100%, 0 78%, 7% 70%, 13% 77%, 20% 62%, 27% 72%, 34% 58%, 41% 70%, 48% 55%, 56% 68%, 64% 52%, 71% 64%, 79% 50%, 86% 63%, 93% 56%, 100% 66%, 100% 100%);background:var(--ridge-near)}
+@media (prefers-reduced-motion:reduce){.sky-stars::after{animation:none;opacity:.6}}
+@media print{.sky-backdrop{display:none}}
