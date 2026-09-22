@@ -943,3 +943,54 @@ html.sky-back .sky{opacity:.16}
 }
 @media (prefers-reduced-motion:reduce){.hero-kicker,.hero-title,.hero-built,.hero-scroll,.hero-scroll span{animation:none}}
 @media print{.hero,.sky{display:none}}
+
+/* -----------------------------------------------------------------------------
+   16. Dawn
+   Warm the palette a step towards first light and open up the leading; the
+   tokens here override block 1 and the hard-coded greys of block 15. Light
+   stays a warm white page.
+   -------------------------------------------------------------------------- */
+:root{
+  --paper:#0C0A08;--surface:#14110E;--surface-2:#1C1814;
+  --ink:#EFE6DA;--muted:#A59A8C;--line:#27221D;--line-strong:#372F27;
+  --accent:#F2C39A;--accent-ink:#1A120A;--accent-soft:rgba(242,195,154,.10);--gold:#E8A672;
+}
+:root[data-theme="light"]{
+  --paper:#FBF7F1;--surface:#FFFDFA;--surface-2:#F3ECE2;
+  --ink:#221C16;--muted:#766B5F;--line:#E8DFD3;--line-strong:#D9CDBF;
+  --accent:#B4602A;--accent-ink:#FFFFFF;--accent-soft:rgba(180,96,42,.10);--gold:#C46A2B;
+}
+html.sky-back::after{content:"";position:fixed;left:0;right:0;bottom:0;height:42vh;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse 62% 58% at 16% 108%,rgba(255,168,96,.17),rgba(255,168,96,0) 70%),linear-gradient(to top,rgba(236,150,88,.09),rgba(236,150,88,.03) 48%,rgba(236,150,88,0))}
+:root[data-theme="light"].sky-back::after{display:none}
+.hero-kicker{color:#D9CFC3}
+.hero-title{color:#F7F1E8}
+.hero-built{border-top-color:rgba(242,195,154,.22)}
+.hero-built li+li{border-left-color:rgba(242,195,154,.14)}
+.hb-kicker{color:#A69A8C}
+.hero-built strong{color:#F7F1E8}
+.hb-line{color:#C2B7A9}
+.hero-scroll{border-color:rgba(242,195,154,.35)}
+/* more air in the profile */
+.minimal-home{font-size:16.5px;line-height:1.65}
+.minimal-home .onepage-hero{padding:76px 0 36px}
+.minimal-home .identity-card{padding:80px 0 40px}
+.minimal-home .education-line{margin-top:20px;line-height:1.55}
+.minimal-home .about-heading{margin-bottom:28px}
+.minimal-home .about-panel>p{max-width:40em;font-size:17px;line-height:1.75}
+.minimal-home .about-panel>p+p{margin-top:18px}
+.minimal-home .compact-section{padding:40px 0}
+.minimal-home .compact-list,.minimal-home .oss-list{margin-top:16px}
+.minimal-home .compact-row{padding:18px 0;gap:16px}
+.minimal-home .compact-row p{margin-top:4px;font-size:14.5px}
+.minimal-home .oss-row{padding:22px 0;gap:16px}
+.minimal-home .oss-copy>p{margin-top:5px;font-size:15px;line-height:1.6}
+.minimal-home .oss-contributions{margin-top:10px;font-size:14.5px;line-height:1.65}
+.minimal-home .oss-contributions li+li{margin-top:5px}
+.minimal-home .oss-actions{margin-top:10px}
+.minimal-home .publication-list article{padding:18px 0}
+.minimal-home .publication-list h3{line-height:1.45}
+.minimal-home .publication-list .publication-authors{margin-top:7px;line-height:1.55}
+.minimal-home .personal-intro{margin-top:12px;font-size:15.5px}
+.minimal-home .onepage-footer{padding:30px 0 40px}
+@media (max-width:720px){.minimal-home .compact-section{padding:30px 0}}
