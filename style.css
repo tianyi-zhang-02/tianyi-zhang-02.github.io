@@ -774,7 +774,7 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
 .minimal-home .theme-toggle,.minimal-home .language-toggle{height:34px}
 .minimal-home .language-toggle{font-size:12px;padding:0 11px;white-space:nowrap}
 .minimal-home .theme-toggle{width:30px}
-.minimal-home .identity-card h1{
+.minimal-home .identity-card .identity-name{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   font-size:31px;line-height:1.08;letter-spacing:-.035em;
 }
@@ -905,7 +905,7 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
   .minimal-home .identity-card{position:static;padding:30px 0 32px}
   .minimal-home .onepage-hero{padding:0 0 24px}
   .minimal-home .identity-photo{width:112px;border-radius:22px;margin-bottom:17px}
-  .minimal-home .identity-card h1{font-size:34px}
+  .minimal-home .identity-card .identity-name{font-size:34px}
   .minimal-home nav.links{display:flex}
   .minimal-home .about-heading{margin-bottom:18px}
   .minimal-home .about-heading h2{font-size:27px}
@@ -983,17 +983,6 @@ body.has-sky{background:transparent}       /* the fixed backdrop below shows thr
   animation:sky-breathe 9s ease-in-out infinite alternate;
 }
 @keyframes sky-breathe{from{opacity:.35}to{opacity:1}}
-.sky-moon{                      /* a dark disc lit along one edge, the way Moonshot's eclipse ring is */
-  position:absolute;right:clamp(24px,7vw,120px);bottom:clamp(120px,22vh,260px);
-  width:clamp(110px,13vw,176px);height:clamp(110px,13vw,176px);border-radius:50%;
-  opacity:var(--moon);
-  background:radial-gradient(circle at 42% 40%,#141a33 0,#0a0d1c 58%,#080a17 100%);
-  box-shadow:
-    inset -.9em -.55em 1.6em rgba(226,232,255,.62),
-    inset .4em .3em 1.2em rgba(0,0,0,.35),
-    0 0 40px rgba(190,205,255,.16),
-    0 0 120px rgba(160,180,255,.10);
-}
 .sky-horizon{                   /* a little light left along the ridge line */
   position:absolute;left:0;right:0;bottom:0;height:clamp(140px,26vh,320px);
   background:linear-gradient(to top,var(--sky-horizon),transparent);
@@ -1001,6 +990,48 @@ body.has-sky{background:transparent}       /* the fixed backdrop below shows thr
 .sky-ridge{position:absolute;left:0;right:0;bottom:0}
 .sky-ridge-far{height:clamp(64px,13vh,150px);clip-path:polygon(0 100%, 0 62%, 6% 54%, 11% 60%, 17% 44%, 22% 52%, 28% 36%, 33% 47%, 39% 30%, 45% 42%, 52% 22%, 57% 35%, 63% 12%, 66.5% 0, 70% 16%, 76% 30%, 82% 20%, 88% 38%, 94% 28%, 100% 40%, 100% 100%);background:var(--ridge-far)}
 .sky-ridge-near{height:clamp(40px,8vh,96px);clip-path:polygon(0 100%, 0 78%, 7% 70%, 13% 77%, 20% 62%, 27% 72%, 34% 58%, 41% 70%, 48% 55%, 56% 68%, 64% 52%, 71% 64%, 79% 50%, 86% 63%, 93% 56%, 100% 66%, 100% 100%);background:var(--ridge-near)}
-@media (max-width:760px){.sky-moon{right:6vw;bottom:clamp(110px,18vh,200px);width:96px;height:96px}}
 @media (prefers-reduced-motion:reduce){.sky-stars::after{animation:none;opacity:.7}}
 @media print{.sky-backdrop{display:none}}
+
+/* -----------------------------------------------------------------------------
+   16. Cover — a full-screen first view: a 1-bit dithered moon over the ridge,
+   the name in monospace, and the profile below it. Nothing moves except a
+   one-time fade-in (skipped under reduced motion).
+   -------------------------------------------------------------------------- */
+.cover{
+  position:relative;min-height:100svh;display:grid;align-items:end;
+  width:min(1040px,100%);margin:0 auto;padding:0 32px clamp(64px,12vh,120px);
+}
+.cover-moon{
+  position:absolute;right:clamp(-40px,2vw,60px);top:50%;transform:translateY(-58%);
+  width:clamp(260px,46vw,620px);height:auto;
+  image-rendering:pixelated;image-rendering:crisp-edges;
+  opacity:.94;pointer-events:none;user-select:none;
+  animation:cover-in 1.4s var(--ease) both;
+}
+:root[data-theme="light"] .cover-moon{filter:invert(1);opacity:.85}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .cover-moon{filter:invert(1);opacity:.85}}
+.cover-text{position:relative;max-width:34ch;font-family:var(--mono);animation:cover-in 1.4s .15s var(--ease) both}
+.cover-kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.cover-title{margin-top:14px;font-size:clamp(40px,6.4vw,84px);line-height:1;letter-spacing:-.02em;font-weight:600;color:var(--ink)}
+.cover-line{margin-top:18px;font-size:clamp(14px,1.3vw,17px);line-height:1.6;color:var(--muted);text-wrap:pretty}
+.cover-scroll{
+  position:absolute;left:32px;bottom:clamp(24px,4vh,40px);
+  font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;
+  animation:cover-in 1.4s .6s var(--ease) both;
+}
+.cover-scroll:hover{color:var(--accent)}
+@keyframes cover-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.cover-moon{animation-name:cover-moon-in}
+@keyframes cover-moon-in{from{opacity:0;transform:translateY(-56%) scale(.985)}to{opacity:.94;transform:translateY(-58%)}}
+.minimal-home.has-sky .identity-card{padding-top:44px}
+.minimal-home.has-sky .onepage-hero{padding-top:40px}
+@media (max-width:720px){
+  .cover{padding:0 20px clamp(48px,10vh,80px)}
+  .cover-moon{right:-12vw;top:38%;width:78vw}
+  .cover-title{font-size:clamp(38px,12vw,56px)}
+  .cover-scroll{left:20px}
+  .minimal-home.has-sky .identity-card{padding-top:28px}
+}
+@media (prefers-reduced-motion:reduce){.cover-moon,.cover-text,.cover-scroll{animation:none}}
+@media print{.cover{display:none}}
