@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tianyi Zhang</title>
-<meta name="description" content="Tianyi Zhang works on post-training, representation, search, and evaluation, extracting reliable learning signals from sparse, noisy data.">
+<meta name="description" content="Tianyi Zhang works on representation learning, LLM post-training, and model and agent evaluation, especially when feedback is sparse or noisy.">
 <meta name="color-scheme" content="dark light">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; frame-src https://open.spotify.com; connect-src https://api.github.com; font-src 'self'; worker-src 'none'; upgrade-insecure-requests">
@@ -17,13 +17,13 @@
 <canvas class="sky" aria-hidden="true"></canvas>
 
 <section class="hero" aria-label="Cover">
-  <p class="hero-kicker">Tianyi Zhang · Georgia Tech · post-training, retrieval, evaluation</p>
-  <h1 class="hero-title">I build post-training and evaluation systems for language models.</h1>
+  <p class="hero-kicker">Tianyi Zhang · Georgia Tech · representation, post-training, evaluation</p>
+  <h1 class="hero-title">I study how language models learn from feedback—and how we can tell whether they actually improve.</h1>
   <ul class="hero-built" aria-label="Things I have built">
-    <li><a href="https://github.com/NVIDIA-NeMo/RL/pulls?q=is:pr+is:merged+author:tianyi-zhang-02"><span class="hb-kicker">Open source · NVIDIA</span><strong>NeMo RL</strong><span class="hb-line">Log-prob and top-k distillation optimizations, multi-reward GDPO, streamed PPO minibatches, merged upstream.</span></a></li>
-    <li><a href="https://github.com/tianyi-zhang-02/wayfind"><span class="hb-kicker">Open source</span><strong>wayfind</strong><span class="hb-line">A plan AI agents can read and a memory they keep up to date. Claude Code plugin, MCP server, offline map.</span></a></li>
-    <li><a href="/cooking-agi/index.en.html"><span class="hb-kicker">Study notes</span><strong>AGI Study Notes</strong><span class="hb-line">Bilingual notes on modern AI systems, with an interactive Transformer lab and a quick review for interviews.</span></a></li>
-    <li><a href="https://openreview.net/pdf?id=2Exmr1eIKZ"><span class="hb-kicker">Research · ICML 2026</span><strong>AgentSuite</strong><span class="hb-line">A component-based benchmark auditing pipeline for more reliable agent evaluation, with GT EIC Lab × NVIDIA.</span></a></li>
+    <li><a href="https://github.com/NVIDIA-NeMo/RL/pulls?q=is:pr+is:merged+author:tianyi-zhang-02"><span class="hb-kicker">Open source · NVIDIA</span><strong>NeMo RL</strong><span class="hb-line">I contribute to post-training correctness and efficiency, from probability paths and distillation to multi-reward and asynchronous PPO.</span></a></li>
+    <li><a href="https://github.com/tianyi-zhang-02/wayfind"><span class="hb-kicker">Open source</span><strong>wayfind</strong><span class="hb-line">A shared plan and memory for people and AI agents: one goal, different views, less context lost between sessions.</span></a></li>
+    <li><a href="/cooking-agi/index.en.html"><span class="hb-kicker">Study notes</span><strong>AGI Study Notes</strong><span class="hb-line">Bilingual notes I write to understand modern AI systems, with interactive explanations and interview review pages.</span></a></li>
+    <li><a href="https://openreview.net/pdf?id=2Exmr1eIKZ"><span class="hb-kicker">Research · ICML 2026</span><strong>AgentSuite</strong><span class="hb-line">A component-based pipeline for finding flaws in agent benchmarks before we trust the rankings they produce.</span></a></li>
   </ul>
   <a class="hero-scroll" href="#top" aria-label="Scroll to the profile"><span></span></a>
 </section>
@@ -69,8 +69,8 @@
             </button>
           </div>
         </div>
-        <p><span>I am an M.S. student at </span><a class="entity-link" href="https://www.gatech.edu/"><img src="images/gatech.ico" alt=""><strong>Georgia Tech</strong></a><span>. Most recently, I worked as an ML Engineer Intern at </span><a class="entity-link" href="https://www.linkedin.com/"><img src="images/linkedin.ico" alt=""><strong>LinkedIn</strong></a><span>, focusing on post-training and evaluation for relevance and retrieval. I am interested in extracting reliable learning signals from sparse, noisy data.</span></p>
-        <p><span>Previously, at </span><a class="entity-link entity-link-pair" href="https://research.nvidia.com/"><img src="images/gatech.ico" alt=""><span aria-hidden="true">×</span><img src="images/nvidia.ico" alt=""><strong>GT EIC Lab × NVIDIA AI Research</strong></a><span>, I built evaluation and benchmark-auditing systems for AI agents. Before that, at </span><a class="entity-link" href="https://www.emory.edu/"><img src="images/emory.svg" alt=""><strong>Emory</strong></a><span>, I worked on graph neural networks for directed and temporal brain-network modeling.</span></p>
+        <p><span>I am an M.S. student at </span><a class="entity-link" href="https://www.gatech.edu/"><img src="images/gatech.ico" alt=""><strong>Georgia Tech</strong></a><span>. I am interested in representation learning, LLM post-training, and evaluation—especially when the feedback we learn from is sparse, noisy, or only an imperfect proxy for what people want.</span></p>
+        <p><span>Most recently, I worked on LLM-based retrieval at </span><a class="entity-link" href="https://www.linkedin.com/"><img src="images/linkedin.ico" alt=""><strong>LinkedIn</strong></a><span>. Before that, at </span><a class="entity-link entity-link-pair" href="https://research.nvidia.com/"><img src="images/gatech.ico" alt=""><span aria-hidden="true">×</span><img src="images/nvidia.ico" alt=""><strong>GT EIC Lab × NVIDIA AI Research</strong></a><span>, I helped build systems for agent evaluation and benchmark auditing. I began my research at </span><a class="entity-link" href="https://www.emory.edu/"><img src="images/emory.svg" alt=""><strong>Emory</strong></a><span>, studying directed and temporal brain networks.</span></p>
       </div>
     </header>
 
@@ -80,17 +80,17 @@
         <div class="compact-list">
           <article class="compact-row">
             <a class="row-mark" href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="images/linkedin.ico" alt=""></a>
-            <div><h3>LinkedIn</h3><p>Machine Learning Engineer Intern</p><p class="row-detail">LLMs for home-feed recommendation, mainly LLM-based retrieval.</p></div>
+            <div><h3>LinkedIn</h3><p>Machine Learning Engineer Intern</p><p class="row-detail">Worked on LLM-based retrieval and offline evaluation for home-feed recommendations.</p></div>
             <time>May 2026 — August 2026</time>
           </article>
           <article class="compact-row">
             <span class="row-mark row-mark-pair" aria-hidden="true"><img src="images/gatech.ico" alt=""><img src="images/nvidia.ico" alt=""></span>
-            <div><h3>Georgia Tech EIC Lab × NVIDIA AI Research</h3><p>Student Researcher</p><p class="row-detail">Evaluation and benchmark-auditing systems for AI agents (AgentSuite, ICML 2026).</p></div>
+            <div><h3>Georgia Tech EIC Lab × NVIDIA AI Research</h3><p>Student Researcher</p><p class="row-detail">Built tools to audit agent benchmarks and make evaluation results more trustworthy (AgentSuite, ICML 2026).</p></div>
             <time>Jul 2025 — Dec 2025</time>
           </article>
           <article class="compact-row">
             <a class="row-mark" href="https://www.emory.edu/" aria-label="Emory University"><img src="images/emory.svg" alt=""></a>
-            <div><h3>Emory · Graph Mining Lab</h3><p>Student Researcher</p><p class="row-detail">Graph neural networks for directed and temporal brain-network modeling (AIME 2025, EMBC 2025).</p></div>
+            <div><h3>Emory · Graph Mining Lab</h3><p>Student Researcher</p><p class="row-detail">Modeled directional and time-varying brain connectivity with graph learning (AIME 2025, EMBC 2025).</p></div>
             <time>Dec 2023 — May 2025</time>
           </article>
         </div>
@@ -106,11 +106,11 @@
                 <h3><a href="https://github.com/NVIDIA-NeMo/RL">NVIDIA NeMo RL</a></h3>
                 <span class="oss-stars" title="GitHub stars" aria-label="2.0 thousand GitHub stars">★ <span data-github-star-count>2.0k</span></span>
               </div>
-              <p>Scalable toolkit for efficient LLM reinforcement learning and post-training.</p>
+              <p>An open-source framework for scalable LLM post-training and reinforcement learning.</p>
               <ul class="oss-contributions">
-                <li>Optimized log-probability and top-k distillation to reduce compute and communication overhead.</li>
-                <li>Developing multi-reward GDPO support that preserves separate reward signals through async training.</li>
-                <li>Developing streamed SingleController PPO minibatches for lower memory use and consistent training recovery.</li>
+                <li>I optimized log-probability and top-k distillation paths to remove unnecessary compute and communication.</li>
+                <li>I am adding multi-reward GDPO support so separate reward signals survive the asynchronous training pipeline.</li>
+                <li>I am also working on streamed SingleController PPO minibatches to reduce memory pressure without changing training behavior.</li>
               </ul>
               <div class="oss-actions">
                 <a href="https://github.com/NVIDIA-NeMo/RL/pulls?q=is:pr+is:merged+author:tianyi-zhang-02">Merged ↗</a>
@@ -124,11 +124,11 @@
               <div class="oss-heading">
                 <h3><a href="https://github.com/tianyi-zhang-02/wayfind">wayfind</a></h3>
               </div>
-              <p>A plan your AI agents can read and a memory they keep up to date: people and agents share one goal-oriented memory, each through its own view.</p>
+              <p>A shared planning and memory layer for people and AI agents: one goal, with a view designed for each reader.</p>
               <ul class="oss-contributions">
-                <li>Searches from both ends: backward from the goal to what it needs, forward from what exists to what can be built.</li>
-                <li>Compiles one memory for each reader: token-budgeted briefings for agents, a map with one-click decisions for people.</li>
-                <li>Works with Claude Code as a plugin and with Codex; standard-library Python, an MCP server, and an offline map.</li>
+                <li>Plans backward from the goal and forward from the evidence already available.</li>
+                <li>Turns the same memory into compact agent briefings and a navigable map for people.</li>
+                <li>Works through a Claude Code plugin, an MCP server, and a fully offline map.</li>
               </ul>
               <div class="oss-actions">
                 <a href="https://github.com/tianyi-zhang-02/wayfind">Repository ↗</a>
@@ -149,7 +149,7 @@
               <div class="oss-heading">
                 <h3><a href="/cooking-agi/index.en.html">AGI Study Notes</a></h3>
               </div>
-              <p>Where I keep what I learn about modern AI systems: study notes with interactive figures, a quick review for interviews, and what I learned looking for a job.</p>
+              <p>Where I work through modern AI systems in my own words: learning notes, interactive figures, interview review, and a candid record of my job search.</p>
               <div class="oss-actions">
                 <a href="/cooking-agi/index.en.html">Open the notes →</a>
               </div>
@@ -181,7 +181,7 @@
 
       <section id="personal" class="compact-section personal-section">
         <h2>Personal</h2>
-        <p class="personal-intro">Photography, mountains, rivers, animals, travel, music — and learning guitar.</p>
+        <p class="personal-intro">Outside of work, I like photography, mountains, rivers, animals, travel, music—and I am slowly learning guitar.</p>
 
         <figure class="hero-reveal personal-panorama">
           <div class="reveal">
