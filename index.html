@@ -11,22 +11,53 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M5 27 L27 5' stroke='%23BDBFB8' stroke-dasharray='2 3' fill='none'/%3E%3Cpath d='M5 27 C 11 12 17 7 27 5' stroke='%231E3EC8' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css?v=82">
 <link rel="stylesheet" href="after-hours.css?v=1">
+<link rel="stylesheet" href="portfolio.css?v=2">
 <script src="theme-init.js"></script>
 </head>
-<body class="one-page minimal-home has-sky">
+<body class="one-page minimal-home has-sky portfolio-refined">
+
+<a class="skip-to-profile" href="#top">Skip to profile</a>
 
 <canvas class="sky" aria-hidden="true"></canvas>
 
 <section class="hero" aria-label="Cover">
-  <p class="hero-kicker">Tianyi Zhang · Georgia Tech · representation, post-training, evaluation</p>
-  <h1 class="hero-title">I build systems that learn, and the tests that tell real magic from a good trick.</h1>
-  <p class="hero-note">Lately I’ve been exploring probability: how to tell when the world has changed, and what “optimal” means once it has.</p>
-  <a class="hero-scroll" href="#top" aria-label="Scroll to the profile"><span></span></a>
+  <div class="cover-masthead">
+    <a class="cover-name" href="#profile">Tianyi Zhang<span lang="zh-Hans">张天毅</span></a>
+    <a class="cover-resume" href="resume/Tianyi_Zhang_Resume_EN.pdf" target="_blank" rel="noopener">Resume <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="cover-copy">
+    <p class="hero-kicker">Machine learning · Research &amp; engineering</p>
+    <h1 class="hero-title">I build systems<br>that <em>learn.</em></h1>
+    <p class="hero-note">And the tests that tell real magic<br class="cover-line-break"> from a good trick.</p>
+  </div>
+  <div class="cover-footer">
+    <p>Representation · Post-training · Evaluation</p>
+    <a class="cover-explore" href="#profile">A little about me <span aria-hidden="true">↓</span></a>
+    <p>Georgia Tech · M.S. CS</p>
+  </div>
 </section>
 
-<div class="site-shell">
+<div class="portfolio-bar">
+  <div class="portfolio-bar-inner">
+    <a class="portfolio-wordmark" href="#" aria-label="Tianyi Zhang — back to the stars">TZ<span aria-hidden="true">.</span></a>
+    <nav class="section-nav" aria-label="Page sections">
+      <a href="#top">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Open source</a>
+      <a href="#notes">Notes</a>
+      <a href="#publications">Research</a>
+      <a href="#personal">Personal</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+      <svg class="tt-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M4.2 12H2M22 12h-2.2M6.5 6.5 4.9 4.9M19.1 19.1l-1.6-1.6M17.5 6.5l1.6-1.6M4.9 19.1l1.6-1.6"/></svg>
+      <svg class="tt-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.4A8.4 8.4 0 0 1 9.6 4a8.4 8.4 0 1 0 10.4 10.4Z"/></svg>
+    </button>
+  </div>
+</div>
+
+<div class="site-shell" id="profile">
   <aside class="identity-card" aria-label="Profile">
-    <img class="identity-photo" src="images/tianyi-zhang.jpg" alt="Portrait of Tianyi Zhang">
+    <img class="identity-photo" src="images/tianyi-zhang.jpg" alt="Portrait of Tianyi Zhang" width="156" height="156">
     <h2 class="identity-name">Tianyi Zhang</h2>
     <p class="identity-location">Shanghai · Atlanta · Bay Area</p>
     <p class="education-line"><strong>Georgia Tech</strong><br><span>M.S. in Computer Science</span><br><span>2025–2027</span></p>
@@ -51,22 +82,10 @@
       <div class="about-panel">
         <div class="about-heading">
           <h2>About</h2>
-          <div class="about-actions">
-            <nav class="section-nav" aria-label="Page sections">
-              <a href="#experience">Experience</a>
-              <a href="#work">Open Source</a>
-              <a href="#notes">Notes</a>
-              <a href="#publications">Research</a>
-              <a href="#personal">Personal</a>
-            </nav>
-            <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
-              <svg class="tt-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M4.2 12H2M22 12h-2.2M6.5 6.5 4.9 4.9M19.1 19.1l-1.6-1.6M17.5 6.5l1.6-1.6M4.9 19.1l1.6-1.6"/></svg>
-              <svg class="tt-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.4A8.4 8.4 0 0 1 9.6 4a8.4 8.4 0 1 0 10.4 10.4Z"/></svg>
-            </button>
-          </div>
         </div>
         <p><span>I am an M.S. student at </span><a class="entity-link" href="https://www.gatech.edu/"><img src="images/gatech.ico" alt=""><strong>Georgia Tech</strong></a><span>. I am interested in representation learning, LLM post-training, and evaluation—especially when the feedback we learn from is sparse, noisy, or only an imperfect proxy for what people want.</span></p>
         <p><span>Most recently, I worked on LLM-based retrieval at </span><a class="entity-link" href="https://www.linkedin.com/"><img src="images/linkedin.ico" alt=""><strong>LinkedIn</strong></a><span>. Before that, at </span><a class="entity-link entity-link-pair" href="https://research.nvidia.com/"><img src="images/gatech.ico" alt=""><span aria-hidden="true">×</span><img src="images/nvidia.ico" alt=""><strong>GT EIC Lab × NVIDIA AI Research</strong></a><span>, I helped build systems for agent evaluation and benchmark auditing. I began my research at </span><a class="entity-link" href="https://www.emory.edu/"><img src="images/emory.svg" alt=""><strong>Emory</strong></a><span>, studying directed and temporal brain networks.</span></p>
+        <div class="current-question"><span>Currently curious about</span><p>How do we tell when the world has changed, and what does “optimal” mean once it has? Lately, I’ve been exploring this through probability.</p></div>
       </div>
     </header>
 
@@ -77,12 +96,12 @@
           <article class="compact-row">
             <a class="row-mark" href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="images/linkedin.ico" alt=""></a>
             <div><h3>LinkedIn</h3><p>Machine Learning Engineer Intern</p><p class="row-detail">Worked on LLM-based retrieval and offline evaluation for home-feed recommendations.</p></div>
-            <time>May 2026 — August 2026</time>
+            <time>May — Aug 2026</time>
           </article>
           <article class="compact-row">
             <span class="row-mark row-mark-pair" aria-hidden="true"><img src="images/gatech.ico" alt=""><img src="images/nvidia.ico" alt=""></span>
             <div><h3>Georgia Tech EIC Lab × NVIDIA AI Research</h3><p>Student Researcher</p><p class="row-detail">Built tools to audit agent benchmarks and make evaluation results more trustworthy (AgentSuite, ICML 2026).</p></div>
-            <time>Jul 2025 — Dec 2025</time>
+            <time>Jul — Dec 2025</time>
           </article>
           <article class="compact-row">
             <a class="row-mark" href="https://www.emory.edu/" aria-label="Emory University"><img src="images/emory.svg" alt=""></a>
@@ -122,14 +141,14 @@
         <h2>Notes</h2>
         <div class="oss-list">
           <article class="oss-row">
-            <a class="oss-mark" href="/cooking-agi/index.en.html" aria-label="AGI Study Notes"><img src="images/notes.svg" alt=""></a>
+            <a class="oss-mark" href="https://tianyi-zhang-02.github.io/cooking-agi/index.en.html" aria-label="AGI Study Notes"><img src="images/notes.svg" alt=""></a>
             <div class="oss-copy">
               <div class="oss-heading">
-                <h3><a href="/cooking-agi/index.en.html">AGI Study Notes</a></h3>
+                <h3><a href="https://tianyi-zhang-02.github.io/cooking-agi/index.en.html">AGI Study Notes</a></h3>
               </div>
               <p>Where I work through modern AI systems in my own words: learning notes, interactive figures, interview review, and a candid record of my job search.</p>
               <div class="oss-actions">
-                <a href="/cooking-agi/index.en.html">Open the notes →</a>
+                <a href="https://tianyi-zhang-02.github.io/cooking-agi/index.en.html">Open the notes →</a>
               </div>
             </div>
           </article>
@@ -190,7 +209,7 @@
       </section>
     </main>
 
-    <footer class="onepage-footer"><span>© <span id="yr">2026</span> Tianyi Zhang</span></footer>
+    <footer class="onepage-footer"><span>© <span id="yr">2026</span> Tianyi Zhang</span><a href="#">Back to the stars ↑</a></footer>
   </div>
 </div>
 
@@ -241,5 +260,6 @@
 <script src="script.js?v=48"></script>
 <script defer src="sky.js?v=4"></script>
 <script defer src="after-hours.js?v=1"></script>
+<script defer src="portfolio.js?v=1"></script>
 </body>
 </html>
