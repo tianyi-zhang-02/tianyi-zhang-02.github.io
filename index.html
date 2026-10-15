@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="style.css?v=82">
 <link rel="stylesheet" href="after-hours.css?v=1">
 <link rel="stylesheet" href="portfolio.css?v=2">
+<link rel="stylesheet" href="texture.css?v=10">
 <script src="theme-init.js"></script>
 </head>
 <body class="one-page minimal-home has-sky portfolio-refined">
@@ -19,6 +20,8 @@
 <a class="skip-to-profile" href="#top">Skip to profile</a>
 
 <canvas class="sky" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="spotlight" aria-hidden="true"></div>
 
 <section class="hero" aria-label="Cover">
   <div class="cover-masthead">
@@ -59,7 +62,11 @@
   <aside class="identity-card" aria-label="Profile">
     <img class="identity-photo" src="images/tianyi-zhang.jpg" alt="Portrait of Tianyi Zhang" width="156" height="156">
     <h2 class="identity-name">Tianyi Zhang</h2>
-    <p class="identity-location">Shanghai · Atlanta · Bay Area</p>
+    <ul class="identity-clocks" aria-label="Local time where I have lived">
+      <li data-clock="Asia/Shanghai"><span>Shanghai</span><time></time></li>
+      <li data-clock="America/New_York" class="is-here" title="Where I am now"><span>Atlanta</span><time></time></li>
+      <li data-clock="America/Los_Angeles"><span>Bay Area</span><time></time></li>
+    </ul>
     <p class="education-line"><strong>Georgia Tech</strong><br><span>M.S. in Computer Science</span><br><span>2025–2027</span></p>
     <p class="education-line"><strong>Emory University</strong><br><span>B.S. in Data Science</span><br><span>2021–2025</span></p>
     <nav class="links" aria-label="Primary links">
@@ -83,9 +90,9 @@
         <div class="about-heading">
           <h2>About</h2>
         </div>
-        <p><span>I am an M.S. student at </span><a class="entity-link" href="https://www.gatech.edu/"><img src="images/gatech.ico" alt=""><strong>Georgia Tech</strong></a><span>. I am interested in representation learning, LLM post-training, and evaluation—especially when the feedback we learn from is sparse, noisy, or only an imperfect proxy for what people want.</span></p>
-        <p><span>Most recently, I worked on LLM-based retrieval at </span><a class="entity-link" href="https://www.linkedin.com/"><img src="images/linkedin.ico" alt=""><strong>LinkedIn</strong></a><span>. Before that, at </span><a class="entity-link entity-link-pair" href="https://research.nvidia.com/"><img src="images/gatech.ico" alt=""><span aria-hidden="true">×</span><img src="images/nvidia.ico" alt=""><strong>GT EIC Lab × NVIDIA AI Research</strong></a><span>, I helped build systems for agent evaluation and benchmark auditing. I began my research at </span><a class="entity-link" href="https://www.emory.edu/"><img src="images/emory.svg" alt=""><strong>Emory</strong></a><span>, studying directed and temporal brain networks.</span></p>
-        <div class="current-question"><span>Currently curious about</span><p>How do we tell when the world has changed, and what does “optimal” mean once it has? Lately, I’ve been exploring this through probability.</p></div>
+        <p><span>I am a master’s student in computer science at </span><a class="entity-link" href="https://www.gatech.edu/"><img src="images/gatech.ico" alt=""><strong>Georgia Tech</strong></a><span>, where I study representation learning, LLM post-training and evaluation, especially when the feedback a model learns from is sparse, noisy, or only a rough stand-in for what people actually want.</span></p>
+        <p><span>Most recently I worked on LLM-based retrieval at </span><a class="entity-link" href="https://www.linkedin.com/"><img src="images/linkedin.ico" alt=""><strong>LinkedIn</strong></a><span>. Before that, at </span><a class="entity-link entity-link-pair" href="https://research.nvidia.com/"><img src="images/gatech.ico" alt=""><span aria-hidden="true">×</span><img src="images/nvidia.ico" alt=""><strong>GT EIC Lab × NVIDIA AI Research</strong></a><span>, I helped build tools for evaluating agents and auditing benchmarks. My research began at </span><a class="entity-link" href="https://www.emory.edu/"><img src="images/emory.svg" alt=""><strong>Emory</strong></a><span>, with directed and time-varying brain networks.</span></p>
+        <div class="current-question"><span>Currently curious about</span><p>How do you tell that the world has changed, and what does “optimal” even mean once it has? Lately I have been thinking about it through probability.</p></div>
       </div>
     </header>
 
@@ -95,17 +102,17 @@
         <div class="compact-list">
           <article class="compact-row">
             <a class="row-mark" href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="images/linkedin.ico" alt=""></a>
-            <div><h3>LinkedIn</h3><p>Machine Learning Engineer Intern</p><p class="row-detail">Worked on LLM-based retrieval and offline evaluation for home-feed recommendations.</p></div>
+            <div><h3>LinkedIn</h3><p>Machine Learning Engineer Intern</p><p class="row-detail">Worked on LLM-based retrieval and offline evaluation for the home feed.</p></div>
             <time>May — Aug 2026</time>
           </article>
           <article class="compact-row">
             <span class="row-mark row-mark-pair" aria-hidden="true"><img src="images/gatech.ico" alt=""><img src="images/nvidia.ico" alt=""></span>
-            <div><h3>Georgia Tech EIC Lab × NVIDIA AI Research</h3><p>Student Researcher</p><p class="row-detail">Built tools to audit agent benchmarks and make evaluation results more trustworthy (AgentSuite, ICML 2026).</p></div>
+            <div><h3>Georgia Tech EIC Lab × NVIDIA AI Research</h3><p>Student Researcher</p><p class="row-detail">Built tools that audit agent benchmarks, so that evaluation results can be trusted (AgentSuite, ICML 2026).</p></div>
             <time>Jul — Dec 2025</time>
           </article>
           <article class="compact-row">
             <a class="row-mark" href="https://www.emory.edu/" aria-label="Emory University"><img src="images/emory.svg" alt=""></a>
-            <div><h3>Emory · Graph Mining Lab</h3><p>Student Researcher</p><p class="row-detail">Modeled directional and time-varying brain connectivity with graph learning (AIME 2025, EMBC 2025).</p></div>
+            <div><h3>Emory · Graph Mining Lab</h3><p>Student Researcher</p><p class="row-detail">Modeled directed, time-varying brain connectivity with graph learning (AIME 2025, EMBC 2025).</p></div>
             <time>Dec 2023 — May 2025</time>
           </article>
         </div>
@@ -121,11 +128,11 @@
                 <h3><a href="https://github.com/NVIDIA-NeMo/RL">NVIDIA NeMo RL</a></h3>
                 <span class="oss-stars" title="GitHub stars" aria-label="2.0 thousand GitHub stars">★ <span data-github-star-count>2.0k</span></span>
               </div>
-              <p>An open-source framework for scalable LLM post-training and reinforcement learning.</p>
+              <p>An open-source library for LLM post-training and reinforcement learning at scale.</p>
               <ul class="oss-contributions">
-                <li>I optimized log-probability and top-k distillation paths to remove unnecessary compute and communication.</li>
-                <li>I am adding multi-reward GDPO support so separate reward signals survive the asynchronous training pipeline.</li>
-                <li>I am also working on streamed SingleController PPO minibatches to reduce memory pressure without changing training behavior.</li>
+                <li>Optimized the log-probability and top-k distillation paths, removing compute and communication they did not need.</li>
+                <li>Adding multi-reward GDPO, so that separate reward signals survive the asynchronous training pipeline.</li>
+                <li>Streaming SingleController PPO minibatches to ease memory pressure without changing how training behaves.</li>
               </ul>
               <div class="oss-actions">
                 <a href="https://github.com/NVIDIA-NeMo/RL/pulls?q=is:pr+is:merged+author:tianyi-zhang-02">Merged ↗</a>
@@ -146,7 +153,7 @@
               <div class="oss-heading">
                 <h3><a href="https://tianyi-zhang-02.github.io/cooking-agi/index.en.html">AGI Study Notes</a></h3>
               </div>
-              <p>Where I work through modern AI systems in my own words: learning notes, interactive figures, interview review, and a candid record of my job search.</p>
+              <p>Where I work through modern AI in my own words: study notes, interactive figures, interview review, and an honest record of my job search.</p>
               <div class="oss-actions">
                 <a href="https://tianyi-zhang-02.github.io/cooking-agi/index.en.html">Open the notes →</a>
               </div>
@@ -178,7 +185,7 @@
 
       <section id="personal" class="compact-section personal-section">
         <h2>Personal</h2>
-        <p class="personal-intro">Outside of work, I like photography, mountains, rivers, animals, travel, music—and I am slowly learning guitar.</p>
+        <p class="personal-intro">Away from work: photography, mountains and rivers, animals, travel and music. I am slowly learning the guitar.</p>
 
         <figure class="hero-reveal personal-panorama">
           <div class="reveal">
@@ -198,7 +205,7 @@
           <div class="music-copy">
             <p class="card-index">Spotify</p>
             <h3 lang="zh-Hans">夯歌分享</h3>
-            <p>Songs currently on repeat, updated along the way.</p>
+            <p>What I have on repeat lately, updated as I go.</p>
             <a href="https://open.spotify.com/playlist/5mvXtbOcZx8t4gBWIZTFZn?si=b447c6cfe7af4445">Open in Spotify ↗</a>
           </div>
           <div class="spotify-consent" data-spotify-embed data-src="https://open.spotify.com/embed/playlist/5mvXtbOcZx8t4gBWIZTFZn?utm_source=generator&amp;theme=0">
@@ -212,6 +219,24 @@
     <footer class="onepage-footer"><span>© <span id="yr">2026</span> Tianyi Zhang</span><a href="#">Back to the stars ↑</a></footer>
   </div>
 </div>
+
+<section class="lake-scene" data-mountain="images/namcha-{phase}.webp" data-sunset="videos/namcha-barwa.mp4" aria-labelledby="lake-title">
+  <canvas aria-hidden="true"></canvas>
+  <div class="lake-copy">
+    <h2 id="lake-title">A life is a drop of water, thrown upward.</h2>
+    <p>Sooner or later it falls back to the mountains, the rivers and the sea, and rejoins the whole. Brief and small as it is, gathered over generations it carries enough momentum to reach for the stars.</p>
+  </div>
+  <div class="lake-meta">
+    <div class="lake-hours" role="group" aria-label="See the light at other hours">
+      <button type="button" data-phase="now" aria-pressed="true">Now <span data-now></span></button>
+      <button type="button" data-phase="dawn" aria-pressed="false">Dawn</button>
+      <button type="button" data-phase="day" aria-pressed="false">Day</button>
+      <button type="button" data-phase="sunset" aria-pressed="false">Sunset</button>
+      <button type="button" data-phase="night" aria-pressed="false">Night</button>
+    </div>
+    <p class="lake-credit">Namcha Barwa, Tibet · my photo and time-lapse</p>
+  </div>
+</section>
 
 <section class="after-hours" id="after-hours" aria-labelledby="after-hours-title">
   <header class="after-hours-heading">
@@ -260,6 +285,7 @@
 <script src="script.js?v=48"></script>
 <script defer src="sky.js?v=4"></script>
 <script defer src="after-hours.js?v=1"></script>
-<script defer src="portfolio.js?v=1"></script>
+<script defer src="portfolio.js?v=4"></script>
+<script defer src="lake.js?v=9"></script>
 </body>
 </html>
