@@ -1,0 +1,85 @@
+.portfolio-refined .oss-timeline {
+  list-style: none;
+  margin: 34px 0 0;
+  padding: 0;
+}
+
+.portfolio-refined .oss-entry {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  column-gap: 34px;
+  position: relative;
+  padding: 0 0 38px;
+}
+
+.portfolio-refined .oss-entry:last-child { padding-bottom: 0; }
+.portfolio-refined .oss-entry::before {
+  content: "";
+  position: absolute;
+  left: 126px;
+  top: 14px;
+  bottom: -14px;
+  width: 1px;
+  background: var(--portfolio-line);
+}
+
+.portfolio-refined .oss-entry:last-child::before { bottom: 0; }
+.portfolio-refined .oss-entry::after {
+  content: "";
+  position: absolute;
+  left: 123px;
+  top: 10px;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--portfolio-secondary);
+  border-radius: 50%;
+  background: var(--portfolio-bar);
+}
+
+.portfolio-refined .oss-entry-current::after {
+  border-color: var(--portfolio-accent);
+  background: var(--portfolio-accent);
+  box-shadow: 0 0 0 4px var(--tx-surface);
+}
+
+.portfolio-refined .oss-period {
+  margin: 3px 0 0;
+  color: var(--portfolio-secondary);
+  font: 400 11px/1.85 var(--portfolio-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.portfolio-refined .oss-period-end { display: block; white-space: nowrap; }
+.portfolio-refined .oss-entry-current .oss-period-end { color: var(--portfolio-accent); }
+.portfolio-refined .oss-project { min-width: 0; scroll-margin-top: 108px; }
+.portfolio-refined .oss-project-heading { display: flex; align-items: center; gap: 14px; }
+.portfolio-refined .oss-project-heading .oss-mark { flex: 0 0 40px; }
+.portfolio-refined .oss-project h3 {
+  margin: 0;
+  color: var(--tx-head);
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 550;
+  letter-spacing: -.02em;
+}
+
+.portfolio-refined .oss-project h3 a { color: inherit; text-decoration: none; }
+.portfolio-refined .oss-project h3 a:hover { color: var(--portfolio-accent); text-decoration: underline; }
+.portfolio-refined .oss-role { margin: 4px 0 0; font-size: 12px; color: var(--portfolio-secondary); }
+.portfolio-refined .oss-role .oss-stars { margin-left: 8px; }
+.portfolio-refined .oss-description { margin: 19px 0 0; color: var(--portfolio-secondary); font-size: 14px; line-height: 1.8; }
+.portfolio-refined .oss-description + .oss-description { margin-top: 10px; }
+.portfolio-refined .oss-project .oss-contributions { margin-top: 14px; }
+.portfolio-refined .oss-project .oss-actions { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 18px; }
+.portfolio-refined .oss-project .oss-actions a { padding: 4px 0; }
+
+@media (max-width: 720px) {
+  .portfolio-refined .oss-timeline { margin-top: 28px; }
+  .portfolio-refined .oss-entry { grid-template-columns: minmax(0, 1fr); padding-left: 24px; padding-bottom: 36px; row-gap: 14px; }
+  .portfolio-refined .oss-entry::before { left: 3px; top: 12px; bottom: -12px; }
+  .portfolio-refined .oss-entry::after { left: 0; top: 8px; }
+  .portfolio-refined .oss-period { display: flex; gap: 6px; margin-top: 0; font-size: 10px; }
+  .portfolio-refined .oss-period-end { display: inline; }
+  .portfolio-refined .oss-project h3 { font-size: 17px; }
+  .portfolio-refined .oss-project-heading { gap: 12px; }
+}
