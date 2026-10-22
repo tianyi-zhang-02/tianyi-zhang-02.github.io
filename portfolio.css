@@ -83,7 +83,9 @@ html[data-theme="light"].sky-back .portfolio-refined .sky { opacity: 0; }
 .portfolio-refined .about-panel > p:first-of-type { font-family: var(--portfolio-serif); font-size: clamp(23px, 2.25vw, 29px); line-height: 1.5; letter-spacing: -.02em; color: var(--ink); }
 .portfolio-refined .about-panel > p + p { margin-top: 26px; }
 .portfolio-refined .entity-link { display: inline; padding: 0; border-radius: 0; background: none; white-space: normal; text-decoration: underline; text-decoration-color: var(--portfolio-line); text-decoration-thickness: 1px; }
-.portfolio-refined .entity-link :is(img, span[aria-hidden]) { display: none; }
+.portfolio-refined .entity-link img, .portfolio-refined .institution-mark { display: inline-block; width: 16px; height: 16px; margin-inline-end: .35em; object-fit: contain; vertical-align: -.12em; }
+.portfolio-refined .entity-link:not(.entity-link-pair), .portfolio-refined .entity-name { white-space: nowrap; }
+.portfolio-refined .entity-link-pair > .entity-name { color: inherit; font-size: inherit; }
 .portfolio-refined .entity-link strong { font-weight: inherit; }
 .portfolio-refined .current-question { margin-top: 30px; padding-left: 18px; border-left: 1px solid var(--portfolio-accent); }
 .portfolio-refined .current-question > span { font: 400 10px/1.6 var(--portfolio-mono); letter-spacing: .05em; color: var(--portfolio-accent); }
