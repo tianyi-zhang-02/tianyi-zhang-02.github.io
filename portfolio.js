@@ -18,7 +18,18 @@
     }
     if (activeLink === currentLink) return;
     if (currentLink) currentLink.removeAttribute('aria-current');
-    if (activeLink) activeLink.setAttribute('aria-current', 'location');
+    if (activeLink) {
+      activeLink.setAttribute('aria-current', 'location');
+      if (navigation.scrollWidth > navigation.clientWidth) {
+        const bounds = navigation.getBoundingClientRect();
+        const linkBounds = activeLink.getBoundingClientRect();
+        if (linkBounds.left < bounds.left) {
+          navigation.scrollTo({ left: navigation.scrollLeft + linkBounds.left - bounds.left, behavior: 'auto' });
+        } else if (linkBounds.right > bounds.right) {
+          navigation.scrollTo({ left: navigation.scrollLeft + linkBounds.right - bounds.right, behavior: 'auto' });
+        }
+      }
+    }
     currentLink = activeLink;
   }
 
@@ -51,23 +62,4 @@
     if (section.getBoundingClientRect().top < window.innerHeight) section.classList.add('is-in');
     observer.observe(section);
   });
-})();
-
-// Local time in the three places I have lived; the city I am in now is marked in the markup.
-(() => {
-  const clocks = Array.from(document.querySelectorAll('[data-clock]'));
-  if (!clocks.length || !window.Intl) return;
-  const formats = clocks.map(item => {
-    try { return new Intl.DateTimeFormat('en-GB', { timeZone: item.dataset.clock, hour: '2-digit', minute: '2-digit', hour12: false }); }
-    catch (error) { return null; }
-  });
-  function tick() {
-    const now = new Date();
-    clocks.forEach((item, index) => {
-      const time = item.querySelector('time');
-      if (time && formats[index]) time.textContent = formats[index].format(now);
-    });
-  }
-  tick();
-  window.setInterval(tick, 15000);
 })();
