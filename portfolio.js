@@ -34,27 +34,9 @@
   scheduleUpdate();
 })();
 
-// Texture: a soft light that follows the pointer through the profile, and sections that
-// settle in as they arrive. Both are skipped for reduced motion and coarse pointers.
 (() => {
   const root = document.documentElement;
   const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const spotlight = document.querySelector('.spotlight');
-  if (spotlight && !calm && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    let frame = 0, x = 0, y = 0;
-    window.addEventListener('pointermove', event => {
-      x = event.clientX; y = event.clientY;
-      if (frame) return;
-      frame = window.requestAnimationFrame(() => {
-        frame = 0;
-        spotlight.style.setProperty('--spot-x', x + 'px');
-        spotlight.style.setProperty('--spot-y', y + 'px');
-        spotlight.classList.add('is-on');
-      });
-    }, { passive: true });
-    document.addEventListener('pointerleave', () => spotlight.classList.remove('is-on'));
-  }
-
   const sections = document.querySelectorAll('.portfolio-refined .compact-section');
   if (calm || !('IntersectionObserver' in window) || !sections.length) return;
   root.classList.add('tx-reveal');
