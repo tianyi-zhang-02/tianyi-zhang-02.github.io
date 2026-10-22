@@ -84,7 +84,7 @@
   font-size: 14px;
   cursor: pointer;
 }
-.after-hours-play:hover { background: #ffffff16; border-color: #c9b8da; }
+.after-hours-play:hover { border-color: #c9b8da; }
 .after-hours .after-hours-privacy {
   margin: 16px 0 0;
   font-size: 11px;

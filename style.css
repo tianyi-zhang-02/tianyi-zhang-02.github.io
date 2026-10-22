@@ -228,9 +228,9 @@ img,video,svg{max-width:100%}
   font:500 var(--t-xs)/1.2 var(--mono);letter-spacing:.045em;color:var(--ink);text-decoration:none;
 }
 .side-contact a:last-child{border-bottom:1px solid var(--line)}
-.side-contact a span:last-child{color:var(--muted);transition:transform var(--dur-fast) var(--ease),color var(--dur-fast) var(--ease)}
+.side-contact a span:last-child{color:var(--muted);transition:color var(--dur-fast) var(--ease)}
 .side-contact a:hover{color:var(--accent)}
-.side-contact a:hover span:last-child{transform:translate(2px,-2px);color:var(--accent)}
+.side-contact a:hover span:last-child{color:var(--accent)}
 
 .one-page-content{min-width:0}
 
@@ -329,9 +329,9 @@ figure.sig figcaption{
   min-height:38px;padding:0 14px;border:1px solid rgba(255,255,255,.45);border-radius:var(--r-pill);
   background:rgba(12,15,22,.72);backdrop-filter:blur(10px);color:#fff;cursor:pointer;
   font:600 var(--t-2xs)/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;
-  transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease);
+  transition:border-color var(--dur-fast) var(--ease);
 }
-.panorama-open-button:hover{background:rgba(12,15,22,.9);transform:translateY(-1px)}
+.panorama-open-button:hover{border-color:#fff}
 .panorama-open-button:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .panorama-dialog{width:min(96vw,1500px);height:min(92vh,920px);max-width:none;max-height:none;margin:auto;padding:0;border:1px solid color-mix(in srgb,#fff 14%,transparent);border-radius:16px;background:#0b0d12;color:#fff;box-shadow:0 40px 120px rgba(0,0,0,.55);overflow:hidden}
 .panorama-dialog::backdrop{background:rgba(5,7,12,.82);backdrop-filter:blur(9px)}
@@ -342,7 +342,7 @@ figure.sig figcaption{
 .panorama-controls{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}
 .panorama-controls button,.panorama-controls output{min-width:38px;height:34px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.14);border-radius:8px;background:rgba(255,255,255,.06);color:#fff;padding:0 10px;font:600 10px/1 var(--mono);letter-spacing:.04em}
 .panorama-controls button{cursor:pointer}
-.panorama-controls button:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.3)}
+.panorama-controls button:hover{border-color:rgba(255,255,255,.3)}
 .panorama-controls output{min-width:56px;color:#cbd3df}
 .panorama-controls .panorama-close{margin-left:6px;font-size:19px;color:#cbd3df}
 .panorama-viewport{position:relative;min-height:0;overflow:hidden;background:radial-gradient(circle at 50% 50%,#1b202a,#06070a 72%);touch-action:none;cursor:grab;user-select:none}
@@ -388,9 +388,7 @@ body.panorama-open{overflow:hidden}
 .experience-logo{
   display:grid;place-items:center;width:40px;height:40px;
   background:transparent;
-  transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease);
 }
-.experience-logo:hover{transform:translateY(-2px);opacity:.78}
 .experience-logo img{display:block;max-width:100%;max-height:100%;object-fit:contain}
 .experience-brand-pair .experience-logo{width:34px;height:34px}
 .brand-cross{display:grid;place-items:center;width:7px;height:34px;font:400 11px/1 var(--sans);color:var(--muted)}
@@ -410,9 +408,8 @@ body.panorama-open{overflow:hidden}
 .publication-card h3 a,.project-card h3 a{color:var(--ink);text-decoration:none}
 .publication-card h3 a:hover,.project-card h3 a:hover{color:var(--accent)}
 .project-card .project-title a{display:inline-flex;align-items:center;gap:var(--s-3)}
-.project-logo{display:grid;place-items:center;flex:0 0 auto;width:48px;height:48px;background:transparent;transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
+.project-logo{display:grid;place-items:center;flex:0 0 auto;width:48px;height:48px;background:transparent}
 .project-logo img{display:block;max-width:100%;max-height:100%;object-fit:contain}
-.project-title a:hover .project-logo{transform:translateY(-2px);opacity:.78}
 .section-body .section-link{margin-top:var(--s-4)!important}
 .project-head .starnum{font:500 var(--t-xs)/1 var(--mono);color:var(--gold)}
 
@@ -475,7 +472,7 @@ body.panorama-open{overflow:hidden}
   appearance:none;border:1px solid var(--inverse-line);border-radius:var(--r-pill);padding:11px 16px;
   background:var(--inverse-ink);color:var(--inverse-bg);font:600 var(--t-sm)/1 var(--sans);cursor:pointer;
 }
-.spotify-consent button:hover{background:var(--inverse-accent)}
+.spotify-consent button:hover{text-decoration:underline;text-underline-offset:3px}
 .spotify-consent p{color:var(--inverse-muted);font-size:var(--t-sm)}
 
 /* -----------------------------------------------------------------------------
@@ -497,11 +494,11 @@ body.panorama-open{overflow:hidden}
 .download-card{
   display:flex;min-height:84px;flex-direction:column;justify-content:space-between;
   padding:16px;color:var(--ink);text-decoration:none;
-  transition:transform var(--dur) var(--ease),border-color var(--dur) var(--ease),box-shadow var(--dur) var(--ease);
+  transition:border-color var(--dur) var(--ease),color var(--dur) var(--ease);
 }
 .download-card span{font:500 var(--t-2xs)/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .download-card strong{font:700 16px/var(--lh-snug) var(--serif)}
-.download-card:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent);box-shadow:var(--shadow-lift)}
+.download-card:hover{border-color:var(--accent);color:var(--accent)}
 
 .onepage-footer{
   margin-top:0;padding:var(--s-6) 0 var(--s-7);border-top:1px solid var(--line);
@@ -710,7 +707,6 @@ body:not(.one-page) footer a:hover{color:var(--accent)}
     animation-duration:.01ms!important;animation-iteration-count:1!important;
     transition-duration:.01ms!important;
   }
-  .download-card:hover{transform:none}
   .route-signal{display:none}
 }
 
@@ -912,8 +908,7 @@ html.sky-back .sky{opacity:.16}
   border-top:1px solid rgba(255,255,255,.14);animation:hero-in 1.2s .5s var(--ease) both;
 }
 .hero-built li+li{border-left:1px solid rgba(255,255,255,.12)}
-.hero-built a{display:block;padding:18px 20px 6px;color:inherit;text-decoration:none;border-radius:6px;transition:background var(--dur-fast) var(--ease)}
-.hero-built a:hover{background:rgba(255,255,255,.05)}
+.hero-built a{display:block;padding:18px 20px 6px;color:inherit;text-decoration:none;border-radius:6px}
 .hb-kicker{display:block;font:500 10.5px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#9C9C9C}
 .hero-built strong{display:block;margin-top:8px;font-size:16px;font-weight:600;letter-spacing:-.01em;color:#FFFFFF}
 .hero-built a:hover strong{text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.5)}
