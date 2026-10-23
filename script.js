@@ -280,8 +280,6 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   var projects = document.querySelectorAll('[data-github-repo]');
   if (!projects.length || !window.fetch) return;
 
-  var maxAge = 6 * 60 * 60 * 1000;
-
   function formatStars(count) {
     return count >= 1000 ? (count / 1000).toFixed(1) + 'k' : count.toLocaleString('en-US');
   }
@@ -301,9 +299,8 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     var cacheKey = 'github-stars:' + repo;
     try {
       var cached = JSON.parse(localStorage.getItem(cacheKey));
-      if (cached && Date.now() - cached.savedAt < maxAge && Number.isFinite(cached.count)) {
+      if (cached && Number.isFinite(cached.count)) {
         render(project, cached.count);
-        return;
       }
     } catch (error) {}
 
