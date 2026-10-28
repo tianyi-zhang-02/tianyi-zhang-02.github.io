@@ -4,11 +4,12 @@
    a band of glowing gas crosses the sky and a few bright stars flare. The scene leans gently toward
    the pointer, a click jumps to warp, and now and then a meteor, a comet or a satellite goes by.
 
-   The look follows the visitor's clock and calendar, while the scene itself stays the same. With the
-   hour, the light swings round the planet (a fuller face by day, a thin crescent at night), the sky
-   brightens and darkens, the stars and gas fade by day, and the planet's glow warms at dawn and dusk.
-   With the season, the gas changes colour and a sparse weather drifts across the frame: snow in
-   winter, petals in spring, fireflies in summer, falling leaves in autumn.
+   The look follows the visitor's clock and calendar, which theme-init.js works out before the first
+   paint, while the scene itself stays the same. With the hour, the light swings round the planet (a
+   fuller face by day, a thin crescent at night), the sky brightens and darkens, the stars and gas fade
+   by day, and the planet's glow warms at dawn and dusk. With the season, the gas changes colour and a
+   sparse weather drifts across the frame: snow in winter, petals in spring, fireflies in summer,
+   falling leaves in autumn.
 
    Everything shares one camera. The planet and its ring are ray-cast per character cell; the ship is a
    cloud of surface points; both write into one depth buffer, so occlusion is real. Glyphs come from a
@@ -110,24 +111,9 @@
     zbuf[i] = z; lbuf[i] = l; cbuf[i] = c; glyph[i] = g === undefined ? -1 : g;
   }
 
-  /* ---- the visitor's clock and calendar ------------------------------------------------------- */
-  // ?hour=21.5 and ?month=1 override the clock for checking.
-  var clock = (function () {
-    var q = location.search, d = new Date(), m;
-    var hour = (m = /[?&]hour=([\d.]+)/.exec(q)) ? +m[1] % 24 : d.getHours() + d.getMinutes() / 60;
-    var month = (m = /[?&]month=(\d+)/.exec(q)) ? (+m[1] - 1) % 12 : d.getMonth();
-    function ramp(a, b, x) { var t = Math.max(0, Math.min(1, (x - a) / (b - a))); return t * t * (3 - 2 * t); }
-    var day = ramp(5, 8.5, hour) * (1 - ramp(17, 20.5, hour));                       // 0 at night, 1 by day
-    var warm = Math.max(Math.exp(-Math.pow((hour - 6.6) / 1.2, 2)), Math.exp(-Math.pow((hour - 18.6) / 1.3, 2)));   // dawn and dusk
-    var period = hour < 5 ? 'Night' : hour < 8 ? 'Dawn' : hour < 17 ? 'Day' : hour < 20.5 ? 'Dusk' : 'Night';
-    // seasons as in the northern hemisphere; each has its gas colours and its weather
-    var SEASONS = [
-      { name: 'Winter', gas: ['#4f9fe0', '#7b86ff', '#c4b8ff'], weather: 'snow', tint: '#e4ecff' },
-      { name: 'Spring', gas: ['#3dbf9c', '#8a7cff', '#ff7eb6'], weather: 'petals', tint: '#ffb6d3' },
-      { name: 'Summer', gas: ['#2aa7c9', '#c056ff', '#ff8a4c'], weather: 'fireflies', tint: '#ffe08a' },
-      { name: 'Autumn', gas: ['#6a5cff', '#e2589a', '#f2a541'], weather: 'leaves', tint: '#f2a541' }];
-    return { hour: hour, day: day, warm: warm, period: period, season: SEASONS[Math.floor(((month + 1) % 12) / 3)] };
-  })();
+  /* ---- the visitor's clock and calendar, worked out in theme-init.js before the first paint ----- */
+  var clock = window.skyClock || { hour: 22, day: 0, warm: 0, period: 'Night',
+    season: { name: 'Autumn', gas: ['#6a5cff', '#e2589a', '#f2a541'], weather: 'leaves', tint: '#f2a541' } };
   // the sun swings round the planet with the hour: a fuller face by day, a thin crescent at night
   var SUN = (function () { var a = 0.184 - 0.42 * Math.cos(2 * Math.PI * (clock.hour - 13) / 24); return norm([-Math.cos(a), 0.4, Math.sin(a)]); })();
 
@@ -593,10 +579,6 @@
 
   /* ---- frame ---------------------------------------------------------------------------------- */
   var warpStart = -10, lastT = 0;
-  (function () {
-    var night = [4, 5, 10], day = [10, 17, 34], warm = [22, 11, 20];
-    hero.style.backgroundColor = 'rgb(' + night.map(function (c, i) { return Math.round(c + (day[i] - c) * clock.day + (warm[i] - c) * 0.55 * clock.warm); }).join(',') + ')';
-  })();
   var hudSky = document.querySelector('[data-hud-sky]');
   if (hudSky) hudSky.textContent = clock.season.name + ' · ' + clock.period;
   function frame(t) {

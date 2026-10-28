@@ -10,8 +10,8 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; frame-src https://open.spotify.com https://player.bilibili.com; connect-src https://api.github.com; font-src 'self'; worker-src 'none'; upgrade-insecure-requests">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='19' cy='17' r='9' fill='%23b8c6e4'/%3E%3Cellipse cx='19' cy='17' rx='15' ry='4' fill='none' stroke='%23d8c49c' stroke-width='1.6' transform='rotate(-18 19 17)'/%3E%3Ccircle cx='5' cy='6' r='1.6' fill='%23ff9446'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="site.css?v=1">
-<script src="theme-init.js"></script>
+<link rel="stylesheet" href="site.css?v=2">
+<script src="theme-init.js?v=2"></script>
 </head>
 <body class="portfolio-refined">
 
@@ -38,9 +38,9 @@
 <section class="sky-hero" id="profile" aria-label="Introduction">
   <canvas class="ascii-sky" aria-hidden="true"></canvas>
   <div class="hero-copy">
-    <p class="kicker"><span class="kicker-dot" aria-hidden="true">●</span>Georgia Tech · M.S. CS · 2027</p>
+    <p class="kicker"><img src="images/emory.svg" alt="">Emory <span class="sep" aria-hidden="true">|</span> <img src="images/gatech.ico" alt="">Georgia Tech</p>
     <h1 class="hero-name" aria-label="Tianyi Zhang"><span data-scramble aria-hidden="true">Tianyi Zhang</span></h1>
-    <p class="hero-line">Representation learning, LLM post-training, and model &amp; agent evaluation — especially when feedback is sparse or noisy.</p>
+    <p class="hero-line">Representation learning, LLM post-training, and model &amp; agent evaluation</p>
     <nav class="hero-links" aria-label="Primary links">
       <a href="https://scholar.google.com/citations?hl=en&amp;view_op=list_works&amp;user=46rbYk0AAAAJ">Scholar ↗</a>
       <a href="https://github.com/tianyi-zhang-02">GitHub ↗</a>
@@ -206,24 +206,6 @@
   </section>
 </main>
 
-<section class="lake-scene" data-mountain="images/namcha-{phase}.webp" data-sunset="videos/namcha-barwa.mp4" aria-labelledby="lake-title">
-  <canvas aria-hidden="true"></canvas>
-  <div class="lake-copy">
-    <h2 id="lake-title">A life is a drop of water, thrown upward.</h2>
-    <p>Sooner or later it falls back to the mountains, the rivers and the sea, and rejoins the whole. Brief and small as it is, gathered over generations it carries enough momentum to reach for the stars.</p>
-  </div>
-  <div class="lake-meta">
-    <div class="lake-hours" role="group" aria-label="See the light at other hours">
-      <button type="button" data-phase="now" aria-pressed="true">Now <span data-now></span></button>
-      <button type="button" data-phase="dawn" aria-pressed="false">Dawn</button>
-      <button type="button" data-phase="day" aria-pressed="false">Day</button>
-      <button type="button" data-phase="sunset" aria-pressed="false">Sunset</button>
-      <button type="button" data-phase="night" aria-pressed="false">Night</button>
-    </div>
-    <p class="lake-credit">Namcha Barwa, Tibet · my photo and time-lapse</p>
-  </div>
-</section>
-
 <section class="after-hours" id="after-hours" aria-labelledby="after-hours-title">
   <header class="after-hours-heading">
     <p>AFTER HOURS</p>
@@ -270,10 +252,9 @@
 </dialog>
 
 <script src="script.js?v=49"></script>
-<script defer src="ascii-sky.js?v=1"></script>
+<script defer src="ascii-sky.js?v=2"></script>
 <script defer src="ascii-page.js?v=1"></script>
 <script defer src="after-hours.js?v=1"></script>
 <script defer src="portfolio.js?v=7"></script>
-<script defer src="lake.js?v=9"></script>
 </body>
 </html>
