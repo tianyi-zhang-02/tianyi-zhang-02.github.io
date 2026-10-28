@@ -11,6 +11,10 @@
    sparse weather drifts across the frame: snow in winter, petals in spring, fireflies in summer,
    falling leaves in autumn.
 
+   In the light theme the same scene is printed in ink on the page's paper: the planet in indigo and
+   ochre, the gas mixed toward the ink and left without its glow, and no halo. On load the planet and
+   ring print in cell by cell, and as the page scrolls the sky sinks a little slower than the page.
+
    Everything shares one camera. The planet and its ring are ray-cast per character cell; the ship is a
    cloud of surface points; both write into one depth buffer, so occlusion is real. Glyphs come from a
    small pre-drawn atlas (one row per colour). The scene runs only while the hero is on screen and shows
@@ -39,7 +43,8 @@
     palette = [v('--ascii-ink', '#eef1f6'), v('--ascii-dim', '#5d6680'), v('--ascii-fire', '#ff9446'),
                v('--ascii-hot', '#fff0c2'), v('--ascii-planet', '#b8c6e4'), v('--ascii-blink', '#ff6157'), v('--ascii-ember', '#b8442e'), v('--ascii-sand', '#d8c49c'), clock.season.tint];
     light = v('--ascii-light', '0') === '1';
-    nebPalette = clock.season.gas.map(hex);
+    var ink = hex(palette[PLANET]);
+    nebPalette = clock.season.gas.map(function (g) { var c = hex(g); return light ? c.map(function (x, j) { return Math.round(x * 0.65 + ink[j] * 0.35); }) : c; });
   }
   function hex(s) { s = s.replace('#', ''); if (s.length === 3) s = s.replace(/./g, '$&$&'); var n = parseInt(s, 16); return [n >> 16 & 255, n >> 8 & 255, n & 255]; }
   function buildAtlas() {
@@ -232,21 +237,21 @@
     for (i = 0; i < nebCols * nebRows; i++) {
       var hk0 = Math.max(0, Math.min(1, 0.7 * nebHue[i] + 0.45 * nebD[i] - 0.1)) * 2, ca = nebPalette[hk0 < 1 ? 0 : 1], cb = nebPalette[hk0 < 1 ? 1 : 2], mm = hk0 < 1 ? hk0 : hk0 - 1;
       for (var j = 0; j < 3; j++) img.data[i * 4 + j] = ca[j] + (cb[j] - ca[j]) * mm;
-      img.data[i * 4 + 3] = Math.min(255, nebD[i] * nebD[i] * (light ? 70 : 120));
+      img.data[i * 4 + 3] = Math.min(255, nebD[i] * nebD[i] * 120);
     }
     gctx.putImageData(img, 0, 0);
     nebLayers = [0, 1].map(function (L) {
       var cv = document.createElement('canvas'), c2;
       cv.width = Math.ceil(nebCols * CW * DPR); cv.height = Math.ceil(nebRows * CH * DPR); c2 = cv.getContext('2d');
       c2.imageSmoothingEnabled = true; c2.imageSmoothingQuality = 'high';
-      if (L === 0) c2.drawImage(glow, 0, 0, cv.width, cv.height);      // the glow lives in one layer and
+      if (L === 0 && !light) c2.drawImage(glow, 0, 0, cv.width, cv.height);      // the glow lives in one layer and
       for (var y = 0; y < nebRows; y++) for (var x = 0; x < nebCols; x++) {   // is drawn at half strength in each
         var D = nebD[y * nebCols + x], r = hash(x * 7 + L * 101, y * 13 + L * 59);
         if (D < 0.02 || r > D * 2.2) continue;                         // faint gas is a sparse sprinkle
         var dd = D * (0.6 + 0.8 * hash(x * 3 + L * 211, y * 5 + L * 17));
         var lev = Math.max(1, Math.min(NEB.length - 1, Math.round(dd * (NEB.length - 1))));
         var hk = Math.max(0, Math.min(1, 0.7 * nebHue[y * nebCols + x] + 0.45 * dd - 0.1));
-        c2.globalAlpha = Math.min(0.9, (light ? 0.12 : 0.2) + (light ? 0.5 : 0.65) * dd);
+        c2.globalAlpha = Math.min(0.9, (light ? 0.1 : 0.2) + (light ? 0.42 : 0.65) * dd);
         c2.drawImage(atl, lev * gw, Math.round(hk * (NEB_K - 1)) * gh, gw, gh, Math.round(x * CW * DPR), Math.round(y * CH * DPR), gw, gh);
       }
       return cv;
@@ -299,6 +304,7 @@
   }
   var halo = null;
   function buildHalo() {                          // the atmosphere's glow, strongest toward the sun
+    if (light) { halo = null; return; }            // paper has no glow; the limb glyphs draw the edge
     var r = scr.r, pad = r * 0.16, size = Math.ceil((r + pad) * 2 * DPR);
     halo = document.createElement('canvas'); halo.width = halo.height = size;
     var h = halo.getContext('2d'), c = size / 2, g = h.createRadialGradient(c, c, r * 0.985 * DPR, c, c, (r + pad) * DPR);
@@ -318,6 +324,7 @@
     var x0 = Math.max(0, Math.floor((c0[0] - rr) / CW)), x1 = Math.min(cols - 1, Math.ceil((c0[0] + rr) / CW));
     var y0 = Math.max(0, Math.floor((c0[1] - rr) / CH)), y1 = Math.min(rows - 1, Math.ceil((c0[1] + rr) / CH));
     var spin = t * 0.018, CC = C[0] * C[0] + C[1] * C[1] + C[2] * C[2];
+    var rev = smooth(0.15, 2.2, t);                     // on load the planet prints in, cell by cell
     var ringLit = 0.35 + 0.65 * Math.abs(sun[0] * N[0] + sun[1] * N[1] + sun[2] * N[2]);
     for (var gy = y0; gy <= y1; gy++) for (var gx = x0; gx <= x1; gx++) {
       var dx = ((gx + 0.5) * CW - cam.cx) / cam.f, dy = -((gy + 0.5) * CH - cam.cy) / cam.f, dz = 1;
@@ -341,7 +348,8 @@
         var rim = Math.pow(1 - Math.abs(hz), 4) * 0.45 * Math.max(0, lit + 0.35);   // the lit limb brightens
         var l = Math.max(0, lit) * band * sh + rim + (hash(gx * 3, gy * 7) - 0.5) * 0.07;   // a little dither breaks up flat runs
         var warm = Math.sin(lat * 11 + 0.8 * Math.sin(lon * 2 + lat * 26 + spin * 4)) > 0.35 || e < 0.7;
-        if (l > 0.1) put(gx, gy, dz * tS, Math.min(1, l * (0.8 + 0.2 * clock.day)), warm ? SAND : PLANET);
+        if (hash(gx * 5 + 1, gy * 3 + 2) > rev) put(gx, gy, dz * tS, 0, PLANET, -2);
+        else if (l > 0.1) put(gx, gy, dz * tS, Math.min(1, l * (0.8 + 0.2 * clock.day)), warm ? SAND : PLANET);
         else if (hash(gx, gy) < 0.1 + 0.12 * band) put(gx, gy, dz * tS, 0.12, DIM, gi('.'));   // night side: faint dots
         else put(gx, gy, dz * tS, 0, PLANET, -2);                                            // empty, but opaque
       } else {
@@ -360,11 +368,11 @@
           var px = dx * tR - C[0], py = dy * tR - C[1], pz = dz * tR - C[2], r = Math.hypot(px, py, pz);
           if (r > RING_IN && r < RING_OUT) {
             var dens = ringDensity((r - RING_IN) / (RING_OUT - RING_IN));
-            if (dens < 0.08) continue;
+            if (dens < 0.08 || hash(gx * 7 + 3, gy * 2 + 5) > rev) continue;
             var tb = px * sun[0] + py * sun[1] + pz * sun[2];             // planet shadow on the ring
             var shadow = (tb < 0 && Math.hypot(px - sun[0] * tb, py - sun[1] * tb, pz - sun[2] * tb) < 1) ? 0.12 : 1;
             var l2 = dens * shadow * ringLit;
-            if (l2 > 0.07) put(gx, gy, dz * tR, Math.min(1, 0.25 + l2 * 0.8), l2 > 0.45 ? SAND : PLANET, gi(l2 > 0.5 ? '=' : (l2 > 0.2 ? '-' : '.')));
+            if (l2 > 0.07) put(gx, gy, dz * tR, Math.min(1, 0.25 + l2 * 0.8), l2 > (light ? 0.2 : 0.45) ? SAND : PLANET, gi(l2 > 0.5 ? '=' : (l2 > 0.2 ? '-' : '.')));
           }
         }
       }
@@ -607,8 +615,7 @@
       var X = Math.round(gx * CW * DPR), Y = Math.round(gy * CH * DPR);
       if (gas && l > 0.45 && zbuf[i] < 8e8 && c !== PLANET && c !== SAND && c !== DIM && c !== WEATHER && nebD[(gy + sy) * nebCols + gx + sx] > 0.03) ctx.clearRect(X, Y, gw, gh);   // the ship, fire and meteors own their cell; stars and weather sit in the gas
       if (g < 0) {
-        var ll = light ? 1 - l * 0.9 : l;
-        g = Math.max(1, Math.min(RAMP.length - 1, Math.round(ll * (RAMP.length - 1))));
+        g = Math.max(1, Math.min(RAMP.length - 1, Math.round(l * (RAMP.length - 1))));
         ctx.globalAlpha = 0.35 + 0.65 * Math.min(1, l * 1.3);
       } else ctx.globalAlpha = Math.max(0.2, Math.min(1, l));
       ctx.drawImage(atlas, g * gw, c * gh, gw, gh, X, Y, gw, gh);
@@ -645,11 +652,19 @@
     if (now - warpStart > 1.8) warpStart = now;
   });
 
+  // the sky sinks a little slower than the page as it scrolls away
+  var sy0 = -1;
+  if (!reduce) window.addEventListener('scroll', function () {
+    var y = Math.min(window.scrollY, H);
+    if (y === sy0) return; sy0 = y;
+    canvas.style.transform = y > 0 ? 'translate3d(0, ' + (y * 0.35).toFixed(1) + 'px, 0)' : '';
+  }, { passive: true });
+
   var rt;
   window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { resize(); if (!running) frame(lastT); }, 150); });
   if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { visible = e[0].isIntersecting; if (visible) play(); else pause(); }).observe(hero);
   document.addEventListener('visibilitychange', function () { if (document.hidden) pause(); else play(); });
-  new MutationObserver(function () { readTheme(); buildAtlas(); if (!running) frame(lastT); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  new MutationObserver(function () { resize(); if (!running) frame(lastT); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
   /* ---- the name decodes itself on load and on hover ------------------------------------------ */
   var GLYPHS = '!<>-_\\/[]{}=+*^?#%@01';
