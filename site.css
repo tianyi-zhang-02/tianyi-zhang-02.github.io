@@ -1,6 +1,6 @@
 /* Tianyi Zhang — one stylesheet for the whole page.
-   The hero is a night sky drawn in characters and stays dark in both themes; the rest of the page
-   follows the theme toggle (dark unless light is pinned) and takes its colours from the same sky: in
+   The hero is a sky drawn in characters: glowing on the night in the dark theme, in ink on the
+   page's paper in the light one. The page follows the theme toggle (dark unless light is pinned) and takes its colours from the same sky: in
    the dark theme the page is the sky's colour at the visitor's hour (--sky, set by theme-init.js),
    faint glows behind it carry the season's gas colours (--gas-1..3), and the accents are the
    planet's ice blue and sand, with the ship's flame kept for small live marks. Mono type carries
@@ -29,7 +29,7 @@
   --field-strength: 1;
   --glow: 1;
 
-  /* the hero's sky, the same in both themes */
+  /* the hero's sky; the light theme redraws it in ink below */
   --ascii-ink: #eef1f6;
   --ascii-dim: #59627c;
   --ascii-fire: #ff9446;
@@ -165,6 +165,35 @@ body::before {
   display: flex; gap: 28px; color: #5d6680; font: 400 11px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase;
   font-variant-numeric: tabular-nums; pointer-events: none;
 }
+
+/* the light theme: the same sky, drawn in ink on the page's paper */
+:root[data-theme="light"] {
+  --ascii-ink: #1d2233;
+  --ascii-dim: #9aa1b2;
+  --ascii-fire: #c4501a;
+  --ascii-hot: #7a2a0c;
+  --ascii-planet: #3b4f7a;
+  --ascii-sand: #8a6420;
+  --ascii-blink: #c4301a;
+  --ascii-ember: #b8442e;
+  --ascii-light: 1;
+}
+:root[data-theme="light"] .sky-hero { background: var(--bg); color: var(--ink); }
+:root[data-theme="light"] .sky-hero::after {
+  background:
+    linear-gradient(to bottom, color-mix(in srgb, var(--bg) 55%, transparent), transparent 96px),
+    radial-gradient(ellipse 58% 52% at 16% 80%, color-mix(in srgb, var(--bg) 82%, transparent), transparent 70%);
+}
+:root[data-theme="light"] .kicker { color: var(--muted); }
+:root[data-theme="light"] .kicker .sep { color: var(--dim); }
+:root[data-theme="light"] .hero-name { color: var(--ink); }
+:root[data-theme="light"] .hero-line { border-top-color: var(--line-2); color: var(--text); }
+:root[data-theme="light"] .hero-links a { border-bottom-color: var(--line-2); color: var(--ink); }
+:root[data-theme="light"] .hero-links a:hover { border-color: var(--accent); color: var(--accent); }
+:root[data-theme="light"] .hero-hud { color: var(--dim); }
+:root[data-theme="light"] .portfolio-bar { color: var(--muted); }
+:root[data-theme="light"] :is(.portfolio-wordmark, .section-nav a:hover, .section-nav a[aria-current]) { color: var(--ink); }
+:root[data-theme="light"] .theme-toggle { border-color: var(--line-2); }
 
 /* ------------------------------------------------------------------ page */
 .page { position: relative; max-width: 1120px; margin: 0 auto; padding: clamp(72px, 10vw, 136px) clamp(20px, 5vw, 48px) 24px; }
