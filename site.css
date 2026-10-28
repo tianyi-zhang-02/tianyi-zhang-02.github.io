@@ -28,6 +28,7 @@
   --field: 190, 200, 225;
   --field-strength: 1;
   --glow: 1;
+  --photo-shadow: rgba(0, 0, 0, .5);                   /* photos keep a neutral shadow, never the season's colours */
 
   /* the hero's sky; the light theme redraws it in ink below */
   --ascii-ink: #eef1f6;
@@ -57,6 +58,7 @@
   --field: 40, 44, 60;
   --field-strength: .5;
   --glow: .45;
+  --photo-shadow: rgba(30, 34, 48, .2);
   color-scheme: light;
 }
 
@@ -231,7 +233,7 @@ body::before {
 
 /* ------------------------------------------------------------------ about */
 .about-grid { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: clamp(32px, 6vw, 80px); align-items: start; }
-.portrait { width: 100%; height: auto; border-radius: 10px; background: #fff; box-shadow: 0 0 0 1px var(--line-2), 0 18px 60px -18px rgba(var(--gas-1, 47, 159, 189), calc(.45 * var(--glow))); }
+.portrait { width: 100%; height: auto; border-radius: 10px; background: #fff; box-shadow: 0 0 0 1px var(--line-2), 0 18px 60px -18px var(--photo-shadow); }
 .about-copy > p { max-width: 38em; margin-bottom: 18px; color: var(--text); font-size: 17px; line-height: 1.8; }
 .entity-link { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line-2); transition: border-color .2s ease; }
 .entity-link:hover { border-color: var(--accent); }
@@ -308,7 +310,7 @@ body::before {
   display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 12px;
   color: var(--dim); font: 400 11px/1.5 var(--mono); letter-spacing: .14em; text-transform: uppercase;
 }
-.reveal { --pos: 0%; position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 10px; background: #000; touch-action: pan-y; box-shadow: 0 0 0 1px var(--line-2), 0 30px 80px -30px rgba(var(--gas-2, 122, 99, 255), calc(.4 * var(--glow))); }
+.reveal { --pos: 0%; position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 10px; background: #000; touch-action: pan-y; box-shadow: 0 0 0 1px var(--line-2), 0 30px 80px -30px var(--photo-shadow); }
 .rv-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .rv-photo { clip-path: inset(0 0 0 var(--pos)); }
 /* clamp so the round grip never gets half-clipped by the figure's overflow */
