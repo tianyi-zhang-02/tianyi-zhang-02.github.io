@@ -25,7 +25,7 @@
     { name: 'Summer', gas: ['#2aa7c9', '#c056ff', '#ff8a4c'], weather: 'fireflies', tint: '#ffe08a' },
     { name: 'Autumn', gas: ['#6a5cff', '#e2589a', '#f2a541'], weather: 'leaves', tint: '#f2a541' }];
   var season = SEASONS[Math.floor(((month + 1) % 12) / 3)];
-  var night = [4, 5, 10], noon = [10, 17, 34], dusk = [22, 11, 20];
+  var night = [5, 5, 7], noon = [15, 15, 18], dusk = [24, 16, 15];
   var sky = night.map(function (c, i) { return Math.round(c + (noon[i] - c) * day + (dusk[i] - c) * 0.55 * warm); });
   window.skyClock = { hour: hour, day: day, warm: warm, period: period, season: season };
 

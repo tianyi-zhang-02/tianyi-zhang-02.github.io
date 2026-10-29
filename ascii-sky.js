@@ -11,7 +11,7 @@
    sparse weather drifts across the frame: snow in winter, petals in spring, fireflies in summer,
    falling leaves in autumn.
 
-   In the light theme the same scene is printed in ink on the page's paper: the planet in indigo and
+   In the light theme the same scene is printed in ink on the page's paper: the planet in graphite and
    ochre, the gas mixed toward the ink and left without its glow, and no halo. On load the planet and
    ring print in cell by cell, and as the page scrolls the sky sinks a little slower than the page.
 
@@ -44,7 +44,7 @@
                v('--ascii-hot', '#fff0c2'), v('--ascii-planet', '#b8c6e4'), v('--ascii-blink', '#ff6157'), v('--ascii-ember', '#b8442e'), v('--ascii-sand', '#d8c49c'), clock.season.tint];
     light = v('--ascii-light', '0') === '1';
     var ink = hex(palette[PLANET]);
-    nebPalette = clock.season.gas.map(function (g) { var c = hex(g); return light ? c.map(function (x, j) { return Math.round(x * 0.65 + ink[j] * 0.35); }) : c; });
+    nebPalette = clock.season.gas.map(function (g) { var c = hex(g), y = 0.3 * c[0] + 0.59 * c[1] + 0.11 * c[2]; return c.map(function (x, j) { return light ? Math.round(x * 0.45 + ink[j] * 0.55) : Math.round(x * 0.55 + y * 0.45); }); });   // the season's hue, half toward grey
   }
   function hex(s) { s = s.replace('#', ''); if (s.length === 3) s = s.replace(/./g, '$&$&'); var n = parseInt(s, 16); return [n >> 16 & 255, n >> 8 & 255, n & 255]; }
   function buildAtlas() {
@@ -251,7 +251,7 @@
         var dd = D * (0.6 + 0.8 * hash(x * 3 + L * 211, y * 5 + L * 17));
         var lev = Math.max(1, Math.min(NEB.length - 1, Math.round(dd * (NEB.length - 1))));
         var hk = Math.max(0, Math.min(1, 0.7 * nebHue[y * nebCols + x] + 0.45 * dd - 0.1));
-        c2.globalAlpha = Math.min(0.9, (light ? 0.1 : 0.2) + (light ? 0.42 : 0.65) * dd);
+        c2.globalAlpha = Math.min(0.9, (light ? 0.08 : 0.14) + (light ? 0.34 : 0.5) * dd);
         c2.drawImage(atl, lev * gw, Math.round(hk * (NEB_K - 1)) * gh, gw, gh, Math.round(x * CW * DPR), Math.round(y * CH * DPR), gw, gh);
       }
       return cv;
@@ -308,7 +308,7 @@
     var r = scr.r, pad = r * 0.16, size = Math.ceil((r + pad) * 2 * DPR);
     halo = document.createElement('canvas'); halo.width = halo.height = size;
     var h = halo.getContext('2d'), c = size / 2, g = h.createRadialGradient(c, c, r * 0.985 * DPR, c, c, (r + pad) * DPR);
-    var hue = [150 + 105 * clock.warm, 190 - 30 * clock.warm, 255 - 125 * clock.warm].map(Math.round).join(', ');   // warmer at dawn and dusk
+    var hue = [200 + 55 * clock.warm, 200 - 30 * clock.warm, 205 - 85 * clock.warm].map(Math.round).join(', ');   // warmer at dawn and dusk
     g.addColorStop(0, 'rgba(' + hue + ', 0)'); g.addColorStop(0.06, 'rgba(' + hue + ', 0.34)');
     g.addColorStop(0.3, 'rgba(' + hue + ', 0.1)'); g.addColorStop(1, 'rgba(' + hue + ', 0)');
     h.fillStyle = g; h.fillRect(0, 0, size, size);
