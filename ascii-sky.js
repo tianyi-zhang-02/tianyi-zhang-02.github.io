@@ -587,8 +587,6 @@
 
   /* ---- frame ---------------------------------------------------------------------------------- */
   var warpStart = -10, lastT = 0;
-  var hudSky = document.querySelector('[data-hud-sky]');
-  if (hudSky) hudSky.textContent = clock.season.name + ' · ' + clock.period;
   function frame(t) {
     if (!cols) return;
     var dt = Math.min(0.08, Math.max(0, t - lastT)); lastT = t;
@@ -647,7 +645,7 @@
   });
   hero.addEventListener('pointerleave', function () { view.ty = 0; view.tp = 0; });
   hero.addEventListener('click', function (e) {
-    if (reduce || e.target.closest('a, button, input, label, [data-scramble]')) return;
+    if (reduce || e.target.closest('a, button, input, label, .hero-copy')) return;
     var now = (performance.now() - start) / 1000;
     if (now - warpStart > 1.8) warpStart = now;
   });
@@ -665,27 +663,4 @@
   if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { visible = e[0].isIntersecting; if (visible) play(); else pause(); }).observe(hero);
   document.addEventListener('visibilitychange', function () { if (document.hidden) pause(); else play(); });
   new MutationObserver(function () { resize(); if (!running) frame(lastT); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-
-  /* ---- the name decodes itself on load and on hover ------------------------------------------ */
-  var GLYPHS = '!<>-_\\/[]{}=+*^?#%@01';
-  [].forEach.call(document.querySelectorAll('[data-scramble]'), function (el) {
-    var final = el.textContent, busy = false;
-    function run() {
-      if (busy || reduce) return; busy = true;
-      var q = final.split('').map(function (ch, i) { return { to: ch, start: Math.floor(Math.random() * 12) + i, end: Math.floor(Math.random() * 14) + 18 + i * 2 }; });
-      var f = 0;
-      (function tick() {
-        var out = '', done = 0;
-        for (var i = 0; i < q.length; i++) {
-          if (f >= q[i].end || q[i].to === ' ') { out += q[i].to; done++; }
-          else if (f >= q[i].start) out += GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
-          else out += ' ';
-        }
-        el.textContent = out;
-        if (done < q.length) { f++; setTimeout(tick, 33); } else { el.textContent = final; busy = false; }
-      })();
-    }
-    run();
-    el.addEventListener('pointerenter', run);
-  });
 })();
