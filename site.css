@@ -188,7 +188,6 @@ p { margin: 0; }
 
 /* ------------------------------------------------------------------ about */
 .about-grid { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: clamp(32px, 6vw, 80px); align-items: start; }
-.portrait-frame { position: relative; border-radius: 10px; }
 .portrait { width: 100%; height: auto; border-radius: 10px; background: #fff; box-shadow: 0 0 0 1px var(--line-2), 0 18px 60px -18px var(--photo-shadow); }
 /* at rest a photo is printed in the sky's medium, one-bit dots in the page's ink; pointing at it develops the photo (develop.js) */
 .develop-canvas { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: inherit; image-rendering: pixelated; pointer-events: none; }
@@ -373,7 +372,7 @@ body.panorama-open { overflow: hidden; }
 @media (max-width: 900px) {
   .hero-proof { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .about-grid { grid-template-columns: 1fr; }
-  .portrait-frame { width: min(200px, 55vw); }
+  .portrait { width: min(200px, 55vw); }
   .about-copy { margin-top: 24px; }
   .log-row, .publication-list li, .oss-entry { grid-template-columns: 1fr; gap: 6px; }
   .pub-venue { grid-row: auto; }

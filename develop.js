@@ -56,7 +56,7 @@
     function sample() {
       var w = frame.clientWidth, h = frame.clientHeight;
       if (!w || !h || !img.naturalWidth) return false;
-      var cell = w < 420 ? 2 : 3;                       // finer dots on a small photo, so a face still reads
+      var cell = w < 420 ? 2 : 3;                       // finer dots on a small photo, so it still reads
       cols = Math.max(8, Math.round(w / cell));
       rows = Math.max(8, Math.round(h / cell));
       var off = document.createElement('canvas');
