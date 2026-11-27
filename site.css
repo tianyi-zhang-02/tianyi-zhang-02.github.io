@@ -178,6 +178,15 @@ p { margin: 0; }
 .about-grid { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: clamp(32px, 6vw, 80px); align-items: start; }
 .portrait { width: 100%; height: auto; border-radius: 10px; background: #fff; box-shadow: 0 0 0 1px var(--line-2), 0 18px 60px -18px var(--photo-shadow); }
 .about-copy > p { max-width: 38em; margin-bottom: 18px; color: var(--text); font-size: 17px; line-height: 1.8; }
+/* the few phrases worth remembering, marked as with a highlighter; the stroke sweeps in once as the section arrives */
+.about-copy mark {
+  color: var(--ink); padding: 0 .1em; border-radius: 2px;
+  background: linear-gradient(color-mix(in srgb, var(--accent) 30%, transparent), color-mix(in srgb, var(--accent) 30%, transparent)) 0 88% / 100% .5em no-repeat;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.tx-reveal .about-section mark { background-size: 0% .5em; transition: background-size .9s cubic-bezier(.2, .7, .2, 1) .45s; }
+.tx-reveal .about-section mark + mark { transition-delay: .75s; }
+.tx-reveal .about-section.is-in mark { background-size: 100% .5em; }
 .entity-link img, .log-body h3 img, .log-marks img, .spec strong img { display: inline-block; width: 15px; height: 15px; margin: 0 6px 0 2px; vertical-align: -2px; border-radius: 3px; object-fit: contain; }
 .entity-link strong { font-weight: 600; }
 .spec { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; max-width: 40em; margin: 30px 0 0; padding-top: 26px; border-top: 1px solid var(--line); }
