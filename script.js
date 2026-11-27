@@ -292,15 +292,22 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     badge.setAttribute('aria-label', count.toLocaleString('en-US') + ' GitHub stars');
   }
 
+  // one request per repository, however many places on the page show its stars
+  var byRepo = {};
   projects.forEach(function (project) {
     var repo = project.getAttribute('data-github-repo');
-    if (!repo) return;
+    if (repo) (byRepo[repo] = byRepo[repo] || []).push(project);
+  });
+
+  Object.keys(byRepo).forEach(function (repo) {
+    var shown = byRepo[repo];
+    function renderAll(count) { shown.forEach(function (project) { render(project, count); }); }
 
     var cacheKey = 'github-stars:' + repo;
     try {
       var cached = JSON.parse(localStorage.getItem(cacheKey));
       if (cached && Number.isFinite(cached.count)) {
-        render(project, cached.count);
+        renderAll(cached.count);
       }
     } catch (error) {}
 
@@ -316,7 +323,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       .then(function (data) {
         var count = data.stargazers_count;
         if (!Number.isFinite(count)) return;
-        render(project, count);
+        renderAll(count);
         try { localStorage.setItem(cacheKey, JSON.stringify({ count: count, savedAt: Date.now() })); } catch (error) {}
       })
       .catch(function () {});

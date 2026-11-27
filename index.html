@@ -10,7 +10,7 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; frame-src https://open.spotify.com https://player.bilibili.com; connect-src https://api.github.com; font-src 'self'; worker-src 'none'; upgrade-insecure-requests">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='19' cy='17' r='9' fill='%23b8c6e4'/%3E%3Cellipse cx='19' cy='17' rx='15' ry='4' fill='none' stroke='%23d8c49c' stroke-width='1.6' transform='rotate(-18 19 17)'/%3E%3Ccircle cx='5' cy='6' r='1.6' fill='%23ff9446'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="site.css?v=9">
+<link rel="stylesheet" href="site.css?v=10">
 <script src="theme-init.js?v=3"></script>
 </head>
 <body class="portfolio-refined">
@@ -46,6 +46,12 @@
       <a href="https://www.linkedin.com/in/tianyi-zhang2002/">LinkedIn</a>
       <a href="resume/Tianyi_Zhang_Resume_EN.pdf" target="_blank" rel="noopener">Resume</a>
     </nav>
+    <ul class="hero-proof" aria-label="Highlights">
+      <li><a href="https://proceedings.mlr.press/v306/suh26a.html"><strong>ICML 2026</strong><span class="proof-note">Co-author of AgentSuite, on auditing agent benchmarks</span></a></li>
+      <li><a href="https://github.com/NVIDIA-NeMo/RL/pulls?q=is:pr+is:merged+author:tianyi-zhang-02"><strong>NVIDIA NeMo RL</strong><span class="proof-note">9 merged PRs, including faster log-prob and top-k distillation</span></a></li>
+      <li><a href="#experience"><strong>LinkedIn</strong><span class="proof-note">ML engineer intern on LLM-based recommendation for the home feed</span></a></li>
+      <li data-github-repo="tianyi-zhang-02/cooking-agi"><a href="https://tianyi-zhang-02.github.io/cooking-agi/index.en.html"><strong>Cooking AGI</strong><span class="proof-note">Creator of open ML notes in English and Chinese <span class="oss-stars" aria-label="36 GitHub stars">★ <span data-github-star-count>36</span></span></span></a></li>
+    </ul>
   </div>
 </section>
 
@@ -53,7 +59,7 @@
   <section id="top" class="compact-section about-section">
     <h2 class="section-title">About</h2>
     <div class="about-grid">
-      <img class="portrait" src="images/tianyi-zhang.jpg" alt="Portrait of Tianyi Zhang" width="1111" height="1200" loading="lazy" decoding="async">
+      <div class="portrait-frame" data-develop><img class="portrait" src="images/tianyi-zhang.jpg" alt="Portrait of Tianyi Zhang" width="1111" height="1200" loading="lazy" decoding="async"></div>
       <div class="about-copy">
         <p>I’m a master’s student in computer science at <a class="entity-link" href="https://www.gatech.edu/"><img src="images/gatech.ico" alt=""><strong>Georgia Tech</strong></a>, graduating in May 2027.</p>
         <p>Most recently I worked on LLM-based recommendation at <a class="entity-link" href="https://www.linkedin.com/"><img src="images/linkedin.ico" alt=""><strong>LinkedIn</strong></a>. Before that, at <a class="entity-link" href="https://research.nvidia.com/"><img src="images/gatech.ico" alt=""><strong>GT EIC Lab</strong> × <img src="images/nvidia.ico" alt=""><strong>NVIDIA AI Research</strong></a>, I worked on agent evaluation and benchmark auditing (<a href="https://proceedings.mlr.press/v306/suh26a.html">ICML 2026</a>). My research began at <a class="entity-link" href="https://www.emory.edu/"><img src="images/emory.svg" alt=""><strong>Emory</strong></a>, with directed and time-varying brain networks.</p>
@@ -111,7 +117,7 @@
             <a class="oss-mark" href="https://tianyi-zhang-02.github.io/cooking-agi/index.en.html" aria-label="Cooking AGI"><img src="images/notes.svg" alt=""></a>
             <div>
               <h3 id="notes-title"><a href="https://tianyi-zhang-02.github.io/cooking-agi/index.en.html">Cooking AGI</a></h3>
-              <p class="oss-role">Creator &amp; maintainer <span class="oss-stars" title="GitHub stars" aria-label="27 GitHub stars">★ <span data-github-star-count>27</span></span></p>
+              <p class="oss-role">Creator &amp; maintainer <span class="oss-stars" title="GitHub stars" aria-label="36 GitHub stars">★ <span data-github-star-count>36</span></span></p>
             </div>
           </header>
           <p class="oss-description">Open ML and LLM notes in English and Chinese, with interactive diagrams, coding exercises and interview study plans.</p>
@@ -129,7 +135,7 @@
             <a class="oss-mark" href="https://github.com/NVIDIA-NeMo/RL" aria-label="NVIDIA NeMo RL repository"><img src="images/nvidia.ico" alt=""></a>
             <div>
               <h3 id="nemo-title"><a href="https://github.com/NVIDIA-NeMo/RL">NVIDIA NeMo RL</a></h3>
-              <p class="oss-role">Contributor <span class="oss-stars" title="Repository stars" aria-label="2.0 thousand GitHub stars">★ <span data-github-star-count>2.0k</span></span></p>
+              <p class="oss-role">Contributor <span class="oss-stars" title="Repository stars" aria-label="2,166 GitHub stars">★ <span data-github-star-count>2.2k</span></span></p>
             </div>
           </header>
           <p class="oss-description">NVIDIA’s framework for LLM post-training and RL; my work is on training efficiency and correctness.</p>
@@ -176,7 +182,7 @@
     <p class="personal-intro">Away from work: photography, mountains and rivers, animals, travel and music. I am slowly learning the guitar.</p>
 
     <figure class="hero-reveal personal-panorama">
-      <div class="reveal">
+      <div class="reveal" data-develop>
         <video class="rv-media rv-video" preload="none" muted loop playsinline poster="videos/namcha-barwa-poster.jpg">
           <source src="videos/namcha-barwa.mp4" type="video/mp4">
         </video>
@@ -249,10 +255,11 @@
   </div>
 </dialog>
 
-<script src="script.js?v=49"></script>
+<script src="script.js?v=50"></script>
 <script defer src="ascii-sky.js?v=5"></script>
 <script defer src="ascii-page.js?v=2"></script>
 <script defer src="after-hours.js?v=1"></script>
 <script defer src="portfolio.js?v=7"></script>
+<script defer src="develop.js?v=3"></script>
 </body>
 </html>
